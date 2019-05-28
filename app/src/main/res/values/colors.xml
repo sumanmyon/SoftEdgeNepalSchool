@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Primary Color -->
     <color name="colorPrimary">#324148</color>
     <color name="colorPrimaryDark">#0c1b21</color>
+    <color name="colorPrimaryLight">#5c6c73</color>
+    <color name="colorPrimaryText">#ffffff</color>
+
     <color name="colorAccent">#D81B60</color>
 
-    <color name="black">#000000</color>
-    <color name="white">#ffffff</color>
-    <color name="light">#5c6c73</color>
-
-    <color name="teal_light">#26A69A</color>
-    <color name="teal_dark">#00695C</color>
+    <!-- Secondary Color-->
+    <color name="colorSecondary">#26a69a</color>
+    <color name="colorSecondaryDark">#00766c</color>
+    <color name="colorSeconadryLigjt">#64d8cb</color>
+    <color name="colorSecondaryText">#000000</color>
 
     <!-- background transaction -->
     <color name="start">#4D58CF</color>
