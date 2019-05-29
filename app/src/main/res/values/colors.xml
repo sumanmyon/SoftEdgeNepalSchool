@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Primary Color -->
+    <!-- Primary color -->
     <color name="colorPrimary">#324148</color>
     <color name="colorPrimaryDark">#0c1b21</color>
     <color name="colorPrimaryLight">#5c6c73</color>
@@ -9,10 +9,10 @@
 
     <color name="colorAccent">#D81B60</color>
 
-    <!-- Secondary Color-->
+    <!-- Secondary color-->
     <color name="colorSecondary">#26a69a</color>
     <color name="colorSecondaryDark">#00766c</color>
-    <color name="colorSeconadryLigjt">#64d8cb</color>
+    <color name="colorSecondaryLight">#64d8cb</color>
     <color name="colorSecondaryText">#000000</color>
 
     <!-- background transaction -->
