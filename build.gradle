@@ -18,6 +18,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        //for glide
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
         
     }
 }
