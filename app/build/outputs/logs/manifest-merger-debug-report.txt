@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e647ad28cea1962ff2feda86733ffcd5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b21f3ee80ce5149c9f66803a9ea3a272\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\f17b5bbed9caf469897249d91e6d0b15\AndroidManifest.xml:17:1-22:12
@@ -38,41 +38,41 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\suman\.gradle\cac
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\edb94a18c522d990029faa4a9cfb10dc\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b9dc3877f545e7fdb0457d52f9577c5f\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9ecb0ac3041a0658300f1f3486c57f0d\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:3:5-56
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-43:12
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:9:5-66
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:9:22-64
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:14:5-78
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:14:22-76
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:13:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:18:5-80
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:15:5-80
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:18:22-77
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:15:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:22:5-81
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:17:5-81
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:22:22-78
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:17:22-78
 application
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:24:5-41:19
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:19:5-39:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e647ad28cea1962ff2feda86733ffcd5\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e647ad28cea1962ff2feda86733ffcd5\AndroidManifest.xml:22:5-20
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\eea1d5c5da80c94a6c6e7965d334b0e8\AndroidManifest.xml:10:5-20
@@ -90,37 +90,43 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\suman\.gradle\
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\dbcde2a5484e78dc9af3399fe53b96bc\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:29:9-35
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:27:9-41
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:22:9-41
 	android:roundIcon
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:28:9-54
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:23:9-54
 	android:icon
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:26:9-43
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:21:9-43
 	android:allowBackup
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:25:9-35
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:20:9-35
 	android:theme
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:30:9-40
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:25:9-40
 activity#www.softedgenepal.com.softedgenepalschool.MainActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:31:9-37:20
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:26:9-50
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:31:19-47
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:26:19-47
+activity#www.softedgenepal.com.softedgenepalschool.Login.LoginActivity
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:27:9-34:20
+	android:theme
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:27:19-54
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:32:13-36:29
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:35:17-77
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:35:27-74
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:32:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:38:9-40:57
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:36:9-38:57
 	android:resource
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:40:13-54
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:38:13-54
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:39:13-43
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:13-43
 uses-sdk
 INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
