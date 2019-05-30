@@ -36,12 +36,14 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/for_edittext"
                 android:drawableStart="@drawable/username3"
+                android:drawablePadding="12dp"
                 android:padding="8dp"
                 android:singleLine="true"
                 android:ellipsize="end"
                 android:scrollHorizontally="true"
                 android:inputType="textEmailAddress"
-                android:hint="  Username or Email"
+                android:hint="Username or Email"
+                android:textSize="14sp"
                 android:id="@+id/login_edit_text_username"/>
 
             <EditText
@@ -50,12 +52,14 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/for_edittext"
                 android:drawableStart="@drawable/lock"
+                android:drawablePadding="12dp"
                 android:padding="8dp"
                 android:singleLine="true"
                 android:ellipsize="end"
                 android:scrollHorizontally="true"
                 android:inputType="textPassword"
-                android:hint="  Password"
+                android:hint="Password"
+                android:textSize="14sp"
                 android:id="@+id/login_edit_text_password"/>
 
             <LinearLayout
@@ -75,6 +79,7 @@
                     android:text="QR"
                     android:textAllCaps="false"
                     android:textColor="@color/onpresstextcolor"
+                    android:textSize="14sp"
                     android:id="@+id/login_button_QR"/>
 
                 <Button
@@ -89,8 +94,8 @@
                     android:text="Login"
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimaryText"
+                    android:textSize="14sp"
                     android:id="@+id/login_button_login"/>
-
 
             </LinearLayout>
 

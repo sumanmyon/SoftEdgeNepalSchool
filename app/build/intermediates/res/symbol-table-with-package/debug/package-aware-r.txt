@@ -1020,6 +1020,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable for_button
 drawable for_button2
+drawable for_custom_toast
 drawable for_edittext
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1102,6 +1103,10 @@ id contentPanel
 id coordinator
 id custom
 id customPanel
+id customSnackImage
+id customSnackText
+id customToastImage
+id customToastText
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -1147,6 +1152,11 @@ id line1
 id line3
 id listMode
 id list_item
+id login_button_QR
+id login_button_login
+id login_edit_text_password
+id login_edit_text_username
+id login_image_view
 id masked
 id message
 id middle
@@ -1300,6 +1310,8 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout custom_snackbar
+layout custom_toast
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1328,6 +1340,8 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+string Close
+string Open
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
