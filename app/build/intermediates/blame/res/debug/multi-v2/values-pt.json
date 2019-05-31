@@ -14,6 +14,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\32fbd2eea71511b95d7e822c5499aaa3\\res\\values-pt\\values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,317",
+                        "endColumns": "58,46,155,106",
+                        "endOffsets": "109,156,312,419"
+                    },
+                    "to": {
+                        "startLines": "31,32,33,34",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3030,3089,3136,3292",
+                        "endColumns": "58,46,155,106",
+                        "endOffsets": "3084,3131,3287,3394"
+                    }
+                },
+                {
                     "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\dbcde2a5484e78dc9af3399fe53b96bc\\res\\values-pt\\values-pt.xml",
                     "from": {
                         "startLines": "2",
