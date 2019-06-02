@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 import www.softedgenepal.com.softedgenepalschool.CustomMessage.EditTextError;
 
-public class FormValidation implements View.OnClickListener {
+public class FormValidation implements View.OnClickListener, Validate{
     EditText editTextUserName;
     EditText editTextPassword;
     Drawable drawable;
@@ -53,16 +53,17 @@ public class FormValidation implements View.OnClickListener {
 
         if (user && password){
             //todo request to server and, validate and get/store token
-            validateWithDataBase();
+            validateWithDataBase(editTextUserName.getText().toString(), editTextPassword.getText().toString());
         }
     }
 
-    private void validateWithDataBase() {
-
-    }
 
     private void storeUserCredentials(){
 
     }
 
+    @Override
+    public void validateWithDataBase(String userName, String password) {
+
+    }
 }

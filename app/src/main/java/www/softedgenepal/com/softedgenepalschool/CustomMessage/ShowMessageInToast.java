@@ -13,8 +13,8 @@ public class ShowMessageInToast {
     Activity activity;
     Toast toast;
 
-    public  int toastShortLength = Toast.LENGTH_SHORT;
-    public  int toastLongLength = Toast.LENGTH_LONG;
+    public int toastShortLength = Toast.LENGTH_SHORT;
+    public int toastLongLength = Toast.LENGTH_LONG;
 
 
     //todo set activity for toast
@@ -25,6 +25,8 @@ public class ShowMessageInToast {
     //todo default toast
     public void setMessage(String message, int length){
         toast.makeText(activity,message,length);
+//        toast.setText(message);
+//        toast.setDuration(length);
     }
 
     public void show(){

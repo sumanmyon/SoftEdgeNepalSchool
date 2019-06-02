@@ -3,4 +3,39 @@
 
     <string name="Open">Open</string>
     <string name="Close">Close</string>
+
+    <!--
+        For Navigation menu
+    -->
+    <!-- For all (School, Teacher and Student) -->
+    <string name="Event">Event</string>
+    <string name="Blog">Blog</string>
+    <string name="Gallery">Gallery</string>
+    <string name="Videos">Videos</string>
+    <string name="About">About</string>
+    <string name="Setting">Setting</string>
+
+    <!-- For Teacher -->
+    <string name="AssignHomeWork">Assign Homework</string>
+    <string name="TeacherAttendance">Attendance</string>
+    <string name="ClassRoutine">Class Routine</string>
+    <string name="ExamRoutine">Exam Routine</string>
+    <string name="ResultReportCard">Result/Report Card</string>
+    <string name="SalaryAccount">Salary Account</string>
+    <string name="TeacherLeaveApplication">LeaveApplication</string>
+    <string name="TeacherSuggestion">Suggestion</string>
+    <string name="TeacherProfile">Profile</string>
+
+    <!-- For Student -->
+    <string name="HomeWork">Homework</string>
+    <string name="StudentAttendance">Attendance</string>
+    <string name="Routine">Routine</string>
+    <string name="ReportCard">Report Card</string>
+    <string name="StudentAccount">Account</string>
+    <string name="StudentLeaveApplication">Leave Application</string>
+    <string name="Assignment">Assignment</string>
+    <string name="StudentSuggestion">Suggestion</string>
+    <string name="BusRoute">Bus Route</string>
+    <string name="LiveBusTracking">Live Bus Tracking</string>
+    <string name="StudentProfile">Profile</string>
 </resources>

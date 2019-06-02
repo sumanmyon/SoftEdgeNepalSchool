@@ -8,6 +8,13 @@
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="28" />
+
+    <!-- support for all sizes -->
+    <!-- <supports-screens -->
+    <!-- android:smallScreens="true" -->
+    <!-- android:normalScreens="true" -->
+    <!-- android:largeScreens="true" -->
+    <!-- android:xlargeScreens="true"/> -->
     <!--
         Allows Glide to monitor connectivity status and restart failed requests if users go from a
         a disconnected to a connected network state.
@@ -55,10 +62,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.MainActivity" />
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.Login.LoginActivity"
-            android:theme="@style/AppTheme_NoActionBar" >
+            android:theme="@style/AppTheme_NoActionBar" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

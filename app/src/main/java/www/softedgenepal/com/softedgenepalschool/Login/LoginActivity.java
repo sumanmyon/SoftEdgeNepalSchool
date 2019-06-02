@@ -64,12 +64,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void glideDemo(){
-        String url = "https://picsum.photos/200/300?grayscale";
-        url="https://cdn-images-1.medium.com/max/1600/0*akL0KXb54mViVajR.";
-        ShowInGlide showInGlide = new ShowInGlide(this);
-        showInGlide.loadURL(url);
-        showInGlide.forGif();
-        showInGlide.show(imageView);
+//        String url = "https://picsum.photos/200/300?grayscale";
+//        url="https://cdn-images-1.medium.com/max/1600/0*akL0KXb54mViVajR.";
+//        ShowInGlide showInGlide = new ShowInGlide(this);
+//        showInGlide.loadURL(url);
+//        showInGlide.forGif();
+//        showInGlide.show(imageView);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
