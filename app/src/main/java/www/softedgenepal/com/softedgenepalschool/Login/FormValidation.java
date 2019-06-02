@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
-import www.softedgenepal.com.softedgenepalschool.CustomMessage.EditTextError;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomMessage.EditTextError;
 
 public class FormValidation implements View.OnClickListener, Validate{
     EditText editTextUserName;
