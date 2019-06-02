@@ -18,5 +18,6 @@
     <!-- background transaction -->
     <color name="start">#4D58CF</color>
     <color name="end">#B351C2</color>
+    <color name="backgroundLight">#e8eaed</color>
 
 </resources>

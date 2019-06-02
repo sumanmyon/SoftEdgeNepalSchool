@@ -44,6 +44,7 @@
                 android:inputType="textEmailAddress"
                 android:hint="Username or Email"
                 android:textSize="14sp"
+                android:focusable="true"
                 android:id="@+id/login_edit_text_username"/>
 
             <EditText
@@ -60,6 +61,7 @@
                 android:inputType="textPassword"
                 android:hint="Password"
                 android:textSize="14sp"
+                android:focusable="true"
                 android:id="@+id/login_edit_text_password"/>
 
             <LinearLayout
