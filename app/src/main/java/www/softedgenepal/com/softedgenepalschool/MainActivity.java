@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //navigation
         navigation();
 
-
+        //Tab Layout
     }
 
     private void casting() {
