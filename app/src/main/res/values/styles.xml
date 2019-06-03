@@ -12,5 +12,10 @@
     </style>
 
     <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar"/>
+    
+    <!-- For TabLayout -->
+    <style name="CustomTabIndicatorStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+    </style>
 
 </resources>

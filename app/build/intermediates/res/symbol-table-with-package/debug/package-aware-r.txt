@@ -1223,6 +1223,7 @@ id groups
 id home
 id homeAsUp
 id homeWork
+id home_frameLayout
 id icon
 id icon_group
 id icon_only
@@ -1246,6 +1247,8 @@ id login_button_login
 id login_edit_text_password
 id login_edit_text_username
 id login_image_view
+id main_tabLayout
+id main_viewPager
 id masked
 id media_actions
 id message
@@ -1284,6 +1287,13 @@ id salaryAccount
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id schoolAddress_TextView
+id schoolEmail_TextView
+id schoolFax_TextView
+id schoolLogo_imageView
+id schoolName_TextView
+id schoolPhoneNo_TextView
+id schoolWeb_TextView
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1450,6 +1460,9 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_calendar
+layout fragment_home
+layout fragment_notification
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_menu_header
@@ -1468,6 +1481,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout school
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1477,6 +1491,7 @@ layout zxing_capture
 menu nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap logo
 raw zxing_beep
 string About
 string AssignHomeWork
@@ -1570,6 +1585,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
@@ -1782,6 +1798,7 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style CustomTabIndicatorStyle
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
