@@ -18,7 +18,7 @@ public class NetworkConnection {
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
 
         boolean isAvabiable = false;
-        if(!networkInfo.equals(null) && networkInfo.isConnected()){
+        if(networkInfo != null && networkInfo.isConnected()){
             isAvabiable = true;
         }
         return isAvabiable;

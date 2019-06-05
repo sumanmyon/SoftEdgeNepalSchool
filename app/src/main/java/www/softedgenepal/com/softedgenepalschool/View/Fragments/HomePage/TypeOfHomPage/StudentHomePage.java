@@ -1,15 +1,19 @@
 package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomImage.ShowInGlide;
+import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor;
+import www.softedgenepal.com.softedgenepalschool.Presenter.StudentHomePagePresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 
-public class StudentHomePage {
+public class StudentHomePage implements Contractor.View {
     private Activity activity;
     private View view;
 
@@ -27,8 +31,8 @@ public class StudentHomePage {
         casting();
 
         //fetch/get data
-
-
+        StudentHomePagePresenter presenter = new StudentHomePagePresenter(this);
+        presenter.getData();
         //set data
 
     }
@@ -48,6 +52,15 @@ public class StudentHomePage {
         userNameTextView = view.findViewById(R.id.userProfile_nameTextView);
         classTextView = view.findViewById(R.id.userProfile_classTextView);
         roll_SubTextView = view.findViewById(R.id.userProfile_Roll_SubjectTextView);
+    }
+
+    public Context getContext(){
+        return activity.getApplicationContext();
+    }
+
+    @Override
+    public void setMessage(String message) {
+        Toast.makeText(activity,message,Toast.LENGTH_LONG).show();
     }
 
 
