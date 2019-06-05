@@ -35,9 +35,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".Login.LoginActivity"
+        <activity android:name=".View.Activities.LoginActivity"
             android:theme="@style/AppTheme_NoActionBar"/>
-        <activity android:name=".MainActivity"
+        <activity android:name=".View.Activities.MainActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

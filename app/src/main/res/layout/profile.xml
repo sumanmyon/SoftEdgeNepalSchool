@@ -52,17 +52,6 @@
                 android:padding="2dp"
                 android:id="@+id/userProfile_Roll_SubjectTextView"/>
         </LinearLayout>
-        <!--<ImageView-->
-        <!--android:layout_width="28dp"-->
-        <!--android:layout_height="28dp"-->
-        <!--android:layout_weight="0.05"-->
-        <!--android:src="@drawable/lock"-->
-        <!--android:adjustViewBounds="true"-->
-        <!--android:scaleType="centerInside"-->
-        <!--android:layout_gravity="right"-->
-        <!--android:padding="2dp"-->
-        <!--android:layout_margin="4dp"-->
-        <!--android:id="@+id/userProfile_sibling_ImageView" />-->
     </LinearLayout>
 </RelativeLayout>
 

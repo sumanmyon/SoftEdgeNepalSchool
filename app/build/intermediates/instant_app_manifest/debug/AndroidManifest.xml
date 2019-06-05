@@ -63,9 +63,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="www.softedgenepal.com.softedgenepalschool.Login.LoginActivity"
+            android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity"
             android:theme="@style/AppTheme_NoActionBar" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.MainActivity" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -109,6 +109,11 @@
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="www.softedgenepal.com.softedgenepalschool.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

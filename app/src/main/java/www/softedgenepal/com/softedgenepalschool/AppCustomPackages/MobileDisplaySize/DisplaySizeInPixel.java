@@ -9,7 +9,7 @@ import android.view.WindowManager;
 
 public class DisplaySizeInPixel {
     private Activity activity;
-    int width, height;
+    private int width, height;
     public DisplaySizeInPixel(Activity activity) {
        this.activity=activity;
     }

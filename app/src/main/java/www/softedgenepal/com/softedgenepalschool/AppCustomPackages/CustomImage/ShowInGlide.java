@@ -121,4 +121,16 @@ public class ShowInGlide {
     //todo get Bitmap from url, file, uri and drawable
     //https://www.dev2qa.com/android-glide-example/
 
+
+
+
+
+    //todo example1
+//        String url = "https://picsum.photos/200/300?grayscale";
+//        url="https://cdn-images-1.medium.com/max/1600/0*akL0KXb54mViVajR.";
+//        ShowInGlide showInGlide = new ShowInGlide(this);
+//        showInGlide.loadURL(url);
+//        showInGlide.forGif();
+//        showInGlide.show(imageView);
+
 }

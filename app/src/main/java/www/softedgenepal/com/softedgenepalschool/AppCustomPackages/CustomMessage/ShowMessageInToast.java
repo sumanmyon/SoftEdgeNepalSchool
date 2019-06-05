@@ -86,4 +86,13 @@ public class ShowMessageInToast {
          https://www.dev2qa.com/android-custom-toast-example/
       */
 
+
+     /* todo example 1
+         private void showMessage2(String message){
+            ShowMessageInToast show = new ShowMessageInToast(this);
+            show.setCustomToast(R.drawable.logo,message,show.toastLongLength,Gravity.BOTTOM,0,10);
+            show.show();
+        }
+      */
+
 }
