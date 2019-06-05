@@ -3671,32 +3671,17 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        
+
         <item name="android:fontFamily">@font/font</item>
-
-        
         <item name="android:textColor">@color/colorPrimaryText</item>
-        
-        
-        <item name="android:itemBackground">@color/colorPrimary</item>
-
-        
+        <item name="android:itemBackground">@color/colorPrimary</item> 
         <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
     </style><style name="AppTheme.Widget.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
         <item name="textAllCaps">false</item>
-    </style><style name="HeaderBar">
-        <item name="android:textColor">@color/colorPrimaryText</item>
     </style><style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        
         <item name="android:fontFamily">@font/font</item>
-
-        
-        <item name="android:textColor">@color/colorPrimaryText</item>
-
-        
+        <item name="android:textColor">@color/colorPrimaryText</item> 
         <item name="android:itemBackground">@color/colorPrimary</item>
-
-        
         <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
     </style><style name="CustomTabIndicatorStyle" parent="Widget.Design.TabLayout">
         <item name="tabIndicatorColor">@color/colorAccent</item>

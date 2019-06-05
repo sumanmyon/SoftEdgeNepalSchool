@@ -62,9 +62,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="www.softedgenepal.com.softedgenepalschool.Login.LoginActivity"
+            android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity"
             android:theme="@style/AppTheme_NoActionBar" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.MainActivity" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
