@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
-import www.softedgenepal.com.softedgenepalschool.View.BindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
-import www.softedgenepal.com.softedgenepalschool.View.BindingAndTabLayoutAdapter.TabLayoutAdapter;
-import www.softedgenepal.com.softedgenepalschool.View.HomePage.Navigation.NavigationListener;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.TabLayoutAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.NavigationListener;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 public class MainActivity extends AppCompatActivity {
