@@ -48,14 +48,6 @@ public class StudentHomePage {
     }
 
     private void casting() {
-//        toolbar = view.findViewById(R.id.userProfile_toolbar);
-//        toolbar.inflateMenu(R.menu.menu);
-//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem menuItem) {
-//                return onMenuItemClick(menuItem);
-//            }
-//        });
         userProfileImage = view.findViewById(R.id.userProfile_ImageView);
         userNameTextView = view.findViewById(R.id.userProfile_nameTextView);
         classTextView = view.findViewById(R.id.userProfile_classTextView);

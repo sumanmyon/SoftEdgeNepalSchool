@@ -48,11 +48,6 @@ public class Home extends Fragment {
         return view;
     }
 
-
-    private void showMessage(String message){
-        Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();
-    }
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu,menu);
@@ -62,7 +57,10 @@ public class Home extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //todo for menu items
-
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showMessage(String message){
+        Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();
     }
 }
