@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage;
+package www.softedgenepal.com.softedgenepalschool.View.BindingAndTabLayoutAdapter;
 
 import android.app.Activity;
 import android.support.design.widget.TabLayout;
@@ -6,10 +6,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
-import www.softedgenepal.com.softedgenepalschool.Adapters.FragmentAdapter;
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.Calendar;
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.Home;
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.Notification;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomAdapters.FragmentAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments.Calendar;
+import www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments.Home;
+import www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments.Notification;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 public class TabLayoutAdapter {

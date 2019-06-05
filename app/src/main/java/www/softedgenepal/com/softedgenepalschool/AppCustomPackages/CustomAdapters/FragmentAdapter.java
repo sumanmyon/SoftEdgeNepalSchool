@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.Adapters;
+package www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomAdapters;
 
 import android.app.Activity;
 import android.support.annotation.Nullable;
@@ -9,11 +9,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
-
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.Calendar;
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.Home;
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.Notification;
-import www.softedgenepal.com.softedgenepalschool.R;
 
 
 public class FragmentAdapter {

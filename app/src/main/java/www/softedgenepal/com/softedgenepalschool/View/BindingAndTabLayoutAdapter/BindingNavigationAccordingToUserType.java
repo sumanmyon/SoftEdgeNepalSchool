@@ -1,10 +1,10 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage;
+package www.softedgenepal.com.softedgenepalschool.View.BindingAndTabLayoutAdapter;
 
 import android.support.design.widget.NavigationView;
 
 import www.softedgenepal.com.softedgenepalschool.R;
 
-import static www.softedgenepal.com.softedgenepalschool.MainActivity.userType;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class BindingNavigationAccordingToUserType {
 

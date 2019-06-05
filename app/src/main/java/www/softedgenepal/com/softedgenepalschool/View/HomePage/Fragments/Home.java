@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage.Fragments;
+package www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments;
 
 
 import android.os.Bundle;
@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.TypeOfHomPage.SchoolHomePage;
-import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.TypeOfHomPage.StudentHomePage;
+import www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments.TypeOfHomPage.SchoolHomePage;
+import www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments.TypeOfHomPage.StudentHomePage;
 import www.softedgenepal.com.softedgenepalschool.R;
 
-import static www.softedgenepal.com.softedgenepalschool.MainActivity.userType;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 /**
  * A simple {@link Fragment} subclass.

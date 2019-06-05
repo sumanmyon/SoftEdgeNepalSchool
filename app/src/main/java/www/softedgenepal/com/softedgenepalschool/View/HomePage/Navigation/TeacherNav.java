@@ -1,52 +1,46 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage.Navigation;
+package www.softedgenepal.com.softedgenepalschool.View.HomePage.Navigation;
 
 import android.app.Activity;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
 
-public class StudentNav {
+public class TeacherNav {
     private Activity activity;
     private int itemId;
 
-    public StudentNav(Activity activity, int itemId) {
+    public TeacherNav(Activity activity, int itemId) {
         this.activity=activity;
         this.itemId=itemId;
     }
 
     public void set(){
         switch (itemId){
-            case R.id.homeWork:
+            case R.id.assignHomeWork:
                 showMessage("Coming Soon");
                 break;
-            case R.id.studentAttendance:
+            case R.id.teacherAttendance:
                 showMessage("Coming Soon");
                 break;
-            case R.id.routine:
+            case R.id.classRoutine:
                 showMessage("Coming Soon");
                 break;
-            case R.id.reportCard:
+            case R.id.examRoutine:
                 showMessage("Coming Soon");
                 break;
-            case R.id.studentAccount:
+            case R.id.resultReportCard:
                 showMessage("Coming Soon");
                 break;
-            case R.id.studentLeaveApplication:
+            case R.id.salaryAccount:
                 showMessage("Coming Soon");
                 break;
-            case R.id.studentSuggestion:
+            case R.id.teacherLeaveApplication:
                 showMessage("Coming Soon");
                 break;
-            case R.id.assignment:
+            case R.id.teacherSuggestion:
                 showMessage("Coming Soon");
                 break;
-            case R.id.busRoute:
-                showMessage("Coming Soon");
-                break;
-            case R.id.liveBusTracking:
-                showMessage("Coming Soon");
-                break;
-            case R.id.studentProfile:
+            case R.id.teacherProfile:
                 showMessage("Coming Soon");
                 break;
             default:

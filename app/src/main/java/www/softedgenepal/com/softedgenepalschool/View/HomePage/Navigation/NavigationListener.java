@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage.Navigation;
+package www.softedgenepal.com.softedgenepalschool.View.HomePage.Navigation;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;

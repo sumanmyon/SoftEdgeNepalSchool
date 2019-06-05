@@ -1,15 +1,13 @@
-package www.softedgenepal.com.softedgenepalschool.Login;
+package www.softedgenepal.com.softedgenepalschool.View.Login;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomMessage.ShowMessageInToast;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.QRandBarCode.QRScan;
 import www.softedgenepal.com.softedgenepalschool.R;
 

@@ -1,11 +1,10 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.TypeOfHomPage;
+package www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments.TypeOfHomPage;
 
 import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.DisplaySizeInPixel;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
 import www.softedgenepal.com.softedgenepalschool.R;
 

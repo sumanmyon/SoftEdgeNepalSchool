@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.NetworkHandler;
+package www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

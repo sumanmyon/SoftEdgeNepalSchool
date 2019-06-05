@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.FakeApi;
+package www.softedgenepal.com.softedgenepalschool.Model.FakeApi;
 
 public class StudentApi {
 

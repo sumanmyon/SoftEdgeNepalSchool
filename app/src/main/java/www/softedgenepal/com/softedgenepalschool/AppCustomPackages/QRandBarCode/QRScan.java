@@ -7,7 +7,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import org.json.JSONObject;
-import www.softedgenepal.com.softedgenepalschool.Login.LoginActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Login.LoginActivity;
 
 public class QRScan implements View.OnClickListener{
     LoginActivity activity;

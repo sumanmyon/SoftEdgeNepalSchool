@@ -1,16 +1,12 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.TypeOfHomPage;
+package www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments.TypeOfHomPage;
 
 import android.app.Activity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomImage.ShowInGlide;
-import www.softedgenepal.com.softedgenepalschool.FakeApi.StudentApi;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 public class StudentHomePage {

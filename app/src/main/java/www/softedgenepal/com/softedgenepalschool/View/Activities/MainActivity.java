@@ -1,7 +1,5 @@
-package www.softedgenepal.com.softedgenepalschool;
+package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
-import android.content.Context;
-import android.graphics.Point;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -9,19 +7,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import www.softedgenepal.com.softedgenepalschool.Adapters.FragmentAdapter;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.DisplaySizeInPixel;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
-import www.softedgenepal.com.softedgenepalschool.HomePage.BindingNavigationAccordingToUserType;
-import www.softedgenepal.com.softedgenepalschool.HomePage.Navigation.NavigationListener;
-import www.softedgenepal.com.softedgenepalschool.HomePage.TabLayoutAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.BindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
+import www.softedgenepal.com.softedgenepalschool.View.BindingAndTabLayoutAdapter.TabLayoutAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.HomePage.Navigation.NavigationListener;
+import www.softedgenepal.com.softedgenepalschool.R;
 
 public class MainActivity extends AppCompatActivity {
     //For Navigation

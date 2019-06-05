@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.Login;
+package www.softedgenepal.com.softedgenepalschool.View.Login;
 
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;

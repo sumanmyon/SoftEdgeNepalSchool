@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage.Fragments;
+package www.softedgenepal.com.softedgenepalschool.View.HomePage.Fragments;
 
 
 import android.os.Bundle;
