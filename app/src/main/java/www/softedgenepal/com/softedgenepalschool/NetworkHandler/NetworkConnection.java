@@ -12,7 +12,9 @@ public class NetworkConnection {
     }
 
     public boolean isConnectionSuccess(){
+        //state of network connectivity and Monitor network connections (Wi-Fi, GPRS, UMTS, etc.)
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        //get an instance that represents the current network connection.
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
 
         boolean isAvabiable = false;
