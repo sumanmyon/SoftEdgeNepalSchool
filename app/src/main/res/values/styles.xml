@@ -9,9 +9,39 @@
 
         <!-- Apply custom font to whole app -->
         <item name="android:fontFamily">@font/font</item>
+
+        <!-- popup menu text color -->
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        
+        <!-- popup menu background -->
+        <item name="android:itemBackground">@color/colorPrimary</item>
+
+        <!-- toolbar cap disabling -->
+        <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
     </style>
 
-    <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <!-- toolbar cap disabling -->
+    <style name="AppTheme.Widget.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="HeaderBar">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+    <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Apply custom font to whole app -->
+        <item name="android:fontFamily">@font/font</item>
+
+        <!-- popup menu text color -->
+        <item name="android:textColor">@color/colorPrimaryText</item>
+
+        <!-- popup menu background -->
+        <item name="android:itemBackground">@color/colorPrimary</item>
+
+        <!-- toolbar cap disabling -->
+        <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
+    </style>
     
     <!-- For TabLayout -->
     <style name="CustomTabIndicatorStyle" parent="Widget.Design.TabLayout">

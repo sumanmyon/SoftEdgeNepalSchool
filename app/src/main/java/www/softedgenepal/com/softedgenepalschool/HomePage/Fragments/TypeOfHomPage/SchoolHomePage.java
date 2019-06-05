@@ -1,4 +1,4 @@
-package www.softedgenepal.com.softedgenepalschool.HomePage.TypeOfHomPage;
+package www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.TypeOfHomPage;
 
 import android.app.Activity;
 import android.view.View;
@@ -24,7 +24,9 @@ public class SchoolHomePage {
         //casting
         casting();
 
-        //setting data
+        //fetch/get data
+
+        //set data
         setInFields();
     }
 

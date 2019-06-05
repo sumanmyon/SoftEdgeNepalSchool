@@ -4,14 +4,15 @@ package www.softedgenepal.com.softedgenepalschool.HomePage.Fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomMessage.ShowMessageInSnackBar;
-import www.softedgenepal.com.softedgenepalschool.HomePage.TypeOfHomPage.SchoolHomePage;
+import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.TypeOfHomPage.SchoolHomePage;
+import www.softedgenepal.com.softedgenepalschool.HomePage.Fragments.TypeOfHomPage.StudentHomePage;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 import static www.softedgenepal.com.softedgenepalschool.MainActivity.userType;
@@ -39,7 +40,9 @@ public class Home extends Fragment {
             view = inflater.inflate(R.layout.fragment_home, container, false);
             showMessage("Teacher");
         }else if(userType.equals("student")){
-            view = inflater.inflate(R.layout.fragment_home, container, false);
+            view = inflater.inflate(R.layout.user_profile, container, false);
+            setHasOptionsMenu(true);
+            new StudentHomePage(getActivity(), view).setView();
             showMessage("Student");
         }
         return view;
@@ -50,4 +53,16 @@ public class Home extends Fragment {
         Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu,menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //todo for menu items
+
+        return super.onOptionsItemSelected(item);
+    }
 }

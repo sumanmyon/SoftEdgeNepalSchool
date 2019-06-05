@@ -10,6 +10,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private NavigationListener navigationListener;
-    public static String userType = "school";     // userType :: by default is school ,
+    public static String userType = "student";     // userType :: by default is school ,
                                                   // else teacher and student
     int w,h;
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         casting();
 
         //valid user type and then set userType
+
         //binding
         //userType = "school";
         binding();
@@ -109,4 +112,6 @@ public class MainActivity extends AppCompatActivity {
         //tabLayoutAdapter.setIcons();
         tabLayoutAdapter.disableSwipe();
     }
+
+
 }
