@@ -31,14 +31,10 @@ public class SchoolHomePage {
     }
 
     private void setInFields() {
-        //for compatible image for differnt devices
+        //for compatible image for different devices
         //at first get display size
-        DisplaySizeInPixel pixel = new DisplaySizeInPixel(activity);
-        pixel.setByWindowManager();
-        int width = pixel.getWidth();
-        int height = pixel.getHeight();
         //now set image
-        SetImageWithCompatibleScreenSize screenSize = new SetImageWithCompatibleScreenSize(schoolLogoImageView,width,height);
+        SetImageWithCompatibleScreenSize screenSize = new SetImageWithCompatibleScreenSize(activity, schoolLogoImageView);
         screenSize.setCompitableForHeight(3);
         schoolLogoImageView.setImageDrawable(activity.getResources().getDrawable(R.drawable.logo));
 

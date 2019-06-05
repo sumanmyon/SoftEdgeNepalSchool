@@ -1,15 +1,16 @@
 package www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize;
 
+import android.app.Activity;
 import android.widget.ImageView;
 
 public class SetImageWithCompatibleScreenSize {
     private ImageView imageView;
-    private int width, height;
+    private DisplaySizeInPixel pixel;
 
-    public SetImageWithCompatibleScreenSize(ImageView imageView, int width, int height) {
+    public SetImageWithCompatibleScreenSize(Activity activity, ImageView imageView) {
         this.imageView=imageView;
-        this.width=width;
-        this.height=height;
+        pixel = new DisplaySizeInPixel(activity);
+        pixel.setByWindowManager();
     }
 
     public void setImage() {
@@ -18,10 +19,11 @@ public class SetImageWithCompatibleScreenSize {
     }
 
     public void setCompitableForWidth(double divisionValueForWidth){
-        imageView.getLayoutParams().width = (int)(width/divisionValueForWidth);
+        imageView.getLayoutParams().width = (int)(pixel.getWidth()/divisionValueForWidth);
     }
 
     public void setCompitableForHeight(double divisionValueForHeight){
-        imageView.getLayoutParams().height = (int)(height/divisionValueForHeight);
+        imageView.getLayoutParams().height = (int)(pixel.getHeight()/divisionValueForHeight);
     }
+
 }

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import www.softedgenepal.com.softedgenepalschool.Adapters.FragmentAdapter;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.DisplaySizeInPixel;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
+import www.softedgenepal.com.softedgenepalschool.HomePage.BindingNavigationAccordingToUserType;
 import www.softedgenepal.com.softedgenepalschool.HomePage.Navigation.NavigationListener;
 import www.softedgenepal.com.softedgenepalschool.HomePage.TabLayoutAdapter;
 
@@ -30,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private NavigationListener navigationListener;
     public static String userType = "student";     // userType :: by default is school ,
                                                   // else teacher and student
-    int w,h;
-
     //For TabLayout
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -41,12 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //get Actual window display
-        DisplaySizeInPixel pixel = new DisplaySizeInPixel(this);
-        pixel.setByWindowManager();
-        w = pixel.getWidth();
-        h = pixel.getHeight();
 
         //casting
         casting();
@@ -75,19 +68,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void binding(){
-        if(userType.equals("school")){
-            navigationView.getMenu().setGroupVisible(R.id.group_for_all, true);
-            navigationView.getMenu().setGroupVisible(R.id.group_for_teacher, false);
-            navigationView.getMenu().setGroupVisible(R.id.group_for_student, false);
-        }else if(userType.equals("teacher")){
-            navigationView.getMenu().setGroupVisible(R.id.group_for_all, true);
-            navigationView.getMenu().setGroupVisible(R.id.group_for_teacher, true);
-            navigationView.getMenu().setGroupVisible(R.id.group_for_student, false);
-        }else if(userType.equals("student")){
-            navigationView.getMenu().setGroupVisible(R.id.group_for_all, true);
-            navigationView.getMenu().setGroupVisible(R.id.group_for_teacher, false);
-            navigationView.getMenu().setGroupVisible(R.id.group_for_student, true);
-        }
+        BindingNavigationAccordingToUserType accordingToUserType = new BindingNavigationAccordingToUserType();
+        accordingToUserType.setNavigationAccordingToUserType(navigationView);
     }
 
     private void drawerLayout() {
@@ -98,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void navigation() {
         ImageView navImage = navigationView.getHeaderView(0).findViewById(R.id.navigation_image_view);
-        SetImageWithCompatibleScreenSize screenSize = new SetImageWithCompatibleScreenSize(navImage,w,h);
+        SetImageWithCompatibleScreenSize screenSize = new SetImageWithCompatibleScreenSize(this,navImage);
         screenSize.setCompitableForHeight(3.5);
         screenSize.setImage();
 

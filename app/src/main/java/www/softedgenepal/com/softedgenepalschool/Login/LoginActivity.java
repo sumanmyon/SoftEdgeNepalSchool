@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
         casting();
     }
 
-
     private void casting() {
         editTextUserName = findViewById(R.id.login_edit_text_username);
         editTextPassword = findViewById(R.id.login_edit_text_password);
@@ -53,24 +52,8 @@ public class LoginActivity extends AppCompatActivity {
         buttonQR.setOnClickListener(qrScan);
     }
 
-    private void showMessage2(String message){
-        ShowMessageInToast show = new ShowMessageInToast(this);
-        show.setCustomToast(R.drawable.logo,message,show.toastLongLength,Gravity.BOTTOM,0,10);
-        show.show();
-    }
-
-    private void glideDemo(){
-//        String url = "https://picsum.photos/200/300?grayscale";
-//        url="https://cdn-images-1.medium.com/max/1600/0*akL0KXb54mViVajR.";
-//        ShowInGlide showInGlide = new ShowInGlide(this);
-//        showInGlide.loadURL(url);
-//        showInGlide.forGif();
-//        showInGlide.show(imageView);
-    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         qrScan.onResult(requestCode, resultCode, data);
     }
-
-
 }
