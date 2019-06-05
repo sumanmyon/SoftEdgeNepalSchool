@@ -12,6 +12,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\color\\abc_tint_default.xml"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\mipmap_logo.jpg.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\mipmap\\logo.jpg"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -376,6 +380,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_notification.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\fragment_notification.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\2bfd398559f7488f7f8d19872f1b8b91\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
     },
@@ -490,6 +498,10 @@
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_userprofile_suman.jpg.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\drawable\\userprofile_suman.jpg"
     },
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_layout_snackbar.xml.flat",
@@ -964,6 +976,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\2bfd398559f7488f7f8d19872f1b8b91\\res\\color\\mtrl_tabs_icon_color_selector_colored.xml"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_userprofile.png.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\drawable\\userprofile.png"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
@@ -1184,6 +1200,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_sibling2.png.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\drawable\\sibling2.png"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_default_mtrl_shape.xml.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
@@ -1216,12 +1236,12 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_dark.xml.flat",
-        "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_dark.xml.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_dark.xml.flat",
+        "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -1404,6 +1424,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_profile.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\user_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_tab_text.xml.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\2bfd398559f7488f7f8d19872f1b8b91\\res\\layout\\design_layout_tab_text.xml"
     },
@@ -1540,6 +1564,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1592,6 +1620,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\menu\\menu.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
@@ -1614,6 +1646,10 @@
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23_abc_control_background_material.xml.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_sibling.png.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\drawable\\sibling.png"
     },
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
@@ -1896,6 +1932,10 @@
         "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_profile.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\profile.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_spinner.xml.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\color-v23\\abc_tint_spinner.xml"
     },
@@ -1962,6 +2002,10 @@
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-mdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_school.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\school.xml"
     },
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
@@ -2126,6 +2170,10 @@
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_calendar.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\fragment_calendar.xml"
     },
     {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",

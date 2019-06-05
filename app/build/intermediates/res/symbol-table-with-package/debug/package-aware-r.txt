@@ -153,6 +153,10 @@ attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
 attr circleCrop
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr closeIcon
 attr closeIconEnabled
 attr closeIconEndPadding
@@ -1105,11 +1109,15 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable sibling
+drawable sibling2
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable username
 drawable username2
 drawable username3
+drawable userprofile
+drawable userprofile_suman
 font delius_swash_caps
 font font
 font inder
@@ -1143,6 +1151,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addUser
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1223,6 +1232,7 @@ id groups
 id home
 id homeAsUp
 id homeWork
+id home_frameLayout
 id icon
 id icon_group
 id icon_only
@@ -1246,6 +1256,9 @@ id login_button_login
 id login_edit_text_password
 id login_edit_text_username
 id login_image_view
+id logout
+id main_tabLayout
+id main_viewPager
 id masked
 id media_actions
 id message
@@ -1284,6 +1297,13 @@ id salaryAccount
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id schoolAddress_TextView
+id schoolEmail_TextView
+id schoolFax_TextView
+id schoolLogo_imageView
+id schoolName_TextView
+id schoolPhoneNo_TextView
+id schoolWeb_TextView
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1307,6 +1327,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id sibling
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1363,6 +1384,10 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userProfile_ImageView
+id userProfile_Roll_SubjectTextView
+id userProfile_classTextView
+id userProfile_nameTextView
 id videos
 id view_offset_helper
 id visible
@@ -1450,6 +1475,9 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_calendar
+layout fragment_home
+layout fragment_notification
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_menu_header
@@ -1468,17 +1496,23 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout profile
+layout school
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout user_profile
 layout zxing_barcode_scanner
 layout zxing_capture
+menu menu
 menu nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap logo
 raw zxing_beep
 string About
+string AddUser
 string AssignHomeWork
 string Assignment
 string Blog
@@ -1490,12 +1524,14 @@ string ExamRoutine
 string Gallery
 string HomeWork
 string LiveBusTracking
+string Logout
 string Open
 string ReportCard
 string ResultReportCard
 string Routine
 string SalaryAccount
 string Setting
+string Sibling
 string StudentAccount
 string StudentAttendance
 string StudentLeaveApplication
@@ -1570,6 +1606,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
@@ -1590,6 +1627,7 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppTheme_Widget_ActionButton
 style AppTheme_NoActionBar
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
@@ -1782,6 +1820,8 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style CustomTabIndicatorStyle
+style HeaderBar
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -2112,6 +2152,7 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha
