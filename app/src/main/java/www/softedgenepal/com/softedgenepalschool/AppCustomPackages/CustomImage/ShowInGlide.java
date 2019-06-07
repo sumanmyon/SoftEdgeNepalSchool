@@ -69,6 +69,12 @@ public class ShowInGlide {
         requestBuilder = requestManager.load(resourceImage);
     }
 
+    public void loadFailed(int drawImage){
+        requestOptions = new RequestOptions();
+        requestOptions.error(drawImage);
+        apply();
+    }
+
     public void setSpecificSize(int width, int height){
         requestBuilder.override(width,height);
     }

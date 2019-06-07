@@ -1388,6 +1388,7 @@ id userProfile_ImageView
 id userProfile_Roll_SubjectTextView
 id userProfile_classTextView
 id userProfile_nameTextView
+id userProfile_relativeLayout
 id videos
 id view_offset_helper
 id visible
