@@ -1,6 +1,7 @@
 package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +28,10 @@ public class SchoolHomePage {
 
         //set data
         setInFields();
+    }
+
+    public Context getContext(){
+        return activity.getApplicationContext();
     }
 
     private void setInFields() {
