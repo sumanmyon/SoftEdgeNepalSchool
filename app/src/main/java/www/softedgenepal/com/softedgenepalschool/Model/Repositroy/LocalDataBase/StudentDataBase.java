@@ -46,7 +46,7 @@ public class StudentDataBase extends SQLiteOpenHelper {
                 " dateOfBirthBS TEXT, dateOfBirthAD TEXT, contact TEXT," +
                 " email TEXT, house TEXT, religion TEXT, caste TEXT, " +
                 " address TEXT, blood TEXT, busStop TEXT, busRoute TEXT, imageUrl TEXT," +
-                " isParent TEXT, isGuardian TEXT, isSibling TEXT, sid TEXT);");
+                " sid TEXT);");
     }
 
     @Override

@@ -8,7 +8,6 @@
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="28" />
-
     <!-- support for all sizes -->
     <!-- <supports-screens -->
     <!-- android:smallScreens="true" -->
@@ -24,12 +23,9 @@
         Network state is not required but it helps to handle flaky network connections and airplane mode.
         Automatically monitor connectivity status
     -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- to store and load file from local storage. -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- to store and load file from external storage -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- for QR and Barcode -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- to store and load file from local storage. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- to store and load file from external storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- for QR and Barcode -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.hardware.camera" />
 
@@ -62,6 +58,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingPopUp" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity" />
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity"
             android:theme="@style/AppTheme_NoActionBar" />

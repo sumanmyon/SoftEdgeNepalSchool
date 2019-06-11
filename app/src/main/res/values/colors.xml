@@ -7,7 +7,8 @@
     <color name="colorPrimaryLight">#5c6c73</color>
     <color name="colorPrimaryText">#ffffff</color>
 
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#26a69a</color>
+    <!--<color name="colorAccent">#D81B60</color>-->
 
     <!-- Secondary color-->
     <color name="colorSecondary">#26a69a</color>

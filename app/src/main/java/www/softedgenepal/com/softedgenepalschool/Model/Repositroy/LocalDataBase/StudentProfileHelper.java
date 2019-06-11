@@ -52,21 +52,25 @@ public class StudentProfileHelper extends StudentDataBase {
         values.put(section, ssection);
         values.put(rollno,srollno);
         values.put(gender,sgender);
+
         values.put(email,semail);
         values.put(dateOfBirthBS,sdateOfBirthBS);
         values.put(dateOfBirthAD,sdateOfBirthAD);
         values.put(contact, scontact);
         values.put(house, shouse);
+
         values.put(religion, sreligion);
         values.put(caste,scaste);
         values.put(address,saddress);
         values.put(bloodGroup,sbloodGroup);
         values.put(busStop,sbusStop);
+
         values.put(busRoute,sbusRoute);
         values.put(imageUrl,simageUrl);
         values.put(isParent,sisParent);
         values.put(isGuardian,sisGuardian);
         values.put(isSibling, sisSibling);
+
         values.put(sid, ssid);
 
         long result = db.insert(StudentProfileTable, null, values);

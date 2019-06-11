@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="www.softedgenepal.com.softedgenepalschool">
-
     <!-- support for all sizes -->
-    <!--<supports-screens-->
-        <!--android:smallScreens="true"-->
-        <!--android:normalScreens="true"-->
-        <!--android:largeScreens="true"-->
-        <!--android:xlargeScreens="true"/>-->
+    <!-- <supports-screens -->
+    <!-- android:smallScreens="true" -->
+    <!-- android:normalScreens="true" -->
+    <!-- android:largeScreens="true" -->
+    <!-- android:xlargeScreens="true"/> -->
     <!--
         Allows Glide to monitor connectivity status and restart failed requests if users go from a
         a disconnected to a connected network state.
@@ -17,14 +16,12 @@
         Network state is not required but it helps to handle flaky network connections and airplane mode.
         Automatically monitor connectivity status
     -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!--         to store and load file from local storage. -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--         to store and load file from external storage -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- for QR and Barcode -->
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- to store and load file from local storage. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- to store and load file from external storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- for QR and Barcode -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.hardware.camera" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
@@ -33,12 +30,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".View.Activities.LoginActivity"
-            android:theme="@style/AppTheme_NoActionBar"/>
-        <activity android:name=".View.Activities.MainActivity"
-            >
+        android:theme="@style/AppTheme">
+        <activity android:name=".View.Activities.SiblingPopUp"></activity>
+        <activity android:name=".View.Activities.ProfileActivity" />
+        <activity
+            android:name=".View.Activities.LoginActivity"
+            android:theme="@style/AppTheme_NoActionBar" />
+        <activity android:name=".View.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

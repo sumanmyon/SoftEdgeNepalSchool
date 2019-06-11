@@ -24,11 +24,17 @@ public class DisplaySizeInPixel {
         height = size.y;
     }
 
-    public void setByDisplayMetrics(){
+    public void setByDisplayMetrics(int w, int h) {
+        activity.getWindow().setLayout(w,h);
+    }
+
+    public void getByDisplayMetrics(){
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
         height = displayMetrics.heightPixels;
         width = displayMetrics.widthPixels;
+
     }
 
     public int getWidth() {
@@ -38,4 +44,6 @@ public class DisplaySizeInPixel {
     public int getHeight() {
         return height;
     }
+
+
 }

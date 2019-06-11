@@ -1,8 +1,9 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Cache;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cache {
+public class Cache implements Serializable {
     public String isParent = "";
     public String isGuardian = "";
     public String isSibling = "";

@@ -1,6 +1,9 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Cache;
 
-public class StudentDataCache {
+import java.io.Serializable;
+
+public class StudentDataCache implements Serializable{
+
     public String username;
     public String userclass;
     public String section;

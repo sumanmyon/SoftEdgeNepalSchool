@@ -1284,6 +1284,16 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id popupmenu_ImageView
+id popupmenu_TextView
+id profile_detail_ImageView
+id profile_detail_linearLayout
+id profile_detail_username
+id profile_list_key_LinearLayout
+id profile_list_key_TextView
+id profile_list_value_TextView
+id profile_personal_recyclerView
+id profile_recyclerView_title_textView
 id progress_circular
 id progress_horizontal
 id radio
@@ -1328,6 +1338,7 @@ id showCustom
 id showHome
 id showTitle
 id sibling
+id sibling_popupmenu_recyclerView
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1460,6 +1471,9 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_profile
+layout activity_sibling_pop_up
+layout activity_sibling_pop_up2
 layout custom_snackbar
 layout custom_toast
 layout design_bottom_navigation_item
@@ -1497,7 +1511,10 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout popupmenu_profile
 layout profile
+layout profile_detail_recycler_textview_
+layout profile_detail_recyclerlist
 layout school
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -1628,6 +1645,7 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppTheme_Custom
 style AppTheme_Widget_ActionButton
 style AppTheme_NoActionBar
 style Base_AlertDialog_AppCompat

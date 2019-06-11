@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomAdapters.FragmentAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.FragmentAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Home;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;

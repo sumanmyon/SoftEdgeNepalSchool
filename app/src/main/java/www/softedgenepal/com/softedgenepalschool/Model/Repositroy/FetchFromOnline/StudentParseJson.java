@@ -64,6 +64,8 @@ public class StudentParseJson {
                         if(data.getString("isSibling").equals("true")){
                             isSibling = "true";
                             siblingDetail(parseJson.getJSONArray("siblingDetail"), isSibling);  // here isSibling : true
+                        }else{
+                            isSibling = "false";
                         }
                     }else  if(data.getString("isGuardian").equals("true")){
                         isGuardian = "true";
@@ -71,6 +73,8 @@ public class StudentParseJson {
                         if(data.getString("isSibling").equals("true")){
                             isSibling = "true";
                             siblingDetail(parseJson.getJSONArray("siblingDetail"), isSibling);  //here isSibling : true
+                        }else{
+                            isSibling = "false";
                         }
                     }
 
@@ -95,17 +99,21 @@ public class StudentParseJson {
         String section = studentDetail.getString("section");
         String rollno = studentDetail.getString("rollno");
         String gender = studentDetail.getString("gender");
+
         String dateOfBirthBS = studentDetail.getString("dateOfBirth(BS)");
         String dateOfBirthAD = studentDetail.getString("dateOfBirth(AD)");
+
         String contact = studentDetail.getString("contact");
         String email  = studentDetail.getString("email");
         String house  = studentDetail.getString("house");
+
         String religion  = studentDetail.getString("religion");
         String caste  = studentDetail.getString("caste");
         String address  = studentDetail.getString("address");
         String bloodGroup  = studentDetail.getString("blood");
         String busStop  = studentDetail.getString("busStop");
         String busRoute  = studentDetail.getString("busRoute");
+
         String imageUrl  = studentDetail.getString("imageUrl");
 
         if(isSibling.equals("false")) {

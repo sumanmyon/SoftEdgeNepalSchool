@@ -17,17 +17,20 @@ import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentProfileHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentSiblingHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.RequestDataForStudent;
+import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 
 public class FetchDataOnline {
     RequestDataForStudent requestDataForStudent;
+    String url;
     String uid = "1";
     public FetchDataOnline(RequestDataForStudent requestDataForStudent) {
         this.requestDataForStudent=requestDataForStudent;
+        url = new URL(requestDataForStudent.getContext()).getStudentUrl();
     }
 
     public void getJson() {
         try {
-            JSONObject object = new JSONObject(new StudentApi().getStudentTrueForGuardianWithSibling());
+            JSONObject object = new JSONObject(url);
             parseJson(object);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -108,7 +111,7 @@ public class FetchDataOnline {
                 studentDataCache.address,studentDataCache.bloodGroup,studentDataCache.busStop,
                 studentDataCache.busRoute,studentDataCache.imageUrl,
                 cache.isParent,cache.isGuardian,cache.isSibling,
-                "1");
+                uid);
         if(isProfileSuccess){
             showMessage("Student user :: Successfully Stored in database");
         }else {
@@ -122,7 +125,7 @@ public class FetchDataOnline {
         boolean isParentSuccess = parentHelper.insertParent(
                 parentDataCache.fatherName, parentDataCache.fatherOccupation, parentDataCache.fatherContact,
                 parentDataCache.motherName, parentDataCache.motherOccupation, parentDataCache.motherContact,
-                "1"
+                uid
         );
         if(isParentSuccess){
             showMessage("Parent user :: Successfully Stored in database");
@@ -137,7 +140,7 @@ public class FetchDataOnline {
         GuardianDataCache guardianDataCache = guardianDataCacheList.get(0);
         boolean isGuardianSuccess = guardianHelper.insertGuardian(
                 guardianDataCache.guardianName, guardianDataCache.guardianOccupation, guardianDataCache.guardianContact,
-                "1"
+                uid
         );
 
         if(isGuardianSuccess){
@@ -160,7 +163,7 @@ public class FetchDataOnline {
                     siblingDataCache.email, siblingDataCache.house, siblingDataCache.religion,
                     siblingDataCache.caste, siblingDataCache.address, siblingDataCache.bloodGroup,
                     siblingDataCache.busStop, siblingDataCache.busRoute, siblingDataCache.imageUrl,
-                    cache.isParent, cache.isGuardian, cache.isSibling, "1");
+                    uid);
             if (isSiblingSuccess) {
                 showMessage("Sibling user :: Successfully Stored in database");
             } else {
