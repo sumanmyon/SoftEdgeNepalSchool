@@ -2,19 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group
-        android:id="@+id/group_for_teacher"
+        android:id="@+id/group_for_student"
         android:visible="true">
         <item
             android:title="@string/Sibling"
             android:id="@+id/sibling"
             android:icon="@drawable/sibling"
             app:showAsAction="always"/>
+    </group>
         <item
             android:title="@string/AddUser"
             android:id="@+id/addUser"/>
         <item
             android:title="@string/Logout"
             android:id="@+id/logout"/>
-    </group>
+
 
 </menu>

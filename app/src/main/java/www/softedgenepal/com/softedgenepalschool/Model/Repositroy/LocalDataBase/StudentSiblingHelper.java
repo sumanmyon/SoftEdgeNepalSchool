@@ -27,9 +27,6 @@ public class StudentSiblingHelper extends StudentDataBase{
     private static final String busRoute = "busRoute";
     private static final String imageUrl = "imageUrl";
 
-    private static final String isParent = "isParent";
-    private static final String isGuardian = "isGuardian";
-    private static final String isSibling = "isSibling";
     private static final String sid = "sid";
 
     public StudentSiblingHelper(Context context) {
@@ -41,8 +38,7 @@ public class StudentSiblingHelper extends StudentDataBase{
                                   String srollno, String sgender, String sdateOfBirthBS, String sdateOfBirthAD,
                                   String scontact, String semail, String shouse, String sreligion,
                                   String scaste, String saddress, String sbloodGroup, String sbusStop,
-                                  String sbusRoute, String simageUrl, String sisParent, String sisGuardian,
-                                  String sisSibling, String ssid){
+                                  String sbusRoute, String simageUrl, String ssid){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values =new ContentValues();
@@ -63,9 +59,6 @@ public class StudentSiblingHelper extends StudentDataBase{
         values.put(busStop,sbusStop);
         values.put(busRoute,sbusRoute);
         values.put(imageUrl,simageUrl);
-        values.put(isParent,sisParent);
-        values.put(isGuardian,sisGuardian);
-        values.put(isSibling, sisSibling);
         values.put(sid, ssid);
 
         long result = db.insert(StudentSiblingTable, null, values);

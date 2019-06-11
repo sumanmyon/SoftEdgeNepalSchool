@@ -1,6 +1,8 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Cache;
 
-public class ParentDataCache {
+import java.io.Serializable;
+
+public class ParentDataCache implements Serializable{
     public String fatherName;
     public String fatherOccupation;
     public String fatherContact;

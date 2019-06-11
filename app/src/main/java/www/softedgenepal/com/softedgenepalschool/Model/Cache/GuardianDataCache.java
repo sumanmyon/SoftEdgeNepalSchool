@@ -1,6 +1,8 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Cache;
 
-public class GuardianDataCache {
+import java.io.Serializable;
+
+public class GuardianDataCache implements Serializable {
     public String guardianName;
     public String guardianOccupation;
     public String guardianContact;

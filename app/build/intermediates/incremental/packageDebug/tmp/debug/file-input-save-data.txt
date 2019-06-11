@@ -1,7 +1,27 @@
 #Internal package file, do not edit.
-#Thu Jun 06 17:16:03 NPT 2019
+#Mon Jun 10 17:17:50 NPT 2019
+2.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+5.set=ASSET
+0.path=StudentGuardianWithNoSibling.json
+2.baseType=DIRECTORY
+3.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+2.set=ASSET
+1.path=StudentFailed.json
+4.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+count=6
+5.baseType=DIRECTORY
+2.path=StudentParentWithNoSibling.json
+5.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+4.set=ASSET
+3.path=classes.dex
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=StudentGuardianWithSibling.json
+1.baseType=DIRECTORY
+5.path=StudentParentWithSibling.json
+0.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 0.baseType=DIRECTORY
-0.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
-0.path=classes.dex
-0.set=DEX
-count=1
+3.set=DEX
+1.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+4.baseType=DIRECTORY
+0.set=ASSET

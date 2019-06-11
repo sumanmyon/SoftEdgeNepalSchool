@@ -1,0 +1,33 @@
+{
+  "response": "success",
+  "data": {
+    "isParent": false,
+    "isGuardian": true,
+    "isSibling": false
+  },
+  "studentDetail": {
+    "registrationNo": "ravindra123",
+    "username": "Ravindra Subedhi",
+    "class": 7,
+    "section": "A",
+    "rollno": "17",
+    "gender": "male",
+    "dateOfBirth(BS)": "2051-05-13",
+    "dateOfBirth(AD)": "1994-08-29",
+    "contact": "9844779933",
+    "email": "sumanmyon.sam@gmail.com",
+    "house": "White House",
+    "religion": null,
+    "caste": null,
+    "address": "Lalitpur, Hattiban, Shitapakha",
+    "blood": "O +ve",
+    "busStop": "Lalitpur, Hattiban",
+    "busRoute": "38B",
+    "imageUrl": "https://www.filmibeat.com/best-of-img-2017/280x166/best-of/2017/19/137/1076.jpg"
+  },
+  "guardianDetail": {
+    "guardianName": "Hari Subedhi",
+    "guardianOccupation": "Bank Manager",
+    "guardianContact": "9846723346"
+  }
+}
