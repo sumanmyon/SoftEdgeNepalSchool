@@ -1,9 +1,11 @@
 package www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplicationActivity;
 
 public class StudentNav {
     private Activity activity;
@@ -32,7 +34,7 @@ public class StudentNav {
                 showMessage("Coming Soon");
                 break;
             case R.id.studentLeaveApplication:
-                showMessage("Coming Soon");
+                redirectToActivity(LeaveApplicationActivity.class);
                 break;
             case R.id.studentSuggestion:
                 showMessage("Coming Soon");
@@ -53,6 +55,12 @@ public class StudentNav {
                 break;
         }
     }
+
+    private void redirectToActivity(Class<?> activityClass) {
+        Intent intent = new Intent(activity, activityClass);
+        activity.startActivity(intent);
+    }
+
 
     private void showMessage(String message){
         Toast.makeText(activity,message,Toast.LENGTH_LONG).show();

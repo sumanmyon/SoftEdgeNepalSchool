@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--&lt;!&ndash; Primary color &ndash;&gt;-->
+    <!--<color name="colorPrimary">#324148</color>-->
+    <!--<color name="colorPrimaryDark">#0c1b21</color>-->
+    <!--<color name="colorPrimaryLight">#5c6c73</color>-->
+    <!--<color name="colorPrimaryText">#ffffff</color>-->
+
+    <!--<color name="colorAccent">#26a69a</color>-->
+    <!--&lt;!&ndash;<color name="colorAccent">#D81B60</color>&ndash;&gt;-->
+
+    <!--&lt;!&ndash; Secondary color&ndash;&gt;-->
+    <!--<color name="colorSecondary">#26a69a</color>-->
+    <!--<color name="colorSecondaryDark">#00766c</color>-->
+    <!--<color name="colorSecondaryLight">#64d8cb</color>-->
+    <!--<color name="colorSecondaryText">#000000</color>-->
+
     <!-- Primary color -->
-    <color name="colorPrimary">#324148</color>
-    <color name="colorPrimaryDark">#0c1b21</color>
-    <color name="colorPrimaryLight">#5c6c73</color>
-    <color name="colorPrimaryText">#ffffff</color>
+    <color name="colorPrimary">#26a69a</color>
+    <color name="colorPrimaryDark">#00766c</color>
+    <color name="colorPrimaryLight">#64d8cb</color>
+    <color name="colorPrimaryText">#000000</color>
 
-    <color name="colorAccent">#26a69a</color>
+    <!--<color name="colorAccent">#26a69a</color>-->
     <!--<color name="colorAccent">#D81B60</color>-->
+    <color name="colorAccent">#FFFFFF</color>
 
-    <!-- Secondary color-->
-    <color name="colorSecondary">#26a69a</color>
-    <color name="colorSecondaryDark">#00766c</color>
-    <color name="colorSecondaryLight">#64d8cb</color>
+    <color name="colorSecondary">#0097a7</color>
+    <color name="colorSecondaryDark">#006978</color>
+    <color name="colorSecondaryLight">#56c8d8</color>
     <color name="colorSecondaryText">#000000</color>
+
+
 
     <!-- background transaction -->
     <color name="start">#4D58CF</color>
     <color name="end">#B351C2</color>
-    <color name="backgroundLight">#D1D5DA</color>
+    <!--<color name="backgroundLight">#D1D5DA</color>-->
+    <color name="backgroundLight">#FFFFFF</color>
+    <color name="backgroundLightGray">#EDF5F4</color>
+    <color name="red">#D81B60</color>
 
 </resources>

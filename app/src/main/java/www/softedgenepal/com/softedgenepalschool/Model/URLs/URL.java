@@ -10,7 +10,7 @@ public class URL {
 
     public URL(Context context) {
         this.context = context;
-        studentUrl = new StudentApi(context).getStudentTrueForParentWithSibling();
+        studentUrl = new StudentApi(context).getS();
     }
 
     public String getStudentUrl() {

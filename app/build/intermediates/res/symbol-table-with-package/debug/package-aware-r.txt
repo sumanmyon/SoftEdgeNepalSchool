@@ -614,6 +614,7 @@ color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
 color backgroundLight
+color backgroundLightGray
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -724,6 +725,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1087,6 +1089,7 @@ drawable for_button
 drawable for_button2
 drawable for_custom_toast
 drawable for_edittext
+drawable for_edittext2
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_mtrl_chip_checked_black
@@ -1094,6 +1097,8 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable lock
 drawable logo
+drawable menu_icon
+drawable menu_icon2
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1109,6 +1114,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable send_black
+drawable send_white
+drawable send_white2
 drawable sibling
 drawable sibling2
 drawable tooltip_frame_dark
@@ -1244,6 +1252,10 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id leave_application_edit_text_leave_from
+id leave_application_edit_text_leave_subject
+id leave_application_edit_text_leave_to
+id leave_application_edit_text_message
 id left
 id light
 id line1
@@ -1293,7 +1305,9 @@ id profile_list_key_LinearLayout
 id profile_list_key_TextView
 id profile_list_value_TextView
 id profile_personal_recyclerView
+id profile_progress_bar
 id profile_recyclerView_title_textView
+id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
@@ -1383,6 +1397,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -1469,6 +1484,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_leave_application
 layout activity_login
 layout activity_main
 layout activity_profile
@@ -1515,6 +1531,7 @@ layout popupmenu_profile
 layout profile
 layout profile_detail_recycler_textview_
 layout profile_detail_recyclerlist
+layout progress_bar
 layout school
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -1840,6 +1857,8 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style CustomTabIndicatorStyle
+style MyToolbar
+style MyToolbar2
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -2022,6 +2041,9 @@ style ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense
+style ToolbarTextAppearance
+style ToolbarTextAppearance_Subtitle
+style ToolbarTextAppearance_Title
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

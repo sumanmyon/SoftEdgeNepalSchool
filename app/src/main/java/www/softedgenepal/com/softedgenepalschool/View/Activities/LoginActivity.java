@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         //qRScan();
 
         //login button
-        buttonLogin.setOnClickListener(new FormValidation(editTextUserName, editTextPassword));
+        buttonLogin.setOnClickListener(new FormValidation(this,editTextUserName, editTextPassword));
     }
 
     private void loadUI(){

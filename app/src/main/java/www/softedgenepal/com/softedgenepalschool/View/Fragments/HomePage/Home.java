@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,7 +26,7 @@ import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActi
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Home extends Fragment {
+public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
     StudentHomePage studentHomePage;
 
     public Home() {
@@ -46,37 +47,45 @@ public class Home extends Fragment {
             showMessage("Teacher");
         }else if(userType.equals("student")){
             view = inflater.inflate(R.layout.user_profile, container, false);
-            setHasOptionsMenu(true);
+            //setHasOptionsMenu(true);
+            onCreateOptionsMenu(view);
             studentHomePage = new StudentHomePage(getActivity(), view);
             studentHomePage.setView();
             showMessage("Student");
+
+
         }
         return view;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu,menu);
+    public void onCreateOptionsMenu(View view) {
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu);
+
         if(userType.equals("school")){
-            menu.setGroupVisible(R.id.group_for_student, false);
+            toolbar.getMenu().setGroupVisible(R.id.group_for_student, false);
         }else if(userType.equals("parent")){
-            menu.setGroupVisible(R.id.group_for_student, false);
+            toolbar.getMenu().setGroupVisible(R.id.group_for_student, false);
         }else if(userType.equals("student")){
-            menu.setGroupVisible(R.id.group_for_student, true);
+            toolbar.getMenu().setGroupVisible(R.id.group_for_student, true);
         }
 
-        super.onCreateOptionsMenu(menu, inflater);
+        toolbar.setOnMenuItemClickListener(this);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //todo for menu items
+    public boolean onMenuItemClick(MenuItem menuItem) {
         if(userType.equals("student")){
-            studentHomePage.siblingMenu(item);
+            studentHomePage.siblingMenu(menuItem);
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
-
 
     private void showMessage(String message){
         Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();

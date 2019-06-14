@@ -6,18 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.Activities.MainActivity"
-    android:background="@color/backgroundLight"
     android:id="@+id/drawerLayout">
-
-    <!--
-    app:fontFamily="@font/inder"
-    android:fontFamily="@font/font"
-       android:ellipsize="end"
-
-       for nav
-       app:itemIconTint="@color/customColor"
-        android:fitsSystemWindows="true"
-    -->
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,14 +26,14 @@
         <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             app:tabMode="fixed"
-            app:tabTextColor="@color/colorPrimaryText"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            app:tabSelectedTextColor="@color/colorSecondaryLight"
-            app:tabRippleColor="@color/colorSecondaryDark"
-            app:tabIndicator="@color/colorSecondary"
+            android:background="@color/colorPrimaryLight"
+            app:tabTextColor="@color/colorSecondaryText"
+            app:tabSelectedTextColor="@color/backgroundLight"
+            app:tabRippleColor="@color/colorPrimary"
+            app:tabIndicator="@color/backgroundLight"
             app:tabIndicatorHeight="@dimen/cardview_default_radius"
             android:id="@+id/main_tabLayout"/>
     </LinearLayout>
@@ -52,6 +47,5 @@
         app:menu="@menu/nav_menu"
         app:headerLayout="@layout/nav_menu_header"
         android:id="@+id/navigation"/>
-
 
 </android.support.v4.widget.DrawerLayout>

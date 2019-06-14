@@ -1,0 +1,23 @@
+#Internal package file, do not edit.
+#Thu Jun 13 17:10:49 NPT 2019
+2.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+0.path=StudentGuardianWithSibling.json
+2.baseType=DIRECTORY
+3.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+2.set=ASSET
+1.path=StudentGuardianWithNoSibling.json
+4.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+count=5
+2.path=StudentFailed.json
+4.set=ASSET
+3.path=StudentParentWithNoSibling.json
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=StudentParentWithSibling.json
+1.baseType=DIRECTORY
+0.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+0.baseType=DIRECTORY
+3.set=ASSET
+1.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+4.baseType=DIRECTORY
+0.set=ASSET

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.keyrunHORNET:date_picker_converter:2.2.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/822e9f575471f2e9defc3f9c309698ff/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/822e9f575471f2e9defc3f9c309698ff/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.keyrunHORNET/date_picker_converter/2.2.2/9fc7acb8b5c49c6201fb71e5d7093069d58b5c95/date_picker_converter-2.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

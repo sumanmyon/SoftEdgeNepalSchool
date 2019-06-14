@@ -2,6 +2,16 @@ package www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOnli
 
 import android.database.Cursor;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -29,18 +39,53 @@ public class FetchDataOnline {
     }
 
     public void getJson() {
-        try {
-            JSONObject object = new JSONObject(url);
-            parseJson(object);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        String s = "http://192.168.100.100:423/api/auth/Login?UserName=superadmin&Password=admin123";
+//        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, s, null, new Response.Listener<JSONArray>() {
+//            @Override
+//            public void onResponse(JSONArray response) {
+//                //requestDataForStudent.setMessage(response.toString());
+//                data(response);
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                requestDataForStudent.setMessage(error.getMessage());
+//            }
+//        });
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, s, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //requestDataForStudent.setMessage(response.toString());
+                parseJson(response);
+                //data(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                requestDataForStudent.setMessage(error.getMessage());
+            }
+        });
+//
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, s, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//              //data(response);
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                requestDataForStudent.setMessage(error.getMessage());
+//            }
+//        });
+//
+        //calling volley interface to get data
+        RequestQueue requestQueue = Volley.newRequestQueue(requestDataForStudent.getContext());
+        requestQueue.add(jsonObjectRequest);
     }
 
     public void parseJson(JSONObject request) {
         requestDataForStudent.parseJson(request);
     }
-
 
     public void saveforOffline(Cache cacheData) {
         Cache cache = cacheData;

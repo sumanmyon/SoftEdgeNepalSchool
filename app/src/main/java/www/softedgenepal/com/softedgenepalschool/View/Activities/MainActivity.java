@@ -36,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //casting
         casting();
 
-        //valid user type and then set userType
-
         //binding
-        //userType = "school";
         binding();
 
         //drawableLayout
