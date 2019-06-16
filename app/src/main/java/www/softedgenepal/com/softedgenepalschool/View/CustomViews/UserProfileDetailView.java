@@ -2,7 +2,6 @@ package www.softedgenepal.com.softedgenepalschool.View.CustomViews;
 
 import android.app.Activity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import www.softedgenepal.com.softedgenepalschool.R;
 

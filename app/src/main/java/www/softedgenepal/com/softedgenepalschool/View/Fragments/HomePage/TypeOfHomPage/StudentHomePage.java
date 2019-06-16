@@ -1,15 +1,11 @@
 package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +21,11 @@ import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Sibling.SiblingPopUpMenu;
 
-
 public class StudentHomePage implements Contractor.View {
     private Activity activity;
     private View view;
+    ProgressBar progressBar;
 
-    private Toolbar toolbar;
     private CircleImageView userProfileImage;
     private TextView userNameTextView, classTextView, roll_SubTextView;
     private Cache cache;
@@ -45,8 +40,11 @@ public class StudentHomePage implements Contractor.View {
         //casting
         casting();
 
+        //progress bar
+        progressBar.setVisibility(View.VISIBLE);
+
         //fetch/get data
-        StudentHomePagePresenter presenter = new StudentHomePagePresenter(this);
+        StudentHomePagePresenter presenter = new StudentHomePagePresenter(StudentHomePage.this);
         presenter.getData();
     }
 
@@ -60,6 +58,8 @@ public class StudentHomePage implements Contractor.View {
     }
 
     private void setData(String username, String classSection, String rollno, String imageUrl) {
+        progressBar.setVisibility(View.INVISIBLE);
+
         ShowInGlide glide = new ShowInGlide(activity);
         glide.loadURL(imageUrl);
         glide.loadFailed(R.drawable.userprofile);
@@ -86,6 +86,7 @@ public class StudentHomePage implements Contractor.View {
         userNameTextView = view.findViewById(R.id.userProfile_nameTextView);
         classTextView = view.findViewById(R.id.userProfile_classTextView);
         roll_SubTextView = view.findViewById(R.id.userProfile_Roll_SubjectTextView);
+        progressBar = view.findViewById(R.id.profile_progress_bar);
     }
 
     public Context getContext(){

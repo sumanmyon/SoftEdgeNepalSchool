@@ -2,14 +2,29 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".View.Fragments.HomePage.Home"
+    tools:context=".Activities.View.Fragments.HomePage.Home"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLightGray">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
-            <include layout="@layout/profile" />
-    </RelativeLayout>
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            style="@style/MyToolbar"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorPrimaryText"
+            app:titleTextAppearance="@style/ToolbarTextAppearance"
+            android:id="@+id/toolbar"
+            app:logoDescription="@string/app_name"/>
+
+        <include layout="@layout/profile" />
+
+    </LinearLayout>
 </ScrollView>

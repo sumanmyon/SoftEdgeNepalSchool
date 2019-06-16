@@ -2,10 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.Presenter;
 
 import android.content.Context;
 
-import java.util.List;
-
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.RequestDataForStudent;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 

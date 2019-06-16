@@ -2,16 +2,14 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
@@ -36,7 +34,14 @@ public class ProfileActivity extends AppCompatActivity {
         cache = (Cache) getIntent().getSerializableExtra("cache");
         if(cache != null) {
             userNameTextView.setText(cache.studentDataCaches.get(0).username);
-            Glide.with(userImageView).load(cache.studentDataCaches.get(0).imageUrl).into(userImageView);
+
+            //todo show image and store image for offline
+            //Glide.with(userImageView).load(cache.studentDataCaches.get(0).imageUrl).into(userImageView);
+            ShowInGlide glide = new ShowInGlide(this);
+            glide.loadURL(cache.studentDataCaches.get(0).imageUrl);
+            glide.loadFailed(R.drawable.userprofile);
+            glide.show(userImageView);
+
             //todo inflating ui for Student profile
             studentProfile("Personal Detail");
             if(cache.isParent.equals("true"))

@@ -67,7 +67,9 @@ public class StudentParseJson {
                         }else{
                             isSibling = "false";
                         }
-                    }else  if(data.getString("isGuardian").equals("true")){
+                    }
+
+                    if(data.getString("isGuardian").equals("true")){
                         isGuardian = "true";
                         guardianDetail(new JSONObject(parseJson.getString("guardianDetail")));
                         if(data.getString("isSibling").equals("true")){
@@ -100,8 +102,8 @@ public class StudentParseJson {
         String rollno = studentDetail.getString("rollno");
         String gender = studentDetail.getString("gender");
 
-        String dateOfBirthBS = studentDetail.getString("dateOfBirth(BS)");
-        String dateOfBirthAD = studentDetail.getString("dateOfBirth(AD)");
+        String dateOfBirthBS = studentDetail.getString("dateOfBirthBS");
+        String dateOfBirthAD = studentDetail.getString("dateOfBirthAD");
 
         String contact = studentDetail.getString("contact");
         String email  = studentDetail.getString("email");
@@ -116,19 +118,30 @@ public class StudentParseJson {
 
         String imageUrl  = studentDetail.getString("imageUrl");
 
+        //todo for image removing ~ from image url and storing
+        String image = null;
+        if(imageUrl.equals("null")){
+            image = null;
+        }else {
+            String[] s = imageUrl.split("~");
+            //requestDataForStudent.setMessage(s[1]);
+             image = "http://192.168.100.100:423"+s[1];
+            //requestDataForStudent.setMessage(image);
+        }
+
         if(isSibling.equals("false")) {
             studentDataCacheList.add(new StudentDataCache(
                     username, userclass, section, rollno,
                     gender, dateOfBirthBS, dateOfBirthAD, contact,
                     email, house, religion, caste, address,
-                    bloodGroup, busStop, busRoute, imageUrl));
+                    bloodGroup, busStop, busRoute, image));
         }else {
             //presenter.handleMessage("siblingDetail\n"+studentDetail.toString());
             siblingDataCacheList.add(new StudentDataCache(
                     username, userclass, section, rollno,
                     gender, dateOfBirthBS, dateOfBirthAD, contact,
                     email, house, religion, caste, address,
-                    bloodGroup, busStop, busRoute, imageUrl));
+                    bloodGroup, busStop, busRoute, image));
         }
     }
 

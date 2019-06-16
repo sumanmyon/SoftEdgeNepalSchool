@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Activities.ProfileActivity"
-    android:background="@color/backgroundLight">
-
+    tools:context=".Activities.View.Activities.ProfileActivity"
+    android:scrollbars="none"
+    android:background="@color/backgroundLightGray">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/profile_detail_linearLayout">
+            android:id="@+id/profile_detail_linearLayout"
+            android:background="@color/backgroundLightGray">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="196dp"
@@ -24,7 +25,7 @@
                 android:layout_marginBottom="2dp"
                 android:src="@drawable/userprofile_suman"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/colorSecondary"
+                app:civ_border_color="@color/colorPrimaryText"
                 android:id="@+id/profile_detail_ImageView"/>
 
             <TextView

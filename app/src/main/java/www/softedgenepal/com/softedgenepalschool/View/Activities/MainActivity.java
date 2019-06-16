@@ -10,10 +10,10 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
-import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
-import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.TabLayoutAdapter;
-import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.NavigationListener;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.NavigationListener;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.TabLayoutAdapter;
 
 public class MainActivity extends AppCompatActivity {
     //For Navigation
@@ -36,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //casting
         casting();
 
-        //valid user type and then set userType
-
         //binding
-        //userType = "school";
         binding();
 
         //drawableLayout

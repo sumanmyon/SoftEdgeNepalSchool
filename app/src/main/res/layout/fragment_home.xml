@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Fragments.HomePage.Home"
-    android:background="@color/backgroundLight"
+    tools:context=".Activities.View.Fragments.HomePage.Home"
+    android:background="@color/backgroundLightGray"
     android:id="@+id/home_frameLayout">
 
     <!--<include layout="@layout/user_profile"/>-->

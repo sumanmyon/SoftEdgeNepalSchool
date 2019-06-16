@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -48,12 +49,10 @@ public class SiblingPopUpMenu extends Dialog {
 
         //get sibling size
         int size = siblingDataCaches.size();
-        String[] imageURl = new String[size];
-        String[] siblingName = new String[size];
-        for (int i=0; i<size; i++){
-            StudentDataCache dataCache = siblingDataCaches.get(i);
-            siblingName[i] = dataCache.username;
-            imageURl[i] = dataCache.imageUrl;
+
+        if(size<=0){
+            setMessage("There is no sibling data."+size);
+            return;
         }
 
         RecyclerAdapter adapter = new RecyclerAdapter(context,size) {
@@ -69,8 +68,7 @@ public class SiblingPopUpMenu extends Dialog {
             public ViewHolder onCreate(ViewGroup viewGroup, int position) {
                 LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
                 View view = inflater.inflate(R.layout.popupmenu_profile,null);
-                ViewHolder viewHolder = new ViewHolder(view);
-                return viewHolder;
+                return new ViewHolder(view);
             }
 
             @Override
@@ -89,6 +87,10 @@ public class SiblingPopUpMenu extends Dialog {
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
+    }
+
+    private void setMessage(String message) {
+        Toast.makeText(context,message,Toast.LENGTH_LONG).show();
     }
 
 //    private void test(){
