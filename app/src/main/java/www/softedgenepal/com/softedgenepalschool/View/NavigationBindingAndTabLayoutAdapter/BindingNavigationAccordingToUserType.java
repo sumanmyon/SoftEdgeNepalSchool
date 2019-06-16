@@ -1,7 +1,6 @@
 package www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter;
 
 import android.support.design.widget.NavigationView;
-
 import www.softedgenepal.com.softedgenepalschool.R;
 
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;

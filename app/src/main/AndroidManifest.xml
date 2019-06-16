@@ -31,10 +31,10 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar">
-
+        <activity android:name=".View.Activities.SuggestionActivity"></activity>
         <!-- android:hardwareAccelerated="true"> -->
         <activity android:name=".View.Activities.ProfileActivity" />
-        <activity android:name=".View.Activities.LeaveApplicationActivity"/>
+        <activity android:name=".View.Activities.LeaveApplicationActivity" />
         <activity android:name=".View.Activities.LoginActivity" />
         <activity android:name=".View.Activities.MainActivity">
             <intent-filter>

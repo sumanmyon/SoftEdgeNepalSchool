@@ -47,8 +47,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void qRScan(){
-        qrScan = new QRScan(this);
-        buttonQR.setOnClickListener(qrScan);
     }
 
     @Override

@@ -48,6 +48,7 @@
         android:required="false" />
 
     <application
+        android:name="com.hornet.dateconverter.App"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
@@ -57,7 +58,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar" >
-
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity" />
         <!-- android:hardwareAccelerated="true"> -->
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplicationActivity" />
@@ -103,14 +104,10 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
 
-        <provider
-            android:name="com.android.tools.ir.server.InstantRunContentProvider"
-            android:authorities="www.softedgenepal.com.softedgenepalschool.com.android.tools.ir.server.InstantRunContentProvider"
-            android:multiprocess="true" />
+        <activity
+            android:name="com.bugfender.sdk.internal.ui.FeedbackActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

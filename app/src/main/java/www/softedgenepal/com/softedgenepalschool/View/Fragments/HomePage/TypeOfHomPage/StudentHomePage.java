@@ -1,23 +1,15 @@
 package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
-import java.util.logging.Handler;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomImage.ShowInGlide;
@@ -28,7 +20,6 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.StudentHomePagePresen
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Sibling.SiblingPopUpMenu;
-
 
 public class StudentHomePage implements Contractor.View {
     private Activity activity;

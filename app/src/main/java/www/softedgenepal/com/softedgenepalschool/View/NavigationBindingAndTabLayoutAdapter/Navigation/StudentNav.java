@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplicationActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
 
 public class StudentNav {
     private Activity activity;
@@ -37,7 +38,7 @@ public class StudentNav {
                 redirectToActivity(LeaveApplicationActivity.class);
                 break;
             case R.id.studentSuggestion:
-                showMessage("Coming Soon");
+                redirectToActivity(SuggestionActivity.class);
                 break;
             case R.id.assignment:
                 showMessage("Coming Soon");

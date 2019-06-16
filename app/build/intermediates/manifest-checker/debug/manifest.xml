@@ -48,6 +48,7 @@
         android:required="false" />
 
     <application
+        android:name="com.hornet.dateconverter.App"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
@@ -103,9 +104,10 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
+
+        <activity
+            android:name="com.bugfender.sdk.internal.ui.FeedbackActivity"
+            android:windowSoftInputMode="adjustResize" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

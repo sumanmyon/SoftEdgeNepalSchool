@@ -1,4 +1,4 @@
-#Fri Jun 14 14:51:01 NPT 2019
+#Sun Jun 16 12:41:44 NPT 2019
 base.0=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex

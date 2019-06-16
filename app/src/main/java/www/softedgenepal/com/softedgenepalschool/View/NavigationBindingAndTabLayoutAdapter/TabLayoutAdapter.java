@@ -5,12 +5,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-
+import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.FragmentAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Home;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
-import www.softedgenepal.com.softedgenepalschool.R;
 
 public class TabLayoutAdapter {
     FragmentAdapter fragmentAdapter;
