@@ -5,15 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.View.Activities.ProfileActivity"
-    android:scrollbars="none"
-    android:background="@color/backgroundLightGray">
-
+    android:scrollbars="none">
+    <!--android:background="@color/backgroundLightGray"-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/profile_detail_linearLayout"
-            android:background="@color/backgroundLightGray">
+            android:id="@+id/profile_detail_linearLayout">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="196dp"

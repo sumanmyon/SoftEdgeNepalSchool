@@ -35,22 +35,21 @@ public class FetchDataOffline {
         //todo for student profile
         StudentProfileHelper dataBase = new StudentProfileHelper(requestDataForStudent.getContext());
         Cursor cursor = dataBase.showProfile(uid);
-        studentProfile(cursor);
+        if(cursor!=null) {
+            studentProfile(cursor);
 
-        //todo for student parent
-        if(cursor.getString(18).equals("true"))
-            studentParent();
+            //todo for student parent
+            if (cursor.getString(18).equals("true")) studentParent();
 
-        //todo for student guardian
-        if(cursor.getString(19).equals("true"))
-            studentGuardian();
+            //todo for student guardian
+            if (cursor.getString(19).equals("true")) studentGuardian();
 
-        //todo for student sibling
-        if(cursor.getString(20).equals("true"))
-            studentSibling();
+            //todo for student sibling
+            if (cursor.getString(20).equals("true")) studentSibling();
 
-        //todo storing all student related data to offline cache
-        cacheOffline(cursor);
+            //todo storing all student related data to offline cache
+            cacheOffline(cursor);
+        }
     }
 
     private void studentProfile(Cursor cursor) {

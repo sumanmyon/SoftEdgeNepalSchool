@@ -772,6 +772,7 @@ color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
 color onpresstextcolor
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -780,7 +781,6 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
-color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1168,6 +1168,8 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add_black2
+drawable add_white
 drawable avd_hide_password
 drawable avd_show_password
 drawable bf_bugfender_logo
@@ -1219,8 +1221,8 @@ drawable lock
 drawable logo
 drawable mdtp_material_button_background
 drawable mdtp_material_button_selected
-drawable menu_icon
 drawable menu_icon2
+drawable menu_icon_black
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1247,10 +1249,12 @@ drawable username
 drawable username2
 drawable username3
 drawable userprofile
+drawable userprofile4
 drawable userprofile_suman
 font delius_swash_caps
 font font
 font inder
+font mercantile_nor
 font pacifico
 font sriracha
 id ALT
@@ -1381,6 +1385,7 @@ id labeled
 id largeLabel
 id leave_application_edit_text_leave_subject
 id leave_application_edit_text_message
+id leave_application_progress_bar
 id leave_application_send_button
 id leave_application_text_view_leave_from
 id leave_application_text_view_leave_to
@@ -1515,6 +1520,14 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_leave_app_message_textview
+id show_leave_app_recycle_createDate
+id show_leave_app_recycle_message
+id show_leave_app_recycle_subject
+id showall_leave_application_progress_bar
+id showall_leave_floating_button
+id showall_leave_recycleView
+id showall_leave_toolbar
 id sibling
 id sibling_popupmenu_recyclerView
 id smallLabel
@@ -1660,6 +1673,7 @@ layout activity_leave_application
 layout activity_login
 layout activity_main
 layout activity_profile
+layout activity_show_all_leave_application
 layout activity_sibling_pop_up
 layout activity_sibling_pop_up2
 layout activity_suggestion
@@ -1727,6 +1741,7 @@ layout school
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout show_leave_application_recyclerview
 layout support_simple_spinner_dropdown_item
 layout user_profile
 layout zxing_barcode_scanner
@@ -2119,6 +2134,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style ProgressBar
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon

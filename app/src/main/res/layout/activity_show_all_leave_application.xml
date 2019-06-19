@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activities.LeaveApplication.ShowAllLeaveApplication"
+    android:background="@color/backgroundLightGray">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            style="@style/MyToolbar2"
+            app:titleTextColor="@color/backgroundLight"
+            app:titleTextAppearance="@style/ToolbarTextAppearance"
+            android:id="@+id/showall_leave_toolbar" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/showall_leave_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/show_leave_app_message_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:padding="4dp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        style="@android:style/Widget.Holo.ProgressBar"
+        android:id="@+id/showall_leave_application_progress_bar"
+        android:indeterminate="false"
+        android:layout_centerInParent="true" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/add_white"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="6dp"
+        android:id="@+id/showall_leave_floating_button"/>
+</RelativeLayout>

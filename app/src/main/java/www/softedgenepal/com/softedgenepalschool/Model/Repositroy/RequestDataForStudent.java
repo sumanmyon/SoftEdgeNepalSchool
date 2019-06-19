@@ -4,15 +4,12 @@ import android.content.Context;
 
 import org.json.JSONObject;
 
-import java.util.List;
-
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOffline.FetchDataOffline;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOnline.FetchDataOnline;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOnline.StudentParseJson;
-import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor;
+import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.Contractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.StudentHomePagePresenter;
 
 
