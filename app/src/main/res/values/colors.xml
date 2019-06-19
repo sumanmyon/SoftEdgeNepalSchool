@@ -24,7 +24,7 @@
 
     <!--<color name="colorAccent">#26a69a</color>-->
     <!--<color name="colorAccent">#D81B60</color>-->
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorAccent">#D81B60</color>
 
     <color name="colorSecondary">#0097a7</color>
     <color name="colorSecondaryDark">#006978</color>
@@ -39,6 +39,6 @@
     <!--<color name="backgroundLight">#D1D5DA</color>-->
     <color name="backgroundLight">#FFFFFF</color>
     <color name="backgroundLightGray">#EDF5F4</color>
-    <color name="red">#D81B60</color>
+    <color name="orange">#FF5722</color>
 
 </resources>

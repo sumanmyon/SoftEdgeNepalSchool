@@ -44,7 +44,7 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
             inflateUIFields(itemView);
         }
     }
-    public abstract void inflateUIFields(View itemView);
     public abstract ViewHolder onCreate(ViewGroup viewGroup, int position);
+    public abstract void inflateUIFields(View itemView);
     public abstract void onBind(ViewHolder viewHolder, int position);
 }

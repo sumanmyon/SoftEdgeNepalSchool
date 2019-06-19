@@ -32,6 +32,7 @@ public abstract class DatePicker implements View.OnClickListener, DatePickerDial
         DatePickerDialog dpd = DatePickerDialog.newInstance(this);
         dpd.show(supportFragmentManager,"DatePicker");
         dpd.setAccentColor("#D81B60");
+
         dpd.setTitle("Pick Date");
     }
 
@@ -39,6 +40,13 @@ public abstract class DatePicker implements View.OnClickListener, DatePickerDial
         converter = new DateConverter();
         convertDate = converter.getTodayNepaliDate();
         return convertDate.getDay()+"/"+(convertDate.getMonth()+1)+"/"+convertDate.getYear();
+    }
+
+    public String convertNepToEng(String s){
+        String[] date = s.split("/");
+        converter = new DateConverter();
+        convertDate = converter.getEnglishDate(Integer.parseInt(date[2]),Integer.parseInt(date[1]),Integer.parseInt(date[0]));
+        return (convertDate.getMonth()+1)+"/"+convertDate.getDay()+"/"+convertDate.getYear();
     }
 
     public View getView() {

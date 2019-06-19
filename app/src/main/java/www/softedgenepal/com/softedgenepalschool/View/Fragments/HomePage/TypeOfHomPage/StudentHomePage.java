@@ -15,7 +15,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
-import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor;
+import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.Contractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.StudentHomePagePresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;

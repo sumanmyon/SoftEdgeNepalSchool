@@ -6,22 +6,19 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Volley.RestRequest;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Volley.RestRequest.RestJsonObjectRequest;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
-import www.softedgenepal.com.softedgenepalschool.Model.FakeApi.StudentApi;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentGuardianHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentParentHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentProfileHelper;
@@ -35,17 +32,16 @@ public class FetchDataOnline {
     String uid = "1";
     public FetchDataOnline(RequestDataForStudent requestDataForStudent) {
         this.requestDataForStudent=requestDataForStudent;
-        url = new URL(requestDataForStudent.getContext()).getStudentUrl();
+        url = new URL(requestDataForStudent.getContext()).getUrl();
     }
 
     public void getJson() {
-        String s = "http://192.168.100.100:423/api/auth/Login?UserName=superadmin&Password=admin123";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, s, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
+                null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 //requestDataForStudent.setMessage(response.toString());
                 parseJson(response);
-                //data(response);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -55,8 +51,22 @@ public class FetchDataOnline {
         });
 //
         //calling volley interface to get data
-        RequestQueue requestQueue = Volley.newRequestQueue(requestDataForStudent.getContext());
+        final RequestQueue requestQueue = Volley.newRequestQueue(requestDataForStudent.getContext());
         requestQueue.add(jsonObjectRequest);
+
+//        RestRequest.RestJsonObjectRequest restJsonObjectRequest =
+//                new RestJsonObjectRequest(requestDataForStudent.getContext()) {
+//            @Override
+//            protected void getJsonObjectRequest(JSONObject response) {
+//                parseJson(response);
+//            }
+//
+//            @Override
+//            public void getError(VolleyError error) {
+//                requestDataForStudent.setMessage(error.getMessage());
+//            }
+//        };
+//        restJsonObjectRequest.setJsonObjectRequest(restJsonObjectRequest.restRequest.POST, url);
     }
 
     public void parseJson(JSONObject request) {
