@@ -1,9 +1,13 @@
 package www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.Toast;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderActivity;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
 
 public class SchoolNav {
     private Activity activity;
@@ -17,7 +21,7 @@ public class SchoolNav {
     public void set(){
         switch (itemId){
             case R.id.event:
-                showMessage("Coming Soon");
+                redirectToActivity(CalenderActivity.class);
                 break;
             case R.id.blog:
                 showMessage("Coming Soon");
@@ -29,7 +33,7 @@ public class SchoolNav {
                 showMessage("Coming Soon");
                 break;
             case R.id.about:
-                showMessage("Coming Soon");
+                redirectToActivity(AboutActivity.class);
                 break;
             case R.id.setting:
                 showMessage("Coming Soon");
@@ -38,7 +42,10 @@ public class SchoolNav {
                 break;
         }
     }
-
+    private void redirectToActivity(Class<?> activityClass) {
+        Intent intent = new Intent(activity, activityClass);
+        activity.startActivity(intent);
+    }
     private void showMessage(String message){
         Toast.makeText(activity,message,Toast.LENGTH_LONG).show();
     }

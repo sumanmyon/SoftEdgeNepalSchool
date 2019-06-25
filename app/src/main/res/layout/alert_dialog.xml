@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backgroundAlfaLight">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_dialog">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textStyle="bold"
+                android:id="@+id/alertDialogTitle" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="start"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/alertDialogMessage" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text=""
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:background="@drawable/for_button2"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textColor="@color/onpresstextcolor"
+                    android:textSize="14sp"
+                    android:id="@+id/alertDialogExitButton" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:layout_gravity="center"
+                    android:background="@drawable/for_button"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textColor="@color/backgroundLight"
+                    android:textSize="14sp"
+                    android:id="@+id/alertDialogCancelButton"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

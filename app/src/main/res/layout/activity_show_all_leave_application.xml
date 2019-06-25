@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Activities.LeaveApplication.ShowAllLeaveApplication"
-    android:background="@color/backgroundLightGray">
+    tools:context=".View.Activities.LeaveApplication.ShowAllLeaveApplication">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +23,9 @@
             android:id="@+id/showall_leave_recycleView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp">
 
         </android.support.v7.widget.RecyclerView>
     </LinearLayout>
@@ -57,8 +58,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
         android:src="@drawable/add_white"
         app:backgroundTint="@color/colorPrimary"
         app:elevation="6dp"

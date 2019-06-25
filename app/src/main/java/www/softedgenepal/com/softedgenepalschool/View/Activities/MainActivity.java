@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Tab Layout
         tabLayout();
+
     }
 
     private void casting() {
@@ -83,4 +85,6 @@ public class MainActivity extends AppCompatActivity {
         //tabLayoutAdapter.setIcons();
         tabLayoutAdapter.disableSwipe();
     }
+
+
 }

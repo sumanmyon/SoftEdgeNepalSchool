@@ -11,6 +11,8 @@ import java.util.List;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LeaveApplication.GetAllUserLeaveApplication;
 
+import static www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DateTimeFormaterChecker.DateTimeFormateCheckerType2.DateOrTimeFormate2;
+
 public class ParseShowAllLeaveApplication {
     private GetAllUserLeaveApplication getAllUserLeaveApplication;
     private Context context;
@@ -44,7 +46,9 @@ public class ParseShowAllLeaveApplication {
                             String CreatedDate = object.getString("CreatedDate");
                             String IsActive = object.getString("IsActive");
 
-                            leaveApplicationDataCacheList.add(new LeaveApplicationDataCache(SystemCode, StudentId, Subject, Message, splitDate(From), splitDate(To), splitDate(CreatedDate), IsActive));
+                            leaveApplicationDataCacheList.add(new LeaveApplicationDataCache(SystemCode, StudentId, Subject, Message,
+                                    splitDate(From,"date"), splitDate(To, "date"), splitDate(CreatedDate, "date"),
+                                    splitDate(CreatedDate, "time"), IsActive));
                         }
 
                         getAllUserLeaveApplication.setData(leaveApplicationDataCacheList);
@@ -63,10 +67,17 @@ public class ParseShowAllLeaveApplication {
         }
     }
 
-    private String splitDate(String date){
+    private String splitDate( String date, String type){
         //removing created time from created date
-        String split[] = date.split("T");
-        return split[0];
+        String convert = DateOrTimeFormate2(date);
+        String split[] = convert.split("T");
+        String dateOrTime = "";
+        if(type.equals("date"))
+             dateOrTime = split[0];
+        else if(type.equals("time")){
+            dateOrTime =split[1];
+        }
+        return dateOrTime;
     }
 
     private void setMessage(String message){

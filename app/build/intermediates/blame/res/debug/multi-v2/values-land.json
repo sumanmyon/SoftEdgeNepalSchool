@@ -14,12 +14,29 @@
                         "endOffsets": "222"
                     },
                     "to": {
+                        "startLines": "15",
+                        "startColumns": "4",
+                        "startOffsets": "843",
+                        "endLines": "18",
+                        "endColumns": "10",
+                        "endOffsets": "1010"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    },
+                    "to": {
                         "startLines": "14",
                         "startColumns": "4",
                         "startOffsets": "794",
-                        "endLines": "17",
-                        "endColumns": "10",
-                        "endOffsets": "961"
+                        "endColumns": "48",
+                        "endOffsets": "838"
                     }
                 },
                 {

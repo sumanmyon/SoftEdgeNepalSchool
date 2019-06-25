@@ -38,7 +38,12 @@
     <color name="end">#B351C2</color>
     <!--<color name="backgroundLight">#D1D5DA</color>-->
     <color name="backgroundLight">#FFFFFF</color>
-    <color name="backgroundLightGray">#EDF5F4</color>
+    <color name="backgroundAlfaLight">#00FFFFFF</color>
+    <color name="backgroundLightGray">#4BEDF5F4</color>
     <color name="orange">#FF5722</color>
+
+    <color name="primaryTextAlternate">#FF000000</color>
+    <color name="secondaryTextAlternate">#BB000000</color>
+    <color name="tertiaryTextAlternate">#D50000</color>
 
 </resources>

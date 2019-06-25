@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
@@ -26,7 +27,6 @@ public class CreateLeaveApplication implements LeaveApplicationContractor.Model,
     private Context context;
 
     CreateLeaveApplication(){
-
     }
 
     public CreateLeaveApplication(LeaveApplicationPresenter leaveApplicationPresenter) {
@@ -42,39 +42,49 @@ public class CreateLeaveApplication implements LeaveApplicationContractor.Model,
     //todo recall api for
     @Override
     public void postUploadData(List<String> data) {
-        String Url = new URL(context).getCreateLeaveApplicationUrl();
-        Url = Url + "?UserId="+data.get(0)+"&Subject="+data.get(1)+"&Message="+data.get(2)+"&From="+data.get(3)+"&To="+data.get(4);
-        Url = Url.replaceAll(" ", "%20");
+        if(new NetworkConnection(context).isConnectionSuccess()) {
+            String Url = new URL(context).getCreateLeaveApplicationUrl();
+            Url = Url + "?UserId=" + data.get(0) + "&Subject=" + data.get(1) + "&Message=" + data.get(2) + "&From=" + data.get(3) + "&To=" + data.get(4);
+            Url = Url.replaceAll(" ", "%20");
 
-        JsonObjectRequest jsonOblect = new JsonObjectRequest(Request.Method.POST, Url, null,
-                new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    if (response.getString("Status").equals("true")){
-                        setMessage(response.getString("Response"));
+            JsonObjectRequest jsonOblect = new JsonObjectRequest(Request.Method.POST, Url, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        if (response.getString("Status").equals("true")) {
+                            setMessage(response.getString("Response"));
+                            leaveApplicationPresenter.createProgressBarInVisibility();
+                            refresh();
+                        }
+                    } catch (Exception e) {
+                        setMessage(e.getMessage());
                         leaveApplicationPresenter.createProgressBarInVisibility();
                     }
-                }catch (Exception e){
-                    setMessage(e.getMessage());
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    setMessage(error.getMessage());
                     leaveApplicationPresenter.createProgressBarInVisibility();
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                setMessage(error.getMessage());
-                leaveApplicationPresenter.createProgressBarInVisibility();
-            }
-        });
+            });
 
 //        jsonOblect.setRetryPolicy(new DefaultRetryPolicy(
 //                DEFAULT_TIMEOUT_MS,
 //                5,
 //                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        //calling volley interface to get data
-        RequestQueue requestQueue = Volley.newRequestQueue(context);
-        requestQueue.add(jsonOblect);
+            //calling volley interface to get data
+            RequestQueue requestQueue = Volley.newRequestQueue(context);
+            requestQueue.add(jsonOblect);
+        }else {
+            setMessage("It seems you are offline. Please check your network to send your Leave application.");
+            leaveApplicationPresenter.createProgressBarInVisibility();
+        }
+    }
+
+    @Override
+    public void refresh() {
+        leaveApplicationPresenter.refresh();
     }
 }

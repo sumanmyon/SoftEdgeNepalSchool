@@ -46,4 +46,16 @@
     <string name="Sibling">Sibling</string>
     <string name="AddUser">Add User</string>
     <string name="Logout">Logout</string>
+
+    <!-- TODO: For Leave Application -->
+    <string name="ShowAllLeaveApplication_ToolBar">Your Leave Application</string>
+    <string name="ShowAllDetailLeaveApplication_ToolBar">Leave Application Detail</string>
+    <string name="LeaveApplication_Dialoge_Title">Cancel your Leave Application?</string>
+    <string name="LeaveApplication_Dialoge_Body">Press yes to cancel your leave application otherwise press no</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- TODO: For Calender -->
+    <string name="less_than">〈</string>
+    <string name="greater_than">〉</string>
 </resources>
