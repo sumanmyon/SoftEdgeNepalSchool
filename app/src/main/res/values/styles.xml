@@ -79,5 +79,37 @@
         <item name="colorAccent">@color/colorPrimaryText</item> <!-- Whatever color you want-->
     </style>
 
+    <!--
+        AlertDialogTheme
+    -->
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.MinWidth">
+        <!--buttons color-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--title and message color-->
+        <item name="android:textColorPrimary">@color/backgroundLight</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <!--dialog background-->
+        <!--<item name="android:windowBackground">@drawable/background_dialog</item>-->
+        <!--<item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>-->
+        <!--<item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>-->
+    </style>
 
+    <!--<style name="NegativeButtonStyle" parent="android:Widget.Button">-->
+        <!--&lt;!&ndash;<item name="android:textColor">@color/colorAccent</item>&ndash;&gt;-->
+        <!--<item name="android:background">@drawable/for_button2</item>-->
+    <!--</style>-->
+
+    <!--<style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">-->
+        <!--<item name="android:textColor">@color/colorAccent</item>-->
+        <!--<item name="android:background">@drawable/for_button</item>-->
+    <!--</style>-->
+
+
+    <!-- Light theme -->
+    <style name="AlternateAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/primaryTextAlternate</item>
+        <item name="android:textColorSecondary">@color/secondaryTextAlternate</item>
+        <item name="android:textColorTertiary">@color/tertiaryTextAlternate</item>
+    </style>
 </resources>

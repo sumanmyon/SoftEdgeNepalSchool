@@ -75,7 +75,7 @@ public class FragmentAdapter {
         viewPager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return false;
+                return true;
             }
         });
 

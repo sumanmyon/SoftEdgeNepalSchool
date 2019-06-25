@@ -22,6 +22,7 @@ public interface LeaveApplicationContractor {
         interface Create{
             void createProgressBarVisibility();
             void createProgressBarInVisibility();
+            void refresh();
         }
         interface Get{
             void getAllUserData();
@@ -37,6 +38,7 @@ public interface LeaveApplicationContractor {
         void setMessage(String message);
         interface Create{
             void postUploadData(List<String> data);
+            void refresh();
         }
         interface Get{
             void getAllUserLeaveData(Map<String, String> params);

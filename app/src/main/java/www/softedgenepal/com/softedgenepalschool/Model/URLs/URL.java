@@ -11,6 +11,8 @@ public class URL {
     public URL(Context context) {
         this.context = context;
     }
+    public URL(){}
+
     public String getUrl(){
         return new OnlineUrl().getLoginStudentUrl();
     }
@@ -21,6 +23,13 @@ public class URL {
     public String getLeaveApplicationUrl(){
         return new OnlineUrl().getGetLeaveApplicationUrl();
     }
+    public String cancelLeaveApplicationUrl(){
+        return new OnlineUrl().cancelLeaveApplicationUrl;
+    }
+
+    public String calenderUrl(){
+        return new OnlineUrl().calenderAndEventsUrl;
+    }
 
     private class OnlineUrl{
         private String onlineUrl = "http://192.168.100.100:423/";
@@ -28,6 +37,12 @@ public class URL {
 
         private String createLeaveApplicationUrl =onlineUrl + "api/data/Leaveapplication";
         private String getLeaveApplicationUrl = onlineUrl + "api/data/getLeaveapplication";
+        private String cancelLeaveApplicationUrl = onlineUrl + "api/data/cancelLeaveapplication";
+
+        private String calenderAndEventsUrl = onlineUrl + "api/data/geteventinfo";//?From=10/10/1995&To=12/12/2023";
+        //http://192.168.100.100:423/api/data/geteventinfo?From=10/10/1995&To=12/12/2020
+
+
         public OnlineUrl() {
             loginStudentUrl = loginStudentUrl + "UserName=suman&Password=admin123";
         }

@@ -1,6 +1,8 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication;
 
-public class LeaveApplicationDataCache {
+import java.io.Serializable;
+
+public class LeaveApplicationDataCache implements Serializable {
     public String SystemCode;
     public String StudentID;
     public String Subject;
@@ -8,11 +10,12 @@ public class LeaveApplicationDataCache {
     public String From;
     public String To;
     public String CreateDate;
+    public String CreateTime;
     public String IsActive;
 
     public LeaveApplicationDataCache(String systemCode, String studentID, String subject,
                                      String message, String from, String to,
-                                     String createDate, String isActive) {
+                                     String createDate, String createTime, String isActive) {
         SystemCode = systemCode;
         StudentID = studentID;
         Subject = subject;
@@ -20,6 +23,7 @@ public class LeaveApplicationDataCache {
         From = from;
         To = to;
         CreateDate = createDate;
+        CreateTime = createTime;
         IsActive = isActive;
     }
 }

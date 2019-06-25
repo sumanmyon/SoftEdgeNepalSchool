@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activities.View.Fragments.HomePage.Calendar">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+            android:id="@+id/calendar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:text="@string/less_than"
+                android:textColor="@color/backgroundLight"/>
+
+            <TextView
+                android:id="@+id/monthYear"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/backgroundLight"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:text="@string/greater_than"
+                android:textColor="@color/backgroundLight"/>
+        </RelativeLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <GridView
+                android:id="@+id/calendar_headers"
+                android:numColumns="7"
+                android:padding="6dp"
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_height="wrap_content">
+            </GridView>
+            <GridView
+                android:id="@+id/calendar"
+                android:numColumns="7"
+                android:padding="6dp"
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_height="300dp">
+            </GridView>
 
-</FrameLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent"/>
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent"/>
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="32dp"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Holidays and Events"
+                    android:textSize="14dp"
+                    android:padding="2dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary" />
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="18dp"
+                    android:padding="2dp"
+                    android:layout_gravity="start"
+                    android:background="@color/colorPrimaryDark"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recyclerView"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

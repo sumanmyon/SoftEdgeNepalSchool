@@ -96,4 +96,9 @@ public class LeaveApplicationPresenter implements LeaveApplicationContractor.Pre
     public void createProgressBarInVisibility() {
         leaveApplicationActivity.setProgressBarInVisibility();
     }
+
+    @Override
+    public void refresh() {
+        leaveApplicationActivity.onBackPressed();
+    }
 }
