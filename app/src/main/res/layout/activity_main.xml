@@ -11,39 +11,41 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?colorPrimary"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        />
+        app:titleTextColor="@color/white"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <android.support.v4.view.ViewPager
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@color/backgroundLight"
-            android:id="@+id/main_viewPager"/>
-        <android.support.design.widget.TabLayout
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/main_container"/>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/mainActivity_bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            app:tabMode="fixed"
-            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            android:background="@color/colorPrimaryLight"
-            app:tabTextColor="@color/colorSecondaryText"
-            app:tabSelectedTextColor="@color/backgroundLight"
-            app:tabRippleColor="@color/colorPrimary"
-            app:tabIndicator="@color/backgroundLight"
-            app:tabIndicatorHeight="@dimen/cardview_default_radius"
-            android:id="@+id/main_tabLayout"/>
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/blue_grey_700"
+            app:itemIconTint="@drawable/color_state_white_2"
+            app:itemTextColor="@drawable/color_state_white_2"
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/menu_bottom_navigation_shifting" />
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/colorPrimary"
-        app:itemTextColor="@color/colorPrimaryText"
+        android:background="@color/white"
+        app:itemTextColor="@color/colorPrimary"
+        android:scrollbars="none"
         app:menu="@menu/nav_menu"
         app:headerLayout="@layout/nav_menu_header"
         android:id="@+id/navigation"/>

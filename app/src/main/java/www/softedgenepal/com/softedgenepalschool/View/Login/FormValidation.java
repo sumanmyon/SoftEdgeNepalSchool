@@ -88,11 +88,6 @@ public class FormValidation implements View.OnClickListener, Validate{
             //setUserTokenKey("ZIh3NbunvHsZknDpREWA6CmKZ97NNMdE");
             setMessage(student);
             redirect();
-        }else {
-            MainActivity.userType = student;
-            //setUserTokenKey("ZIh3NbunvHsZknDpREWA6CmKZ97NNMdE");
-            setMessage(student);
-            redirect();
         }
     }
 

@@ -46,7 +46,7 @@ public class CalenderActivity extends AppCompatActivity {
     }
 
     private void calender() {
-        // Setup calendar pages
+        // Setup ic_calendar_white pages
         mViewPager = (ViewPager)findViewById(R.id.calendarPager);
         //mViewPager.setOffscreenPageLimit(1);
         mViewPager.setAdapter(new CalendarPagerAdapter(getSupportFragmentManager(), 0, calenderCacheList, this));

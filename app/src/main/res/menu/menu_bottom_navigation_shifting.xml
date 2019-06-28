@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_white"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_notification"
+        android:icon="@drawable/ic_notification_white"
+        android:title="Notification" />
+
+    <item
+        android:id="@+id/navigation_calender"
+        android:icon="@drawable/ic_calender_white"
+        android:title="Calender" />
+</menu>

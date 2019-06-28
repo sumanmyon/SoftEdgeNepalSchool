@@ -11,7 +11,7 @@ import java.util.List;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
 
 /**
- * Pager adapter for displaying all supported calendar months.
+ * Pager adapter for displaying all supported ic_calendar_white months.
  */
 public class CalendarPagerAdapter extends FragmentStatePagerAdapter {
     int type;

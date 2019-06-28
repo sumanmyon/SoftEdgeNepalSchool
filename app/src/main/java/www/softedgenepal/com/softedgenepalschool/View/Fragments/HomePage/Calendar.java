@@ -79,7 +79,7 @@ public class Calendar extends Fragment implements CalenderContractor.View {
     }
 
     private void calender(List<CalenderCache> calenderCacheList) {
-        // Setup calendar pages
+        // Setup ic_calendar_white pages
         mViewPager = (ViewPager)view.findViewById(R.id.calendarPager);
         //mViewPager.setOffscreenPageLimit(1);
         mViewPager.setAdapter(new CalendarPagerAdapter(getActivity().getSupportFragmentManager(), 0,

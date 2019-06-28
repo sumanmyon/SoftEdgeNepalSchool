@@ -2,6 +2,12 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplicati
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +34,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     private Toolbar toolbar;
     private EditText subjectEditText, messageEditText;
     private TextView fromTextView, toTextView;
+    private Button fromButton, toButton;
     private Button sendButton;
     private ProgressBar progressBar;
 
@@ -56,7 +63,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
         setToolBar();
 
         //pick start and end date
-        fromTextView.setOnClickListener(new DatePicker(getSupportFragmentManager()) {
+        fromButton.setOnClickListener(new DatePicker(getSupportFragmentManager()) {
             @Override
             public void show(View v) {
                 pickDate();
@@ -72,7 +79,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
             }
         });
 
-        toTextView.setOnClickListener(new DatePicker(getSupportFragmentManager()) {
+        toButton.setOnClickListener(new DatePicker(getSupportFragmentManager()) {
             @Override
             public void show(View v) {
                 if(startDate[0].equals("")){
@@ -155,7 +162,15 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
         toTextView = findViewById(R.id.leave_application_text_view_leave_to);
         sendButton = findViewById(R.id.leave_application_send_button);
         progressBar = findViewById(R.id.leave_application_progress_bar);
-        //progressBar.getProgressDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+        //progress bar loading color
+        progressBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this,
+                android.R.color.holo_red_dark),
+                android.graphics.PorterDuff.Mode.SRC_IN );
+
+        //progress bar loading color
+        fromButton = findViewById(R.id.leave_application_from_button);
+        toButton = findViewById(R.id.leave_application_to_button);
+
     }
 
     public void setProgressBarVisibility(){

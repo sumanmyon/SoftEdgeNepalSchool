@@ -13,28 +13,25 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             style="@style/MyToolbar2"
-            app:titleTextColor="@color/colorPrimaryText"
+            app:titleTextColor="@color/white"
             app:titleTextAppearance="@style/ToolbarTextAppearance"
             android:id="@+id/leave_toolbar" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:layout_below="@+id/leave_toolbar">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="2dp"
+        android:scrollbars="none"
+        android:scrollingCache="true"
+        android:layout_below="@+id/leave_toolbar"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginBottom="4dp"
-                android:paddingTop="2dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="2dp"
-                app:cardMaxElevation="4dp"
-                app:cardBackgroundColor="@color/colorPrimary">
+                android:layout_margin="2dp"
+                app:cardElevation="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -42,37 +39,34 @@
                     android:layout_margin="8dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Subject"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textSize="14sp"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="4dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"/>
 
-                    <EditText
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:background="@drawable/for_edittext2"
-                        android:padding="8dp"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        android:scrollHorizontally="true"
-                        android:inputType="text"
-                        android:hint="Please type your subject for leave."
-                        android:textSize="14sp"
-                        android:focusable="true"
-                        android:id="@+id/leave_application_edit_text_leave_subject"/>
+                        android:textColorHint="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:theme="@style/TextInputLayout.EditText.Blue" >
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:scrollHorizontally="true"
+                            android:inputType="text"
+                            android:hint="Subject"
+                            android:focusable="true"
+                            android:id="@+id/leave_application_edit_text_leave_subject"
+                            android:textColor="@color/colorPrimaryText"
+                            android:theme="@style/AppCompact.EditText.Blue" />
+
+                    </android.support.design.widget.TextInputLayout>
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="12dp"
                         android:layout_gravity="center"
-                        android:background="@color/colorPrimaryDark"/>
+                        android:background="@color/grey_10"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -82,12 +76,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Days"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp"
                         android:paddingTop="4dp"
                         android:paddingBottom="4dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -105,32 +99,33 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:weightSum="1">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.8"
-                            android:text="From"
-                            android:textColor="@color/colorPrimaryText"
-                            android:textSize="14sp"
-                            android:paddingTop="4dp"
-                            android:paddingBottom="4dp"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginRight="12dp"
-                            android:gravity="left"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:layout_marginTop="4dp"
-                            android:background="@drawable/for_edittext2"
+                            android:layout_weight="0.25"
                             android:padding="8dp"
                             android:singleLine="true"
                             android:ellipsize="end"
                             android:scrollHorizontally="true"
-                            android:hint="Start date "
+                            android:hint="Start/From date "
                             android:textSize="14sp"
                             android:focusable="true"
+                            android:layout_gravity="center"
                             android:id="@+id/leave_application_text_view_leave_from"/>
+                        <Button
+                            android:id="@+id/leave_application_from_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.75"
+                            android:text="From"
+                            android:textSize="14sp"
+                            android:padding="8dp"
+                            android:background="@drawable/for_button"
+                            android:textColor="@color/white"
+                            android:textAllCaps="false"
+                            android:gravity="center"
+                            android:layout_gravity="center"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -140,30 +135,29 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.8"
-                            android:text="To"
-                            android:textColor="@color/colorPrimaryText"
-                            android:textSize="14sp"
-                            android:paddingTop="4dp"
-                            android:paddingBottom="4dp"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginRight="12dp"
-                            android:layout_gravity="bottom"
-                            android:gravity="left"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:layout_marginTop="4dp"
-                            android:background="@drawable/for_edittext2"
+                            android:layout_weight="0.25"
                             android:padding="8dp"
                             android:singleLine="true"
                             android:ellipsize="end"
                             android:scrollHorizontally="true"
-                            android:hint="End date"
+                            android:hint="End/To date"
                             android:textSize="14sp"
                             android:focusable="true"
+                            android:layout_gravity="center"
                             android:id="@+id/leave_application_text_view_leave_to"/>
+                        <Button
+                            android:id="@+id/leave_application_to_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.75"
+                            android:text="To"
+                            android:textSize="14sp"
+                            android:padding="8dp"
+                            android:background="@drawable/for_button"
+                            android:textColor="@color/white"
+                            android:textAllCaps="false"
+                            android:gravity="center"
+                            android:layout_gravity="center"/>
                     </LinearLayout>
 
                     <Button
@@ -171,30 +165,31 @@
                         android:layout_height="1dp"
                         android:layout_marginTop="12dp"
                         android:layout_gravity="center"
-                        android:background="@color/colorPrimaryDark"/>
+                        android:background="@color/grey_10"/>
 
-                    <TextView
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Message"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textSize="14sp"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="4dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:textColorHint="@color/colorPrimary"
                         android:background="@drawable/for_edittext2"
+                        android:textStyle="bold"
                         android:padding="8dp"
-                        android:minLines="6"
-                        android:gravity="bottom"
-                        android:hint="Describe why do you want leave."
-                        android:textSize="14sp"
-                        android:focusable="true"
-                        android:id="@+id/leave_application_edit_text_message"/>
+                        android:layout_marginTop="12dp"
+                        android:theme="@style/TextInputLayout.EditText.Blue" >
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:minLines="6"
+                            android:gravity="top"
+                            android:hint="Message"
+                            android:inputType="textMultiLine"
+                            android:focusable="true"
+                            android:id="@+id/leave_application_edit_text_message" />
+
+                    </android.support.design.widget.TextInputLayout>
+
 
                     <Button
                         android:layout_width="match_parent"
@@ -203,7 +198,7 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginRight="0dp"
                         android:layout_gravity="center"
-                        android:background="@color/colorPrimaryDark"/>
+                        android:background="@color/grey_10"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -224,22 +219,20 @@
                             android:padding="8dp"
                             android:text="Send"
                             android:textAllCaps="false"
-                            android:textColor="@color/colorPrimaryText"
+                            android:textColor="@color/white"
                             android:textSize="14sp"
                             android:id="@+id/leave_application_send_button"/>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-        </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:layout_margin="4dp"
-        style="@android:style/Widget.Holo.ProgressBar"
         android:id="@+id/leave_application_progress_bar"
         android:indeterminate="true"
-        android:layout_centerInParent="true"
-        />
+        android:layout_centerInParent="true" />
 </RelativeLayout>

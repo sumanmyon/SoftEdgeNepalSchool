@@ -11,7 +11,7 @@ import www.softedgenepal.com.softedgenepalschool.R;
 
 
 /**
- * Adapter to display calendar header (days) in grid view.
+ * Adapter to display ic_calendar_white header (days) in grid view.
  */
 public class CalendarHeaderAdapter extends BaseAdapter {
     private final Context mContext;

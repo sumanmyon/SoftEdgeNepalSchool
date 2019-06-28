@@ -22,7 +22,7 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.Stor
 import www.softedgenepal.com.softedgenepalschool.R;
 
 /**
- * Fragment containing a calendar for a particular year and month.
+ * Fragment containing a ic_calendar_white for a particular year and month.
  */
 @SuppressLint("ValidFragment")
 public class CalendarFragment extends Fragment {
@@ -73,7 +73,7 @@ public class CalendarFragment extends Fragment {
         mCalendarHeaders = (GridView)view.findViewById(R.id.calendar_headers);
         mCalendarHeaders.setAdapter(new CalendarHeaderAdapter(getContext()));
 
-        // Set vertical spacing of calendar according to display height
+        // Set vertical spacing of ic_calendar_white according to display height
 
         DisplayMetrics metrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -117,7 +117,7 @@ public class CalendarFragment extends Fragment {
     }
 
     /**
-     * Set year and month for this calendar.
+     * Set year and month for this ic_calendar_white.
      * @param year Year to display.
      * @param month Month to display.
      */

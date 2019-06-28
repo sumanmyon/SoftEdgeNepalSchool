@@ -60,7 +60,7 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
     }
 
     public void onCreateOptionsMenu(View view) {
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar_profile);
         toolbar.inflateMenu(R.menu.menu);
 
         if(userType.equals("school")){
