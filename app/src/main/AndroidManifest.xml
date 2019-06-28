@@ -33,16 +33,14 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar">
-        <activity android:name=".View.Activities.AboutActivity"></activity>
+        <activity android:name=".View.Activities.EventActivity"></activity>
+        <activity android:name=".View.Activities.AboutActivity" />
         <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity" />
         <activity android:name=".View.Activities.SuggestionActivity" /> <!-- android:hardwareAccelerated="true"> -->
         <activity android:name=".View.Activities.ProfileActivity" />
         <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplication" />
         <activity android:name=".View.Activities.LeaveApplication.LeaveApplicationActivity" />
         <activity android:name=".View.Activities.LoginActivity" />
-        <activity
-            android:name=".AppCustomPackages.Calender.CalenderActivity"
-            android:theme="@style/AppTheme_NoActionBar" />
         <activity android:name=".View.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

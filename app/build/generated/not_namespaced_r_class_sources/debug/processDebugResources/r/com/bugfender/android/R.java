@@ -45,7 +45,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int bf_feedback_screen = 0x7f0d0029;
+        public static final int bf_feedback_screen = 0x7f0d002a;
     }
     public static final class string {
         private string() {}

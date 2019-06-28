@@ -4,10 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderActivity;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity;
 
 public class SchoolNav {
     private Activity activity;
@@ -21,7 +20,7 @@ public class SchoolNav {
     public void set(){
         switch (itemId){
             case R.id.event:
-                redirectToActivity(CalenderActivity.class);
+                redirectToActivity(EventActivity.class);
                 break;
             case R.id.blog:
                 showMessage("Coming Soon");

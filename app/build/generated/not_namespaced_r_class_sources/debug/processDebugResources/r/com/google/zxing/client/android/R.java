@@ -58,8 +58,8 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int zxing_barcode_scanner = 0x7f0d0070;
-        public static final int zxing_capture = 0x7f0d0071;
+        public static final int zxing_barcode_scanner = 0x7f0d0071;
+        public static final int zxing_capture = 0x7f0d0072;
     }
     public static final class raw {
         private raw() {}
