@@ -26,7 +26,7 @@ import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.RecyclerAda
 /**
  *  ruling plant bujuli bazzar 11 sarp
  *
- * Adapter to set contents of calendar grid view.
+ * Adapter to set contents of ic_calendar_white grid view.
  */
 public class CalendarAdapter extends BaseAdapter {
     private Date mDate;
@@ -52,7 +52,7 @@ public class CalendarAdapter extends BaseAdapter {
     }
 
     /**
-     * Change calendar to another month.
+     * Change ic_calendar_white to another month.
      * @param date Date containing year and month to display.
      */
     public void changeDate(Date date) {
@@ -228,7 +228,7 @@ public class CalendarAdapter extends BaseAdapter {
                     date.setText(cache.start);
                     imageView.setColorFilter(Color.parseColor(cache.backgroundColor));
 
-                    // todo work here long holidays for eg 2 days.....to a month
+                    // todo work here long holidays for eg background_img days.....to a month
                 }
             };
 

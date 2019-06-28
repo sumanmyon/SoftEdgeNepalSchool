@@ -2,7 +2,7 @@ package www.softedgenepal.com.softedgenepalschool;
 
 import org.junit.Test;
 
-import www.softedgenepal.com.softedgenepalschool.Activities.View.Activities.LeaveApplicationActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity;
 
 import static org.junit.Assert.*;
 
@@ -70,7 +70,7 @@ public class LeaveApplicationActivityTest {
     @Test
     public void comapreDate_FromDayLessThanTodayDay(){
         String from[] = {"1/3/2074"};
-        String to[] = {"2/4/2075"};
+        String to[] = {"background_img/4/2075"};
 
         LeaveApplicationActivity activity = new LeaveApplicationActivity();
         String compare = activity.calculateLeaveDaysOrTodayPickedDate(from[0], to[0]);

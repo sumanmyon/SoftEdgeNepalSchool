@@ -6,7 +6,7 @@
         android:drawable="@drawable/button_pressed2"/> <!-- pressed -->
 
     <item android:state_focused="true"
-        android:drawable="@color/colorSecondary"/> <!-- focused -->
+        android:drawable="@color/colorPrimary"/> <!-- focused -->
 
     <item android:drawable="@drawable/button_default2"/> <!-- default -->
 

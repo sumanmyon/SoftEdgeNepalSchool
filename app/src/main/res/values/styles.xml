@@ -13,6 +13,8 @@
         <item name="android:textColor">@color/colorPrimaryText</item><!-- popup menu text color -->
         <item name="android:itemBackground">@color/colorPrimary</item> <!-- popup menu background -->
         <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item><!-- toolbar cap disabling -->
+
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -26,12 +28,14 @@
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorAccent">@color/backgroundLight</item>
         <item name="colorError">@color/backgroundLight</item>
+
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <!-- toolbar :: custom -->
     <style name="MyToolbar">
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
-        <item name="navigationIcon">@drawable/menu_icon_black</item>
+        <!--<item name="navigationIcon">@drawable/menu_icon_black</item>-->
         <item name="android:background">?colorPrimary</item>
 
     </style>
@@ -46,7 +50,7 @@
         <item name="android:textSize">18sp</item>
         <!--<item name="android:shadowDx">1</item>-->
         <!--<item name="android:shadowDy">1</item>-->
-        <!--<item name="android:shadowRadius">2</item>-->
+        <!--<item name="android:shadowRadius">background_img</item>-->
         <!--<item name="android:shadowColor">?colorAccent</item>-->
     </style>
 
@@ -75,8 +79,8 @@
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
 
-    <style name="ProgressBar">
-        <item name="colorAccent">@color/colorPrimaryText</item> <!-- Whatever color you want-->
+    <style name="ProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="colorAccent">@color/colorAccent</item> <!-- Whatever color you want-->
     </style>
 
     <!--
@@ -111,5 +115,17 @@
         <item name="android:textColor">@color/primaryTextAlternate</item>
         <item name="android:textColorSecondary">@color/secondaryTextAlternate</item>
         <item name="android:textColorTertiary">@color/tertiaryTextAlternate</item>
+    </style>
+
+    <!-- Edit Text custom -->
+    <!-- Base application theme. -->
+    <style name="AppCompact.EditText.Blue" parent="@style/AppTheme">
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <item name="colorControlNormal">@color/colorPrimaryText</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+    </style>
+    <style name="TextInputLayout.EditText.Blue"  parent="@style/AppTheme">
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 </resources>

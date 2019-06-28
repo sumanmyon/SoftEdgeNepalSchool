@@ -1,15 +1,17 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
 MERGED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\822e9f575471f2e9defc3f9c309698ff\AndroidManifest.xml:2:1-18:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\2bfd398559f7488f7f8d19872f1b8b91\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\66d3646394d2019cc265dc9caafdc6bd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e238ddd21705c52d5c685f1c13da8e43\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b4d84dcf6f7cb66dc6f6213f6b4ac675\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1660f70fb581cd73dcd4158eeed97aff\AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e1745d50f7d7843e20eb669c9d34f276\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e34b995709853b5c16846813efd296e9\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9f7c94ea1fe0cbd997eb1536d2385798\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\8397ca8934994c67bbf66ecb9c64e241\AndroidManifest.xml:17:1-39:12
 MERGED from [me.dm7.barcodescanner:zxing:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\14a39a35875a001c54945f9843b8846f\AndroidManifest.xml:2:1-13:12
@@ -25,10 +27,8 @@ MERGED from [me.dm7.barcodescanner:core:1.9] C:\Users\suman\.gradle\caches\trans
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7ceaaa832d24dc7c3f3e8b903766a969\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b80b4db59cf3e41c51b0b4f2db26fa0b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d4d392028145d1a66b2d379a067bfa22\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e1745d50f7d7843e20eb669c9d34f276\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\ab538b03deca00141df8ec3f33a359c3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\06c60719af47b5c716cd6017a16ada19\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e34b995709853b5c16846813efd296e9\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\06cfff61fd0d923402aaab8b14e6cd22\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\62c69d6577fc28fe43700c50d7ad3931\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1cc7fbc43fe028f77396eeb8ae026d8c\AndroidManifest.xml:17:1-22:12
@@ -53,20 +53,20 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c9acc722ce3dee42ce13d27ab9de8edb\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\193d25e5c6214fb0df3e5095fcd3cd39\AndroidManifest.xml:17:1-22:12
 MERGED from [com.bugfender.sdk:android:1.1.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b977c2db4715e14bb7828eb0fc5b7ee3\AndroidManifest.xml:2:1-20:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
 	package
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:3:5-56
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-57:12
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:11-69
@@ -111,7 +111,7 @@ ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENS
 	android:name
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:27:22-65
 application
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:29:5-57:19
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:29:5-55:19
 MERGED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\822e9f575471f2e9defc3f9c309698ff\AndroidManifest.xml:11:5-16:19
 MERGED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\822e9f575471f2e9defc3f9c309698ff\AndroidManifest.xml:11:5-16:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\2bfd398559f7488f7f8d19872f1b8b91\AndroidManifest.xml:22:5-20
@@ -162,60 +162,58 @@ MERGED from [com.bugfender.sdk:android:1.1.6] C:\Users\suman\.gradle\caches\tran
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:35:9-52
 	android:name
 		ADDED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\822e9f575471f2e9defc3f9c309698ff\AndroidManifest.xml:12:9-52
-activity#www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:36:9-76
 	android:name
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:36:19-64
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:9-67
+	android:name
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:19-64
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:9-112
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:38:9-112
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:19-109
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:38:19-109
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:38:9-72
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:39:9-72
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:38:19-69
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:39:19-69
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:39:9-69
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:40:9-69
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:39:19-66
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:40:19-66
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:40:9-94
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:41:9-94
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:40:19-91
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:41:19-91
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:41:9-95
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:9-95
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:41:19-92
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:19-92
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:9-67
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:43:9-67
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:19-64
-activity#www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:43:9-45:59
-	android:theme
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:45:13-56
-	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:44:13-72
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:43:19-64
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:9-52:20
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:44:9-50:20
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:19-63
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:44:19-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:47:13-51:29
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:45:13-49:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:48:17-69
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:17-69
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:48:25-66
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:50:17-77
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:48:17-77
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:50:27-74
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:48:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:54:9-56:57
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:52:9-54:57
 	android:resource
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:56:13-54
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:54:13-54
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:55:13-43
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:53:13-43
 uses-sdk
 INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
@@ -232,6 +230,10 @@ MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\suman\.gradle\
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b4d84dcf6f7cb66dc6f6213f6b4ac675\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1660f70fb581cd73dcd4158eeed97aff\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1660f70fb581cd73dcd4158eeed97aff\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e1745d50f7d7843e20eb669c9d34f276\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e1745d50f7d7843e20eb669c9d34f276\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e34b995709853b5c16846813efd296e9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e34b995709853b5c16846813efd296e9\AndroidManifest.xml:20:5-44
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9f7c94ea1fe0cbd997eb1536d2385798\AndroidManifest.xml:7:5-43
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9f7c94ea1fe0cbd997eb1536d2385798\AndroidManifest.xml:7:5-43
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\8397ca8934994c67bbf66ecb9c64e241\AndroidManifest.xml:20:5-44
@@ -262,14 +264,10 @@ MERGED from [com.android.support:support-v4:28.0.0] C:\Users\suman\.gradle\cache
 MERGED from [com.android.support:support-v4:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b80b4db59cf3e41c51b0b4f2db26fa0b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d4d392028145d1a66b2d379a067bfa22\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d4d392028145d1a66b2d379a067bfa22\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e1745d50f7d7843e20eb669c9d34f276\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e1745d50f7d7843e20eb669c9d34f276\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\ab538b03deca00141df8ec3f33a359c3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\ab538b03deca00141df8ec3f33a359c3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\06c60719af47b5c716cd6017a16ada19\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\06c60719af47b5c716cd6017a16ada19\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e34b995709853b5c16846813efd296e9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e34b995709853b5c16846813efd296e9\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\06cfff61fd0d923402aaab8b14e6cd22\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\06cfff61fd0d923402aaab8b14e6cd22\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\62c69d6577fc28fe43700c50d7ad3931\AndroidManifest.xml:20:5-44

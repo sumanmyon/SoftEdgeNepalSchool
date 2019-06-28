@@ -1,33 +1,49 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.ViewPagerAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Home;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.NavigationListener;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.TabLayoutAdapter;
 
 public class MainActivity extends AppCompatActivity {
     //For Navigation
-    //private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private NavigationListener navigationListener;
     public static String userType = "student";     // userType :: by default is school ,
                                                   // else teacher and student
     //For TabLayout
-    private TabLayout tabLayout;
+    private BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;
     private TabLayoutAdapter tabLayoutAdapter;
+    private ViewPagerAdapter viewPagerAdapter;
+
+    //Fragments lists
+    private Home homeFagment;
+    private Notification notificationFragment;
+    private Calendar calenderFragment;
+    private Fragment activeFragment;
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +62,20 @@ public class MainActivity extends AppCompatActivity {
         //navigation
         navigation();
 
-        //Tab Layout
-        tabLayout();
+        //bottom navigation
+        bottomNavigationView();
 
+        //initFragment
+        initFragment();
+
+        //using fragment to save instance
+        setFragmentManager();
     }
 
     private void casting() {
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigation);
-        tabLayout = findViewById(R.id.main_tabLayout);
-        viewPager = findViewById(R.id.main_viewPager);
+        bottomNavigationView = findViewById(R.id.mainActivity_bottomNavigation);
     }
 
     private void binding(){
@@ -79,12 +99,46 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(navigationListener);
     }
 
-    private void tabLayout(){
-        tabLayoutAdapter = new TabLayoutAdapter(this, tabLayout, viewPager, getSupportFragmentManager());
-        tabLayoutAdapter.setTablayout(true);
-        //tabLayoutAdapter.setIcons();
-        tabLayoutAdapter.disableSwipe();
+    private void initFragment(){
+        homeFagment = new Home();
+        notificationFragment = new Notification();
+        calenderFragment = new Calendar();
+        activeFragment = homeFagment;
+    }
+
+    private void setFragmentManager(){
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().add(R.id.main_container,calenderFragment, "3").hide(calenderFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.main_container,notificationFragment, "background_img").hide(notificationFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.main_container,homeFagment, "1").commit();
     }
 
 
+    private void bottomNavigationView() {
+        bottomNavigationView.animate();
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        //mTextMessage.setText(item.getTitle());
+                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.blue_grey_700));
+                        fragmentManager.beginTransaction().hide(activeFragment).show(homeFagment).commit();
+                        activeFragment = homeFagment;
+                        return true;
+                    case R.id.navigation_notification:
+                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.grey_700));
+                        fragmentManager.beginTransaction().hide(activeFragment).show(notificationFragment).commit();
+                        activeFragment = notificationFragment;
+                        return true;
+                    case R.id.navigation_calender:
+                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.teal_700));
+                        fragmentManager.beginTransaction().hide(activeFragment).show(calenderFragment).commit();
+                        activeFragment = calenderFragment;
+                        return true;
+                }
+                return false;
+            }
+        });
+    }
 }

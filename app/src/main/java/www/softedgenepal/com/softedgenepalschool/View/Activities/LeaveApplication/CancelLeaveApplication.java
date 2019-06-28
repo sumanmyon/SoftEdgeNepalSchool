@@ -1,6 +1,6 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication;
 
-import android.content.Context;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -19,11 +19,11 @@ import www.softedgenepal.com.softedgenepalschool.View.CustomAlertDialog.AlertDia
 
 public class CancelLeaveApplication{
     private ShowAllLeaveApplication context;
-    private AlertDialog alertDialog;
+    private View.OnClickListener view;
 
-    public CancelLeaveApplication(ShowAllLeaveApplication context, AlertDialog alertDialog) {
+    public CancelLeaveApplication(ShowAllLeaveApplication context, View.OnClickListener view) {
         this.context=context;
-        this.alertDialog=alertDialog;
+        this.view=view;
     }
 
     public void cancelRequest(Map<String, String> params) {
@@ -41,16 +41,16 @@ public class CancelLeaveApplication{
                         try {
                             if (response.getString("Status").equals("true")){
                                 setMessage(response.getString("Response"));
-                                destroy();
+                                //destroy();
                                 refreshShowAllLeaveApplication();
                             }else {
                                 setMessage(response.getString("Response"));
-                                destroy();
+                                //destroy();
                                 refreshShowAllLeaveApplication();
                             }
                         }catch (Exception e){
                             setMessage(e.getMessage());
-                            destroy();
+                            //destroy();
                             refreshShowAllLeaveApplication();
                         }
                     }
@@ -58,7 +58,7 @@ public class CancelLeaveApplication{
             @Override
             public void onErrorResponse(VolleyError error) {
                 setMessage(error.getMessage());
-                destroy();
+                //destroy();
                 refreshShowAllLeaveApplication();
             }
         });
@@ -71,9 +71,9 @@ public class CancelLeaveApplication{
         Toast.makeText(context,message,Toast.LENGTH_LONG).show();
     }
 
-    public void destroy(){
-        alertDialog.cancel();
-    }
+//    public void destroy(){
+//        alertDialog.cancel();
+//    }
 
     private void refreshShowAllLeaveApplication(){
         context.refreshRecyclerView();

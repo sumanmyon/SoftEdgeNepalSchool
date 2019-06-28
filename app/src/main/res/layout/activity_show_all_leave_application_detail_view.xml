@@ -22,9 +22,9 @@
         android:id="@+id/showall_detail_leave_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="2dp"
         app:cardElevation="2dp"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,8 +36,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sick Leave Required"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/large"
                 android:padding="4dp"
                 android:textStyle="bold" />
             <Button
@@ -54,7 +54,7 @@
                 android:gravity="end"
                 android:layout_gravity="end"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="10sp"
+                android:textSize="@dimen/small"
                 android:layout_marginTop="12dp"
                 android:padding="2dp"
                 android:layout_weight="0.5"/>
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:text="From: 12/3/2075\nTo: 14/3/2075"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="12sp"
+                android:textSize="@dimen/medium"
                 android:layout_marginTop="4dp"
                 android:padding="4dp"/>
 
@@ -80,7 +80,7 @@ I have asked SoftTech Nepal to check on my clients and will try to periodically 
 Please grant me leave for the aforementioned period. If you need additional information, please let me know.
 \n\nYours Sincerely,\nSuman Neupane"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="12sp"
+                android:textSize="@dimen/medium"
                 android:padding="4dp"/>
             <TextView
                 android:id="@+id/showall_detail_leave_isActive"

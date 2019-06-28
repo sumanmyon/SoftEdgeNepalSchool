@@ -1,8 +1,15 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.LightingColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -12,6 +19,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,10 +30,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.AdapterListAnimation;
 import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.RecyclerAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.CustomAlertDialog.AlertDialog;
 
@@ -37,7 +49,16 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
 
     private final String uid = "1";
 
-    //protected LeaveApplicationPresenter presenter;
+    //for animation
+    private RecyclerView recyclerView;
+    private int animation_type = ItemAnimation.BOTTOM_UP;
+    private AdapterListAnimation mAdapter;
+
+
+    //for bottom sheet
+    private BottomSheetBehavior mBehavior;
+    private BottomSheetDialog mBottomSheetDialog;
+    private View bottom_sheet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,94 +93,69 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     public void setAllLeaveApplication(final List<LeaveApplicationDataCache> leaveApplicationDataCacheList) {
         setTextViewVisibilityOff();
 
-        final int size = leaveApplicationDataCacheList.size();
+        mAdapter = new AdapterListAnimation(this, leaveApplicationDataCacheList, animation_type);
+        recyclerView.setAdapter(mAdapter);
 
-        final RecyclerAdapter adapter = new RecyclerAdapter(getApplicationContext(),size) {
-            private TextView subjectText, messageText, createDateText, isActiveText;//, fromToText;
-            private CardView cardView;
+        mAdapter.setOnItemClickListener(new AdapterListAnimation.OnItemClickListener() {
             @Override
-            public ViewHolder onCreate(ViewGroup viewGroup, int position) {
-                LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-                View view = inflater.inflate(R.layout.show_leave_application_recyclerview, null);
-                return new ViewHolder(view);
+            public void onItemClick(View view, LeaveApplicationDataCache obj, int position) {
+                Intent intent = new Intent(getApplicationContext(), ShowAllLeaveApplicationDetailViewActivity.class);
+                intent.putExtra("leaveApplication", obj);
+                startActivity(intent);
             }
-            @Override
-            public void inflateUIFields(View itemView) {
-                subjectText = itemView.findViewById(R.id.show_leave_app_recycle_subject);
-                messageText = itemView.findViewById(R.id.show_leave_app_recycle_message);
-                createDateText = itemView.findViewById(R.id.show_leave_app_recycle_createDate);
-                isActiveText = itemView.findViewById(R.id.show_leave_app_recycle_isActive);
-                cardView = itemView.findViewById(R.id.show_leave_app_recycle_cardView);
-                //fromToText = itemView.findViewById(R.id.show_leave_app_recycle_from_to);
-            }
+        });
 
+        mAdapter.setOnItemLongClickListener(new AdapterListAnimation.OnItemLongClickListener() {
             @Override
-            public void onBind(ViewHolder viewHolder, final int position) {
-                //todo stuff here
-                final LeaveApplicationDataCache cache = leaveApplicationDataCacheList.get(position);
-                if(cache.IsActive.equals("false")) {
-                    ViewGroup.LayoutParams params = isActiveText.getLayoutParams();
-                    params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-                    isActiveText.setLayoutParams(params);
-                    //isActiveText.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-                    cardView.setCardBackgroundColor(getResources().getColor(R.color.backgroundLightGray));
-                    //fromToText.setText("From: "+cache.From+"\nTo: "+cache.To);
+            public void onItemLongClick(View view, LeaveApplicationDataCache obj, int positio) {
+                if(obj.IsActive.equals("true")) {
+                    showBottomSheetDialog(obj);
                 }
-                subjectText.setText(cache.Subject);
-                messageText.setText(cache.Message);
-                createDateText.setText(cache.CreateDate);
-
-                cardView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), ShowAllLeaveApplicationDetailViewActivity.class);
-                        intent.putExtra("leaveApplication", cache);
-                        startActivity(intent);
-                    }
-                });
-
-                cardView.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        if(cache.IsActive.equals("true")) {
-                            cancelLeaveApplication(cache);
-                        }
-                        return true;
-                    }
-                });
             }
-        };
-
-        RecyclerView recyclerView = findViewById(R.id.showall_leave_recycleView);
-        recyclerView.setHasFixedSize(false);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
+        });
     }
 
-    private void cancelLeaveApplication(final LeaveApplicationDataCache cache) {
-        //todo for cancel Leave Application
-        AlertDialog alertDialog = new AlertDialog(this) {
-            @Override
-            protected void positiveButtonClick(View v) {
-                //setMessage("Coming Soon " + "15");
+    private void showBottomSheetDialog(final LeaveApplicationDataCache obj) {
+        if (mBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+            mBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        }
+        final View view = getLayoutInflater().inflate(R.layout.alert_dialog, null);
+        ((TextView) view.findViewById(R.id.alertDialogTitle)).setText(getResources().getString(R.string.LeaveApplication_Dialoge_Title));
+        Button deleteButton = (view.findViewById(R.id.alertDialogExitButton));
+        ViewGroup.LayoutParams params = deleteButton.getLayoutParams();
+        params.width = 0;
+        params.height = 0;
 
+        deleteButton.setLayoutParams(params);
+
+        Button cancelButton = (view.findViewById(R.id.alertDialogCancelButton));
+        cancelButton.setText(getResources().getString(R.string.yes));
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Map<String, String> params = new HashMap<>();
-                params.put("UserId", cache.StudentID);
-                params.put("SystemCode",cache.SystemCode);
-                    CancelLeaveApplication cancelLeaveApplication = new CancelLeaveApplication(ShowAllLeaveApplication.this, this);
-                    cancelLeaveApplication.cancelRequest(params);
+                params.put("UserId", obj.StudentID);
+                params.put("SystemCode",obj.SystemCode);
+                CancelLeaveApplication cancelLeaveApplication = new CancelLeaveApplication(ShowAllLeaveApplication.this, this);
+                cancelLeaveApplication.cancelRequest(params);
+                mBottomSheetDialog.dismiss();
             }
+        });
 
+        mBottomSheetDialog = new BottomSheetDialog(this);
+        mBottomSheetDialog.setContentView(view);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mBottomSheetDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+
+        mBottomSheetDialog.show();
+        mBottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
-            protected void negativeButtonClick(View v) {
-                cancel();
+            public void onDismiss(DialogInterface dialog) {
+                mBottomSheetDialog = null;
             }
-        };
-        alertDialog.setPositiveButtonText(getResources().getString(R.string.yes));
-        alertDialog.setNegativeButtonText(getResources().getString(R.string.no));
-        alertDialog.setCustomTitle(getResources().getString(R.string.LeaveApplication_Dialoge_Title));
-        alertDialog.setCustomMessage(getResources().getString(R.string.LeaveApplication_Dialoge_Body));
-        alertDialog.show();
+        });
+
     }
 
     @Override
@@ -206,6 +202,22 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
         progressBar = findViewById(R.id.showall_leave_application_progress_bar);
         floatingActionButton = findViewById(R.id.showall_leave_floating_button);
         messageHandleTextView = findViewById(R.id.show_leave_app_message_textview);
+
+        //for recycler view
+        recyclerView = (RecyclerView) findViewById(R.id.showall_leave_recycleView);
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //progress bar loading color
+        progressBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this,
+                android.R.color.holo_red_dark),
+                android.graphics.PorterDuff.Mode.SRC_IN );
+
+
+        //for bottom sheet
+        bottom_sheet = findViewById(R.id.bottom_sheet);
+        mBehavior = BottomSheetBehavior.from(bottom_sheet);
+
     }
 
     public Context getActivity() {

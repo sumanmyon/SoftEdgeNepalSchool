@@ -10,4 +10,10 @@
     <dimen name="view_pager_margin">0dp</dimen>
     <dimen name="eng_date_padding">6dp</dimen>
 
+    <dimen name="vlarge">18dp</dimen>
+    <dimen name="large">16dp</dimen>
+    <dimen name="medium">14dp</dimen>
+    <dimen name="small">12dp</dimen>
+    <dimen name="vsmall">10dp</dimen>
+
 </resources>
