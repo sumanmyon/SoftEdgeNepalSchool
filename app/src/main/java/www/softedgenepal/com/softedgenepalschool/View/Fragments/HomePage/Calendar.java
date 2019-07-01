@@ -93,21 +93,10 @@ public class Calendar extends Fragment implements CalenderContractor.View {
         setFieldInvisible();
     }
 
-    private int currentType = 0;
-    public void toggleCalendar() {
-//        currentType = 1 - currentType;
-//
-//        if (mViewPager != null) {
-//            int currentItem = mViewPager.getCurrentItem();
-//            mViewPager.setAdapter(new CalendarPagerAdapter(getActivity().getSupportFragmentManager(),
-//                    currentType, calenderCacheList, getActivity()));
-//            mViewPager.setCurrentItem(currentItem);
-//        }
-    }
-
     //todo fetch data here
     public void FetchData(Map<String, String> params){
         presenter = new CalenderPresenter(this);
+        presenter.mapModel();
         presenter.fetchData(params);
     }
 

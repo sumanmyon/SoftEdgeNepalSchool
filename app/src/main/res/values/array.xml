@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="month">
+        <item>Baishakh</item>
+        <item>Jestha</item>
+        <item>Ashadh</item>
+        <item>Shrawan</item>
+        <item>Bhadra</item>
+        <item>Ashwin</item>
+        <item>Kartik</item>
+        <item>Mangsir</item>
+        <item>Poush</item>
+        <item>Magh</item>
+        <item>Falgun</item>
+        <item>Chaitra</item>
+    </string-array>
+</resources>

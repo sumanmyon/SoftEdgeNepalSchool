@@ -1,27 +1,27 @@
 #Internal package file, do not edit.
-#Fri Jun 28 15:29:36 NPT 2019
+#Sun Jun 30 17:05:50 NPT 2019
 2.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
-5.set=ASSET
-0.path=fonts/Roboto-Medium.ttf
+5.set=DEX
+0.path=StudentGuardianWithSibling.json
 2.baseType=DIRECTORY
 3.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 2.set=ASSET
-1.path=StudentGuardianWithNoSibling.json
-4.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+1.path=fonts/Roboto-Medium.ttf
+4.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 count=7
 5.baseType=DIRECTORY
-2.path=StudentFailed.json
-5.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
-4.set=DEX
-3.path=StudentParentWithNoSibling.json
+2.path=StudentGuardianWithNoSibling.json
+5.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+4.set=ASSET
+3.path=StudentFailed.json
 6.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 3.baseType=DIRECTORY
 1.set=ASSET
-4.path=classes.dex
+4.path=StudentParentWithNoSibling.json
 6.set=ASSET
 1.baseType=DIRECTORY
 6.baseType=DIRECTORY
-5.path=StudentGuardianWithSibling.json
+5.path=classes.dex
 0.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 0.baseType=DIRECTORY
 3.set=ASSET

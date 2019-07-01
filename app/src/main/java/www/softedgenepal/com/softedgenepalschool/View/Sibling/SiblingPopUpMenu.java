@@ -20,7 +20,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.RecyclerAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 
 public class SiblingPopUpMenu extends Dialog {
     private Context context;

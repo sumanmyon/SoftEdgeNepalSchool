@@ -15,7 +15,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.CustomViews.SetProfile;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomViews.SetProfile;
 
 public class ProfileActivity extends AppCompatActivity {
     private Cache cache;

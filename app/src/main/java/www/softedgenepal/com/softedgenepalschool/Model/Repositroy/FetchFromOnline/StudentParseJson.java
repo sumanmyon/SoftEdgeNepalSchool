@@ -47,7 +47,7 @@ public class StudentParseJson {
         String isSibling = "false";
         try {
             if(parseJson.getString("response").equals("failed")){
-                if(parseJson.getString("data").equals("null")){
+                if(parseJson.getString("data").equals("null") || parseJson.getString("data").equals("")){
                     response="There is not any data to show.";
                 }
             }else if(parseJson.getString("response").equals("success")){

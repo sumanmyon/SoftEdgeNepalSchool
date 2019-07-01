@@ -53,20 +53,6 @@ public class FetchDataOnline {
         //calling volley interface to get data
         final RequestQueue requestQueue = Volley.newRequestQueue(requestDataForStudent.getContext());
         requestQueue.add(jsonObjectRequest);
-
-//        RestRequest.RestJsonObjectRequest restJsonObjectRequest =
-//                new RestJsonObjectRequest(requestDataForStudent.getContext()) {
-//            @Override
-//            protected void getJsonObjectRequest(JSONObject response) {
-//                parseJson(response);
-//            }
-//
-//            @Override
-//            public void getError(VolleyError error) {
-//                requestDataForStudent.setMessage(error.getMessage());
-//            }
-//        };
-//        restJsonObjectRequest.setJsonObjectRequest(restJsonObjectRequest.restRequest.POST, url);
     }
 
     public void parseJson(JSONObject request) {

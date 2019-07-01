@@ -48,8 +48,6 @@ dependencies {
     //volley
     implementation 'com.android.volley:volley:1.1.1'
 
-    //google play services
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
 
     //for QR scan
     implementation 'me.dm7.barcodescanner:zxing:1.9'

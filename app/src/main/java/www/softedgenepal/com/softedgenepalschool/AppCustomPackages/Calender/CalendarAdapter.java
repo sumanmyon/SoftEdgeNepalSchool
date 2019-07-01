@@ -20,7 +20,9 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.CustomAdapters.RecyclerAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
+
+import static www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DateTimeFormaterChecker.DateTimeFormateCheckerType2.DateOrTimeFormate2;
 
 
 /**
@@ -131,20 +133,27 @@ public class CalendarAdapter extends BaseAdapter {
             if(cacheList != null && cacheList.size() > 0) {
                 for (CalenderCache cache : cacheList) {
                     String strDate = cache.start;
-                    String calDate = nepaliDate.convertToEnglish().toString();
-                    //show(strDate + "\t" + calDate + "\t" + cacheList.size());
+                    String startCalDate = nepaliDate.convertToEnglish().toString();
+                    String endDate = splitDate(cache.end,"date");
+                    String[] spliteEndDate = endDate.split("-");
+                    String endCalDate = nepaliDate.convertToEnglish().toString();
 
-                    if (strDate.equalsIgnoreCase(calDate)) {
-                        show(strDate + "\t" + calDate + "\t" + cacheList.size());
+                    if (strDate.equalsIgnoreCase(startCalDate)) {
+                        show(strDate + "\t" + startCalDate + "\t" + endDate+"\t"+endCalDate);
                         //todo set background color
                         //circleImage.setBackgroundColor(Color.parseColor(cache.backgroundColor));
                         circleImage.setVisibility(View.VISIBLE);
                         circleImage.setColorFilter(Color.parseColor(cache.backgroundColor));
 
                         String startDay = String.valueOf(nepaliDate.day);  //todo setting nepali date - day
+                        String endDay = new Date(
+                                Integer.valueOf(spliteEndDate[0]),
+                                Integer.valueOf(spliteEndDate[1]),
+                                Integer.valueOf(spliteEndDate[2]))
+                                .convertToNepali().day+"";
                         calenderCaches.add(new CalenderCache(
                                 cache.title, cache.description,
-                                startDay, cache.end, cache.type,
+                                startDay, endDay, cache.type,
                                 cache.backgroundColor, cache.isActive));
                     }
                 }
@@ -240,6 +249,19 @@ public class CalendarAdapter extends BaseAdapter {
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(layoutManager);
         }
+    }
+
+    private String splitDate(String date, String type){
+        //removing created time from created date
+        String convert = DateOrTimeFormate2(date);
+        String split[] = convert.split("T");
+        String dateOrTime = "";
+        if(type.equals("date"))
+            dateOrTime = split[0];
+        else if(type.equals("time")){
+            dateOrTime =split[1];
+        }
+        return dateOrTime;
     }
 
 

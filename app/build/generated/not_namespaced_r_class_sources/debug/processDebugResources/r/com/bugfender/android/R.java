@@ -12,15 +12,15 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int feedback_appbar_action_button = 0x7f0600b6;
-        public static final int feedback_appbar_background = 0x7f0600b7;
-        public static final int feedback_appbar_close_button = 0x7f0600b8;
-        public static final int feedback_appbar_title = 0x7f0600b9;
-        public static final int feedback_background = 0x7f0600ba;
-        public static final int feedback_input_background = 0x7f0600bb;
-        public static final int feedback_input_hint = 0x7f0600bc;
-        public static final int feedback_input_text = 0x7f0600bd;
-        public static final int feedback_text = 0x7f0600be;
+        public static final int feedback_appbar_action_button = 0x7f0600ab;
+        public static final int feedback_appbar_background = 0x7f0600ac;
+        public static final int feedback_appbar_close_button = 0x7f0600ad;
+        public static final int feedback_appbar_title = 0x7f0600ae;
+        public static final int feedback_background = 0x7f0600af;
+        public static final int feedback_input_background = 0x7f0600b0;
+        public static final int feedback_input_hint = 0x7f0600b1;
+        public static final int feedback_input_text = 0x7f0600b2;
+        public static final int feedback_text = 0x7f0600b3;
     }
     public static final class drawable {
         private drawable() {}
@@ -32,24 +32,24 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int appbar_rl = 0x7f0a0027;
-        public static final int bugfender_tv = 0x7f0a0033;
-        public static final int close_iv = 0x7f0a0048;
-        public static final int feedback_message_et = 0x7f0a006d;
-        public static final int feedback_title_et = 0x7f0a006e;
-        public static final int message_tv = 0x7f0a00cb;
-        public static final int positive_action_tv = 0x7f0a00e9;
-        public static final int root_vg = 0x7f0a00ff;
-        public static final int title_tv = 0x7f0a016a;
+        public static final int appbar_rl = 0x7f0a0025;
+        public static final int bugfender_tv = 0x7f0a0032;
+        public static final int close_iv = 0x7f0a0047;
+        public static final int feedback_message_et = 0x7f0a0072;
+        public static final int feedback_title_et = 0x7f0a0073;
+        public static final int message_tv = 0x7f0a00cf;
+        public static final int positive_action_tv = 0x7f0a00ed;
+        public static final int root_vg = 0x7f0a0103;
+        public static final int title_tv = 0x7f0a016f;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int bf_feedback_screen = 0x7f0d002a;
+        public static final int bf_feedback_screen = 0x7f0d002b;
     }
     public static final class string {
         private string() {}
 
-        public static final int powered_by_bugfender = 0x7f1100a3;
+        public static final int powered_by_bugfender = 0x7f110091;
     }
 }
