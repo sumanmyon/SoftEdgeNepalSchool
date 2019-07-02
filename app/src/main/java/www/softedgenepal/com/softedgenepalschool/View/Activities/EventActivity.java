@@ -100,7 +100,7 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
         List<CalenderCache> getEventList = new ArrayList<>();
         int i[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
         for (CalenderCache cache : eventList){
-            if(cache.type.equals("0")){
+            if(cache.type.equals("0")){      // type = 0 means :: events
                 //todo convert date to nepali
                 //split dates
                 String[] startD = cache.start.split("-");
@@ -114,12 +114,9 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
                         if (startMonth == m) {
                             String month = getStringsMonth().get(startMonth - 1);
                             cache.month = month;
-                            cache.expand = true;
+                            cache.expand = false;
                             getEventList.add(cache);
-                        }else {
-
                         }
-
                     }
                 }
             }

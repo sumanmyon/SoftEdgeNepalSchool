@@ -15,5 +15,6 @@
     <dimen name="medium">14dp</dimen>
     <dimen name="small">12dp</dimen>
     <dimen name="vsmall">10dp</dimen>
+    <dimen name="vvsmall">8dp</dimen>
 
 </resources>

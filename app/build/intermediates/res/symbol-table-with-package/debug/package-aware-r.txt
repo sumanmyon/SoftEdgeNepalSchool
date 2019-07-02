@@ -1367,6 +1367,7 @@ dimen tooltip_y_offset_touch
 dimen view_pager_margin
 dimen vlarge
 dimen vsmall
+dimen vvsmall
 dimen widget_margin
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
