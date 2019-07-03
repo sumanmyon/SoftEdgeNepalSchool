@@ -6,16 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.Date;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderDate;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.SpliteDateOrTime;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Tools;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ViewAnimation;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -25,6 +24,8 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private List<CalenderCache> eventList;
     List<String> stringsMonth;
     private int animationType;
+
+
 
     public EventAdapter(Context context, List<CalenderCache> eventList, List<String> stringsMonth, int animationType) {
         this.context = context;
@@ -54,9 +55,9 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         //todo convert date to nepali
         //split dates
         String[] startD = eventCache.start.split("-");
-        Date startDate = SpliteDateOrTime.convertToNepali(startD);
+        CalenderDate startDate = DateTime.convertToNepali(startD);
         String[] endD = eventCache.start.split("-");
-        Date endDate = SpliteDateOrTime.convertToNepali(endD);
+        CalenderDate endDate = DateTime.convertToNepali(endD);
         if (startDate.toString().equals(endDate.toString())) {
             holder.dateTextView.setText(startDate + "");
         } else {

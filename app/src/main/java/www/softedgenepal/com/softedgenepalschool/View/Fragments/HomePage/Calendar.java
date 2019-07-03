@@ -3,7 +3,6 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -13,30 +12,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalendarPagerAdapter;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.Date;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderDate;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.DateUtils;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.CalenderPresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.CalenderContractor;
 import www.softedgenepal.com.softedgenepalschool.R;
-
-import static www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DateTimeFormaterChecker.DateTimeFormateCheckerType2.DateOrTimeFormate2;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,7 +71,7 @@ public class Calendar extends Fragment implements CalenderContractor.View {
         mViewPager.setAdapter(new CalendarPagerAdapter(getActivity().getSupportFragmentManager(), 0,
                 calenderCacheList, getActivity()));
 
-        Date today = new Date(java.util.Calendar.getInstance()).convertToNepali();
+        CalenderDate today = new CalenderDate(java.util.Calendar.getInstance()).convertToNepali();
         mViewPager.setCurrentItem(
                 (today.year - DateUtils.startNepaliYear) * 12 + (today.month - 1)
         );

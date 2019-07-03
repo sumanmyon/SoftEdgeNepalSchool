@@ -56,7 +56,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         final String[] keys = new String[]{
                 "Class","section","Roll no","Gender",
-                "Date Of Birth (BS)", "Date Of Birth (AD)",
+                "CalenderDate Of Birth (BS)", "CalenderDate Of Birth (AD)",
                 "Contact", "Email", "House",
                 "Religion", "Caste", "Address",
                 "Blood Group", "Bus Stop", "Bus Route"

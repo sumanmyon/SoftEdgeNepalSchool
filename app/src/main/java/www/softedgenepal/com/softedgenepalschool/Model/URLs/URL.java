@@ -31,6 +31,10 @@ public class URL {
         return new OnlineUrl().calenderAndEventsUrl;
     }
 
+    public String assignmentUrl(){
+        return new OnlineUrl().assignmentUrl;
+    }
+
     private class OnlineUrl{
         private String onlineUrl = "http://192.168.100.100:400/";
         private String loginStudentUrl = onlineUrl + "api/auth/Login?";
@@ -41,6 +45,8 @@ public class URL {
 
         private String calenderAndEventsUrl = onlineUrl + "api/data/geteventinfo";//?From=10/10/1995&To=12/12/2023";
         //http://192.168.100.100:423/api/data/geteventinfo?From=10/10/1995&To=12/12/2020
+
+        private String assignmentUrl = onlineUrl + "/api/data/gethomework";
 
 
         public OnlineUrl() {

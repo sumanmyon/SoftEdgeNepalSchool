@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "372265943895",
+    "firebase_url": "https://softschool-93d74.firebaseio.com",
+    "project_id": "softschool-93d74",
+    "storage_bucket": "softschool-93d74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372265943895:android:c062976d281c92c9",
+        "android_client_info": {
+          "package_name": "www.softedgenepal.com.softedgenepalschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372265943895-56c6dql52i0gsb732joc0ip21eb0263v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.softedgenepal.com.softedgenepalschool",
+            "certificate_hash": "4cd3222513773162b531f13f7d485d4c4f2cb701"
+          }
+        },
+        {
+          "client_id": "372265943895-r25bsu96q4bjuank6sdttcriiuttd299.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPzSvIO3MZQNqgfAHOy8k7eQ84V1S-coI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372265943895-r25bsu96q4bjuank6sdttcriiuttd299.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

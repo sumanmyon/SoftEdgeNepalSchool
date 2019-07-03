@@ -31,8 +31,8 @@ import static www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePi
  * Adapter to set contents of ic_calendar_white grid view.
  */
 public class CalendarAdapter extends BaseAdapter {
-    private Date mDate;
-    private Date mToday;
+    private CalenderDate mDate;
+    private CalenderDate mToday;
     private int mExtraDays = 0;
     private final Context mContext;
     List<CalenderCache> cacheList;
@@ -41,11 +41,11 @@ public class CalendarAdapter extends BaseAdapter {
     /**
      * Create an adapter with given context and date.
      * @param context Context containing the grid view.
-     * @param date Date containing year and month to display.
+     * @param date CalenderDate containing year and month to display.
      * @param cacheList
      * @param recyclerView
      */
-    public CalendarAdapter(Context context, Date date, List<CalenderCache> cacheList, RecyclerView recyclerView) {
+    public CalendarAdapter(Context context, CalenderDate date, List<CalenderCache> cacheList, RecyclerView recyclerView) {
         mContext = context;
         this.cacheList = cacheList;
         calenderCaches = new ArrayList<>();
@@ -55,19 +55,19 @@ public class CalendarAdapter extends BaseAdapter {
 
     /**
      * Change ic_calendar_white to another month.
-     * @param date Date containing year and month to display.
+     * @param date CalenderDate containing year and month to display.
      */
-    public void changeDate(Date date) {
+    public void changeDate(CalenderDate date) {
         mDate = date;
 
-        Date temp = new Date(mDate.year, mDate.month, 1);
+        CalenderDate temp = new CalenderDate(mDate.year, mDate.month, 1);
         Log.d("TAG_CALENDER", temp.toString());
 
         Calendar engCalendar = temp.convertToEnglish().getCalendar();
         mExtraDays = engCalendar.get(Calendar.DAY_OF_WEEK)-1;
         notifyDataSetInvalidated();
 
-        mToday = new Date(Calendar.getInstance()).convertToNepali();
+        mToday = new CalenderDate(Calendar.getInstance()).convertToNepali();
     }
 
     @Override
@@ -123,7 +123,7 @@ public class CalendarAdapter extends BaseAdapter {
             int dt = (position + 1 - mExtraDays);
             nepDate.setText(NepaliTranslator.getNumber(dt + ""));
 
-            Date nepaliDate = new Date(mDate.year, mDate.month, dt);
+            CalenderDate nepaliDate = new CalenderDate(mDate.year, mDate.month, dt);
             String dt2 = nepaliDate.convertToEnglish().day + "";
             engDate.setText(dt2);
             engDate.setVisibility(View.VISIBLE);
@@ -146,7 +146,7 @@ public class CalendarAdapter extends BaseAdapter {
                         circleImage.setColorFilter(Color.parseColor(cache.backgroundColor));
 
                         String startDay = String.valueOf(nepaliDate.day);  //todo setting nepali date - day
-                        String endDay = new Date(
+                        String endDay = new CalenderDate(
                                 Integer.valueOf(spliteEndDate[0]),
                                 Integer.valueOf(spliteEndDate[1]),
                                 Integer.valueOf(spliteEndDate[2]))

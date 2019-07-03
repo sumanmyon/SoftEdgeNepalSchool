@@ -108,17 +108,10 @@ public class CalenderModel implements CalenderContractor.Model {
                                     String isActive = data.getString("IsActive");
 
                                     calenderCacheList.add(new CalenderCache(title, description, startDate, endDate, type, backgroundColor, isActive));
-                                    //calender();
                                 }
-//                                else {
-//                                    calender();
-//                                }
                             }
                         }
                     }
-//                    else {
-////                        calender();
-////                    }
                 }
             }
 

@@ -1,5 +1,8 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -10,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
@@ -68,6 +72,30 @@ public class MainActivity extends AppCompatActivity {
 
         //using fragment to save instance
         setFragmentManager();
+
+        //for notification
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                NotificationChannel channel = new NotificationChannel("MyNotification","MyNotification", NotificationManager.IMPORTANCE_DEFAULT);
+//                NotificationManager manager = getSystemService(NotificationManager.class);
+//                manager.createNotificationChannel(channel);
+//            }
+//        }
+//
+//        FirebaseInstanceId.getInstance().getInstanceId()
+//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+//                        if (!task.isSuccessful()) {
+//                            //To do//
+//                            return;
+//                        }
+//                        // Get the Instance ID token//
+//                        //String token = task.getResult().getToken();
+//                        //String msg = getString(R.string.fcm_token, token);
+//                        //Log.d(TAG, msg);
+//                    }
+//                });
     }
 
     private void casting() {

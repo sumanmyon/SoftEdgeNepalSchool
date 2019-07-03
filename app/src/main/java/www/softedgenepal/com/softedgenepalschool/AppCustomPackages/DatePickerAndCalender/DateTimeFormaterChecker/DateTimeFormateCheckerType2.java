@@ -56,7 +56,7 @@ public class DateTimeFormateCheckerType2 {
         return DateTime;
     }
 
-    //todo get formated Date in Date form
+    //todo get formated CalenderDate in CalenderDate form
     public Date getFormatedDate(){
         return formatedDate;
     }

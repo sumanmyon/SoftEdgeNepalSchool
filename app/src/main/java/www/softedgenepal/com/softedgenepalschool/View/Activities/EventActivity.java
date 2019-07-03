@@ -18,7 +18,7 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.SpliteDateOrTime;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Presenter.CalenderPresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.CalenderContractor;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -104,10 +104,10 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
                 //todo convert date to nepali
                 //split dates
                 String[] startD = cache.start.split("-");
-                int startMonth = SpliteDateOrTime.convertToNepali(startD).month;
+                int startMonth = DateTime.convertToNepali(startD).month;
 
                 String[] endD = cache.start.split("-");
-                int endMonth = SpliteDateOrTime.convertToNepali(endD).month;
+                int endMonth = DateTime.convertToNepali(endD).month;
 
                 if(startMonth == endMonth) {
                     for (int m : i) {
