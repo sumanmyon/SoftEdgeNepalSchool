@@ -15,7 +15,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.CustomViews.SetProfile;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomViews.SetProfile;
 
 public class ProfileActivity extends AppCompatActivity {
     private Cache cache;
@@ -56,7 +56,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         final String[] keys = new String[]{
                 "Class","section","Roll no","Gender",
-                "Date Of Birth (BS)", "Date Of Birth (AD)",
+                "CalenderDate Of Birth (BS)", "CalenderDate Of Birth (AD)",
                 "Contact", "Email", "House",
                 "Religion", "Caste", "Address",
                 "Blood Group", "Bus Stop", "Bus Route"

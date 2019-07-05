@@ -12,15 +12,20 @@ public class StoreInSharePreference {
     static String MY_PREFS_NAME;
     private String stringName;
     public String Calender = "calender";
+    public String Assignment = "assignment";
 
     public StoreInSharePreference(Context context) {
         this.context = context;
     }
 
     public void setType(String type){
-        if(type.equals("calender")){
+        if(type.equals(Calender)){
             MY_PREFS_NAME ="Calender";
             stringName = Calender;
+        }
+        if(type.equals(Assignment)){
+            MY_PREFS_NAME ="Assignment";
+            stringName = Assignment;
         }
 
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);

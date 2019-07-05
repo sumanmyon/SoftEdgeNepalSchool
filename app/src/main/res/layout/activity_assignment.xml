@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.Activities.AssignmentActivity"
+    android:background="@color/grey_5">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        style="@style/MyToolbar2"
+        app:title="@string/HomeWork"
+        app:titleTextColor="@color/white"
+        app:titleTextAppearance="@style/ToolbarTextAppearance"
+        android:id="@+id/assignment_toolbar" />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@+id/assignment_toolbar">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assignment_rel"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/assignment_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:padding="4dp" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        style="@android:style/Widget.Holo.ProgressBar"
+        android:id="@+id/assignment_progressbar"
+        android:indeterminate="false"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

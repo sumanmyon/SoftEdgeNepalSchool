@@ -13,6 +13,9 @@ public class CalenderCache {
     public String backgroundColor;
     public String isActive;
 
+    public String month;
+    public boolean expand;
+
     public CalenderCache(JSONObject data){
         this.data = data;
     }

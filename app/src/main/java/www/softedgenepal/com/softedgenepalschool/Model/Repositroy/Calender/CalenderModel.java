@@ -55,13 +55,12 @@ public class CalenderModel implements CalenderContractor.Model {
                 preference.setType(preference.Calender);
                 preference.storeData(response.toString());
                 offline();
-                //parseJson(response);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 setMessage(error.toString());
-                calender();
+                offline();
             }
         });
 
@@ -95,25 +94,28 @@ public class CalenderModel implements CalenderContractor.Model {
             if(response.getString("Status").equals("true")){
                 if(response.getString("Response").equals("Success")) {
                     JSONArray dataArray = response.getJSONArray("Data");
+                    if(!dataArray.toString().equals("[]")) {
+                        if (dataArray.length() >= 0) {
+                            for (int i = 0; i < dataArray.length(); i++) {
+                                JSONObject data = dataArray.getJSONObject(i);
+                                if (!data.toString().equals("")) {
+                                    String title = data.getString("Title");
+                                    String description = data.getString("Description");
+                                    String startDate = splitDate(data.getString("Start"), "date");
+                                    String endDate = splitDate(data.getString("End"), "date");
+                                    String type = data.getString("Type");
+                                    String backgroundColor = data.getString("BackgroundColor");
+                                    String isActive = data.getString("IsActive");
 
-                    if (dataArray.length() >= 0) {
-                        for (int i = 0; i < dataArray.length(); i++) {
-                            JSONObject data = dataArray.getJSONObject(i);
-
-                            String title = data.getString("Title");
-                            String description = data.getString("Description");
-                            String startDate = splitDate(data.getString("Start"), "date");
-                            String endDate = splitDate(data.getString("End"), "date");
-                            String type = data.getString("Type");
-                            String backgroundColor = data.getString("BackgroundColor");
-                            String isActive = data.getString("IsActive");
-
-                            calenderCacheList.add(new CalenderCache(title, description, startDate, endDate, type, backgroundColor, isActive));
-                            calender();
+                                    calenderCacheList.add(new CalenderCache(title, description, startDate, endDate, type, backgroundColor, isActive));
+                                }
+                            }
                         }
                     }
                 }
             }
+
+            calender();
         }catch (Exception e){
             setMessage(e.getMessage());
             calender();

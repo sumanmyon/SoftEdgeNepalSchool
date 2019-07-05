@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/bck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:weightSum="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/assignment_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="2dp"
+                    android:text="Ghyaipo Lhoshar"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/large"/>
+
+                <TextView
+                    android:id="@+id/assignment_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="0.5"
+                    android:gravity="right|bottom"
+                    android:padding="2dp"
+                    android:text="date"
+                    android:textColor="@color/grey_60"
+                    android:textSize="@dimen/small" />
+
+            </LinearLayout>
+        <TextView
+            android:id="@+id/assignment_homwWork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_60"
+            android:gravity="start"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="We have provided various types of English essays (such as Education, India, Science &amp; Technology, Animals, Festivals, National Days, Social Issues "
+            android:textSize="@dimen/small" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/bck"
+        android:layout_gravity="start"
+        android:layout_marginBottom="2dp"
+        android:background="@color/grey_40" />
+</LinearLayout>

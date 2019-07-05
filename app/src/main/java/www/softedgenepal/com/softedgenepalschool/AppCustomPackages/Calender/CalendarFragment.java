@@ -32,7 +32,7 @@ public class CalendarFragment extends Fragment {
     private GridView mCalendarHeaders;
     private RecyclerView recyclerView;
 
-    private Date mCurrentDate = new Date(2000, 1, 1);
+    private CalenderDate mCurrentDate = new CalenderDate(2000, 1, 1);
     List<CalenderCache> cacheList;
     static Activity activity;
 
@@ -91,8 +91,8 @@ public class CalendarFragment extends Fragment {
         String nepali = NepaliTranslator.getNumber(mCurrentDate.year + "") + " "
                 + NepaliTranslator.getMonth(mCurrentDate.month);
 
-        Date eDate1 = new Date(mCurrentDate.year, mCurrentDate.month, 1).convertToEnglish();
-        Date eDate2 = new Date(mCurrentDate.year, mCurrentDate.month, 26).convertToEnglish();
+        CalenderDate eDate1 = new CalenderDate(mCurrentDate.year, mCurrentDate.month, 1).convertToEnglish();
+        CalenderDate eDate2 = new CalenderDate(mCurrentDate.year, mCurrentDate.month, 26).convertToEnglish();
 
         String english = getEnglishMonth(eDate1.month) + "/"
                 + getEnglishMonth(eDate2.month);

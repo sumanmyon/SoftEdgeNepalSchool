@@ -47,8 +47,7 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.wifi"
-        android:required="false" />
-
+        android:required="false" /> <!-- tools:replace="icon" -->
     <application
         android:name="com.hornet.dateconverter.App"
         android:allowBackup="true"
@@ -60,6 +59,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity" />
@@ -68,7 +68,7 @@
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -80,20 +80,11 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity
-            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--
-            Service handling Google Sign-In user revocation. For apps that do not integrate with
-            Google Sign-In, this service will never be started.
-        -->
-        <service
-            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-            android:exported="true"
-            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-
+        <!-- <service android:name=".AppCustomPackages.Notifications.MyFirebaseMessagingService"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.MESSAGING_EVENT"/> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"
@@ -101,15 +92,6 @@
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
         <activity
             android:name="com.bugfender.sdk.internal.ui.FeedbackActivity"
             android:windowSoftInputMode="adjustResize" />

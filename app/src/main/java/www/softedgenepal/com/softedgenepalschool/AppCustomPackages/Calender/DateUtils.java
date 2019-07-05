@@ -9,10 +9,10 @@ public class DateUtils {
     /// Starting Nepali year that this database starts storing date from.
     public final static int startNepaliYear = 2000;
     /// Starting English year that this database starts storing date from.
-    public final static Date startEnglishDate = new Date(1943, 4, 14);
+    public final static CalenderDate startEnglishDate = new CalenderDate(1943, 4, 14);
 
     /**
-     * Date Database useful for converting from/to Nepali/English dates.
+     * CalenderDate Database useful for converting from/to Nepali/English dates.
      *
      * Basically, this is an array of arrays. Each sub-array represents a year.
      * Each year contains number of days in each month as array of integers.
@@ -130,7 +130,7 @@ public class DateUtils {
      * @param engDate English date to convert from.
      * @return Corresponding Nepali date.
      */
-    public static Date getNepaliDate(Date engDate) {
+    public static CalenderDate getNepaliDate(CalenderDate engDate) {
         int days = startEnglishDate.getDaysTill(engDate) + 1;
 
         for (int i=0; i<getNumYears(); ++i) {
@@ -138,7 +138,7 @@ public class DateUtils {
                 if (days > data[i][j])
                     days -= data[i][j];
                 else
-                    return new Date(i+startNepaliYear, j+1, days);
+                    return new CalenderDate(i+startNepaliYear, j+1, days);
             }
         }
         return null;
@@ -149,7 +149,7 @@ public class DateUtils {
      * @param nepDate Nepali date to convert from.
      * @return Corresponding English date.
      */
-    public static Date getEnglishDate(Date nepDate) {
+    public static CalenderDate getEnglishDate(CalenderDate nepDate) {
         int days = 0;
         int year = nepDate.year - startNepaliYear;
 
@@ -160,7 +160,7 @@ public class DateUtils {
 
                     Calendar c = startEnglishDate.getCalendar();
                     c.add(Calendar.DATE, days);
-                    return new Date(c);
+                    return new CalenderDate(c);
                 }
                 else
                     days += data[i][j];
