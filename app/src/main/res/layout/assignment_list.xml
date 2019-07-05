@@ -1,48 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.balysv.materialripple.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/RippleStyleBlack"
-    android:focusable="true"
-    android:id="@+id/bck">
-    <LinearLayout
+    android:orientation="vertical">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/bck"
+        style="@style/RippleStyleBlack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:focusable="true"
+        android:padding="8dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp"
             android:weightSum="1">
-            <LinearLayout
+
+            <TextView
+                android:id="@+id/assignment_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="1dp"
-                android:weightSum="1">
-                <!--<ImageButton-->
-                <!--android:id="@+id/image"-->
-                <!--android:layout_width="@dimen/dp42"-->
-                <!--android:layout_height="@dimen/dp42"-->
-                <!--android:background="@android:color/transparent"-->
-                <!--android:tint="@color/colorPrimary"-->
-                <!--app:srcCompat="@drawable/ic_subject" />-->
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.5"
+                android:padding="2dp"
+                android:text="Ghyaipo Lhoshar"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/large" />
 
-                <TextView
-                    android:id="@+id/assignment_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:padding="2dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="Ghyaipo Lhoshar"
-                    android:textColor="@color/colorPrimaryText"
-                    android:textSize="@dimen/large"/>
-
-            </LinearLayout>
             <TextView
                 android:id="@+id/assignment_date"
                 android:layout_width="match_parent"
@@ -54,29 +42,29 @@
                 android:text="Deadline"
                 android:textColor="@color/grey_60"
                 android:textSize="@dimen/small" />
+
             <TextView
                 android:id="@+id/assignment_homwWork"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/grey_60"
-                android:gravity="start"
-                android:padding="3dp"
-                android:maxLines="1"
                 android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:padding="3dp"
                 android:text="We have provided various types of English essays (such as Education, India, Science &amp; Technology, Animals, Festivals, National Days, Social Issues "
+                android:textColor="@color/grey_60"
                 android:textSize="@dimen/small" />
         </LinearLayout>
+    </com.balysv.materialripple.MaterialRippleLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:id="@+id/assignment_list_vertical_line"
-            android:layout_below="@+id/bck"
-            android:layout_gravity="start"
-            android:layout_marginLeft="11dp"
-            android:layout_marginBottom="2dp"
-            android:background="@color/grey_40" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/assignment_list_vertical_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/bck"
+        android:layout_gravity="start"
+        android:layout_marginLeft="11dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/grey_40" />
 
-
-</com.balysv.materialripple.MaterialRippleLayout>
+</LinearLayout>

@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Activities.SuggestionActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".View.Activities.SuggestionActivity">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/suggestion_toolbar"
+        style="@style/MyToolbar2"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        style="@style/MyToolbar2"
-        app:titleTextColor="@color/white"
         app:titleTextAppearance="@style/ToolbarTextAppearance"
-        android:id="@+id/suggestion_toolbar" />
+        app:titleTextColor="@color/white" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/leave_toolbar"
         android:clipToPadding="false"
         android:padding="2dp"
         android:scrollbars="none"
         android:scrollingCache="true"
-        android:layout_below="@+id/leave_toolbar"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
@@ -46,18 +46,18 @@
                     android:layout_height="wrap_content"
                     android:textColorHint="@color/colorPrimary"
                     android:textStyle="bold"
-                    android:theme="@style/TextInputLayout.EditText.Blue" >
+                    android:theme="@style/TextInputLayout.EditText.Blue">
 
                     <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/suggestion_edit_text_subject"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
                         android:ellipsize="end"
-                        android:scrollHorizontally="true"
-                        android:inputType="text"
-                        android:hint="Subject"
                         android:focusable="true"
-                        android:id="@+id/suggestion_edit_text_subject"
+                        android:hint="Subject"
+                        android:inputType="text"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
                         android:textColor="@color/colorPrimaryText"
                         android:theme="@style/AppCompact.EditText.Blue" />
 
@@ -66,64 +66,66 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="12dp"
                     android:layout_gravity="center"
-                    android:background="@color/grey_10"/>
+                    android:layout_marginTop="12dp"
+                    android:background="@color/grey_10" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@color/colorPrimary"
-                    android:background="@drawable/for_edittext2"
-                    android:textStyle="bold"
-                    android:padding="8dp"
                     android:layout_marginTop="12dp"
-                    android:theme="@style/TextInputLayout.EditText.Blue" >
+                    android:background="@drawable/for_edittext2"
+                    android:padding="8dp"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:theme="@style/TextInputLayout.EditText.Blue">
 
                     <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/suggestion_edit_text_message"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
-                        android:minLines="6"
+                        android:focusable="true"
                         android:gravity="top"
                         android:hint="Message"
                         android:inputType="textMultiLine"
-                        android:focusable="true"
-                        android:id="@+id/suggestion_edit_text_message" />
+                        android:minLines="6" />
 
                 </android.support.design.widget.TextInputLayout>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginRight="0dp"
                     android:layout_gravity="center"
-                    android:background="@color/grey_10"/>
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@color/grey_10" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center"
+                    android:orientation="horizontal"
                     android:weightSum="1">
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_weight="0.3"
-                        android:background="@drawable/for_button"
-                        android:drawableRight="@drawable/send_white"
-                        android:padding="8dp"
-                        android:text="Send"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        android:id="@+id/suggestion_send_button"/>
+
+                        <Button
+                            android:id="@+id/suggestion_send_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:focusable="true"
+                            android:layout_weight="0.3"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/for_button"
+                            android:drawableEnd="@drawable/send_white"
+                            android:text="Send"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
