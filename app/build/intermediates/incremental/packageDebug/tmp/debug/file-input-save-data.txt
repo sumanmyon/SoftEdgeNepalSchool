@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Jul 03 11:10:19 NPT 2019
+#Thu Jul 04 17:10:26 NPT 2019
 2.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 5.set=ASSET
 0.path=fonts/Roboto-Medium.ttf

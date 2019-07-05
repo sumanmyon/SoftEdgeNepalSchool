@@ -3,11 +3,13 @@ package www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.ImageView;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -25,11 +27,23 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.Vi
     AssignmentActivity context;
     List<AssignmentCache> assignmentCacheList;
     int animationType;
+    int size;
+
+    private OnItemClickListener onItemClickListener;
 
     public AssignmentAdapter(AssignmentActivity assignmentActivity, List<AssignmentCache> assignmentCacheList, int animationType) {
         this.context = assignmentActivity;
         this.assignmentCacheList = assignmentCacheList;
         this.animationType = animationType;
+    }
+
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, AssignmentCache cache, int position);
     }
 
     @NonNull
@@ -40,74 +54,61 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final AssignmentCache cache = assignmentCacheList.get(position);
 
         holder.assignmentSubjectName.setText(cache.SubjectNameEng);
-
-        String[] startD = cache.CreateDate.split("-");
-        CalenderDate startDate = DateTime.convertToNepali(startD);
-        String[] endD = cache.Deadline.split("-");
-        CalenderDate endDate = DateTime.convertToNepali(endD);
-        holder.assignmanetDate.setText("Date: "+startDate+"\nDeadline: "+endDate);
-
-        //todo show in web view
-        String homewrok = cache.Homework;
-        if(!homewrok.equals("") || !homewrok.equals("null")) {
-            holder.homeWorkWebView.loadData(cache.Homework, "text/html", null);
+        CalenderDate startDate = null, endDate = null;
+        if(!cache.CreateDate.equals("")) {
+            String[] startD = cache.CreateDate.split("-");
+            startDate = DateTime.convertToNepali(startD);
         }
+        if(!cache.Deadline.equals("")) {
+            String[] endD = cache.Deadline.split("-");
+            endDate = DateTime.convertToNepali(endD);
+        }
+        holder.assignmanetDate.setText("Deadline: "+endDate);       //"Date: "+startDate+"\n
 
         setAnimation(holder.itemView, position);
 
-        holder.bt_expand.setOnClickListener(new View.OnClickListener() {
+        holder.lyt_expand.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //boolean show = toggleLayoutExpand(!cache.expand, v, holder.lyt_expand);
-                //cache.expand = show;
+            public void onClick(View view) {
+                if (onItemClickListener == null) return;
+                onItemClickListener.onItemClick(view,cache,position);
             }
         });
 
-//        // void recycling view
-//        if (cache.expand) {
-//            holder.lyt_expand.setVisibility(View.VISIBLE);
-//        } else {
-//            holder.lyt_expand.setVisibility(View.GONE);
-//        }
-//        Tools.toggleArrow(cache.expand, holder.bt_expand, false);
-    }
-
-    private boolean toggleLayoutExpand(boolean show, View view, View lyt_expand) {
-        Tools.toggleArrow(show, view);
-        if (show) {
-            ViewAnimation.expand(lyt_expand);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            holder.assignmentHomework.setText(Html.fromHtml(cache.Homework, Html.FROM_HTML_MODE_LEGACY).toString());
         } else {
-            ViewAnimation.collapse(lyt_expand);
+            holder.assignmentHomework.setText(Html.fromHtml(cache.Homework).toString());
         }
-        return show;
-    }
 
+        if(position == size-1){
+            holder.assignment_list_vertical_line.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     public int getItemCount() {
-        return assignmentCacheList.size();
+        size = assignmentCacheList.size();
+        return size;
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
-        TextView assignmentSubjectName, assignmanetDate;
-        WebView homeWorkWebView;
-        ImageView bt_expand;
+        TextView assignmentSubjectName, assignmanetDate, assignmentHomework;
         View lyt_expand;
+        Button assignment_list_vertical_line;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             assignmentSubjectName = itemView.findViewById(R.id.assignment_title);
+            assignmentHomework = itemView.findViewById(R.id.assignment_homwWork);
             assignmanetDate = itemView.findViewById(R.id.assignment_date);
-            homeWorkWebView = itemView.findViewById(R.id.assignment_homeWorkWebView);
-
-            bt_expand = itemView.findViewById(R.id.assignment_expand);
-            bt_expand.setColorFilter(context.getResources().getColor(R.color.colorPrimaryDark));
-            lyt_expand = itemView.findViewById(R.id.lyt_expand);
+            lyt_expand = itemView.findViewById(R.id.bck);
+            assignment_list_vertical_line = itemView.findViewById(R.id.assignment_list_vertical_line);
         }
     }
 

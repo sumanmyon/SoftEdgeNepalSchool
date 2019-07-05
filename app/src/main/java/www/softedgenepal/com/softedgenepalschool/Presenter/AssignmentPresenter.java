@@ -2,6 +2,8 @@ package www.softedgenepal.com.softedgenepalschool.Presenter;
 
 import android.content.Context;
 
+import org.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -40,5 +42,10 @@ public class AssignmentPresenter implements AssignmentContractor.Presenter {
     @Override
     public void setData(List<AssignmentCache> assignmentCacheList) {
         assignmentActivity.setData(assignmentCacheList);
+    }
+
+    @Override
+    public void setJsonData(JSONObject response) {
+        assignmentActivity.setJsonData(response);
     }
 }

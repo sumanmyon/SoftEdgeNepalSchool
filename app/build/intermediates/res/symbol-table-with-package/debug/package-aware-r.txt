@@ -393,6 +393,18 @@ attr maxImageSize
 attr mdtp_theme_dark
 attr measureWithLargestChild
 attr menu
+attr mrl_rippleAlpha
+attr mrl_rippleBackground
+attr mrl_rippleColor
+attr mrl_rippleDelayClick
+attr mrl_rippleDimension
+attr mrl_rippleDuration
+attr mrl_rippleFadeDuration
+attr mrl_rippleHover
+attr mrl_rippleInAdapter
+attr mrl_rippleOverlay
+attr mrl_ripplePersistent
+attr mrl_rippleRoundedCorners
 attr multiChoiceItemLayout
 attr navigationContentDescription
 attr navigationIcon
@@ -1057,6 +1069,7 @@ color text_color_disabled
 color text_color_normal
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
 color viewfinder_border
 color viewfinder_laser
 color viewfinder_mask
@@ -1163,6 +1176,7 @@ dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen appbar_padding_top
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -1220,6 +1234,8 @@ dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
 dimen dp32
+dimen dp36
+dimen dp42
 dimen eng_date_padding
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
@@ -1353,6 +1369,19 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen small
+dimen spacing_large
+dimen spacing_medium
+dimen spacing_middle
+dimen spacing_mlarge
+dimen spacing_mxlarge
+dimen spacing_small
+dimen spacing_smlarge
+dimen spacing_xlarge
+dimen spacing_xmedium
+dimen spacing_xmlarge
+dimen spacing_xsmall
+dimen spacing_xxlarge
+dimen spacing_xxxlarge
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
@@ -1484,16 +1513,20 @@ drawable for_button2
 drawable for_custom_toast
 drawable for_edittext
 drawable for_edittext2
+drawable ic_assignment
 drawable ic_calender_white
 drawable ic_calender_white2
 drawable ic_chevron_left_black_24dp
 drawable ic_chevron_right_black_24dp
+drawable ic_close
+drawable ic_date_range
 drawable ic_expand_arrow
 drawable ic_home_white
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notification_white
+drawable ic_subject
 drawable lock
 drawable logo
 drawable mdtp_material_button_background
@@ -1572,15 +1605,26 @@ id alertDialogTitle
 id alertTitle
 id all
 id always
+id app_bar_layout
 id appbar_rl
 id assignHomeWork
 id assignment
 id assignmentRecyclerView
+id assignment_bt_close
+id assignment_createdDate
 id assignment_date
-id assignment_expand
+id assignment_deadline
+id assignment_download
 id assignment_homeWorkWebView
+id assignment_homwWork
+id assignment_homwWork_lyl
+id assignment_homwWork_lyl_down
+id assignment_list_vertical_line
 id assignment_loading
 id assignment_progressbar
+id assignment_rel
+id assignment_subject
+id assignment_subject_toolbar
 id assignment_title
 id assignment_toolbar
 id async
@@ -1679,6 +1723,8 @@ id groups
 id home
 id homeAsUp
 id homeWork
+id homeWork_recy_lyl
+id homeWork_recy_lyl2
 id home_frameLayout
 id icon
 id icon_group
@@ -1713,6 +1759,8 @@ id login_edit_text_username
 id login_image_view
 id logout
 id lyt_expand
+id lyt_profile
+id lyt_spacer
 id mainActivity_bottomNavigation
 id main_container
 id masked
@@ -1795,6 +1843,8 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerView
+id recyclerView_date
+id recyclerView_homework
 id relative_layout
 id reportCard
 id resultReportCard
@@ -1968,6 +2018,7 @@ interpolator mtrl_fast_out_linear_in
 interpolator mtrl_fast_out_slow_in
 interpolator mtrl_linear
 interpolator mtrl_linear_out_slow_in
+layout a
 layout abc_action_bar_title_item
 layout abc_action_bar_up_container
 layout abc_action_menu_item_layout
@@ -2012,6 +2063,7 @@ layout activity_sibling_pop_up2
 layout activity_suggestion
 layout alert_dialog
 layout assignment_list
+layout assignment_list2
 layout bf_feedback_screen
 layout calender_list
 layout custom_snackbar
@@ -2031,9 +2083,11 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout event_list
+layout fragment_bottom_sheet
 layout fragment_calendar
 layout fragment_home
 layout fragment_notification
+layout homework_recyclerview
 layout layout_date
 layout layout_date_header
 layout layout_textview
@@ -2470,6 +2524,9 @@ style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
 style ProgressBar
+style RippleStyleBlack
+style RippleStyleDark
+style RippleStyleWhite
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon
@@ -2823,6 +2880,7 @@ styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerti
 styleable MaterialButton android_insetLeft android_insetRight android_insetTop android_insetBottom backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
 styleable MaterialCardView strokeColor strokeWidth
 styleable MaterialComponentsTheme bottomSheetDialogTheme bottomSheetStyle chipGroupStyle chipStandaloneStyle chipStyle colorAccent colorBackgroundFloating colorPrimary colorPrimaryDark colorSecondary editTextStyle floatingActionButtonStyle materialButtonStyle materialCardViewStyle navigationViewStyle scrimBackground snackbarButtonStyle tabStyle textAppearanceBody1 textAppearanceBody2 textAppearanceButton textAppearanceCaption textAppearanceHeadline1 textAppearanceHeadline2 textAppearanceHeadline3 textAppearanceHeadline4 textAppearanceHeadline5 textAppearanceHeadline6 textAppearanceOverline textAppearanceSubtitle1 textAppearanceSubtitle2 textInputStyle
+styleable MaterialRippleLayout mrl_rippleAlpha mrl_rippleBackground mrl_rippleColor mrl_rippleDelayClick mrl_rippleDimension mrl_rippleDuration mrl_rippleFadeDuration mrl_rippleHover mrl_rippleInAdapter mrl_rippleOverlay mrl_ripplePersistent mrl_rippleRoundedCorners
 styleable MenuGroup android_enabled android_id android_visible android_menuCategory android_orderInCategory android_checkableBehavior
 styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
 styleable MenuView android_windowAnimationStyle android_itemTextAppearance android_horizontalDivider android_verticalDivider android_headerBackground android_itemBackground android_itemIconDisabledAlpha preserveIconSpacing subMenuArrow

@@ -82,7 +82,8 @@ public class AssignmentModel implements AssignmentContractor.Model {
 
         try {
             JSONObject response = new JSONObject(data);
-            parseJson(response);
+           // parseJson(response);
+            setJsonDataToView(response);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -98,18 +99,28 @@ public class AssignmentModel implements AssignmentContractor.Model {
                     if(!dataArray.toString().equals("[]")) {
                         if (dataArray.length() >= 0) {
                             for (int i = 0; i < dataArray.length(); i++) {
-                                JSONObject data = dataArray.getJSONObject(i);
-                                if (!data.toString().equals("")) {
-                                    String Class = data.getString("Class");
-                                    String ClassConfigurationCode = data.getString("ClassConfigurationCode");
-                                    String Homework = data.getString("Homework");
-                                    String CreateDate = DateTime.splitDateOrTime(data.getString("Date"), "date");
-                                    String Deadline = DateTime.splitDateOrTime(data.getString("Deadline"), "date");
-                                    String SubjectNameEng = data.getString("SubjectNameEng");
-                                    String SubjectCode = data.getString("SubjectCode");
-                                    String ImageUrl = data.getString("ImageUrl");
+                                JSONArray array = dataArray.getJSONArray(i);
+                                for(int j=0; j<array.length(); j++) {
+                                    JSONObject data = array.getJSONObject(j);
+                                    if (!data.toString().equals("")) {
+                                        String Class = data.getString("Class");
+                                        String ClassConfigurationCode = data.getString("ClassConfigurationCode");
+                                        String Homework = data.getString("Homework");
+                                        String CreateDate = "";
+                                        if(!data.getString("Date").equals("null")) {
+                                            CreateDate = DateTime.splitDateOrTime(data.getString("Date"), "date");
+                                        }
+                                        String Deadline = "";
+                                        if(!data.getString("Deadline").equals("null")) {
+                                            Deadline = DateTime.splitDateOrTime(data.getString("Deadline"), "date");
+                                        }
+                                        String SubjectNameEng = data.getString("SubjectNameEng");
+                                        String SubjectCode = data.getString("SubjectCode");
+                                        String ImageUrl = data.getString("ImageUrl");
+                                        String FontType = "";
 
-                                    assignmentCacheList.add(new AssignmentCache(Class, ClassConfigurationCode, Homework, CreateDate, Deadline, SubjectNameEng, SubjectCode, ImageUrl));
+                                        assignmentCacheList.add(new AssignmentCache(Class, ClassConfigurationCode, Homework, CreateDate, Deadline, SubjectNameEng, SubjectCode, ImageUrl, FontType));
+                                    }
                                 }
                             }
                         }
@@ -117,13 +128,18 @@ public class AssignmentModel implements AssignmentContractor.Model {
                 }
             }
 
-            setDataToView();
+            setDataToView(response);
         }catch (Exception e){
             setMessage(e.getMessage());
-            setDataToView();
+            setDataToView(response);
         }
     }
-    private void setDataToView() {
+    private void setJsonDataToView(JSONObject response) {
+        assignmentPresenter.setJsonData(response);
+
+    }
+
+    private void setDataToView(JSONObject response) {
         assignmentPresenter.setData(assignmentCacheList);
     }
 

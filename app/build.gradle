@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
+        //multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -67,6 +68,8 @@ dependencies {
     //Nepali date picker
     //https://github.com/keyrunHORNET/date_picker_converter
     implementation 'com.github.keyrunHORNET:date_picker_converter:2.2.2'
+
+    implementation 'com.balysv:material-ripple:1.0.2'                  // ripple effect
 
 
     //firebase for push notification
