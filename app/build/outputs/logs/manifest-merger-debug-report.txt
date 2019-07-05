@@ -153,10 +153,10 @@ MERGED from [com.bugfender.sdk:android:1.1.6] C:\Users\suman\.gradle\caches\tran
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:36:9-52
 	android:name
 		ADDED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\822e9f575471f2e9defc3f9c309698ff\AndroidManifest.xml:12:9-52
-activity#www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:9-75
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:9-81
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:19-63
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:37:19-69
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:38:9-67
 	android:name
@@ -189,10 +189,10 @@ activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:45:9-67
 	android:name
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:45:19-64
-activity#www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:9-52:20
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:19-69
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:19-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:47:13-51:29
 action#android.intent.action.MAIN

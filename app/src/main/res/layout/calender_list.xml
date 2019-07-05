@@ -1,88 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <LinearLayout
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/bck"
+        style="@style/RippleStyleBlack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/bck"
-        android:layout_marginBottom="10dp"
-        android:padding="8dp"
-        android:layout_margin="0dp">
+        android:focusable="true"
+        android:padding="8dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView"
-            android:layout_width="26dp"
-            android:layout_height="35dp"
-            android:layout_margin="1dp"
-            android:padding="2dp"
-            android:src="@color/colorPrimary" />
         <LinearLayout
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <LinearLayout
-            android:padding="1dp"
+            android:layout_margin="0dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ghyaipo Lhoshar"
-                android:textSize="12dp"
+            android:padding="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView"
+                android:layout_width="26dp"
+                android:layout_height="35dp"
+                android:layout_margin="1dp"
                 android:padding="2dp"
-                android:textStyle="bold"
-                android:layout_weight="0.5"
-                android:id="@+id/title"/>
-            <TextView
+                android:src="@color/colorPrimary" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:gravity="right|bottom"
-                android:text="date"
-                android:id="@+id/date"
-                android:textSize="12dp"
-                android:layout_weight="0.5"
-                android:padding="2dp"/>
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
 
-        </LinearLayout>
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:textSize="8dp"-->
-                <!--android:padding="1dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="right|bottom"-->
-                <!--android:id="@+id/date"-->
-                <!--android:text="date"/>-->
-        <RelativeLayout
-            android:padding="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="1dp"
+                    android:weightSum="1">
 
-            <TextView
-                android:id="@+id/message"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="1dp"
-                android:text="message"
-                android:textSize="12dp" />
-        </RelativeLayout>
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:padding="2dp"
+                        android:text="Ghyaipo Lhoshar"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="0.5"
+                        android:gravity="right|bottom"
+                        android:padding="2dp"
+                        android:text="date"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp">
+
+                    <TextView
+                        android:id="@+id/message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="1dp"
+                        android:text="message"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </com.balysv.materialripple.MaterialRippleLayout>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="2dp"
+        android:layout_below="@+id/bck"
         android:layout_gravity="start"
-        android:background="@color/colorPrimaryDark"
-        android:layout_below="@+id/bck"/>
+        android:layout_marginBottom="2dp"
+        android:background="@color/colorPrimaryDark" />
 </RelativeLayout>
