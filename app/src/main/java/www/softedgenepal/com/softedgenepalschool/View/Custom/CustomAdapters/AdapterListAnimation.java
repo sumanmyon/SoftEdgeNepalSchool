@@ -49,7 +49,7 @@ public class AdapterListAnimation extends RecyclerView.Adapter<RecyclerView.View
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         private TextView subjectText, messageText, createDateText, isActiveText;//, fromToText;
-        private CardView cardView;
+        private View cardView;
 
         public OriginalViewHolder(View v) {
             super(v);
