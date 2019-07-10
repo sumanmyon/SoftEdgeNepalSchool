@@ -23,6 +23,7 @@ import android.widget.ImageView;
 //import com.google.firebase.iid.InstanceIdResult;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.FileDownloader;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.ViewPagerAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
@@ -72,35 +73,21 @@ public class MainActivity extends AppCompatActivity {
         //bottom navigation
         bottomNavigationView();
 
+        //test Download Manger
+//        String url= "http://appeteria.com/video.mp4";
+//        String fileName = "video.mp4";
+//        String title = "Download Image";
+//        String description = "downloading...";
+//        FileDownloader downloader = new FileDownloader(this);
+//        downloader.downloadFile(url, fileName,downloader.Video, title, description);
+//
+//        downloader.registerReciver();
+
         //initFragment
         initFragment();
 
         //using fragment to save instance
         setFragmentManager();
-
-        //for notification
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                NotificationChannel channel = new NotificationChannel("MyNotification","MyNotification", NotificationManager.IMPORTANCE_DEFAULT);
-//                NotificationManager manager = getSystemService(NotificationManager.class);
-//                manager.createNotificationChannel(channel);
-//            }
-//        }
-//
-//        FirebaseInstanceId.getInstance().getInstanceId()
-//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-//                        if (!task.isSuccessful()) {
-//                            //To do//
-//                            return;
-//                        }
-//                        // Get the Instance ID token//
-//                        //String token = task.getResult().getToken();
-//                        //String msg = getString(R.string.fcm_token, token);
-//                        //Log.d(TAG, msg);
-//                    }
-//                });
     }
 
     private void casting() {

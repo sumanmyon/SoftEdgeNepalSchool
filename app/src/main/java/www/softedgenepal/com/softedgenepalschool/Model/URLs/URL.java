@@ -6,7 +6,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.FakeApi.StudentApi;
 
 public class URL {
     Context context;
-    private String url;
+    public String url = new OnlineUrl().onlineUrl;
 
     public URL(Context context) {
         this.context = context;

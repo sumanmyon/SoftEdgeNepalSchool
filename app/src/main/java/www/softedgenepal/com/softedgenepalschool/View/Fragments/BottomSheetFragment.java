@@ -2,31 +2,46 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments;
 
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v4.app.Fragment;
-import android.text.Html;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.FileDownloader;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
+import www.softedgenepal.com.softedgenepalschool.CustomImage.ImageSplitter;
+import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Tools;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
+import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,11 +49,13 @@ import www.softedgenepal.com.softedgenepalschool.R;
 public class BottomSheetFragment extends BottomSheetDialogFragment {
     private BottomSheetBehavior mBehavior;
     private AppBarLayout app_bar_layout;
-    private LinearLayout lyt_profile, homeWorkLinearLayout, homeWorkLinearLayoutDown;
+    private LinearLayout lyt_profile, homeWorkLinearLayout, homeWorkLinearLayoutDown, homeWorkFileLinearLayout;
 
     private TextView subjectTextView, createDateTextView, deadlineTextView;
     private WebView homeWorkTextView;
     private ImageButton homeWorkDownload;
+    private RecyclerView recyclerView;
+    private final int GRID_SPAN = 3;
 
     private AssignmentCache cache;
 
@@ -84,7 +101,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
             }
         });
 
-        ((ImageButton) view.findViewById(R.id.assignment_bt_close)).setOnClickListener(new View.OnClickListener() {
+        (view.findViewById(R.id.assignment_bt_close)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
@@ -95,16 +112,22 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     }
 
     private void casting(View view) {
-        app_bar_layout = (AppBarLayout) view.findViewById(R.id.app_bar_layout);
-        lyt_profile = (LinearLayout) view.findViewById(R.id.lyt_profile);
+        app_bar_layout = view.findViewById(R.id.app_bar_layout);
+        lyt_profile = view.findViewById(R.id.lyt_profile);
         subjectTextView = view.findViewById(R.id.assignment_subject);
         createDateTextView = view.findViewById(R.id.assignment_createdDate);
         deadlineTextView = view.findViewById(R.id.assignment_deadline);
         homeWorkTextView = view.findViewById(R.id.assignment_homeWorkWebView);
         homeWorkLinearLayout = view.findViewById(R.id.assignment_homwWork_lyl);
         homeWorkLinearLayoutDown = view.findViewById(R.id.assignment_homwWork_lyl_down);
+        homeWorkFileLinearLayout = view.findViewById(R.id.assignment_homwWork_file_lyl);
         ((View) view.findViewById(R.id.lyt_spacer)).setMinimumHeight(Tools.getScreenHeight() / 2);
         homeWorkDownload = view.findViewById(R.id.assignment_download);
+
+        //todo for file download recycler view
+        recyclerView = view.findViewById(R.id.bottom_sheet_recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(),GRID_SPAN));
     }
 
     private void setHomeWorkInVisibilty(){
@@ -125,13 +148,9 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         createDateTextView.setText(cache.CreateDate);
         deadlineTextView.setText(cache.Deadline);
 
-        String test = "<table>\n" + " <caption>A complex table</caption>\n" + " <thead>\n" + "  <tr>\n" + "   <th colspan=\"3\">Invoice #123456789</th>\n" + "   <th>14 January 2025\n" + "  </tr>\n" + "  <tr>\n" + "   <td colspan=\"2\">\n" + "    <strong>Pay to:</strong><br>\n" + "    Acme Billing Co.<br>\n" + "    123 Main St.<br>\n" + "    Cityville, NA 12345\n" + "   </td>\n" + "   <td colspan=\"2\">\n" + "    <strong>Customer:</strong><br>\n" + "    John Smith<br>\n" + "    321 Willow Way<br>\n" + "    Southeast Northwestershire, MA 54321\n" + "   </td>\n" + "  </tr>\n" + " </thead>\n" + " <tbody>\n" + "  <tr>\n" + "   <th>Name / Description</th>\n" + "   <th>Qty.</th>\n" + "   <th>@</th>\n" + "   <th>Cost</th>\n" + "  </tr>\n" + "  <tr>\n" + "   <td>Paperclips</td>\n" + "   <td>1000</td>\n" + "   <td>0.01</td>\n" + "   <td>10.00</td>\n" + "  </tr>\n" + "  <tr>\n" + "   <td>Staples (box)</td>\n" + "   <td>100</td>\n" + "   <td>1.00</td>\n" + "   <td>100.00</td>\n" + "  </tr>\n" + " </tbody>\n" + " <tfoot>\n" + "  <tr>\n" + "   <th colspan=\"3\">Subtotal</th>\n" + "   <td> 110.00</td>\n" + "  </tr>\n" + "  <tr>\n" + "   <th colspan=\"2\">Tax</th>\n" + "   <td> 8% </td>\n" + "   <td>8.80</td>\n" + "  </tr>\n" + "  <tr>\n" + "   <th colspan=\"3\">Grand Total</th>\n" + "   <td>$ 118.80</td>\n" + "  </tr>\n" + " </tfoot>\n" + "</table>";
+        String homeWork = cache.Homework;
 
-        String homeWork = new String(cache.Homework);
-
-        //Toast.makeText(getContext(), homeWork, Toast.LENGTH_LONG).show();
-
-        if(!homeWork.equals("") || !homeWork.equals(null)){
+        if(!homeWork.equals("") || !homeWork.equals(null) || !homeWork.equals("<p><br></p>")){
             setHomeWorkVisibilty();
 
             String[] strings = new String[]{"\b","\t","\n","\f","\r"};//,"\\\'","\\\"", "\\\\"};
@@ -153,18 +172,34 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 
             boolean isHTML = homeWork.matches(".*\\<[^>]+>.*");
            Log.d("TAG_HTML",cache.Homework+"\t"+isHTML);
+        }else {
+            setHomeWorkInVisibilty();
         }
 
         String downloadLink = cache.ImageUrl;
         Log.d("TAG_downloadLink",downloadLink);
         if(downloadLink.equals("")){
             homeWorkDownload.setVisibility(View.GONE);
+            homeWorkFileLinearLayout.setVisibility(View.GONE);
         }else {
             //todo download file
-            homeWorkDownload.setOnClickListener(new DownloadFile());
+            //showMessage(downloadLink);
+            homeWorkDownload.setVisibility(View.GONE);
+            downloadLink = ImageSplitter.convertSplit(downloadLink,",~","~");
+            String[] s = ImageSplitter.imageSplit(downloadLink, "~");
+            List<String> a = new ArrayList<>();
+            showMessage(String.valueOf(s.length));
+            for(int i=0; i<s.length; i++){
+                if(i < s.length-1) {
+                    a.add(s[i + 1]);
+                    showMessage(a.get(i));
+                }
+            }
+
+            ShowImage showImage = new ShowImage(a);
+            showImage.showInView();
         }
     }
-
 
     @Override
     public void onStart() {
@@ -186,15 +221,111 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 
     private int getActionBarSize() {
         final TypedArray styledAttributes = getContext().getTheme().obtainStyledAttributes(new int[]{android.R.attr.actionBarSize});
-        int size = (int) styledAttributes.getDimension(0, 0);
-        return size;
+        return (int) styledAttributes.getDimension(0, 0);
+    }
+
+    private class ShowImage{
+        private List<String> images;
+
+        ShowImage(List<String> images) {
+            this.images=images;
+        }
+
+        void showInView(){
+            RecyclerAdapter adapter = new RecyclerAdapter(getContext(),images.size()) {
+                ImageView homeworkImage;
+                View bck;
+                @Override
+                public ViewHolder onCreate(ViewGroup viewGroup, int position) {
+                    LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+                    View view = inflater.inflate(R.layout.bottom_recycler_list, null);
+                    return new ViewHolder(view);
+                }
+
+                @Override
+                public void inflateUIFields(View itemView) {
+                    homeworkImage=itemView.findViewById(R.id.bottom_sheet_recycler_view_image_view);
+                    bck = itemView.findViewById(R.id.bck);
+
+                    WindowManager wm = (WindowManager) itemView.getContext().getSystemService(Context.WINDOW_SERVICE);
+                    Display display = wm.getDefaultDisplay();
+                    Point size = new Point();
+                    display.getSize(size);
+                    int height = (size.y)/4;
+                    int width = (size.x)/3;
+
+                    ViewGroup.LayoutParams params = homeworkImage.getLayoutParams();
+                    params.height = width;
+                    params.width = width;
+
+                    homeworkImage.setLayoutParams(params);
+                }
+
+                @Override
+                public void onBind(ViewHolder viewHolder, int position) {
+                    String url = new URL().url;
+                    String fileName = cache.SubjectNameEng +"_"+cache.CreateDate+"_"+position;
+
+                    ShowInGlide glide = new ShowInGlide(getActivity());
+                    glide.loadURL( url + images.get(position));
+                    if (images.get(position).matches(".*\\.(pdf)")) {     // https://www.mkyong.com/regular-expressions/how-to-validate-image-file-extension-with-regular-expression/
+                        glide.loadFailed(R.drawable.ic_pdf);
+                        bck.setOnClickListener(new DownloadFile(url + images.get(position), fileName+".pdf",  FileDownloader.PDF));
+                    } else {
+                        glide.loadFailed(R.drawable.ic_pdf);
+                        if(images.get(position).matches(".*\\.(png|PNG)"))
+                            bck.setOnClickListener(new DownloadFile(url + images.get(position), fileName+".png",  FileDownloader.Photo));
+                        else if(images.get(position).matches(".*\\.(jpg|JPG)"))
+                            bck.setOnClickListener(new DownloadFile(url + images.get(position), fileName+".jpg",  FileDownloader.Photo));
+                        else if(images.get(position).matches(".*\\.(jpeg|JPEG)"))
+                            bck.setOnClickListener(new DownloadFile(url + images.get(position), fileName+".jpeg",  FileDownloader.Photo));
+
+                       // ".*\\.(png|jpg|gif|bmp)"
+                    }
+                    glide.show(homeworkImage);
+
+                    showMessage(new URL().url + images.get(position));
+                }
+            };
+
+            recyclerView.setAdapter(adapter);
+        }
     }
 
     private class DownloadFile implements View.OnClickListener {
+        String imgUrl;
+        String fileName;
+        String formate;
+        public DownloadFile(String imgUrl, String fileName, String formate) {
+            this.imgUrl = imgUrl;
+            this.fileName = fileName;
+            this.formate = formate;
+        }
 
         @Override
         public void onClick(View v) {
+            if(new NetworkConnection(getContext()).isConnectionSuccess()) {
+                //String url= "http://appeteria.com/video.mp4";
+                //String fileName = "video.mp4";
+                String title = "Download";
+                String description = "downloading " + formate + " ...";
+                FileDownloader downloader = new FileDownloader(getActivity());
+                downloader.downloadFile(imgUrl, fileName, formate, title, description);
 
+                downloader.registerReciver();
+                showToast(fileName+" download started.");
+            }else{
+                showMessage("Please check your network connection.");
+            }
         }
+    }
+
+    private void showMessage(String message){
+       // Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();
+        Log.d("ImagesURL", message);
+    }
+
+    private void showToast(String message){
+        Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();
     }
 }

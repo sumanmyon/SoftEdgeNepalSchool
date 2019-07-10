@@ -12,25 +12,25 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int shouldScaleToFill = 0x7f0401a1;
+        public static final int shouldScaleToFill = 0x7f0401a7;
     }
     public static final class color {
         private color() {}
 
-        public static final int viewfinder_border = 0x7f0601da;
-        public static final int viewfinder_laser = 0x7f0601db;
-        public static final int viewfinder_mask = 0x7f0601dc;
+        public static final int viewfinder_border = 0x7f0601e6;
+        public static final int viewfinder_laser = 0x7f0601e7;
+        public static final int viewfinder_mask = 0x7f0601e8;
     }
     public static final class integer {
         private integer() {}
 
-        public static final int viewfinder_border_length = 0x7f0b000f;
-        public static final int viewfinder_border_width = 0x7f0b0010;
+        public static final int viewfinder_border_length = 0x7f0b0010;
+        public static final int viewfinder_border_width = 0x7f0b0011;
     }
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] BarcodeScannerView = { 0x7f0401a1 };
+        public static final int[] BarcodeScannerView = { 0x7f0401a7 };
         public static final int BarcodeScannerView_shouldScaleToFill = 0;
     }
 }

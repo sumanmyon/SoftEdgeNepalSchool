@@ -270,14 +270,45 @@
                     android:layout_width="@dimen/dp42"
                     android:layout_height="0dp" />
 
-                <!--<View-->
-                    <!--android:layout_width="@dimen/spacing_large"-->
-                    <!--android:layout_height="0dp" />-->
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/grey_10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/assignment_homwWork_file_lyl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_xmedium"
+                android:layout_marginTop="@dimen/spacing_xmedium"
+                android:orientation="horizontal">
+                <!--android:visibility="gone">-->
+
+                <ImageButton
+                    android:layout_width="@dimen/dp42"
+                    android:layout_height="@dimen/dp42"
+                    android:background="@android:color/transparent"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/ic_assignment" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/bottom_sheet_recycler_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+                        <!--app:layoutManager="android.support.v7.widget.GridLayoutManager"-->
+                        <!--app:spanCount="2"-->
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
 
             </LinearLayout>
 
