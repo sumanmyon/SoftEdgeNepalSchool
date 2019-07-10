@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomImage.ShowInGlide;
+import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
