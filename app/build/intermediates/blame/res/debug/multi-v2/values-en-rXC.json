@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\66d3646394d2019cc265dc9caafdc6bd\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\a4e5421f631a8043bc5f844ef002a946\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\af3668594c4526ba46fa46355a9ef17b\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\08550008bcfdfe298e7564a2383e6c16\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

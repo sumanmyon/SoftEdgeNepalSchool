@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.keyrunHORNET:date_picker_converter:2.2.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/822e9f575471f2e9defc3f9c309698ff/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/822e9f575471f2e9defc3f9c309698ff/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76f0af91d96415a8fea066179a4a14dd/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76f0af91d96415a8fea066179a4a14dd/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

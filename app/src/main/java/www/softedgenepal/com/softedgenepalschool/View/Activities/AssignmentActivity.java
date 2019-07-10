@@ -28,6 +28,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderDate;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
@@ -61,7 +62,9 @@ public class AssignmentActivity extends AppCompatActivity implements AssignmentC
         //get Student Id :: registrationNo
 
         //getToday CalenderDate
-        today = DateTime.getTodayDate();
+        String[] todaySplit = DateTime.getTodayDate().split("/");
+
+        today = DateTime.getTodayDate();//String.valueOf(DateTime.convertToNepali(todaySplit));
 
         //params to fetch url
         params = new HashMap<>();
