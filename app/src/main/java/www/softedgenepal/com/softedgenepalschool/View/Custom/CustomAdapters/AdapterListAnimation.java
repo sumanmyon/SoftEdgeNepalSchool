@@ -123,6 +123,11 @@ public class AdapterListAnimation extends RecyclerView.Adapter<RecyclerView.View
     }
 
     @Override
+    public int getItemCount() {
+        return items.size();
+    }
+
+    @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -132,11 +137,6 @@ public class AdapterListAnimation extends RecyclerView.Adapter<RecyclerView.View
             }
         });
         super.onAttachedToRecyclerView(recyclerView);
-    }
-
-    @Override
-    public int getItemCount() {
-        return items.size();
     }
 
     private int lastPosition = -1;

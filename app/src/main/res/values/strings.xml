@@ -58,4 +58,8 @@
     <!-- TODO: For Calender -->
     <string name="less_than">〈</string>
     <string name="greater_than">〉</string>
+
+    <!-- TODO: Mapbox -->
+    <string name="mapbox_access_token">pk.eyJ1Ijoic29mdGVkZ2VuZXBhbCIsImEiOiJjanh4Mmc5cWQwMzFtM3BxbjAwdTE1NXUyIn0.j4-OvyW9hUFSCBMYPuVNng</string>
+
 </resources>

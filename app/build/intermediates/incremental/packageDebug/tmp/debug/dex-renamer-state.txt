@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#Fri Jul 05 13:07:40 NPT 2019
-=======
-#Wed Jul 10 14:13:15 NPT 2019
->>>>>>> 21b8e06fe9e4810404de9fac0b4359e9caf5cf04
+#Thu Jul 11 13:24:48 NPT 2019
 base.0=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

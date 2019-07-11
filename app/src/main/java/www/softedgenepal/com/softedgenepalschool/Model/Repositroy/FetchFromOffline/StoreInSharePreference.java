@@ -13,6 +13,7 @@ public class StoreInSharePreference {
     private String stringName;
     public String Calender = "calender";
     public String Assignment = "assignment";
+    public String BusRoute = "busroute";
 
     public StoreInSharePreference(Context context) {
         this.context = context;
@@ -25,6 +26,11 @@ public class StoreInSharePreference {
         }
         if(type.equals(Assignment)){
             MY_PREFS_NAME ="Assignment";
+            stringName = Assignment;
+        }
+
+        if(type.equals(BusRoute)){
+            MY_PREFS_NAME ="BusRoute";
             stringName = Assignment;
         }
 

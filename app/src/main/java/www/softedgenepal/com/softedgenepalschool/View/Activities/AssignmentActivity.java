@@ -103,7 +103,7 @@ public class AssignmentActivity extends AppCompatActivity implements AssignmentC
         loadTextView.setVisibility(View.INVISIBLE);
     }
 
-    @Override
+
     public void setData(List<AssignmentCache> assignmentCacheList) {
         setFieldInvisible();
 
@@ -112,15 +112,15 @@ public class AssignmentActivity extends AppCompatActivity implements AssignmentC
 //        recyclerView.setAdapter(adapter);
 
         //todo show in detail view
-        adapter.setOnItemClickListener(new AssignmentAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, AssignmentCache cache, int position) {
-                BottomSheetFragment fragment = new BottomSheetFragment();
-                //some thing here
-                fragment.setAssignment(cache);
-                fragment.show(getSupportFragmentManager(), fragment.getTag());
-            }
-        });
+//        adapter.setOnItemClickListener(new AssignmentAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, AssignmentCache cache, int position) {
+//                BottomSheetFragment fragment = new BottomSheetFragment();
+//                //some thing here
+//                fragment.setAssignment(cache);
+//                fragment.show(getSupportFragmentManager(), fragment.getTag());
+//            }
+//        });
     }
 
     @Override
@@ -198,12 +198,8 @@ public class AssignmentActivity extends AppCompatActivity implements AssignmentC
                     }
                 }
             }
-
-
-            //
         }catch (Exception e){
             setMessage(e.getMessage());
-            //
         }
     }
 

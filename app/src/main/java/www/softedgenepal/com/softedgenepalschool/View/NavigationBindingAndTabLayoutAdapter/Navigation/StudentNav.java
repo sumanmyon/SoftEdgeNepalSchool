@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
@@ -46,7 +47,7 @@ public class StudentNav {
                 redirectToActivity(AssignmentActivity.class);
                 break;
             case R.id.busRoute:
-                showMessage("Coming Soon");
+                redirectToActivity(BusRouteActivity.class);
                 break;
             case R.id.liveBusTracking:
                 showMessage("Coming Soon");
