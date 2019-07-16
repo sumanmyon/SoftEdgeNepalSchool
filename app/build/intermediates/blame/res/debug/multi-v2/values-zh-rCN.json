@@ -4,6 +4,23 @@
             "outputFile": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\56dad3d4b2e7384043ea2d2253d8b9b4\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,136,236,305,373,442,517,604,709,790,883,968,1082,1142",
+                        "endColumns": "80,99,68,67,68,74,86,104,80,92,84,113,59,64",
+                        "endOffsets": "131,231,300,368,437,512,599,704,785,878,963,1077,1137,1202"
+                    },
+                    "to": {
+                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60,61",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5070,5151,5251,5320,5388,5457,5532,5619,5724,5805,5898,5983,6097,6157",
+                        "endColumns": "80,99,68,67,68,74,86,104,80,92,84,113,59,64",
+                        "endOffsets": "5146,5246,5315,5383,5452,5527,5614,5719,5800,5893,5978,6092,6152,6217"
+                    }
+                },
+                {
                     "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\d53a8c069dd987e112002d5d7104b535\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -52,23 +69,6 @@
                         "startOffsets": "4969",
                         "endColumns": "100",
                         "endOffsets": "5065"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\36745299f0bf813874d8f6396f9df004\\res\\values-zh-rCN\\values-zh-rCN.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,136,236,305,373,442,517,604,709,790,883,968,1082,1142",
-                        "endColumns": "80,99,68,67,68,74,86,104,80,92,84,113,59,64",
-                        "endOffsets": "131,231,300,368,437,512,599,704,785,878,963,1077,1137,1202"
-                    },
-                    "to": {
-                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60,61",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5070,5151,5251,5320,5388,5457,5532,5619,5724,5805,5898,5983,6097,6157",
-                        "endColumns": "80,99,68,67,68,74,86,104,80,92,84,113,59,64",
-                        "endOffsets": "5146,5246,5315,5383,5452,5527,5614,5719,5800,5893,5978,6092,6152,6217"
                     }
                 },
                 {

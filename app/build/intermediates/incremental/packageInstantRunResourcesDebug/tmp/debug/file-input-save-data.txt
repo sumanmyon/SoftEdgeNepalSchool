@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jul 05 16:35:31 NPT 2019
+#Tue Jul 16 13:45:57 NPT 2019
 2.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 5.set=ASSET
 0.path=StudentGuardianWithSibling.json

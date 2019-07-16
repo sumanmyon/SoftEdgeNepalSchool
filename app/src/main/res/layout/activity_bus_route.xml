@@ -6,27 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".View.Activities.BusRouteActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        style="@style/MyToolbar2"
-        app:title="@string/BusRoute"
-        app:titleTextColor="@color/white"
-        app:titleTextAppearance="@style/ToolbarTextAppearance"
-        android:id="@+id/busRoute_toolbar" />
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--style="@style/MyToolbar2"-->
+        <!--app:title="@string/BusRoute"-->
+        <!--app:titleTextColor="@color/white"-->
+        <!--app:titleTextAppearance="@style/ToolbarTextAppearance"-->
+        <!--android:id="@+id/busRoute_toolbar" />-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/busRoute_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:layout_below="@+id/busRoute_toolbar">
+        android:scrollbars="none">
+        <!--android:layout_below="@+id/busRoute_toolbar">-->
     </android.support.v7.widget.RecyclerView>
     <TextView
         android:id="@+id/busRoute_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loading..."
+        android:text="Loading please wait..."
         android:gravity="center"
         android:layout_centerInParent="true"
         android:textColor="@color/colorPrimary"

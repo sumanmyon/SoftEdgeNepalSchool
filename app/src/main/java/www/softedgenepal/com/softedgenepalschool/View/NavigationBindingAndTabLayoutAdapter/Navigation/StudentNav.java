@@ -46,11 +46,10 @@ public class StudentNav {
             case R.id.assignment:
                 redirectToActivity(AssignmentActivity.class);
                 break;
-            case R.id.busRoute:
-                redirectToActivity(BusRouteActivity.class);
-                break;
+//            case R.id.busRoute:
+//                break;
             case R.id.liveBusTracking:
-                showMessage("Coming Soon");
+                redirectToActivity(BusRouteActivity.class);
                 break;
             case R.id.studentProfile:
                 showMessage("Coming Soon");

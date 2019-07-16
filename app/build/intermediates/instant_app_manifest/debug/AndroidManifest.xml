@@ -34,8 +34,16 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -48,18 +56,9 @@
     <uses-feature
         android:name="android.hardware.screen.landscape"
         android:required="false" />
-    <uses-feature
-        android:name="android.hardware.wifi"
-        android:required="false" />
 
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name="com.hornet.dateconverter.App"
@@ -73,6 +72,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar" >
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ShowInMapActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity" />
@@ -94,16 +94,12 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <service
-            android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.MyFirebaseMessagingService"
-            android:exported="false" >
+        <service android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.MyFirebaseMessagingService" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service
-            android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.GetDeviceTokenService"
-            android:exported="false" >
+        <service android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.GetDeviceTokenService" >
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
@@ -204,13 +200,14 @@
             android:exported="false"
             android:initOrder="100" />
 
-        <service
-            android:name="com.mapbox.android.telemetry.crash.CrashReporterJobIntentService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
         <activity
             android:name="com.bugfender.sdk.internal.ui.FeedbackActivity"
             android:windowSoftInputMode="adjustResize" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="www.softedgenepal.com.softedgenepalschool.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

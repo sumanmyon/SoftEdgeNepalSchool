@@ -1,6 +1,7 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -97,81 +98,94 @@ public class BusRouteActivity extends AppCompatActivity implements MapboxContrac
     public void setJsonData(JSONObject response) {
         setFieldInvisible();
 
-        setLog("BusRouteActivity", response.toString());
+        if(response != null) {
+            //setLog("BusRouteActivity", response.toString());
+            List<BusRouteCache> busRouteCaches = new ArrayList<>();
+            try {
+                if (response.getString("Status").equals("true")) {
+                    if (response.getString("Response").equals("Success")) {
+                        JSONArray dataArray = response.getJSONArray("Data");
+                        if (!dataArray.toString().equals("[]")) {
+                            if (dataArray.length() >= 0) {
+                                for (int i = 0; i < dataArray.length(); i++) {
+                                    JSONObject dataObject = dataArray.getJSONObject(i);
+                                    String SystemCode = dataObject.getString("SystemCode");
+                                    String StaffCode = dataObject.getString("StaffCode");
+                                    String FullName = dataObject.getString("FullName");
+                                    String RouteName = dataObject.getString("RouteName");
 
-        List<BusRouteCache> busRouteCaches = new ArrayList<>();
-        try {
-            if (response.getString("Status").equals("true")) {
-                if (response.getString("Response").equals("Success")) {
-                    JSONArray dataArray = response.getJSONArray("Data");
-                    if (!dataArray.toString().equals("[]")) {
-                        if (dataArray.length() >= 0) {
-                            for (int i = 0; i < dataArray.length(); i++) {
-                                JSONObject dataObject = dataArray.getJSONObject(i);
-                                String SystemCode = dataObject.getString("SystemCode");
-                                String StaffCode = dataObject.getString("StaffCode");
-                                String FullName = dataObject.getString("FullName");
-                                String RouteName = dataObject.getString("RouteName");
-
-                                JSONArray routeDetailsArray = dataObject.getJSONArray("RouteDetails");
-                                List<BusRouteCache.RouteDetails> routeDetailsList = new ArrayList<>();
-                                for (int j = 0; j < routeDetailsArray.length(); j++) {
-                                    if (!routeDetailsArray.toString().equals("[]")) {
-                                        JSONObject routeDetailsObject = routeDetailsArray.getJSONObject(j);
-                                        String StationName = routeDetailsObject.getString("StationName");
-                                        String Latitude = routeDetailsObject.getString("Latitude");
-                                        String Longitude = routeDetailsObject.getString("Longitude");
-                                        String Order = routeDetailsObject.getString("Order");
-                                        routeDetailsList.add(new BusRouteCache.RouteDetails(StationName, Latitude, Longitude, Order));
+                                    JSONArray routeDetailsArray = dataObject.getJSONArray("RouteDetails");
+                                    List<BusRouteCache.RouteDetails> routeDetailsList = new ArrayList<>();
+                                    for (int j = 0; j < routeDetailsArray.length(); j++) {
+                                        if (!routeDetailsArray.toString().equals("[]")) {
+                                            JSONObject routeDetailsObject = routeDetailsArray.getJSONObject(j);
+                                            String StationName = routeDetailsObject.getString("StationName");
+                                            String Latitude = routeDetailsObject.getString("Latitude");
+                                            String Longitude = routeDetailsObject.getString("Longitude");
+                                            String Order = routeDetailsObject.getString("Order");
+                                            routeDetailsList.add(new BusRouteCache.RouteDetails(StationName, Latitude, Longitude, Order));
+                                        }
                                     }
-                                }
 
-                                busRouteCaches.add(new BusRouteCache(SystemCode, StaffCode, FullName, RouteName, routeDetailsList));
-                           }
+                                    busRouteCaches.add(new BusRouteCache(SystemCode, StaffCode, FullName, RouteName, routeDetailsList));
+
+                                }
+                            }
                         }
                     }
                 }
-            }
 
-            //todo show in view
-            showInView(busRouteCaches);
-        }catch (Exception e){
-            setLog("BusRouteActivity",e.getMessage());
+                //todo show in view
+                showInView(busRouteCaches);
+            } catch (Exception e) {
+                setLog("BusRouteActivity", e.getMessage());
+            }
+        }else {
+           loadTextView.setVisibility(View.VISIBLE);
+           loadTextView.setText("Please come online to view live bus tracking.");
         }
     }
 
     private void showInView(final List<BusRouteCache> busRouteCachesList){
         saveBusRouteCachesList = busRouteCachesList;
         setLog("BusRouteActivity", saveBusRouteCachesList.size()+"");
-        final RecyclerAdapter adapter = new RecyclerAdapter(this, saveBusRouteCachesList.size()) {
-            TextView routeNameTextView;
-            @Override
-            public ViewHolder onCreate(ViewGroup viewGroup, int position) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.bus_route_recyclerview_list, viewGroup,false);
-                return new ViewHolder(view);
-            }
+        redirect(saveBusRouteCachesList.get(0), ShowInMapActivity.class);
+//        final RecyclerAdapter adapter = new RecyclerAdapter(this, saveBusRouteCachesList.size()) {
+//            TextView routeNameTextView;
+//            @Override
+//            public ViewHolder onCreate(ViewGroup viewGroup, int position) {
+//                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.bus_route_recyclerview_list, viewGroup,false);
+//                return new ViewHolder(view);
+//            }
+//
+//            @Override
+//            public void inflateUIFields(View itemView) {
+//                routeNameTextView = itemView.findViewById(R.id.busRoute_RouteName);
+//            }
+//
+//            @Override
+//            public void onBind(ViewHolder viewHolder, int position) {
+//                final BusRouteCache busRouteCache = saveBusRouteCachesList.get(position);
+//                routeNameTextView.setText(busRouteCache.RouteName);
+//
+//                viewHolder.itemView.findViewById(R.id.bck).setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        setLog("BusRouteActivity", busRouteCache.RouteDetailsList.size()+"");
+//                        setMessage("Total Route points "+busRouteCache.RouteDetailsList.size());
+//                        redirect(busRouteCache, ShowInMapActivity.class);
+//                    }
+//                });
+//            }
+//        };
+//
+//        recyclerView.setAdapter(adapter);
+    }
 
-            @Override
-            public void inflateUIFields(View itemView) {
-                routeNameTextView = itemView.findViewById(R.id.busRoute_RouteName);
-            }
-
-            @Override
-            public void onBind(ViewHolder viewHolder, int position) {
-                final BusRouteCache busRouteCache = saveBusRouteCachesList.get(position);
-                routeNameTextView.setText(busRouteCache.RouteName);
-
-                viewHolder.itemView.findViewById(R.id.bck).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        setLog("BusRouteActivity", busRouteCache.RouteDetailsList.size()+"");
-                        setMessage("Total Route points "+busRouteCache.RouteDetailsList.size());
-                    }
-                });
-            }
-        };
-
-        recyclerView.setAdapter(adapter);
+    private void redirect(BusRouteCache busRouteCache, Class<?> classActivity) {
+        Intent intent = new Intent(this, classActivity);
+        intent.putExtra("GetBusRoutes", busRouteCache);
+        startActivity(intent);
     }
 
     List<BusRouteCache> saveBusRouteCachesList;

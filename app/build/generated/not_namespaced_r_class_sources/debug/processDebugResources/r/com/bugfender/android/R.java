@@ -12,15 +12,15 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int feedback_appbar_action_button = 0x7f0600b6;
-        public static final int feedback_appbar_background = 0x7f0600b7;
-        public static final int feedback_appbar_close_button = 0x7f0600b8;
-        public static final int feedback_appbar_title = 0x7f0600b9;
-        public static final int feedback_background = 0x7f0600ba;
-        public static final int feedback_input_background = 0x7f0600bb;
-        public static final int feedback_input_hint = 0x7f0600bc;
-        public static final int feedback_input_text = 0x7f0600bd;
-        public static final int feedback_text = 0x7f0600be;
+        public static final int feedback_appbar_action_button = 0x7f0600b8;
+        public static final int feedback_appbar_background = 0x7f0600b9;
+        public static final int feedback_appbar_close_button = 0x7f0600ba;
+        public static final int feedback_appbar_title = 0x7f0600bb;
+        public static final int feedback_background = 0x7f0600bc;
+        public static final int feedback_input_background = 0x7f0600bd;
+        public static final int feedback_input_hint = 0x7f0600be;
+        public static final int feedback_input_text = 0x7f0600bf;
+        public static final int feedback_text = 0x7f0600c0;
     }
     public static final class drawable {
         private drawable() {}
@@ -32,11 +32,11 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int appbar_rl = 0x7f0a0028;
-        public static final int bugfender_tv = 0x7f0a004b;
-        public static final int close_iv = 0x7f0a0065;
-        public static final int feedback_message_et = 0x7f0a0092;
-        public static final int feedback_title_et = 0x7f0a0093;
+        public static final int appbar_rl = 0x7f0a0029;
+        public static final int bugfender_tv = 0x7f0a004c;
+        public static final int close_iv = 0x7f0a0064;
+        public static final int feedback_message_et = 0x7f0a0091;
+        public static final int feedback_title_et = 0x7f0a0092;
         public static final int message_tv = 0x7f0a00f8;
         public static final int positive_action_tv = 0x7f0a0116;
         public static final int root_vg = 0x7f0a012e;
@@ -45,7 +45,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int bf_feedback_screen = 0x7f0d002f;
+        public static final int bf_feedback_screen = 0x7f0d0030;
     }
     public static final class string {
         private string() {}

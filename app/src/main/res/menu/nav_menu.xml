@@ -62,9 +62,9 @@
         <item
             android:title="@string/StudentSuggestion"
             android:id="@+id/studentSuggestion"/>
-        <item
-            android:title="@string/BusRoute"
-            android:id="@+id/busRoute"/>
+        <!--<item-->
+            <!--android:title="@string/BusRoute"-->
+            <!--android:id="@+id/busRoute"/>-->
         <item
             android:title="@string/LiveBusTracking"
             android:id="@+id/liveBusTracking"/>

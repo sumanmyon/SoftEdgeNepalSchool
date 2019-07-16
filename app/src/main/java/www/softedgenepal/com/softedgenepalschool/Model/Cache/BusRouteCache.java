@@ -1,8 +1,9 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Cache;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class BusRouteCache {
+public class BusRouteCache implements Serializable {
     public String SystemCode;
     public String StaffCode;
     public String FullName;
@@ -10,7 +11,7 @@ public class BusRouteCache {
     public List<RouteDetails> RouteDetailsList;
 
 
-    public static class RouteDetails{
+    public static class RouteDetails implements Serializable{
         public String StationName;
         public String Latitude;
         public String Longitude;
