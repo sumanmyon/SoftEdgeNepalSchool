@@ -34,38 +34,44 @@ public class FileDownloader {
 
     private File setfileName(String fileName, String fileType){
         File main=new File(String.valueOf(Environment.getExternalStorageDirectory().getAbsolutePath()));
+        setLog(main.getAbsolutePath());
+
+        String appDirectory = null;
+        File file = null;
+
         File[]t=main.getParentFile().listFiles();
-
-        String appDirectory;
-        for(File dir:t){
-            setLog(dir.getAbsolutePath());
+        if(t==null){
+            appDirectory = String.valueOf(main.getAbsoluteFile());
+        }else {
+            for (File dir : t) {
+                setLog(dir.getAbsolutePath());
+                appDirectory = dir.getAbsolutePath();
+            }
         }
+        //todo .........SoftSchool/Videos
         //todo create folder in storage
-        appDirectory = t[0].getAbsolutePath();
-
-        //.........SoftSchool/Videos
-        File folder = new File(appDirectory+"/"+FolderName);
-        if(!folder.exists()){
-            try{
+        File folder = new File(appDirectory + "/" + FolderName);
+        if (!folder.exists()) {
+            try {
                 setLog(folder.toString());
                 if (!folder.mkdirs()) {
                     Log.d("FileDownlaod", "failed to create directory");
-                }else {
+                } else {
                     Log.d("FileDownlaod", "success to create directory");
-                    File subfolder = new File(appDirectory+"/"+FolderName+"/"+fileType);
+                    File subfolder = new File(appDirectory + "/" + FolderName + "/" + fileType);
                     if (!subfolder.mkdirs()) {
                         Log.d("FileDownlaod", "failed to create sub directory");
-                    }else {
+                    } else {
                         Log.d("FileDownlaod", "success to create sub directory");
                     }
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        storedFolder = appDirectory+"/"+FolderName;
+        storedFolder = appDirectory + "/" + FolderName;
         storedFileName = fileName;
-        File file = new File(appDirectory+"/"+FolderName+"/"+fileType, fileName);
+        file = new File(appDirectory + "/" + FolderName + "/" + fileType, fileName);
         setLog(file.toString());
 
         return file;

@@ -13,7 +13,7 @@ public interface AssignmentContractor {
     interface View{
         void setMessage(String message);
         Context getCalContext();
-        void setData(List<AssignmentCache> assignmentCacheList);
+        //void setData(List<AssignmentCache> assignmentCacheList);
         void setJsonData(JSONObject response);
     }
 

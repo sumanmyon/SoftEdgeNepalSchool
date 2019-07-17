@@ -7,9 +7,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity;
-
 public class ExampleWebView {
 
     private void set(){
@@ -30,7 +27,7 @@ public class ExampleWebView {
         }
         //webView.loadData(compile, "text/html", null);
 
-       // webView.setWebViewClient(new AssignmentActivity.MyBrowser());
+       // webView.setWebViewClient(new HomeWorkActivity.MyBrowser());
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setAppCacheEnabled(true);

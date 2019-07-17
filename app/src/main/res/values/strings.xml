@@ -9,7 +9,6 @@
     -->
     <!-- For all (School, Teacher and Student) -->
     <string name="Event">Event</string>
-    <string name="Blog">Blog</string>
     <string name="Gallery">Gallery</string>
     <string name="Videos">Videos</string>
     <string name="About">About</string>
@@ -33,9 +32,8 @@
     <string name="ReportCard">Report Card</string>
     <string name="StudentAccount">Account</string>
     <string name="StudentLeaveApplication">Leave Application</string>
-    <string name="Assignment">Assignment</string>
     <string name="StudentSuggestion">Suggestion</string>
-    <string name="BusRoute">Bus Route</string>
+    <!--<string name="BusRoute">Bus Route</string>    &lt;!&ndash; for particular role &ndash;&gt;-->
     <string name="LiveBusTracking">Live Bus Tracking</string>
     <string name="StudentProfile">Profile</string>
 
@@ -58,4 +56,8 @@
     <!-- TODO: For Calender -->
     <string name="less_than">〈</string>
     <string name="greater_than">〉</string>
+
+    <!-- TODO: Mapbox -->
+    <string name="mapbox_access_token">pk.eyJ1Ijoic29mdGVkZ2VuZXBhbCIsImEiOiJjanh4Mmc5cWQwMzFtM3BxbjAwdTE1NXUyIn0.j4-OvyW9hUFSCBMYPuVNng</string>
+    <string name="RouteName">Route: </string>
 </resources>

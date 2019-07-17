@@ -1,8 +1,5 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -13,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
@@ -23,7 +19,6 @@ import android.widget.ImageView;
 //import com.google.firebase.iid.InstanceIdResult;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.FileDownloader;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.ViewPagerAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
@@ -31,7 +26,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Home;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.NavigationListener;
-import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.TabLayoutAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.TabLayoutAdapter;
 
 public class MainActivity extends AppCompatActivity {
     //For Navigation

@@ -1,15 +1,11 @@
 package www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters;
 
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -17,22 +13,20 @@ import java.util.List;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderDate;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Tools;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ViewAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
 
 public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.ViewHolder> {
-    AssignmentActivity context;
+    HomeWorkActivity context;
     List<AssignmentCache> assignmentCacheList;
     int animationType;
     int size;
 
     private OnItemClickListener onItemClickListener;
 
-    public AssignmentAdapter(AssignmentActivity assignmentActivity, List<AssignmentCache> assignmentCacheList, int animationType) {
-        this.context = assignmentActivity;
+    public AssignmentAdapter(HomeWorkActivity homeWorkActivity, List<AssignmentCache> assignmentCacheList, int animationType) {
+        this.context = homeWorkActivity;
         this.assignmentCacheList = assignmentCacheList;
         this.animationType = animationType;
     }
@@ -99,7 +93,7 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.Vi
     protected class ViewHolder extends RecyclerView.ViewHolder {
         TextView assignmentSubjectName, assignmanetDate, assignmentHomework;
         View lyt_expand;
-        Button assignment_list_vertical_line;
+        View assignment_list_vertical_line;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

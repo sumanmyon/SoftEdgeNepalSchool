@@ -7,7 +7,6 @@
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="28" />
-
     <!-- support for all sizes -->
     <!-- <supports-screens -->
     <!-- android:smallScreens="true" -->
@@ -33,8 +32,17 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -46,9 +54,6 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.screen.landscape"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.wifi"
         android:required="false" />
 
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
@@ -65,22 +70,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar" >
-        <service
-            android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.MyFirebaseMessagingService"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service
-            android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.GetDeviceTokenService"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
-
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ShowInMapActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity" />
@@ -89,7 +82,7 @@
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -100,6 +93,17 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.MyFirebaseMessagingService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.GetDeviceTokenService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
 
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
@@ -189,6 +193,12 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="com.mapbox.android.telemetry.provider.MapboxTelemetryInitProvider"
+            android:authorities="www.softedgenepal.com.softedgenepalschool.mapboxtelemetryinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
 
         <activity
             android:name="com.bugfender.sdk.internal.ui.FeedbackActivity"

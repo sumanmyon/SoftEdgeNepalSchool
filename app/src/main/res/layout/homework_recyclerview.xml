@@ -46,11 +46,18 @@
                 android:layout_marginLeft="@dimen/dp42">
             </android.support.v7.widget.RecyclerView>
         </LinearLayout>
-    <Button
+
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/homeWork_recy_lyl2"
-        android:layout_gravity="start"
         android:layout_marginBottom="2dp"
         android:background="@color/grey_40" />
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_below="@+id/homeWork_recy_lyl2"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:layout_marginBottom="2dp"-->
+        <!--android:background="@color/grey_40" />-->
 </RelativeLayout>

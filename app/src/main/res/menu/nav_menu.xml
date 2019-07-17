@@ -56,15 +56,15 @@
         <item
             android:title="@string/StudentLeaveApplication"
             android:id="@+id/studentLeaveApplication"/>
-        <item
-            android:title="@string/Assignment"
-            android:id="@+id/assignment"/>
+        <!--<item-->
+            <!--android:title="@string/Assignment"-->
+            <!--android:id="@+id/assignment"/>-->
         <item
             android:title="@string/StudentSuggestion"
             android:id="@+id/studentSuggestion"/>
-        <item
-            android:title="@string/BusRoute"
-            android:id="@+id/busRoute"/>
+        <!--<item-->
+            <!--android:title="@string/BusRoute"-->
+            <!--android:id="@+id/busRoute"/>-->
         <item
             android:title="@string/LiveBusTracking"
             android:id="@+id/liveBusTracking"/>
@@ -80,9 +80,9 @@
         <item
             android:title="@string/Event"
             android:id="@+id/event"/>
-        <item
-            android:title="@string/Blog"
-            android:id="@+id/blog"/>
+        <!--<item-->
+            <!--android:title="@string/Blog"-->
+            <!--android:id="@+id/blog"/>-->
         <item
             android:title="@string/Gallery"
             android:id="@+id/gallery"/>

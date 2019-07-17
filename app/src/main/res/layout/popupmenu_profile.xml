@@ -14,14 +14,14 @@
         android:layout_marginBottom="4dp"
         android:src="@drawable/userprofile"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/colorPrimaryText"
+        app:civ_border_color="@color/white"
         android:id="@+id/popupmenu_ImageView"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Name: Suman Neupane"
-        android:textColor="@color/colorPrimaryText"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:padding="6dp"
         android:layout_marginLeft="6dp"
