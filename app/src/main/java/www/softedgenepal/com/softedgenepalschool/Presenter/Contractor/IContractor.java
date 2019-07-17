@@ -4,11 +4,9 @@ import android.content.Context;
 
 import org.json.JSONObject;
 
-import java.util.List;
+import java.util.Map;
 
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
-
-public interface MapboxContractor {
+public interface IContractor {
     interface View{
         void casting();
         Context getCalContext();
@@ -17,6 +15,7 @@ public interface MapboxContractor {
         void setLog(String topic, String body);
 
         void getJsonData();
+        Map<String, String> getParams();
         void setJsonData(JSONObject response);
     }
 
@@ -27,6 +26,7 @@ public interface MapboxContractor {
         Context getCalContext();
 
         void getJsonData();
+        Map<String, String> getParams();
         void setJsonData(JSONObject response);
     }
 

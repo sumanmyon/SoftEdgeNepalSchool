@@ -19,6 +19,4 @@
             android:title="@string/Logout"
             android:tint="@color/white"
             android:id="@+id/logout"/>
-
-
 </menu>

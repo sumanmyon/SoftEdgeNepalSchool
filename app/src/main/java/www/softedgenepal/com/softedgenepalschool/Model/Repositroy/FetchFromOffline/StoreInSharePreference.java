@@ -14,6 +14,7 @@ public class StoreInSharePreference {
     public String Calender = "calender";
     public String Assignment = "assignment";
     public String BusRoute = "busroute";
+    public String Routine = "routine";
 
     public StoreInSharePreference(Context context) {
         this.context = context;

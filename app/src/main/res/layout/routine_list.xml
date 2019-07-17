@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp">
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/routine_listSelect"
+                style="@style/RippleStyleBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_xsmall"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_xsmall">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            android:layout_marginLeft="@dimen/spacing_xsmall"
+                            android:layout_marginRight="@dimen/spacing_xsmall"
+                            android:background="@android:color/transparent"
+                            android:tint="@color/colorPrimary"
+                            app:srcCompat="@drawable/ic_subject" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/small"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/routine_listExamination"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:paddingTop="@dimen/spacing_small"
+                                android:textStyle="bold"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/grey_90" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Examination"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                                android:textColor="@color/grey_40" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyl_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/spacing_small">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal">
+                            <ImageButton
+                                android:layout_width="@dimen/dp42"
+                                android:layout_height="@dimen/dp42"
+                                android:layout_marginLeft="@dimen/spacing_xsmall"
+                                android:layout_marginRight="@dimen/spacing_xsmall"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/colorPrimary"
+                                app:srcCompat="@drawable/ic_date_range" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.1"
+                                android:layout_marginLeft="@dimen/small"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/routine_listStartDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="2019-06-15"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/grey_90" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Start Date"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                                    android:textColor="@color/grey_40" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.5"
+                            android:layout_marginLeft="@dimen/small"
+                            android:orientation="horizontal">
+                            <ImageButton
+                                android:visibility="invisible"
+                                android:layout_width="@dimen/dp42"
+                                android:layout_height="@dimen/dp42"
+                                android:layout_marginLeft="@dimen/spacing_xsmall"
+                                android:layout_marginRight="@dimen/spacing_xsmall"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/colorPrimary"
+                                app:srcCompat="@drawable/ic_date_range" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/routine_listEndDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="2019-06-15"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/grey_90" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="End Date"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                                    android:textColor="@color/grey_40" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <!--<LinearLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:layout_weight="0.5"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/routine_listEndDate"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="2019-06-18"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                        <!--android:textColor="@color/grey_90" />-->
+
+                        <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="End Date"-->
+                        <!--android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"-->
+                        <!--android:textColor="@color/grey_40" />-->
+
+                        <!--</LinearLayout>-->
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:id="@+id/assignment_list_vertical_line"
+            android:background="@color/grey_40" />
+    </LinearLayout>
+
+</RelativeLayout>
