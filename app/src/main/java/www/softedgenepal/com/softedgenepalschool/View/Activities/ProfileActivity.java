@@ -16,6 +16,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomViews.SetProfile;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 
 public class ProfileActivity extends AppCompatActivity {
     private Cache cache;
@@ -31,7 +32,8 @@ public class ProfileActivity extends AppCompatActivity {
         casting();
 
         //getting cached data
-        cache = (Cache) getIntent().getSerializableExtra("cache");
+        this.cache = StudentHomePage.cache;
+        //cache = (Cache) getIntent().getSerializableExtra("cache");
         if(cache != null) {
             userNameTextView.setText(cache.studentDataCaches.get(0).username);
 
@@ -48,6 +50,8 @@ public class ProfileActivity extends AppCompatActivity {
                 studentParent();
             if(cache.isGuardian.equals("true"))
                 studentGuardian();
+        }else {
+
         }
     }
 

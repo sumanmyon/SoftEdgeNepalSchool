@@ -1682,6 +1682,8 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notification_white
 drawable ic_pdf
+drawable ic_pdf2
+drawable ic_pdf3
 drawable ic_room_red_700_24dp
 drawable ic_subject
 drawable lock
@@ -1725,6 +1727,8 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notification_white
 drawable notify_panel_notification_icon_bg
+drawable null_img
+drawable null_img2
 drawable send_black
 drawable send_white
 drawable send_white2
@@ -1787,7 +1791,6 @@ id always
 id app_bar_layout
 id appbar_rl
 id assignHomeWork
-id assignment
 id assignmentRecyclerView
 id assignment_bt_close
 id assignment_createdDate
@@ -1814,7 +1817,6 @@ id barrier
 id bck
 id beginning
 id blocking
-id blog
 id bottom
 id bottom_sheet
 id bottom_sheet_recycler_view
@@ -2253,6 +2255,7 @@ layout activity_leave_application2
 layout activity_login
 layout activity_main
 layout activity_profile
+layout activity_routine
 layout activity_show_all_leave_application
 layout activity_show_all_leave_application_detail_view
 layout activity_show_in_map
@@ -2359,10 +2362,8 @@ string AddUser
 string Ashar
 string Ashoj
 string AssignHomeWork
-string Assignment
 string Baisakh
 string Bhadra
-string Blog
 string Chaitra
 string ClassRoutine
 string Close

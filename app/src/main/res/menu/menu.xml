@@ -8,16 +8,16 @@
             android:title="@string/Sibling"
             android:id="@+id/sibling"
             android:icon="@drawable/sibling"
-            android:iconTint="@color/colorSecondaryText"
+            android:iconTint="@color/white"
             app:showAsAction="always"/>
     </group>
         <item
             android:title="@string/AddUser"
-            android:tint="@color/colorSecondaryText"
+            android:tint="@color/white"
             android:id="@+id/addUser"/>
         <item
             android:title="@string/Logout"
-            android:tint="@color/colorSecondaryText"
+            android:tint="@color/white"
             android:id="@+id/logout"/>
 
 

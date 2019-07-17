@@ -57,14 +57,22 @@
         </LinearLayout>
     </com.balysv.materialripple.MaterialRippleLayout>
 
-    <Button
-        android:id="@+id/assignment_list_vertical_line"
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/bck"
-        android:layout_gravity="start"
         android:layout_marginLeft="11dp"
+        android:id="@+id/assignment_list_vertical_line"
         android:layout_marginBottom="2dp"
         android:background="@color/grey_40" />
+
+    <!--<Button-->
+        <!--android:id="@+id/assignment_list_vertical_line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_below="@+id/bck"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:layout_marginLeft="11dp"-->
+        <!--android:layout_marginBottom="2dp"-->
+        <!--android:background="@color/grey_40" />-->
 
 </LinearLayout>

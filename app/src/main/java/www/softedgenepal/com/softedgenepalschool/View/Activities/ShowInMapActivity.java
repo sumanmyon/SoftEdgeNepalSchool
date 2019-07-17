@@ -260,7 +260,7 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
+        finish();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

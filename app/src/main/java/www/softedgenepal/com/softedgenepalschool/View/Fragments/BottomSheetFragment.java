@@ -259,6 +259,8 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                     params.width = width;
 
                     homeworkImage.setLayoutParams(params);
+                    homeworkImage.setAdjustViewBounds(true);
+                    homeworkImage.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 }
 
                 @Override
@@ -269,10 +271,10 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                     ShowInGlide glide = new ShowInGlide(getActivity());
                     glide.loadURL( url + images.get(position));
                     if (images.get(position).matches(".*\\.(pdf)")) {     // https://www.mkyong.com/regular-expressions/how-to-validate-image-file-extension-with-regular-expression/
-                        glide.loadFailed(R.drawable.ic_pdf);
+                        glide.loadFailed(R.drawable.ic_pdf3);
                         bck.setOnClickListener(new DownloadFile(url + images.get(position), fileName+".pdf",  FileDownloader.PDF));
                     } else {
-                        glide.loadFailed(R.drawable.ic_pdf);
+                        glide.loadFailed(R.drawable.null_img2);
                         if(images.get(position).matches(".*\\.(png|PNG)"))
                             bck.setOnClickListener(new DownloadFile(url + images.get(position), fileName+".png",  FileDownloader.Photo));
                         else if(images.get(position).matches(".*\\.(jpg|JPG)"))

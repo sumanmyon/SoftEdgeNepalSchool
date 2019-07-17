@@ -22,9 +22,9 @@ public class SchoolNav {
             case R.id.event:
                 redirectToActivity(EventActivity.class);
                 break;
-            case R.id.blog:
-                showMessage("Coming Soon");
-                break;
+//            case R.id.blog:
+//                showMessage("Coming Soon");
+//                break;
             case R.id.gallery:
                 showMessage("Coming Soon");
                 break;

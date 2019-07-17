@@ -5,10 +5,11 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
 
 public class StudentNav {
@@ -23,13 +24,13 @@ public class StudentNav {
     public void set(){
         switch (itemId){
             case R.id.homeWork:
-                showMessage("Coming Soon");
+                redirectToActivity(HomeWorkActivity.class);
                 break;
             case R.id.studentAttendance:
                 showMessage("Coming Soon");
                 break;
             case R.id.routine:
-                showMessage("Coming Soon");
+                redirectToActivity(RoutineActivity.class);
                 break;
             case R.id.reportCard:
                 showMessage("Coming Soon");
@@ -43,16 +44,11 @@ public class StudentNav {
             case R.id.studentSuggestion:
                 redirectToActivity(SuggestionActivity.class);
                 break;
-            case R.id.assignment:
-                redirectToActivity(AssignmentActivity.class);
-                break;
-//            case R.id.busRoute:
-//                break;
             case R.id.liveBusTracking:
                 redirectToActivity(BusRouteActivity.class);
                 break;
             case R.id.studentProfile:
-                showMessage("Coming Soon");
+                //redirectToActivity(ProfileActivity.class);
                 break;
             default:
                 break;

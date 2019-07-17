@@ -9,16 +9,15 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.Assignment.AssignmentModel;
-import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.Calender.CalenderModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.AssignmentContractor;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.AssignmentActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
 
 public class AssignmentPresenter implements AssignmentContractor.Presenter {
-    private AssignmentActivity assignmentActivity;
+    private HomeWorkActivity homeWorkActivity;
     private AssignmentModel model;
 
-    public AssignmentPresenter(AssignmentActivity assignmentActivity) {
-        this.assignmentActivity = assignmentActivity;
+    public AssignmentPresenter(HomeWorkActivity homeWorkActivity) {
+        this.homeWorkActivity = homeWorkActivity;
     }
 
     public void mapToModel(){
@@ -31,21 +30,21 @@ public class AssignmentPresenter implements AssignmentContractor.Presenter {
 
     @Override
     public void setMessage(String message) {
-        assignmentActivity.setMessage(message);
+        homeWorkActivity.setMessage(message);
     }
 
     @Override
     public Context getCalContext() {
-        return assignmentActivity.getCalContext();
+        return homeWorkActivity.getCalContext();
     }
 
     @Override
     public void setData(List<AssignmentCache> assignmentCacheList) {
-        assignmentActivity.setData(assignmentCacheList);
+        homeWorkActivity.setData(assignmentCacheList);
     }
 
     @Override
     public void setJsonData(JSONObject response) {
-        assignmentActivity.setJsonData(response);
+        homeWorkActivity.setJsonData(response);
     }
 }

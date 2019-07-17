@@ -28,7 +28,7 @@ public class StudentHomePage implements Contractor.View {
 
     private CircleImageView userProfileImage;
     private TextView userNameTextView, classTextView, roll_SubTextView;
-    private Cache cache;
+    public static Cache cache;
 
     private List<StudentDataCache> studentDataCacheList;
     public StudentHomePage(Activity activity, View view) {
@@ -75,7 +75,7 @@ public class StudentHomePage implements Contractor.View {
             public void onClick(View v) {
                 //todo student user detail page
                 Intent profileIntent = new Intent(activity, ProfileActivity.class);
-                profileIntent.putExtra("cache",cache);
+                //profileIntent.putExtra("cache",cache);
                 activity.startActivity(profileIntent);
             }
         });
@@ -101,13 +101,21 @@ public class StudentHomePage implements Contractor.View {
     public void siblingMenu(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.sibling:
-                contextMenu();
+                if(cache != null) {
+                    contextMenu();
+                }else {
+                    showMessage("You have no sibling.");
+                }
                 break;
         }
     }
 
     //todo create different class for this
     private void contextMenu(){
-        new SiblingPopUpMenu(activity, cache.siblingDataCaches);
+        SiblingPopUpMenu popUpMenu = new SiblingPopUpMenu(activity, cache.siblingDataCaches);
+    }
+
+    private void showMessage(String message){
+        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
     }
 }
