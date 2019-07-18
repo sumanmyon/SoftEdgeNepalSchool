@@ -1660,7 +1660,10 @@ drawable for_edittext
 drawable for_edittext2
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_about_us
+drawable ic_account
 drawable ic_assignment
+drawable ic_attendance
 drawable ic_back
 drawable ic_bus_stop
 drawable ic_bus_stop2
@@ -1676,7 +1679,10 @@ drawable ic_date_range
 drawable ic_directions_bus
 drawable ic_done
 drawable ic_expand_arrow
+drawable ic_gallery
 drawable ic_home_white
+drawable ic_homework
+drawable ic_leave_application
 drawable ic_location
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1685,8 +1691,13 @@ drawable ic_notification_white
 drawable ic_pdf
 drawable ic_pdf2
 drawable ic_pdf3
+drawable ic_profile_img
+drawable ic_report
 drawable ic_room_red_700_24dp
+drawable ic_setting
 drawable ic_subject
+drawable ic_suggestion
+drawable ic_video
 drawable lock
 drawable logo
 drawable mapbox_compass_icon

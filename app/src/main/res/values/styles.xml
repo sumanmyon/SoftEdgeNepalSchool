@@ -9,9 +9,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorError">@color/backgroundLight</item>
 
-        <item name="android:fontFamily">@font/font</item><!-- Apply custom font to whole app -->
+        <item name="android:fontFamily">@font/font</item><!-- Apply custom font to whole app            //-->
         <item name="android:textColor">@color/backgroundLight</item><!-- popup menu text color          //-->
-        <item name="android:itemBackground">@color/colorPrimaryDark</item> <!-- popup menu background   //-->
+        <item name="android:itemBackground">@color/colorPrimaryDark</item> <!-- popup menu background -->
         <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item><!-- toolbar cap disabling -->
 
         <item name="windowActionModeOverlay">true</item>
