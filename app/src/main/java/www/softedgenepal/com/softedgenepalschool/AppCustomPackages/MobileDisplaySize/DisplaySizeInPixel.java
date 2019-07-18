@@ -34,7 +34,6 @@ public class DisplaySizeInPixel {
 
         height = displayMetrics.heightPixels;
         width = displayMetrics.widthPixels;
-
     }
 
     public int getWidth() {

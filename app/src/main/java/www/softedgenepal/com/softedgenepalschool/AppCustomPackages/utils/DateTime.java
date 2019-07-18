@@ -45,4 +45,13 @@ public class DateTime {
         Date date = new Date(System.currentTimeMillis());
         return formatter.format(date);
     }
+
+    public static CalenderDate DateConvertToNepali(String date, String dateOrTime){
+        String data = splitDateOrTime(date, dateOrTime);
+        if(dateOrTime.equals("date")) {
+            String[] s = data.split("/");
+            return convertToNepali(s);
+        }else
+            return null;
+    }
 }

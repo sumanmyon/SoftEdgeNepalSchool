@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Locale;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.DisplaySizeInPixel;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 /**
@@ -68,6 +69,14 @@ public class CalendarFragment extends Fragment {
         //mAdapter.recyclerViewUpdate(recyclerView);
 
         mCalendar = (GridView)view.findViewById(R.id.calendar);
+        DisplaySizeInPixel pixel = new DisplaySizeInPixel(getActivity());
+        pixel.setByWindowManager();
+        int height = pixel.getHeight();
+
+        ViewGroup.LayoutParams params = mCalendar.getLayoutParams();
+        params.height = (int) ((height * 1.65)/3);
+
+        mCalendar.setLayoutParams(params);
         mCalendar.setAdapter(mAdapter);
 
         mCalendarHeaders = (GridView)view.findViewById(R.id.calendar_headers);

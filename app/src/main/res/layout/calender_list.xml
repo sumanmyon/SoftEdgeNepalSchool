@@ -51,7 +51,8 @@
                         android:padding="2dp"
                         android:text="Ghyaipo Lhoshar"
                         android:textSize="12dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryText"/>
 
                     <TextView
                         android:id="@+id/date"
@@ -62,7 +63,8 @@
                         android:gravity="right|bottom"
                         android:padding="2dp"
                         android:text="date"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:textColor="@color/colorPrimaryText"/>
 
                 </LinearLayout>
 
@@ -78,17 +80,19 @@
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="1dp"
                         android:text="message"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:textColor="@color/colorPrimaryText"/>
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </com.balysv.materialripple.MaterialRippleLayout>
 
-    <Button
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/bck"
-        android:layout_gravity="start"
+        android:layout_marginTop="1dp"
         android:layout_marginBottom="2dp"
-        android:background="@color/colorPrimaryDark" />
+        android:id="@+id/assignment_list_vertical_line"
+        android:background="@color/grey_40" />
 </RelativeLayout>
