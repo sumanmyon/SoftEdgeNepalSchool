@@ -49,6 +49,7 @@
                     android:layout_gravity="left"
                     android:layout_weight="0.5"
                     android:gravity="right|bottom"
+                    android:textColor="@color/colorPrimaryText"
                     android:padding="2dp"
                     android:text="date"
                     android:textSize="@dimen/small" />
@@ -84,6 +85,7 @@
             android:id="@+id/event_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryText"
             android:text="message"
             android:textSize="@dimen/medium" />
 

@@ -53,7 +53,7 @@
         android:id="@+id/showall_leave_application_progress_bar"
         android:indeterminate="false"
         android:layout_centerInParent="true"
-        style="@android:style/Widget.DeviceDefault.ProgressBar"/>
+        style="@android:style/Widget.Holo.ProgressBar"/>
         <!--android:theme="@style/ProgressBar"-->
 
 

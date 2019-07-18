@@ -4,14 +4,13 @@ import android.content.Context;
 
 import org.json.JSONObject;
 
-import java.util.List;
+import java.util.Map;
 
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.BusRouteAndLiveBusTracking.MapBoxModel;
-import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.MapboxContractor;
+import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
 
-public class MapBoxPresenter implements MapboxContractor.Presenter {
+public class MapBoxPresenter implements IContractor.Presenter {
     private BusRouteActivity busRouteActivity;
     private MapBoxModel mapBoxModel;
 
@@ -38,6 +37,11 @@ public class MapBoxPresenter implements MapboxContractor.Presenter {
     @Override
     public void getJsonData() {
         mapBoxModel.getJsonData();
+    }
+
+    @Override
+    public Map<String, String> getParams() {
+        return null;
     }
 
     @Override

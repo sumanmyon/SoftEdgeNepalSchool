@@ -147,11 +147,11 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
                                         String Homework = data.getString("Homework");
                                         String CreateDate = "";
                                         if(!data.getString("Date").equals("null")) {
-                                            CreateDate = DateTime.splitDateOrTime(data.getString("Date"), "date");
+                                            CreateDate = DateTime.DateConvertToNepali(data.getString("Date"), "date");
                                         }
                                         String Deadline = "";
                                         if(!data.getString("Deadline").equals("null")) {
-                                            Deadline = DateTime.splitDateOrTime(data.getString("Deadline"), "date");
+                                            Deadline = DateTime.DateConvertToNepali(data.getString("Deadline"), "date");
                                         }
                                         String SubjectNameEng = data.getString("SubjectNameEng");
                                         String SubjectCode = data.getString("SubjectCode");

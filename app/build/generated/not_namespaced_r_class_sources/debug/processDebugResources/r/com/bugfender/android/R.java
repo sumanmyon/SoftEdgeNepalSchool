@@ -35,12 +35,12 @@ public final class R {
         public static final int appbar_rl = 0x7f0a0029;
         public static final int bugfender_tv = 0x7f0a004a;
         public static final int close_iv = 0x7f0a0062;
-        public static final int feedback_message_et = 0x7f0a008f;
-        public static final int feedback_title_et = 0x7f0a0090;
+        public static final int feedback_message_et = 0x7f0a008e;
+        public static final int feedback_title_et = 0x7f0a008f;
         public static final int message_tv = 0x7f0a00f6;
         public static final int positive_action_tv = 0x7f0a0114;
         public static final int root_vg = 0x7f0a012c;
-        public static final int title_tv = 0x7f0a0198;
+        public static final int title_tv = 0x7f0a01a6;
     }
     public static final class layout {
         private layout() {}

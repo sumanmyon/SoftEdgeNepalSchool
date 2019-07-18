@@ -7,7 +7,9 @@
         android:visible="false">
         <item
             android:title="@string/AssignHomeWork"
-            android:id="@+id/assignHomeWork"/>
+            android:id="@+id/assignHomeWork"
+            android:icon="@drawable/ic_assignment"
+            />
         <item
             android:title="@string/TeacherAttendance"
             android:id="@+id/teacherAttendance"/>
@@ -40,37 +42,46 @@
         android:visible="false">
         <item
             android:title="@string/HomeWork"
-            android:id="@+id/homeWork"/>
+            android:id="@+id/homeWork"
+            android:icon="@drawable/ic_homework"/>
         <item
             android:title="@string/StudentAttendance"
-            android:id="@+id/studentAttendance"/>
+            android:id="@+id/studentAttendance"
+            android:icon="@drawable/ic_attendance"/>
         <item
             android:title="@string/Routine"
-            android:id="@+id/routine"/>
+            android:id="@+id/routine"
+            android:icon="@drawable/ic_assignment" />
         <item
             android:title="@string/ReportCard"
-            android:id="@+id/reportCard"/>
+            android:id="@+id/reportCard"
+            android:icon="@drawable/ic_report"/>
         <item
             android:title="@string/StudentAccount"
-            android:id="@+id/studentAccount"/>
+            android:id="@+id/studentAccount"
+            android:icon="@drawable/ic_account"/>
         <item
             android:title="@string/StudentLeaveApplication"
-            android:id="@+id/studentLeaveApplication"/>
+            android:id="@+id/studentLeaveApplication"
+            android:icon="@drawable/ic_leave_application"/>
         <!--<item-->
             <!--android:title="@string/Assignment"-->
             <!--android:id="@+id/assignment"/>-->
         <item
             android:title="@string/StudentSuggestion"
-            android:id="@+id/studentSuggestion"/>
+            android:id="@+id/studentSuggestion"
+            android:icon="@drawable/ic_suggestion"/>
         <!--<item-->
             <!--android:title="@string/BusRoute"-->
             <!--android:id="@+id/busRoute"/>-->
         <item
             android:title="@string/LiveBusTracking"
-            android:id="@+id/liveBusTracking"/>
+            android:id="@+id/liveBusTracking"
+            android:icon="@drawable/ic_directions_bus"/>
         <item
             android:title="@string/StudentProfile"
-            android:id="@+id/studentProfile"/>
+            android:id="@+id/studentProfile"
+            android:icon="@drawable/ic_profile_img"/>
     </group>
 
     <group
@@ -79,21 +90,26 @@
         android:visible="true">
         <item
             android:title="@string/Event"
-            android:id="@+id/event"/>
+            android:id="@+id/event"
+            android:icon="@drawable/ic_calender_white"/>
         <!--<item-->
             <!--android:title="@string/Blog"-->
             <!--android:id="@+id/blog"/>-->
         <item
             android:title="@string/Gallery"
-            android:id="@+id/gallery"/>
+            android:id="@+id/gallery"
+            android:icon="@drawable/ic_gallery"/>
         <item
             android:title="@string/Videos"
-            android:id="@+id/videos"/>
+            android:id="@+id/videos"
+            android:icon="@drawable/ic_video"/>
         <item
             android:title="@string/About"
-            android:id="@+id/about"/>
+            android:id="@+id/about"
+            android:icon="@drawable/ic_about_us"/>
         <item
             android:title="@string/Setting"
-            android:id="@+id/setting"/>
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_setting"/>
     </group>
 </menu>

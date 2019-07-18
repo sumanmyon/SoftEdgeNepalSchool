@@ -67,19 +67,19 @@
                 android:layout_height="300dp">
             </GridView>
 
-            <Button
-                android:layout_width="wrap_content"
+            <View
+                android:layout_width="80dp"
                 android:layout_height="1dp"
                 android:layout_marginBottom="2dp"
                 android:layout_gravity="center"
                 android:background="@color/colorAccent"/>
-            <Button
+            <View
                 android:layout_width="48dp"
                 android:layout_height="1dp"
                 android:layout_marginBottom="2dp"
                 android:layout_gravity="center"
                 android:background="@color/colorAccent"/>
-            <Button
+            <View
                 android:layout_width="16dp"
                 android:layout_height="1dp"
                 android:layout_marginBottom="32dp"
@@ -99,14 +99,16 @@
                     android:padding="2dp"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary" />
-                <Button
+
+
+                <View
                     android:layout_width="100dp"
                     android:layout_height="1dp"
+                    android:layout_gravity="start"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="18dp"
                     android:padding="2dp"
-                    android:layout_gravity="start"
-                    android:background="@color/colorPrimaryDark"/>
+                    android:background="@color/grey_40" />
 
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"

@@ -7,10 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,20 +17,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.BusRouteCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
-import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.MapboxContractor;
+import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.MapBoxPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.AssignmentAdapter;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
-import www.softedgenepal.com.softedgenepalschool.View.Fragments.BottomSheetFragment;
 
-public class BusRouteActivity extends AppCompatActivity implements MapboxContractor.View {
+public class BusRouteActivity extends AppCompatActivity implements IContractor.View {
     private TextView loadTextView;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
@@ -86,6 +77,11 @@ public class BusRouteActivity extends AppCompatActivity implements MapboxContrac
     @Override
     public void getJsonData() {
         presenter.getJsonData();
+    }
+
+    @Override
+    public Map<String, String> getParams() {
+        return null;
     }
 
 

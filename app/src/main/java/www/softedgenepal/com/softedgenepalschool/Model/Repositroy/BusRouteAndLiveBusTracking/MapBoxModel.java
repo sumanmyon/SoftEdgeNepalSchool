@@ -15,10 +15,10 @@ import org.json.JSONObject;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOffline.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
-import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.MapboxContractor;
+import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.MapBoxPresenter;
 
-public class MapBoxModel implements MapboxContractor.Model {
+public class MapBoxModel implements IContractor.Model {
     MapBoxPresenter mapBoxPresenter;
 
     public MapBoxModel(MapBoxPresenter mapBoxPresenter) {
