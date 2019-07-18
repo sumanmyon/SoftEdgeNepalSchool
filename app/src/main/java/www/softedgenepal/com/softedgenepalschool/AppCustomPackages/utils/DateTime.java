@@ -46,11 +46,11 @@ public class DateTime {
         return formatter.format(date);
     }
 
-    public static CalenderDate DateConvertToNepali(String date, String dateOrTime){
+    public static String DateConvertToNepali(String date, String dateOrTime){
         String data = splitDateOrTime(date, dateOrTime);
         if(dateOrTime.equals("date")) {
-            String[] s = data.split("/");
-            return convertToNepali(s);
+            String[] s = data.split("-");
+            return String.valueOf(convertToNepali(s));
         }else
             return null;
     }

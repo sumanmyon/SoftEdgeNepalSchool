@@ -171,8 +171,14 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
                 final RoutineCache routineCache = routineCacheList.get(position);
                 examinationTextView.setText(routineCache.ExamNameEng);
 
-                String startDate = DateTime.splitDateOrTime(routineCache.routine.get(0).ExamDate, "date");
-                String endDate = DateTime.splitDateOrTime(routineCache.routine.get(routineCache.routine.size()-1).ExamDate, "date");
+                String startDate = "";
+                String endDate = "";
+                if(!routineCache.routine.get(0).ExamDate.equals("null")) {
+                     startDate = DateTime.DateConvertToNepali(routineCache.routine.get(0).ExamDate, "date");
+                }
+                if(routineCache.routine.get(routineCache.routine.size()-1).ExamDate.equals("null")){
+                    endDate = DateTime.splitDateOrTime(routineCache.routine.get(routineCache.routine.size()-1).ExamDate, "date");
+                }
 
                 startDateTextView.setText(startDate);
                 endDateTextView.setText(endDate);
@@ -180,8 +186,6 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
                 listItemSelect.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //setMessage(routineCache.routine.size()+"");
-                        //Toast.makeText(this, routineCache.routine.size(),Toast.LENGTH_LONG).show();
                         RoutineFragment fragment = new RoutineFragment();
                         //some thing here
                         fragment.setAssignment(routineCache);
