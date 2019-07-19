@@ -176,8 +176,8 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
                 if(!routineCache.routine.get(0).ExamDate.equals("null")) {
                      startDate = DateTime.DateConvertToNepali(routineCache.routine.get(0).ExamDate, "date");
                 }
-                if(routineCache.routine.get(routineCache.routine.size()-1).ExamDate.equals("null")){
-                    endDate = DateTime.splitDateOrTime(routineCache.routine.get(routineCache.routine.size()-1).ExamDate, "date");
+                if(!routineCache.routine.get(routineCache.routine.size()-1).ExamDate.equals("null")){
+                    endDate = DateTime.DateConvertToNepali(routineCache.routine.get(routineCache.routine.size()-1).ExamDate, "date");
                 }
 
                 startDateTextView.setText(startDate);

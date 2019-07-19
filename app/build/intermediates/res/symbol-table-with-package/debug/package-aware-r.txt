@@ -2572,6 +2572,8 @@ string mdtp_time
 string mdtp_time_placeholder
 string mdtp_time_separator
 string mdtp_year_picker_description
+string msg_subscribe_failed
+string msg_subscribed
 string mtrl_chip_close_icon_content_description
 string no
 string password_toggle_content_description

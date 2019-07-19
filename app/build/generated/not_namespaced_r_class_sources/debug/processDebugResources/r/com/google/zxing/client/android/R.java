@@ -69,10 +69,10 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int zxing_app_name = 0x7f1100c7;
-        public static final int zxing_button_ok = 0x7f1100c8;
-        public static final int zxing_msg_camera_framework_bug = 0x7f1100c9;
-        public static final int zxing_msg_default_status = 0x7f1100ca;
+        public static final int zxing_app_name = 0x7f1100c9;
+        public static final int zxing_button_ok = 0x7f1100ca;
+        public static final int zxing_msg_camera_framework_bug = 0x7f1100cb;
+        public static final int zxing_msg_default_status = 0x7f1100cc;
     }
     public static final class style {
         private style() {}
