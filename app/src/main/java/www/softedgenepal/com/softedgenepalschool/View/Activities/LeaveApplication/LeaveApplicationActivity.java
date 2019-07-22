@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +32,13 @@ import www.softedgenepal.com.softedgenepalschool.R;
 public class LeaveApplicationActivity extends AppCompatActivity implements LeaveApplicationContractor.View {
     private Activity activity;
 
-    private Toolbar toolbar;
+    //private View toolbar;
     private EditText subjectEditText, messageEditText;
     private TextView fromTextView, toTextView;
     private Button fromButton, toButton;
     private Button sendButton;
     private ProgressBar progressBar;
+    private View closeButton;
 
     private final String[] startDate = {""};
     private final String[] endDate = {""};
@@ -99,6 +101,13 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
             }
         });
 
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         sendButton();
     }
 
@@ -151,21 +160,22 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     }
 
     private void setToolBar() {
-        toolbar.setTitle("Create your Leave Application");
+        //toolbar.setTitle("Create your Leave Application");
     }
 
     private void casting() {
-        toolbar = findViewById(R.id.leave_toolbar);
+       // toolbar = findViewById(R.id.leave_toolbar);
         subjectEditText = findViewById(R.id.leave_application_edit_text_leave_subject);
         messageEditText = findViewById(R.id.leave_application_edit_text_message);
         fromTextView = findViewById(R.id.leave_application_text_view_leave_from);
         toTextView = findViewById(R.id.leave_application_text_view_leave_to);
         sendButton = findViewById(R.id.leave_application_send_button);
         progressBar = findViewById(R.id.leave_application_progress_bar);
+        closeButton = findViewById(R.id.leave_create_bt_close);
         //progress bar loading color
-        progressBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this,
-                android.R.color.holo_red_dark),
-                android.graphics.PorterDuff.Mode.SRC_IN );
+//        progressBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this,
+//                android.R.color.holo_red_dark),
+//                android.graphics.PorterDuff.Mode.SRC_IN );
 
         //progress bar loading color
         fromButton = findViewById(R.id.leave_application_from_button);
@@ -191,9 +201,15 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+
+    }
+
+    @Override
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        startActivity(new Intent(this, ShowAllLeaveApplication.class));
+        //startActivity(new Intent(this, ShowAllLeaveApplication.class));
     }
 }

@@ -22,7 +22,7 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
         size = getSize();
     }
 
-    private int getSize() {
+    public int getSize() {
         return keysLength;
     }
 

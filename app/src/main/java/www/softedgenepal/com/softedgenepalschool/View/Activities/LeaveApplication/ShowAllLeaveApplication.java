@@ -49,7 +49,6 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     private int animation_type = ItemAnimation.BOTTOM_UP;
     private AdapterListAnimation mAdapter;
 
-
     //for bottom sheet
     private BottomSheetBehavior mBehavior;
     private BottomSheetDialog mBottomSheetDialog;
@@ -167,7 +166,8 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     }
 
     public void setProgressBarInVisibility(){
-        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.GONE);
+        messageHandleTextView.setVisibility(View.GONE);
     }
 
     private void redirect(Class<?> activityClass){

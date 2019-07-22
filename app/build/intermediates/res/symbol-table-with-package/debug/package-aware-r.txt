@@ -1660,6 +1660,7 @@ drawable for_edittext
 drawable for_edittext2
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable graphchart
 drawable ic_about_us
 drawable ic_account
 drawable ic_assignment
@@ -1821,8 +1822,19 @@ id assignment_rel
 id assignment_subject
 id assignment_subject_toolbar
 id assignment_title
-id assignment_toolbar
 id async
+id attendanceCard1
+id attendanceCard2
+id attendanceCardPresentDays
+id attendanceClass
+id attendancePichart
+id attendancePresentDays
+id attendanceProfile
+id attendanceRecycler
+id attendanceUserName
+id attendance_bt_close
+id attendance_loading
+id attendane_progressbar
 id attributionView
 id auto
 id barrier
@@ -1927,6 +1939,7 @@ id homeWork
 id homeWork_recy_lyl
 id homeWork_recy_lyl2
 id home_frameLayout
+id homework_bt_close
 id icon
 id icon_group
 id icon_only
@@ -1949,6 +1962,7 @@ id leave_application_send_button
 id leave_application_text_view_leave_from
 id leave_application_text_view_leave_to
 id leave_application_to_button
+id leave_create_bt_close
 id leave_toolbar
 id left
 id light
@@ -2050,6 +2064,10 @@ id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
+id recyclerAttendancePichart
+id recyclerAttendancePresentDays
+id recyclerAttendanceTopic
+id recyclerAttendanceWorkingDays
 id recyclerView
 id recyclerView_date
 id recyclerView_homework
@@ -2273,6 +2291,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_about
 layout activity_assignment
+layout activity_attendance
 layout activity_bus_route
 layout activity_calender
 layout activity_event
@@ -2282,6 +2301,7 @@ layout activity_login
 layout activity_main
 layout activity_profile
 layout activity_routine
+layout activity_runtime
 layout activity_show_all_leave_application
 layout activity_show_all_leave_application_detail_view
 layout activity_show_in_map
@@ -2365,6 +2385,7 @@ layout profile
 layout profile_detail_recycler_textview_
 layout profile_detail_recyclerlist
 layout progress_bar
+layout recycler_attendance
 layout routine_list
 layout routine_recycler_list
 layout school
@@ -2396,6 +2417,7 @@ string Bhadra
 string Chaitra
 string ClassRoutine
 string Close
+string CreatelevApp
 string Event
 string ExamRoutine
 string Falgun
@@ -2507,6 +2529,7 @@ string greater_than
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string less_than
+string loading
 string mapbox_access_token
 string mapbox_attributionErrorNoBrowser
 string mapbox_attributionTelemetryMessage
@@ -2572,6 +2595,8 @@ string mdtp_time
 string mdtp_time_placeholder
 string mdtp_time_separator
 string mdtp_year_picker_description
+string msg_subscribe_failed
+string msg_subscribed
 string mtrl_chip_close_icon_content_description
 string no
 string password_toggle_content_description
@@ -2581,9 +2606,12 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string powered_by_bugfender
 string project_id
+string rationale_ask
+string rationale_ask_again
 string search_menu_title
 string status_bar_notification_info_overflow
 string titleDialog
+string title_settings_dialog
 string yes
 string zxing_app_name
 string zxing_button_ok
@@ -2602,6 +2630,7 @@ style AppTheme
 style AppTheme_Custom
 style AppTheme_Widget_ActionButton
 style AppTheme_NoActionBar
+style AppTheme_Permission
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -2794,6 +2823,8 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style CustomTabIndicatorStyle
+style EasyPermissions
+style EasyPermissions_Transparent
 style MyToolbar
 style MyToolbar2
 style Platform_AppCompat

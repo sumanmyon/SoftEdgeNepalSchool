@@ -26,12 +26,11 @@ public class GetAllUserLeaveApplication implements LeaveApplicationContractor.Mo
 
     @Override
     public void getAllUserLeaveData(Map<String, String> params) {
+        online = new ShowLeaveApplicationOnline(this,context);
         if(new NetworkConnection(context).isConnectionSuccess()){
-            online = new ShowLeaveApplicationOnline(this,context);
             online.get(params);
         }else {
-            getProgressBarInVisibility();
-            setMessageInTextView("It seems you are offline. Please check your network to load.");
+            online.offline();
         }
     }
 

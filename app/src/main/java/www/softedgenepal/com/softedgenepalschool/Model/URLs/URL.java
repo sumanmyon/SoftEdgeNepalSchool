@@ -43,9 +43,12 @@ public class URL {
         return new OnlineUrl().routineUrl;
     }
 
+    public String attendanceUrl(){
+        return new OnlineUrl().attendanceUrl;
+    }
 
     private class OnlineUrl{
-        private String onlineUrl = "http://192.168.100.100:400/";
+        private String onlineUrl = "http://192.168.100.20:400/";
         private String loginStudentUrl = onlineUrl + "api/auth/Login?";
 
         private String createLeaveApplicationUrl =onlineUrl + "api/data/Leaveapplication";
@@ -60,6 +63,8 @@ public class URL {
         private String busRouteUrl = onlineUrl + "api/data/getbusroutes";
 
         private String routineUrl = onlineUrl + "api/data/getroutine";
+
+        private String attendanceUrl = onlineUrl + "api/data/getattendance";
 
         public OnlineUrl() {
             loginStudentUrl = loginStudentUrl + "UserName=suman&Password=admin123";

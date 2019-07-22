@@ -143,7 +143,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         this.cache=cache;
     }
 
-    private void setData(){
+    public void setData(){
         subjectTextView.setText(cache.SubjectNameEng);
         createDateTextView.setText(cache.CreateDate);
         deadlineTextView.setText(cache.Deadline);
@@ -329,5 +329,11 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 
     private void showToast(String message){
         Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getActivity().getSupportFragmentManager().popBackStack();
     }
 }

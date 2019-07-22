@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jul 18 13:16:19 NPT 2019
+#Sun Jul 21 13:58:17 NPT 2019
 4.path=lib/x86_64/libmapbox-gl.so
 8.set=NATIVE_RESOURCE
 6.path=StudentFailed.json
@@ -12,8 +12,10 @@
 4.set=NATIVE_RESOURCE
 5.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
 7.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+11.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
 9.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 1.baseType=DIRECTORY
+11.set=DEX
 0.set=DEX
 6.baseType=DIRECTORY
 7.set=ASSET
@@ -27,9 +29,11 @@
 5.path=StudentGuardianWithNoSibling.json
 0.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 7.path=StudentParentWithNoSibling.json
+11.path=classes.dex
 9.path=lib/x86/libmapbox-gl.so
 6.set=ASSET
 2.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
+11.baseType=DIRECTORY
 4.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 3.baseType=DIRECTORY
 6.base=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\merged_assets\\debug\\out
@@ -38,7 +42,7 @@
 2.set=ASSET
 8.baseType=DIRECTORY
 9.set=NATIVE_RESOURCE
-count=11
+count=12
 4.baseType=DIRECTORY
 5.set=ASSET
 9.baseType=DIRECTORY

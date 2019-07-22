@@ -15,6 +15,8 @@ public class StoreInSharePreference {
     public String Assignment = "assignment";
     public String BusRoute = "busroute";
     public String Routine = "routine";
+    public String LeaveApplication = "leave_application";
+    public String Attendance = "attendance";
 
     public StoreInSharePreference(Context context) {
         this.context = context;
@@ -32,7 +34,22 @@ public class StoreInSharePreference {
 
         if(type.equals(BusRoute)){
             MY_PREFS_NAME ="BusRoute";
-            stringName = Assignment;
+            stringName = BusRoute;
+        }
+
+        if(type.equals(BusRoute)){
+            MY_PREFS_NAME ="Routine";
+            stringName = Routine;
+        }
+
+        if(type.equals(BusRoute)){
+            MY_PREFS_NAME ="LeaveApplication";
+            stringName = LeaveApplication;
+        }
+
+        if(type.equals(BusRoute)){
+            MY_PREFS_NAME ="Attendance";
+            stringName = Attendance;
         }
 
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);

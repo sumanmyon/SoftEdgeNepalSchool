@@ -8,20 +8,62 @@
     tools:context=".View.Activities.HomeWorkActivity"
     android:background="@color/grey_5">
 
-    <android.support.v7.widget.Toolbar
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        style="@style/MyToolbar2"
-        app:title="@string/HomeWork"
-        app:titleTextColor="@color/white"
-        app:titleTextAppearance="@style/ToolbarTextAppearance"
-        android:id="@+id/assignment_toolbar" />
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/homework_bt_close"
+                style="@style/RippleStyleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true">
+                <ImageButton
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/ic_back" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/assignment_subject_toolbar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/HomeWork"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:layout_below="@+id/app_bar_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--style="@style/MyToolbar2"-->
+        <!--app:title="@string/HomeWork"-->
+        <!--app:titleTextColor="@color/white"-->
+        <!--app:titleTextAppearance="@style/ToolbarTextAppearance"-->
+        <!--android:id="@+id/assignment_toolbar" />-->
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars="none"
-        android:layout_below="@+id/assignment_toolbar">
+        android:layout_below="@+id/app_bar_layout">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,7 +75,7 @@
         android:id="@+id/assignment_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loading..."
+        android:text="@string/loading"
         android:gravity="center"
         android:layout_centerInParent="true"
         android:textColor="@color/colorPrimary"

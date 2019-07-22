@@ -6,8 +6,8 @@
     <solid
         android:color="@color/colorPrimaryLight"/>
     <stroke
-        android:color="@color/white"
+        android:color="@color/colorPrimaryLight"
         android:width="4dp"/>
     <corners
-        android:radius="0dp"/>
+        android:radius="0dp" />
 </shape>

@@ -2,6 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -44,6 +45,7 @@ import static www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.
 public class HomeWorkActivity extends AppCompatActivity implements AssignmentContractor.View {
     private TextView loadTextView;
     private ProgressBar progressBar;
+    private View backpress;
 
     Map<String, String> params;
     AssignmentPresenter presenter;
@@ -73,6 +75,13 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
         params.put("studentId","1024");
 
         FetchData(params);
+
+        backpress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     //todo fetch data here
@@ -105,8 +114,8 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
 
 
     public void setData(List<AssignmentCache> assignmentCacheList) {
-        setFieldInvisible();
-
+        //setFieldInvisible();
+//
         //todo work here
 //        adapter = new AssignmentAdapter(this,assignmentCacheList, ItemAnimation.BOTTOM_UP);
 //        recyclerView.setAdapter(adapter);
@@ -123,6 +132,7 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
 //        });
     }
 
+    List<AssignmentCache> assignmentCacheList = null;
     @Override
     public void setJsonData(JSONObject response) {
         setFieldInvisible();
@@ -135,7 +145,7 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
                         if (dataArray.length() >= 0) {
                             for (int i = 0; i < dataArray.length(); i++) {
                                 JSONArray array = dataArray.getJSONArray(i);
-                                List<AssignmentCache> assignmentCacheList = new ArrayList<>();
+                                assignmentCacheList = new ArrayList<>();
 
                                 for(int j=0; j<array.length(); j++) {
                                     JSONObject data = array.getJSONObject(j);
@@ -162,37 +172,7 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
                                          assignmentCacheList.add(assignmentCache);
                                     }
                                 }
-
-                                AssignmentAdapter adapter1 = new AssignmentAdapter(this,assignmentCacheList, ItemAnimation.BOTTOM_UP);
-
-                                LinearLayout relativeLayout;
-                                View view;
-                                relativeLayout = findViewById(R.id.assignment_rel);
-                                view = getLayoutInflater().inflate(R.layout.homework_recyclerview,null);
-                                relativeLayout.addView(view);
-
-                                TextView textView = view.findViewById(R.id.recyclerView_date);
-                                if(assignmentCacheList.get(0).CreateDate.equals(today)){
-                                    textView.setText("Today");
-                                }else {
-                                    textView.setText("Date: "+assignmentCacheList.get(0).CreateDate);
-                                }
-                                RecyclerView recyclerView;
-                                recyclerView = view.findViewById(R.id.assignmentRecyclerView);
-                                recyclerView.setHasFixedSize(true);
-                                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-                                recyclerView.setAdapter(adapter1);
-
-                                adapter1.setOnItemClickListener(new AssignmentAdapter.OnItemClickListener() {
-                                    @Override
-                                    public void onItemClick(View view, AssignmentCache cache, int position) {
-                                        BottomSheetFragment fragment = new BottomSheetFragment();
-                                        //some thing here
-                                        fragment.setAssignment(cache);
-                                        fragment.show(getSupportFragmentManager(), fragment.getTag());
-                                    }
-                                });
+                                setInView();
                             }
                         }
                     }
@@ -203,9 +183,62 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
         }
     }
 
+    private void setInView(){
+        AssignmentAdapter adapter1 = new AssignmentAdapter(this,assignmentCacheList, ItemAnimation.BOTTOM_UP);
+
+        LinearLayout relativeLayout;
+        View view;
+        relativeLayout = findViewById(R.id.assignment_rel);
+        view = getLayoutInflater().inflate(R.layout.homework_recyclerview,null);
+        relativeLayout.addView(view);
+
+        TextView textView = view.findViewById(R.id.recyclerView_date);
+        if(assignmentCacheList.get(0).CreateDate.equals(today)){
+            textView.setText("Today");
+        }else {
+            textView.setText("Date: "+assignmentCacheList.get(0).CreateDate);
+        }
+        RecyclerView recyclerView;
+        recyclerView = view.findViewById(R.id.assignmentRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerView.setAdapter(adapter1);
+
+        //final BottomSheetFragment[] currentFrag = null;
+        adapter1.setOnItemClickListener(new AssignmentAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, AssignmentCache cache, int position) {
+                try {
+                    BottomSheetFragment fragment = new BottomSheetFragment();
+                    fragment.setAssignment(cache);
+                    fragment.show(getSupportFragmentManager(), fragment.getTag());
+                }catch (Exception e){
+                    setMessage(e.getMessage());
+                }
+            }
+        });
+    }
+
+    private void setLog(String topic, String message) {
+        Log.d(topic, message);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setInView();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 
     private void casting() {
         progressBar = findViewById(R.id.assignment_progressbar);
         loadTextView = findViewById(R.id.assignment_loading);
+        backpress = findViewById(R.id.homework_bt_close);
     }
 }

@@ -69,7 +69,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppTheme_NoActionBar" >
+        android:theme="@style/AppTheme_NoActionBar"
+        android:usesCleartextTraffic="true" > <!-- for cleartext http traffic -->
+        <activity
+            android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.RunTimePermissions"
+            android:theme="@style/AppTheme_Permission" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ShowInMapActivity" />
@@ -105,6 +110,11 @@
             </intent-filter>
         </service>
 
+        <activity
+            android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/EasyPermissions.Transparent" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:clearTaskOnLaunch="true"
