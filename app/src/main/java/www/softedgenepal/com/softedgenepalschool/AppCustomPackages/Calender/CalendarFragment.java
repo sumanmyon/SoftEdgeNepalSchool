@@ -59,14 +59,11 @@ public class CalendarFragment extends Fragment {
 
         // Initialize grid views
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        recyclerView.setNestedScrollingEnabled(false);
-        ViewCompat.setNestedScrollingEnabled(recyclerView, false);
-        recyclerView.setLayoutFrozen(true);
-
 
 
         mAdapter = new CalendarAdapter(getContext(), mCurrentDate, cacheList, recyclerView);     //todo dates show
         //mAdapter.recyclerViewUpdate(recyclerView);
+        recyclerView.invalidate();
 
         mCalendar = (GridView)view.findViewById(R.id.calendar);
         DisplaySizeInPixel pixel = new DisplaySizeInPixel(getActivity());
