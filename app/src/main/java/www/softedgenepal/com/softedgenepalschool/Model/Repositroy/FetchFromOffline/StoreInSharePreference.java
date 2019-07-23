@@ -27,6 +27,7 @@ public class StoreInSharePreference {
             MY_PREFS_NAME ="Calender";
             stringName = Calender;
         }
+
         if(type.equals(Assignment)){
             MY_PREFS_NAME ="Assignment";
             stringName = Assignment;
@@ -37,17 +38,17 @@ public class StoreInSharePreference {
             stringName = BusRoute;
         }
 
-        if(type.equals(BusRoute)){
+        if(type.equals(Routine)){
             MY_PREFS_NAME ="Routine";
             stringName = Routine;
         }
 
-        if(type.equals(BusRoute)){
+        if(type.equals(LeaveApplication)){
             MY_PREFS_NAME ="LeaveApplication";
             stringName = LeaveApplication;
         }
 
-        if(type.equals(BusRoute)){
+        if(type.equals(Attendance)){
             MY_PREFS_NAME ="Attendance";
             stringName = Attendance;
         }

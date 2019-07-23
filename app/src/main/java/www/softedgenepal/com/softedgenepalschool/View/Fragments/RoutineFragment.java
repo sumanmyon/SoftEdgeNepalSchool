@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.RoutineCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
@@ -99,7 +100,7 @@ public class RoutineFragment extends BottomSheetDialogFragment {
         Log.d("RoutineFrag","3");
         //todo setRecycler view
         RecyclerAdapter adapter = new RecyclerAdapter(getContext(), routineCache.routine.size()) {
-            TextView subjectTextView, startTimeTextView, endTimeTextView;
+            TextView subjectTextView, examDateTextView, startTimeTextView, endTimeTextView;
             @Override
             public ViewHolder onCreate(ViewGroup viewGroup, int position) {
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.routine_recycler_list, viewGroup, false);
@@ -109,6 +110,7 @@ public class RoutineFragment extends BottomSheetDialogFragment {
             @Override
             public void inflateUIFields(View itemView) {
                 subjectTextView = itemView.findViewById(R.id.routine_listSubject);
+                examDateTextView = itemView.findViewById(R.id.routine_listDate);
                 startTimeTextView = itemView.findViewById(R.id.routine_listStartTime);
                 endTimeTextView = itemView.findViewById(R.id.routine_listEndTime);
             }
@@ -119,6 +121,13 @@ public class RoutineFragment extends BottomSheetDialogFragment {
                 subjectTextView.setText(routine.SubjectNameEng);
                 startTimeTextView.setText(routine.StartTime);
                 endTimeTextView.setText(routine.EndTime);
+
+                String examDate = "";
+                if(!routine.ExamDate.equals("null")) {
+                    examDate = DateTime.DateConvertToNepali(routine.ExamDate, "date");
+                }
+
+                examDateTextView.setText(examDate);
             }
         };
 

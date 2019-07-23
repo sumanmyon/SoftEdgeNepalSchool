@@ -74,7 +74,6 @@
                         android:paddingTop="@dimen/spacing_small">
 
                         <LinearLayout
-
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -89,50 +88,84 @@
                                 android:tint="@color/colorPrimary"
                                 app:srcCompat="@drawable/ic_date_range" />
                             <LinearLayout
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="0.1"
-                                android:layout_marginLeft="@dimen/small"
                                 android:orientation="vertical">
-                                <TextView
-                                    android:id="@+id/routine_listStartTime"
-                                    android:layout_width="match_parent"
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="10:00"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                    android:textColor="@color/grey_90" />
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="0.1"
+                                    android:layout_marginLeft="@dimen/small"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:id="@+id/routine_listDate"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="2076-02-03"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                        android:textColor="@color/grey_90" />
 
-                                <TextView
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Exam Date"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                                        android:textColor="@color/grey_40" />
+                                </LinearLayout>
+
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Start Time"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
-                                    android:textColor="@color/grey_40" />
+                                    android:orientation="horizontal">
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight="0.1"
+                                        android:layout_marginLeft="@dimen/small"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:id="@+id/routine_listStartTime"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="10:00"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                            android:textColor="@color/grey_90" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Start Time"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                                            android:textColor="@color/grey_40" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight="0.1"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:id="@+id/routine_listEndTime"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="13:00"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                            android:textColor="@color/grey_90" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="End Time"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                                            android:textColor="@color/grey_40" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
                             </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="0.1"
-                                android:orientation="vertical">
-                                <TextView
-                                    android:id="@+id/routine_listEndTime"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="13:00"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                    android:textColor="@color/grey_90" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="End Time"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
-                                    android:textColor="@color/grey_40" />
-                            </LinearLayout>
-
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
