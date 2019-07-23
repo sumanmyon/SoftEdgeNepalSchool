@@ -72,10 +72,10 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
             }
             @Override
             public void getValue(String date) {
-                String toDayDate = getTodayDate();
+                //String toDayDate = getTodayDate();
                 startDate[0] = date;
-                String success = calculateLeaveDaysOrTodayPickedDate(toDayDate,startDate[0]);
-                displayInTextView(success, startDate[0], fromTextView);
+                //String success = calculateLeaveDaysOrTodayPickedDate(toDayDate,startDate[0]);
+                displayInTextView("success", startDate[0], fromTextView);
                 engstartDate = convertNepToEng(startDate[0]);
                 //setMessage(engstartDate);
             }
@@ -121,6 +121,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
         if(success.equals("success")){
             textView.setText(date);
         }else {
+            textView.setText("");
             setMessage("You should pick today date or future day for leave.");
         }
     }

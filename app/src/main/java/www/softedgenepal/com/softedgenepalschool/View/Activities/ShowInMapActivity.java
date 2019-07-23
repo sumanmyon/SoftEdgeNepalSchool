@@ -88,6 +88,11 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
         this.mapBoxMap = mapboxMap;
+
+        //todo remove mapbox icon from map
+        mapboxMap.getUiSettings().setAttributionEnabled(false);
+        mapboxMap.getUiSettings().setLogoEnabled(false);
+
         enableLocation();
     }
 

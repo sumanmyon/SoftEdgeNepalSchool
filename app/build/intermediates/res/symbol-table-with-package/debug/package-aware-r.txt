@@ -2093,6 +2093,7 @@ id routine2_textView_toolbar
 id routine_app_bar_layout
 id routine_bt_close
 id routine_frag
+id routine_listDate
 id routine_listEndDate
 id routine_listEndTime
 id routine_listExamination
