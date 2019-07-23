@@ -9,5 +9,5 @@
         android:color="@color/colorPrimaryLight"
         android:width="4dp"/>
     <corners
-        android:radius="0dp" />
+        android:radius="360dp" />
 </shape>

@@ -182,6 +182,7 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
         Intent intent = new Intent(this, classActivity);
         intent.putExtra("GetBusRoutes", busRouteCache);
         startActivity(intent);
+        finish();
     }
 
     List<BusRouteCache> saveBusRouteCachesList;

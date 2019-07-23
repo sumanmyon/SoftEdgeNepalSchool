@@ -34,6 +34,7 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
 
     private EventAdapter adapter;
     private RecyclerView recyclerView;
+    private View backpress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,13 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
         params.put("To","12/12/2023");
 
         FetchData(params);
+
+        backpress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     //todo fetch data here
@@ -80,6 +88,7 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
     private void casting() {
         progressBar = findViewById(R.id.event_progressbar);
         loadTextView = findViewById(R.id.event_loading);
+        backpress = findViewById(R.id.event_bt_close);
 
         recyclerView = findViewById(R.id.event_recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -135,6 +144,12 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
         for (String s : arr) items.add(s);
         Collections.shuffle(items);
         return items;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     @Override

@@ -7,15 +7,48 @@
     tools:context=".View.Activities.LeaveApplication.LeaveApplicationActivity"
     android:orientation="vertical"
     android:background="@color/backgroundLightGray">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/leave_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
-        <android.support.v7.widget.Toolbar
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            style="@style/MyToolbar2"
-            app:titleTextColor="@color/white"
-            app:titleTextAppearance="@style/ToolbarTextAppearance"
-            android:id="@+id/leave_toolbar" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/leave_create_bt_close"
+                style="@style/RippleStyleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true">
+                <ImageButton
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/ic_back" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/assignment_subject_toolbar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/CreatelevApp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -39,28 +72,27 @@
                     android:layout_margin="8dp"
                     android:orientation="vertical">
 
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorPrimary"
-                        android:textStyle="bold"
-                        android:theme="@style/TextInputLayout.EditText.Blue" >
-
-                        <android.support.v7.widget.AppCompatEditText
-                            android:id="@+id/leave_application_edit_text_leave_subject"
+                        <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:focusable="true"
-                            android:hint="Subject"
-                            android:inputType="text"
-                            android:scrollHorizontally="true"
-                            android:singleLine="true"
-                            android:textColor="@color/colorPrimaryText"
-                            android:theme="@style/AppCompact.EditText.Blue" />
+                            android:textColorHint="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:theme="@style/TextInputLayout.EditText.Blue" >
 
-                    </android.support.design.widget.TextInputLayout>
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/leave_application_edit_text_leave_subject"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:focusable="true"
+                                android:hint="Subject"
+                                android:inputType="text"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:textColor="@color/colorPrimaryText"
+                                android:theme="@style/AppCompact.EditText.Blue" />
+
+                        </android.support.design.widget.TextInputLayout>
 
                     <Button
                         android:layout_width="match_parent"
@@ -134,6 +166,7 @@
                             android:ellipsize="end"
                             android:scrollHorizontally="true"
                             android:hint="Start/From date "
+                            android:textColor="@color/colorPrimaryText"
                             android:textSize="14sp"
                             android:focusable="true"
                             android:layout_gravity="center"
@@ -166,6 +199,7 @@
                             android:ellipsize="end"
                             android:scrollHorizontally="true"
                             android:hint="End/To date"
+                            android:textColor="@color/colorPrimaryText"
                             android:textSize="14sp"
                             android:focusable="true"
                             android:layout_gravity="center"

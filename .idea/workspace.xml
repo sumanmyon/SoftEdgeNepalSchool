@@ -667,7 +667,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -675,7 +674,11 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49829933" visible="true" weight="0.12934947" />
+=======
       <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.036308624" />
+>>>>>>> 87e85f4d46fa7d909aaddcefb3fce25da59f0eb9
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Structure" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="0" visible="true" weight="0.23129252" />
@@ -684,8 +687,13 @@
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50075644" side_tool="true" weight="0.29761904" />
       <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49924356" weight="0.5527211" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.23809524" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.44727892" />
+=======
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.66204506" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.44727892" />
+>>>>>>> 87e85f4d46fa7d909aaddcefb3fce25da59f0eb9
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32928944" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.48129252" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32993197" />

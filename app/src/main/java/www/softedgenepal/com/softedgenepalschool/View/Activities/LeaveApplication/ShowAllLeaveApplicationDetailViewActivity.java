@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.format.DateUtils;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,8 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
 
     private TextView subjectTextView, messageTextView, createDateTextView, fromToTextView, cancelTextView;
     private CardView cardView;
+    private View backpress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,18 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
         casting();
 
         cache = (LeaveApplicationDataCache) getIntent().getSerializableExtra("leaveApplication");
+
+        showInView(cache);
+
+        backpress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+    }
+
+    private void showInView(LeaveApplicationDataCache cache) {
         if(cache != null) {
             setMessage("There is leave application");
 
@@ -60,6 +75,8 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
     }
 
     private void casting() {
+        backpress = findViewById(R.id.leaveApp_bt_close);
+
         subjectTextView = findViewById(R.id.showall_detail_leave_subject);
         messageTextView = findViewById(R.id.showall_detail_leave_message);
         createDateTextView = findViewById(R.id.showall_detail_leave_createDate);
@@ -67,6 +84,17 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
         cancelTextView = findViewById(R.id.showall_detail_leave_isActive);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        showInView(cache);
+    }
 
     public void setMessage(String message) {
         Toast.makeText(this,message,Toast.LENGTH_LONG).show();

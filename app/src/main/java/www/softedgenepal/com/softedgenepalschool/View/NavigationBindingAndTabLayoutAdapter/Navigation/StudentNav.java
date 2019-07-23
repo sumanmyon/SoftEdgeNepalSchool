@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
@@ -27,7 +28,7 @@ public class StudentNav {
                 redirectToActivity(HomeWorkActivity.class);
                 break;
             case R.id.studentAttendance:
-                showMessage("Coming Soon");
+                redirectToActivity(AttendanceActivity.class);
                 break;
             case R.id.routine:
                 redirectToActivity(RoutineActivity.class);

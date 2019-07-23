@@ -30,7 +30,7 @@ public class StudentHomePage implements Contractor.View {
     private TextView userNameTextView, classTextView, roll_SubTextView;
     public static Cache cache;
 
-    private List<StudentDataCache> studentDataCacheList;
+    public static List<StudentDataCache> studentDataCacheList = null;
     public StudentHomePage(Activity activity, View view) {
         this.activity=activity;
         this.view=view;

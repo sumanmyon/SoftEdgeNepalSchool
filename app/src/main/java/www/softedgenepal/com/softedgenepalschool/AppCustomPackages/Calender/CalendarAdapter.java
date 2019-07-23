@@ -2,6 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -243,9 +244,16 @@ public class CalendarAdapter extends BaseAdapter {
 
             recyclerView.setHasFixedSize(false);
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+
+            //recyclerView.setNestedScrollingEnabled(false);                    //todo here
+            ViewCompat.setNestedScrollingEnabled(recyclerView, false);
+            recyclerView.setLayoutFrozen(true);
+
             recyclerView.setAdapter(adapter);
+
         }else {
             recyclerView.setVisibility(View.INVISIBLE);
+            recyclerView.setHasFixedSize(false);
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(layoutManager);
         }

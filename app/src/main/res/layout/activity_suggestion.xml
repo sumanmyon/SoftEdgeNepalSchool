@@ -7,14 +7,48 @@
     android:orientation="vertical"
     tools:context=".View.Activities.SuggestionActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/suggestion_toolbar"
-        style="@style/MyToolbar2"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/leave_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        app:titleTextAppearance="@style/ToolbarTextAppearance"
-        app:titleTextColor="@color/white" />
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/suggest_bt_close"
+                style="@style/RippleStyleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true">
+                <ImageButton
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/ic_back" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/assignment_subject_toolbar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/StudentSuggestion"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -41,59 +75,127 @@
                 android:layout_margin="8dp"
                 android:orientation="vertical">
 
-                <android.support.design.widget.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:theme="@style/TextInputLayout.EditText.Blue">
-
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/suggestion_edit_text_subject"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="@dimen/dp42"
+                        android:layout_height="@dimen/dp42"
+                        app:srcCompat="@drawable/ic_subject"
+                        android:tint="@color/colorPrimaryDark"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="top"
+                        android:backgroundTint="@color/transparent"/>
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:focusable="true"
-                        android:hint="Subject"
-                        android:inputType="text"
-                        android:scrollHorizontally="true"
-                        android:singleLine="true"
-                        android:textColor="@color/colorPrimaryText"
-                        android:theme="@style/AppCompact.EditText.Blue" />
+                        android:orientation="vertical">
 
-                </android.support.design.widget.TextInputLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.5"
+                            android:padding="8dp"
+                            android:textStyle="bold"
+                            android:text="Subject"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/large" />
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/suggestion_edit_text_subject"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:focusable="true"
+                            android:padding="8dp"
+                            android:hint="Improvement of School"
+                            android:inputType="text"
+                            android:scrollHorizontally="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:singleLine="true"
+                            android:textColor="@color/colorPrimaryText"
+                            android:background="@drawable/for_edittext2"
+                            android:theme="@style/AppCompact.EditText.Blue" />
+                    </LinearLayout>
+                </LinearLayout>
 
-                <Button
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColorHint="@color/colorPrimary"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:theme="@style/TextInputLayout.EditText.Blue">-->
+
+                    <!--<android.support.v7.widget.AppCompatEditText-->
+                        <!--android:id="@+id/suggestion_edit_text_subject"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:ellipsize="end"-->
+                        <!--android:focusable="true"-->
+                        <!--android:hint="Subject"-->
+                        <!--android:inputType="text"-->
+                        <!--android:scrollHorizontally="true"-->
+                        <!--android:singleLine="true"-->
+                        <!--android:textColor="@color/colorPrimaryText"-->
+                        <!--android:theme="@style/AppCompact.EditText.Blue" />-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="12dp"
                     android:background="@color/grey_10" />
 
-                <android.support.design.widget.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/for_edittext2"
-                    android:padding="8dp"
-                    android:textColorHint="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:theme="@style/TextInputLayout.EditText.Blue">
-
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/suggestion_edit_text_message"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="@dimen/dp42"
+                        android:layout_height="@dimen/dp42"
+                        app:srcCompat="@drawable/ic_assignment"
+                        android:tint="@color/colorPrimaryDark"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="top"
+                        android:backgroundTint="@color/transparent"/>
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:focusable="true"
-                        android:gravity="top"
-                        android:hint="Message"
-                        android:inputType="textMultiLine"
-                        android:minLines="6" />
+                        android:orientation="vertical">
 
-                </android.support.design.widget.TextInputLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.5"
+                            android:padding="8dp"
+                            android:textStyle="bold"
+                            android:text="Message"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/large" />
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/suggestion_edit_text_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/for_edittext2"
+                            android:theme="@style/AppCompact.EditText.Blue"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorPrimaryText"
+                            android:focusable="true"
+                            android:padding="8dp"
+                            android:gravity="top"
+                            android:hint="We sent out our latest Parent and Carer Questionnaire at the end of the Summer Term 2018 and we were thrilled with the results...... "
+                            android:inputType="textMultiLine"
+                            android:minLines="6" />
+                    </LinearLayout>
+                </LinearLayout>
 
-                <Button
+                <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_gravity="center"
@@ -106,25 +208,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-
-                        <Button
+                    android:orientation="vertical">
+                        <android.support.design.widget.FloatingActionButton
                             android:id="@+id/suggestion_send_button"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:focusable="true"
-                            android:layout_weight="0.3"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/for_button"
-                            android:drawableEnd="@drawable/send_white"
-                            android:text="Send"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_margin="8dp"
+                            app:backgroundTint="@color/green_500"
+                            app:srcCompat="@drawable/ic_send" />
 
                 </LinearLayout>
             </LinearLayout>

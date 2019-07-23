@@ -18,7 +18,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/routine_bt_close"
+                android:id="@+id/event_bt_close"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/selectableItemBackgroundBorderless"
