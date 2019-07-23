@@ -1695,9 +1695,11 @@ drawable ic_pdf3
 drawable ic_profile_img
 drawable ic_report
 drawable ic_room_red_700_24dp
+drawable ic_send
 drawable ic_setting
 drawable ic_subject
 drawable ic_suggestion
+drawable ic_text_input
 drawable ic_video
 drawable lock
 drawable logo
@@ -1742,6 +1744,9 @@ drawable notification_white
 drawable notify_panel_notification_icon_bg
 drawable null_img
 drawable null_img2
+drawable roundbutton
+drawable roundbuttondefault
+drawable roundbuttonpressed
 drawable send_black
 drawable send_white
 drawable send_white2
@@ -1835,6 +1840,7 @@ id attendanceUserName
 id attendance_bt_close
 id attendance_loading
 id attendane_progressbar
+id attly
 id attributionView
 id auto
 id barrier
@@ -1883,6 +1889,7 @@ id customSnackImage
 id customSnackText
 id customToastImage
 id customToastText
+id cv
 id dark
 id date
 id day_name
@@ -1904,6 +1911,7 @@ id englishDate
 id enterAlways
 id enterAlwaysCollapsed
 id event
+id event_bt_close
 id event_date
 id event_loading
 id event_message
@@ -1954,6 +1962,7 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id leaveApp_bt_close
 id leave_application_edit_text_leave_subject
 id leave_application_edit_text_message
 id leave_application_from_button
@@ -2145,7 +2154,6 @@ id showall_detail_leave_toolbar
 id showall_leave_application_progress_bar
 id showall_leave_floating_button
 id showall_leave_recycleView
-id showall_leave_toolbar
 id sibling
 id sibling_popupmenu_recyclerView
 id smallLabel
@@ -2171,10 +2179,10 @@ id studentProfile
 id studentSuggestion
 id submenuarrow
 id submit_area
+id suggest_bt_close
 id suggestion_edit_text_message
 id suggestion_edit_text_subject
 id suggestion_send_button
-id suggestion_toolbar
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager

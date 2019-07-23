@@ -55,11 +55,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="none">
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <LinearLayout
+                    android:id="@+id/attly"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -189,6 +190,7 @@
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/attendanceRecycler"
+                    android:layout_below="@+id/attly"
                     android:layout_marginTop="12dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
@@ -196,7 +198,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="none"/>
-            </LinearLayout>
+            </RelativeLayout>
         </ScrollView>
     </LinearLayout>
 

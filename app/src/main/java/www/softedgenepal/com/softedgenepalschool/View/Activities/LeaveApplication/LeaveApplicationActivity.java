@@ -35,8 +35,8 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     //private View toolbar;
     private EditText subjectEditText, messageEditText;
     private TextView fromTextView, toTextView;
-    private Button fromButton, toButton;
-    private Button sendButton;
+    private View fromButton, toButton;
+    private View sendButton;
     private ProgressBar progressBar;
     private View closeButton;
 
@@ -51,7 +51,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_leave_application);
+        setContentView(R.layout.activity_leave_application2);
         this.activity = this;
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
 

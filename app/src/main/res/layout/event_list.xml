@@ -31,29 +31,71 @@
                 android:orientation="horizontal"
                 android:padding="1dp"
                 android:weightSum="1">
+                <ImageButton
+                    android:layout_width="@dimen/dp42"
+                    android:layout_height="@dimen/dp42"
+                    app:srcCompat="@drawable/ic_subject"
+                    android:tint="@color/colorPrimaryDark"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top"
+                    android:backgroundTint="@color/transparent"/>
 
-                <TextView
-                    android:id="@+id/event_title"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:padding="2dp"
-                    android:text="Ghyaipo Lhoshar"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/large"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+                    <TextView
+                        android:id="@+id/event_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="Ghyaipo Lhoshar"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            app:srcCompat="@drawable/ic_calender_white"
+                            android:tint="@color/colorPrimaryDark"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/transparent"/>
+                        <TextView
+                            android:id="@+id/event_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:padding="4dp"
+                            android:text="date" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lyt_expand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/vvsmall"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <TextView
+                            android:id="@+id/event_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryText"
+                            android:text="message"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
-                <TextView
-                    android:id="@+id/event_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="0.5"
-                    android:gravity="right|bottom"
-                    android:textColor="@color/colorPrimaryText"
-                    android:padding="2dp"
-                    android:text="date"
-                    android:textSize="@dimen/small" />
-
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
@@ -65,37 +107,20 @@
         <ImageButton
             android:id="@+id/bt_expand"
             android:layout_width="?attr/actionBarSize"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
             android:layout_weight="0.5"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:tint="@color/grey_60"
             app:srcCompat="@drawable/ic_expand_arrow" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lyt_expand"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/vvsmall"
-        android:background="@color/grey_3"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/event_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryText"
-            android:text="message"
-            android:textSize="@dimen/medium" />
-
-    </LinearLayout>
-
-    <Button
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/bck"
         android:layout_gravity="start"
         android:layout_marginBottom="2dp"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@color/grey_10" />
 </LinearLayout>

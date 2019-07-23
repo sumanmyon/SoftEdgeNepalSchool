@@ -39,10 +39,12 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
 
     protected ProgressBar progressBar;
     protected FloatingActionButton floatingActionButton;
-    protected Toolbar toolbar;
+    //protected Toolbar toolbar;
     protected TextView messageHandleTextView;
+    private View backpress;
 
     private final String uid = "1";
+    private List<LeaveApplicationDataCache> leaveApplicationDataCacheList;
 
     //for animation
     private RecyclerView recyclerView;
@@ -63,13 +65,20 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
         casting();
 
         //toolbar
-        toolbar();
+        //toolbar();
 
         //get all leave application of user
         getLeaveApplication();
 
         //fab
         floatingActionButton();
+
+        backpress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
 
@@ -84,8 +93,9 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     }
 
     @Override
-    public void setAllLeaveApplication(final List<LeaveApplicationDataCache> leaveApplicationDataCacheList) {
+    public void setAllLeaveApplication(List<LeaveApplicationDataCache> leaveApplicationDataCacheList) {
         setTextViewVisibilityOff();
+        this.leaveApplicationDataCacheList = leaveApplicationDataCacheList;
 
         mAdapter = new AdapterListAnimation(this, leaveApplicationDataCacheList, animation_type);
         recyclerView.setAdapter(mAdapter);
@@ -174,9 +184,9 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
         startActivity(new Intent(this, activityClass));
     }
 
-    private void toolbar() {
-        toolbar.setTitle(getResources().getString(R.string.ShowAllLeaveApplication_ToolBar));
-    }
+//    private void toolbar() {
+//        toolbar.setTitle(getResources().getString(R.string.ShowAllLeaveApplication_ToolBar));
+//    }
 
     @Override
     public void setMessage(String message) {
@@ -193,7 +203,9 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     }
 
     private void casting() {
-        toolbar = findViewById(R.id.showall_leave_toolbar);
+        //toolbar = findViewById(R.id.showall_leave_toolbar);
+        backpress = findViewById(R.id.leaveApp_bt_close);
+
         progressBar = findViewById(R.id.showall_leave_application_progress_bar);
         floatingActionButton = findViewById(R.id.showall_leave_floating_button);
         messageHandleTextView = findViewById(R.id.show_leave_app_message_textview);
@@ -213,6 +225,18 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
         bottom_sheet = findViewById(R.id.bottom_sheet);
         mBehavior = BottomSheetBehavior.from(bottom_sheet);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setAllLeaveApplication(leaveApplicationDataCacheList);
     }
 
     public Context getActivity() {

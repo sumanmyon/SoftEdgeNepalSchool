@@ -72,28 +72,27 @@
                     android:layout_margin="8dp"
                     android:orientation="vertical">
 
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorPrimary"
-                        android:textStyle="bold"
-                        android:theme="@style/TextInputLayout.EditText.Blue" >
-
-                        <android.support.v7.widget.AppCompatEditText
-                            android:id="@+id/leave_application_edit_text_leave_subject"
+                        <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:focusable="true"
-                            android:hint="Subject"
-                            android:inputType="text"
-                            android:scrollHorizontally="true"
-                            android:singleLine="true"
-                            android:textColor="@color/colorPrimaryText"
-                            android:theme="@style/AppCompact.EditText.Blue" />
+                            android:textColorHint="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:theme="@style/TextInputLayout.EditText.Blue" >
 
-                    </android.support.design.widget.TextInputLayout>
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/leave_application_edit_text_leave_subject"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:focusable="true"
+                                android:hint="Subject"
+                                android:inputType="text"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:textColor="@color/colorPrimaryText"
+                                android:theme="@style/AppCompact.EditText.Blue" />
+
+                        </android.support.design.widget.TextInputLayout>
 
                     <Button
                         android:layout_width="match_parent"
