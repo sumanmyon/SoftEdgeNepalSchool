@@ -57,45 +57,89 @@
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimaryDark"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <ImageButton
-                            android:layout_width="@dimen/dp42"
-                            android:layout_height="@dimen/dp42"
-                            app:srcCompat="@drawable/ic_calender_white"
-                            android:tint="@color/colorPrimaryDark"
-                            android:scaleType="centerCrop"
-                            android:layout_gravity="center"
-                            android:backgroundTint="@color/transparent"/>
-                        <TextView
-                            android:id="@+id/event_date"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:textColor="@color/colorPrimaryText"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                            android:padding="4dp"
-                            android:text="date" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/lyt_expand"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/vvsmall"
-                        android:orientation="vertical"
-                        android:visibility="gone">
-                        <TextView
-                            android:id="@+id/event_message"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorPrimaryText"
-                            android:text="message"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<ImageButton-->
+                            <!--android:layout_width="@dimen/dp42"-->
+                            <!--android:layout_height="@dimen/dp42"-->
+                            <!--app:srcCompat="@drawable/ic_calender_white"-->
+                            <!--android:tint="@color/colorPrimaryDark"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:backgroundTint="@color/transparent"/>-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/event_date"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center_vertical"-->
+                            <!--android:textColor="@color/colorPrimaryText"-->
+                            <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                            <!--android:padding="4dp"-->
+                            <!--android:text="date" />-->
+                    <!--</LinearLayout>-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/lyt_expand"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="@dimen/vvsmall"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:visibility="gone">-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/event_message"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/colorPrimaryText"-->
+                            <!--android:text="message"-->
+                            <!--android:textAppearance="@style/TextAppearance.AppCompat.Small" />-->
 
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
                 </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:layout_width="@dimen/dp42"
+                    android:layout_height="@dimen/dp42"
+                    app:srcCompat="@drawable/ic_calender_white"
+                    android:tint="@color/colorPrimaryDark"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/transparent"/>
+                <TextView
+                    android:id="@+id/event_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:padding="4dp"
+                    android:text="date" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lyt_expand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <ImageButton
+                    android:layout_width="@dimen/dp42"
+                    android:layout_height="1dp"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/transparent"/>
+                <TextView
+                    android:id="@+id/event_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryText"
+                    android:text="message"
+                    android:padding="4dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
             </LinearLayout>
         </LinearLayout>
 

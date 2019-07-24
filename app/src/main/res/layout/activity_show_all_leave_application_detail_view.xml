@@ -56,7 +56,6 @@
         android:layout_margin="2dp"
         app:cardElevation="2dp"
         app:cardCornerRadius="0dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,12 +70,13 @@
                 android:textSize="@dimen/large"
                 android:padding="4dp"
                 android:textStyle="bold" />
-            <Button
+            <View
                 android:layout_width="100dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
                 android:layout_gravity="start"
-                android:background="@color/colorPrimaryDark"/>
+                android:background="@color/grey_10"/>
             <TextView
                 android:id="@+id/showall_detail_leave_createDate"
                 android:layout_width="wrap_content"
@@ -88,7 +88,10 @@
                 android:textSize="@dimen/small"
                 android:layout_marginTop="12dp"
                 android:padding="2dp"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.5"
+                android:drawableRight="@drawable/ic_calender_white"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:drawablePadding="8dp"/>
 
             <TextView
                 android:id="@+id/showall_detail_leave_from_to"
@@ -98,21 +101,43 @@
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/medium"
                 android:layout_marginTop="4dp"
-                android:padding="4dp"/>
-
-            <TextView
-                android:id="@+id/showall_detail_leave_message"
+                android:padding="10dp"
+                android:drawableLeft="@drawable/ic_calender_white"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorPrimaryDark"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dear Mr./Mrs. Hari,\n\n         I am down with fever and flu because of which I will not be able to come to the office for at least 1 day. As per my family doctor, it is best that I take rest and recover properly before resuming work.
+                android:orientation="horizontal">
+                <ImageButton
+                    android:layout_width="@dimen/dp42"
+                    android:layout_height="@dimen/dp42"
+                    android:layout_marginLeft="@dimen/spacing_xsmall"
+                    android:layout_marginRight="@dimen/spacing_xsmall"
+                    android:src="@drawable/ic_leave_application"
+                    android:tint="@color/colorPrimaryDark"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="top"
+                    android:backgroundTint="@color/transparent"/>
+
+                <TextView
+                    android:id="@+id/showall_detail_leave_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Dear Mr./Mrs. Hari,\n\n         I am down with fever and flu because of which I will not be able to come to the office for at least 1 day. As per my family doctor, it is best that I take rest and recover properly before resuming work.
 
 I have asked SoftTech Nepal to check on my clients and will try to periodically check my email if you need anything urgent.
 
 Please grant me leave for the aforementioned period. If you need additional information, please let me know.
 \n\nYours Sincerely,\nSuman Neupane"
-                android:textColor="@color/colorPrimaryText"
-                android:textSize="@dimen/medium"
-                android:padding="4dp"/>
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/medium"
+                    android:padding="4dp"
+                    />
+            </LinearLayout>
+
+
             <TextView
                 android:id="@+id/showall_detail_leave_isActive"
                 android:layout_width="match_parent"

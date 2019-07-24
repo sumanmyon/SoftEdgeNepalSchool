@@ -16,9 +16,7 @@
             style="@style/RippleStyleBlack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:padding="8dp">
-
+            android:focusable="true">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,11 +34,13 @@
                         android:layout_marginRight="@dimen/spacing_xsmall"
                         android:background="@android:color/transparent"
                         android:tint="@color/colorPrimary"
-                        app:srcCompat="@drawable/ic_subject" />
+                        app:srcCompat="@drawable/ic_subject"
+                        android:layout_gravity="center_vertical"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
                         <TextView
                             android:id="@+id/show_leave_app_recycle_subject"
                             android:layout_width="match_parent"
@@ -50,99 +50,86 @@
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="16sp"
                             android:textStyle="bold" />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-                            <ImageButton
-                                android:layout_width="@dimen/dp42"
-                                android:layout_height="@dimen/dp42"
-                                android:layout_marginLeft="@dimen/spacing_xsmall"
-                                android:layout_marginRight="@dimen/spacing_xsmall"
-                                android:background="@android:color/transparent"
-                                android:tint="@color/colorPrimary"
-                                app:srcCompat="@drawable/ic_date_range" />
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="@dimen/small"
-                                android:orientation="vertical">
-                                <TextView
-                                    android:id="@+id/show_leave_app_recycle_createDate"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="06/12/2076"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                    android:textColor="@color/grey_90" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Created Date"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
-                                    android:textColor="@color/grey_40" />
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <ImageButton
-                                android:layout_width="@dimen/dp42"
-                                android:layout_height="@dimen/dp42"
-                                android:layout_marginLeft="@dimen/spacing_xsmall"
-                                android:layout_marginRight="@dimen/spacing_xsmall"
-                                android:src="@drawable/ic_text_input"
-                                android:tint="@color/colorPrimaryDark"
-                                android:scaleType="centerCrop"
-                                android:layout_gravity="top"
-                                android:backgroundTint="@color/transparent"/>
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="@dimen/small"
-                                android:orientation="vertical">
-                                <TextView
-                                    android:id="@+id/show_leave_app_recycle_message"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="msdkcnbcb"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                    android:textColor="@color/grey_90" />
-
-                                <!--<TextView-->
-                                    <!--android:layout_width="match_parent"-->
-                                    <!--android:layout_height="wrap_content"-->
-                                    <!--android:text="Message"-->
-                                    <!--android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"-->
-                                    <!--android:textColor="@color/grey_40" />-->
-                            </LinearLayout>
-                        </LinearLayout>
-                        <TextView
-                            android:id="@+id/show_leave_app_recycle_isActive"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:gravity="end"
-                            android:text="Canceled"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="14sp"
-                            android:textStyle="italic" />
                     </LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="@dimen/dp42"
+                        android:layout_height="@dimen/dp42"
+                        android:layout_marginLeft="@dimen/spacing_xsmall"
+                        android:layout_marginRight="@dimen/spacing_xsmall"
+                        android:background="@android:color/transparent"
+                        android:tint="@color/colorPrimary"
+                        app:srcCompat="@drawable/ic_date_range" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/small"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/show_leave_app_recycle_createDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="06/12/2076"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/grey_90" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Created Date"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                            android:textColor="@color/grey_40" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="@dimen/dp42"
+                        android:layout_height="@dimen/dp42"
+                        android:layout_marginLeft="@dimen/spacing_xsmall"
+                        android:layout_marginRight="@dimen/spacing_xsmall"
+                        android:src="@drawable/ic_text_input"
+                        android:tint="@color/colorPrimaryDark"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="top"
+                        android:backgroundTint="@color/transparent"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/small"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/show_leave_app_recycle_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="msdkcnbcbmvnmncx\ndvjxcvnbnxcbvnbxmcbmvbnm\nbdjvbcxvbxcvbvcxnvnb\ngsdhfhvchxbcvbnvbxnvcnbvbnxc\ndvjxcvnbnxcbvnbxmcbmvbnm\nbdjvbcxvbxcvbvcxnvnb\ngsdhfhvchxbcvbnvbxnvcnbvbnxc"
+                            android:layout_gravity="bottom"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/grey_90" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/show_leave_app_recycle_isActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="end"
+                    android:paddingEnd="8dp"
+                    android:text="Canceled"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
             </LinearLayout>
-
-                <!--<View-->
-                    <!--android:layout_width="100dp"-->
-                    <!--android:layout_height="1dp"-->
-                    <!--android:layout_gravity="start"-->
-                    <!--android:layout_marginLeft="4dp"-->
-                    <!--android:layout_marginTop="4dp"-->
-                    <!--android:background="@color/blue_grey_500" />-->
-
         </com.balysv.materialripple.MaterialRippleLayout>
     </android.support.v7.widget.CardView>
 

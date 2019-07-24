@@ -1772,6 +1772,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id ShowInMap_bt_close
 id ShowInMap_toolbar
 id about
 id about_toolbar
