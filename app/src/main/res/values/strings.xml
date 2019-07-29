@@ -65,4 +65,9 @@
     <string name="msg_subscribe_failed">subscribe failed </string>
     <string name="loading">Loading...</string>
     <string name="CreatelevApp">Create your Leave Application</string>
+
+    <!-- Report Card Marks View:: flag = percentage, gpa or both -->
+    <string name="percentage">percentage</string>
+    <string name="gpa">gpa</string>
+    <string name="both">both</string>
 </resources>

@@ -94,7 +94,7 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
 
     @Override
     public void setAllLeaveApplication(List<LeaveApplicationDataCache> leaveApplicationDataCacheList) {
-        setTextViewVisibilityOff();
+        setProgressBarInVisibility();
         this.leaveApplicationDataCacheList = leaveApplicationDataCacheList;
 
         mAdapter = new AdapterListAnimation(this, leaveApplicationDataCacheList, animation_type);

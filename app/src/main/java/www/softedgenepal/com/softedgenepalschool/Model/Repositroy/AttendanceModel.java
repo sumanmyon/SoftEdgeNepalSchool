@@ -72,11 +72,6 @@ public class AttendanceModel implements IContractor.Model {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(request);
-
-//            StoreInSharePreference preference = new StoreInSharePreference(getContext());
-//            preference.setType(preference.Attendance);
-//            preference.storeData(AttendanceApi.attendance);
-//            offline();
     }
 
     private void offline() {

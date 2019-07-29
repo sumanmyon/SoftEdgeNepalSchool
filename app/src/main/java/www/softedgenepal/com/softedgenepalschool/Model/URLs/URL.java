@@ -43,6 +43,10 @@ public class URL {
         return new OnlineUrl().routineUrl;
     }
 
+    public String reportCardUrl(){
+        return new OnlineUrl().reportCardUrl;
+    }
+
     public String attendanceUrl(){
         return new OnlineUrl().attendanceUrl;
     }
@@ -65,6 +69,8 @@ public class URL {
         private String routineUrl = onlineUrl + "api/data/getroutine";
 
         private String attendanceUrl = onlineUrl + "api/data/getattendance";
+
+        private String reportCardUrl = onlineUrl + "api/data/getexammarks";
 
         public OnlineUrl() {
             loginStudentUrl = loginStudentUrl + "UserName=suman&Password=admin123";

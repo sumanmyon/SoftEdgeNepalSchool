@@ -29,7 +29,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <application
         android:allowBackup="true"
@@ -38,10 +38,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar"
-        android:usesCleartextTraffic="true">     <!-- for cleartext http traffic-->
-        <activity android:name=".View.Activities.RunTimePermissions"
-            android:theme="@style/AppTheme_Permission"/>
-        <activity android:name=".View.Activities.AttendanceActivity"/>
+        android:usesCleartextTraffic="true">
+        <activity android:name=".View.Activities.ReportCardActivity"
+            android:screenOrientation="landscape"/>
+        <!-- for cleartext http traffic -->
+        <activity
+            android:name=".View.Activities.RunTimePermissions"
+            android:theme="@style/AppTheme_Permission" />
+        <activity android:name=".View.Activities.AttendanceActivity" />
         <activity android:name=".View.Activities.RoutineActivity" />
         <activity android:name=".View.Activities.BusRouteActivity" />
         <activity android:name=".View.Activities.ShowInMapActivity" />

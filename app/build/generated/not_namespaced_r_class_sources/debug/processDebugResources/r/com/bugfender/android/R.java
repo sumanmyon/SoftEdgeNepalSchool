@@ -37,19 +37,19 @@ public final class R {
         public static final int close_iv = 0x7f0a006f;
         public static final int feedback_message_et = 0x7f0a009d;
         public static final int feedback_title_et = 0x7f0a009e;
-        public static final int message_tv = 0x7f0a0108;
-        public static final int positive_action_tv = 0x7f0a0126;
-        public static final int root_vg = 0x7f0a0142;
-        public static final int title_tv = 0x7f0a01bd;
+        public static final int message_tv = 0x7f0a0109;
+        public static final int positive_action_tv = 0x7f0a0127;
+        public static final int root_vg = 0x7f0a015e;
+        public static final int title_tv = 0x7f0a01d9;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int bf_feedback_screen = 0x7f0d0033;
+        public static final int bf_feedback_screen = 0x7f0d0034;
     }
     public static final class string {
         private string() {}
 
-        public static final int powered_by_bugfender = 0x7f1100c5;
+        public static final int powered_by_bugfender = 0x7f1100c8;
     }
 }

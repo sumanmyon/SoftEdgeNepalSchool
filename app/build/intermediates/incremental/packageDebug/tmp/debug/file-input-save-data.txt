@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jul 23 16:14:49 NPT 2019
+#Wed Jul 24 15:27:30 NPT 2019
 4.path=lib/x86_64/libmapbox-gl.so
 8.set=NATIVE_RESOURCE
 6.path=StudentFailed.json

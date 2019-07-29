@@ -55,7 +55,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     private WebView homeWorkTextView;
     private ImageButton homeWorkDownload;
     private RecyclerView recyclerView;
-    private final int GRID_SPAN = 3;
+    private final int GRID_SPAN = 4;        //3
 
     private AssignmentCache cache;
 
@@ -252,7 +252,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                     Point size = new Point();
                     display.getSize(size);
                     int height = (size.y)/4;
-                    int width = (size.x)/3;
+                    int width = (size.x)/5;     //3
 
                     ViewGroup.LayoutParams params = homeworkImage.getLayoutParams();
                     params.height = width;

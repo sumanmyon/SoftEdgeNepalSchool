@@ -14,7 +14,7 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
     private Context context;
     private int keysLength;
     private int size;
-    private int animation_type;
+    protected int animation_type = ItemAnimation.BOTTOM_UP;
 
     protected RecyclerAdapter(Context context, int keysLength) {
         this.context=context;
@@ -36,17 +36,8 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int position) {
         onBind(viewHolder, position);
 
-        setAnimationType(ItemAnimation.BOTTOM_UP);
+       // setAnimationType(animation_type);
         setAnimation(viewHolder.itemView, position);
-
-//        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (onItemClickListener != null) {
-//                    onItemClickListener.onItemClick(view, position);
-//                }
-//            }
-//        });
     }
 
     @Override
@@ -76,9 +67,9 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
     private int lastPosition = -1;
     private boolean on_attach = true;
 
-    protected void setAnimationType(int animation_type){
-        this.animation_type = animation_type;
-    }
+//    protected void setAnimationType(int animation_type){
+//        this.animation_type = animation_type;
+//    }
 
     protected void setAnimation(View view, int position) {
         if (position > lastPosition) {

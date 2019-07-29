@@ -17,6 +17,7 @@ public class StoreInSharePreference {
     public String Routine = "routine";
     public String LeaveApplication = "leave_application";
     public String Attendance = "attendance";
+    public String ReportCard = "report_card";
 
     public StoreInSharePreference(Context context) {
         this.context = context;
@@ -51,6 +52,11 @@ public class StoreInSharePreference {
         if(type.equals(Attendance)){
             MY_PREFS_NAME ="Attendance";
             stringName = Attendance;
+        }
+
+        if(type.equals(ReportCard)){
+            MY_PREFS_NAME ="ReportCard";
+            stringName = ReportCard;
         }
 
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
