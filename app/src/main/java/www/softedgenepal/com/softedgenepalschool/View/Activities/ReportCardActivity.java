@@ -47,6 +47,9 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
 
     private List<ReportCardCache> reportCardCacheList;
 
+    private Integer red = getResources().getColor(R.color.red_500);
+    private Integer green = getResources().getColor(R.color.green_500);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -230,16 +233,26 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
                 recyclerReportCardSN.setText(String.valueOf(position+1));
                 recyclerReportCardSubject.setText(marks.Subject);
 
+                float passM = Float.valueOf(marks.PassMarks);
+                float obtainM = Float.valueOf(marks.ObtainedMarks);
                 recyclerReportCardTheroyFM.setText(marks.FullMarks);
-                recyclerReportCardTheroyPM.setText(marks.PassMarks);
-                recyclerReportCardTheroyOM.setText(marks.ObtainedMarks);
+                recyclerReportCardTheroyPM.setText(passM+"");
+                recyclerReportCardTheroyOM.setText(obtainM+"");
+                if(passM>obtainM){
+                    recyclerReportCardTheroyOM.setTextColor(red);
+                }
 
+                float passPM = Float.valueOf(marks.PassMarks);
+                float obtainPM = Float.valueOf(marks.ObtainedMarks);
                 recyclerReportCardPracticalFM.setText(marks.PracticalFullMarks);
                 recyclerReportCardPracticalPM.setText(marks.PracticalPassMarks);
                 recyclerReportCardPracticalOM.setText(marks.PracticalObtainedMarks);
+                if(passPM>obtainPM){
+                    recyclerReportCardPracticalOM.setTextColor(red);
+                }
 
-                totalTheroyMarks = totalTheroyMarks + Float.valueOf(marks.FullMarks);// + Float.valueOf(marks.PracticalFullMarks);
-                passTotalTheroyMarks = passTotalTheroyMarks + Float.valueOf(marks.PassMarks); // + Float.valueOf(marks.PracticalPassMarks);
+                totalTheroyMarks = totalTheroyMarks + Float.valueOf(marks.FullMarks);
+                passTotalTheroyMarks = passTotalTheroyMarks + Float.valueOf(marks.PassMarks);
                 totalPracticalMarks = totalPracticalMarks + Float.valueOf(marks.PracticalFullMarks);
                 passTotalPracticalMarks = passTotalPracticalMarks + Float.valueOf(marks.PracticalPassMarks);
 
@@ -279,9 +292,9 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
         resultTextView.setText(result);
 
         if(result.equals("Pass")) {
-            resultTextView.setTextColor(getResources().getColor(R.color.green_500));
+            resultTextView.setTextColor(green);
         }else {
-            resultTextView.setTextColor(getResources().getColor(R.color.red_500));
+            resultTextView.setTextColor(red);
         }
     }
 
