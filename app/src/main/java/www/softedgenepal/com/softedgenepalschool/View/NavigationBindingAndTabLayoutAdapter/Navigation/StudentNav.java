@@ -9,7 +9,6 @@ import www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActiv
 import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;

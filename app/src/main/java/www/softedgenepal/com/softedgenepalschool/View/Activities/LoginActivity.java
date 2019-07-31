@@ -1,23 +1,33 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.QRandBarCode.QRScan;
+import com.google.zxing.Result;
+
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
 
+import static android.Manifest.permission_group.CAMERA;
+
 public class LoginActivity extends AppCompatActivity {
     //casting
-    public EditText editTextUserName,  editTextPassword;
+    static public EditText editTextUserName,  editTextPassword;
     public Button buttonQR, buttonLogin;
     ImageView imageView;
-    QRScan qrScan;
+
+    private static final int REQUEST_CAMERA = 1;
+    private ZXingScannerView mScannerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         loadUI();
 
         //QR Scan
-        //qRScan();
+        qRScan();
 
         //login button
         buttonLogin.setOnClickListener(new FormValidation(this,editTextUserName, editTextPassword));
@@ -47,10 +57,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void qRScan(){
+        buttonQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ScanActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        qrScan.onResult(requestCode, resultCode, data);
-    }
 }

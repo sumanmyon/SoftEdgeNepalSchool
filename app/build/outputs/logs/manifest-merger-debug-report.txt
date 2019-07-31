@@ -12,8 +12,8 @@ MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.11.0] C:
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\56dad3d4b2e7384043ea2d2253d8b9b4\AndroidManifest.xml:2:1-20:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\a4e5421f631a8043bc5f844ef002a946\AndroidManifest.xml:17:1-22:12
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d53a8c069dd987e112002d5d7104b535\AndroidManifest.xml:17:1-55:12
-MERGED from [me.dm7.barcodescanner:zxing:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1599d1e64bcb03e66c12980545cedd45\AndroidManifest.xml:2:1-13:12
-MERGED from [me.dm7.barcodescanner:core:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\170d8cebff61c173c7305ff428aaf808\AndroidManifest.xml:2:1-13:12
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\035bb65be88441961ded7d8c5d33ea07\AndroidManifest.xml:2:1-13:12
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\12d251c6e3f7ef0d35dfd1b7ae884781\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\f01b840eb6ad4f1da7fe34219ca3ae77\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-messaging:17.3.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb7ab0572045a10fa6fb7bd9ac0c12\AndroidManifest.xml:17:1-37:12
 MERGED from [com.google.firebase:firebase-core:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7634fca7b58faaec8045cf3ef284f2d7\AndroidManifest.xml:2:1-9:12
@@ -198,10 +198,10 @@ MERGED from [pub.devrel:easypermissions:2.0.1] C:\Users\suman\.gradle\caches\tra
 MERGED from [pub.devrel:easypermissions:2.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3374fac54bf6a6d508df3d3fe6d0d4b0\AndroidManifest.xml:11:5-17:19
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d53a8c069dd987e112002d5d7104b535\AndroidManifest.xml:45:5-53:19
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d53a8c069dd987e112002d5d7104b535\AndroidManifest.xml:45:5-53:19
-MERGED from [me.dm7.barcodescanner:zxing:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1599d1e64bcb03e66c12980545cedd45\AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:zxing:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1599d1e64bcb03e66c12980545cedd45\AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:core:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\170d8cebff61c173c7305ff428aaf808\AndroidManifest.xml:11:5-20
-MERGED from [me.dm7.barcodescanner:core:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\170d8cebff61c173c7305ff428aaf808\AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\035bb65be88441961ded7d8c5d33ea07\AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\035bb65be88441961ded7d8c5d33ea07\AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\12d251c6e3f7ef0d35dfd1b7ae884781\AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\12d251c6e3f7ef0d35dfd1b7ae884781\AndroidManifest.xml:11:5-20
 MERGED from [com.google.firebase:firebase-messaging:17.3.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb7ab0572045a10fa6fb7bd9ac0c12\AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-messaging:17.3.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb7ab0572045a10fa6fb7bd9ac0c12\AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-core:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7634fca7b58faaec8045cf3ef284f2d7\AndroidManifest.xml:7:5-20
@@ -280,6 +280,10 @@ ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENS
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:43:13-50
 	android:name
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:19-69
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.ScanActivity
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:44:9-66
+	android:name
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:44:19-63
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.RunTimePermissions
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:45:9-47:58
 	android:theme
@@ -398,10 +402,10 @@ MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\suman\.gradle\cac
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\a4e5421f631a8043bc5f844ef002a946\AndroidManifest.xml:20:5-44
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d53a8c069dd987e112002d5d7104b535\AndroidManifest.xml:19:5-43
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\d53a8c069dd987e112002d5d7104b535\AndroidManifest.xml:19:5-43
-MERGED from [me.dm7.barcodescanner:zxing:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1599d1e64bcb03e66c12980545cedd45\AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:zxing:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1599d1e64bcb03e66c12980545cedd45\AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:core:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\170d8cebff61c173c7305ff428aaf808\AndroidManifest.xml:7:5-9:41
-MERGED from [me.dm7.barcodescanner:core:1.9] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\170d8cebff61c173c7305ff428aaf808\AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\035bb65be88441961ded7d8c5d33ea07\AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\035bb65be88441961ded7d8c5d33ea07\AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\12d251c6e3f7ef0d35dfd1b7ae884781\AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\12d251c6e3f7ef0d35dfd1b7ae884781\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\f01b840eb6ad4f1da7fe34219ca3ae77\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\f01b840eb6ad4f1da7fe34219ca3ae77\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:17.3.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb7ab0572045a10fa6fb7bd9ac0c12\AndroidManifest.xml:20:5-44

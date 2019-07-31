@@ -11,27 +11,27 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContracto
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity;
 
 public class ReportCardPresenter implements IContractor.Presenter {
-    private ReportCardActivity reportCardActivity;
+    private ReportCardActivity percentageFragment;
     private ReportCardModel reportCardModel;
 
-    public ReportCardPresenter(ReportCardActivity reportCardActivity) {
-        this.reportCardActivity = reportCardActivity;
+    public ReportCardPresenter(ReportCardActivity percentageFragment) {
+        this.percentageFragment = percentageFragment;
         reportCardModel = new ReportCardModel(this);
     }
 
     @Override
     public void setMessage(String message) {
-        reportCardActivity.setMessage(message);
+        percentageFragment.setMessage(message);
     }
 
     @Override
     public void setLog(String topic, String body) {
-        reportCardActivity.setLog(topic, body);
+        percentageFragment.setLog(topic, body);
     }
 
     @Override
     public Context getCalContext() {
-        return reportCardActivity.getCalContext();
+        return percentageFragment.getCalContext();
     }
 
     @Override
@@ -41,11 +41,11 @@ public class ReportCardPresenter implements IContractor.Presenter {
 
     @Override
     public Map<String, String> getParams() {
-        return reportCardActivity.getParams();
+        return percentageFragment.getParams();
     }
 
     @Override
     public void setJsonData(JSONObject response) {
-        reportCardActivity.setJsonData(response);
+        percentageFragment.setJsonData(response);
     }
 }

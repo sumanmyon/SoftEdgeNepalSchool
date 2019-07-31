@@ -52,7 +52,7 @@ public class URL {
     }
 
     private class OnlineUrl{
-        private String onlineUrl = "http://192.168.100.100:400/";
+        private String onlineUrl = "http://192.168.100.102:400/";
         private String loginStudentUrl = onlineUrl + "api/auth/Login?";
 
         private String createLeaveApplicationUrl =onlineUrl + "api/data/Leaveapplication";

@@ -12,18 +12,18 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int mrl_rippleAlpha = 0x7f0401c1;
-        public static final int mrl_rippleBackground = 0x7f0401c2;
-        public static final int mrl_rippleColor = 0x7f0401c3;
-        public static final int mrl_rippleDelayClick = 0x7f0401c4;
-        public static final int mrl_rippleDimension = 0x7f0401c5;
-        public static final int mrl_rippleDuration = 0x7f0401c6;
-        public static final int mrl_rippleFadeDuration = 0x7f0401c7;
-        public static final int mrl_rippleHover = 0x7f0401c8;
-        public static final int mrl_rippleInAdapter = 0x7f0401c9;
-        public static final int mrl_rippleOverlay = 0x7f0401ca;
-        public static final int mrl_ripplePersistent = 0x7f0401cb;
-        public static final int mrl_rippleRoundedCorners = 0x7f0401cc;
+        public static final int mrl_rippleAlpha = 0x7f0401c8;
+        public static final int mrl_rippleBackground = 0x7f0401c9;
+        public static final int mrl_rippleColor = 0x7f0401ca;
+        public static final int mrl_rippleDelayClick = 0x7f0401cb;
+        public static final int mrl_rippleDimension = 0x7f0401cc;
+        public static final int mrl_rippleDuration = 0x7f0401cd;
+        public static final int mrl_rippleFadeDuration = 0x7f0401ce;
+        public static final int mrl_rippleHover = 0x7f0401cf;
+        public static final int mrl_rippleInAdapter = 0x7f0401d0;
+        public static final int mrl_rippleOverlay = 0x7f0401d1;
+        public static final int mrl_ripplePersistent = 0x7f0401d2;
+        public static final int mrl_rippleRoundedCorners = 0x7f0401d3;
     }
     public static final class color {
         private color() {}
@@ -33,7 +33,7 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] MaterialRippleLayout = { 0x7f0401c1, 0x7f0401c2, 0x7f0401c3, 0x7f0401c4, 0x7f0401c5, 0x7f0401c6, 0x7f0401c7, 0x7f0401c8, 0x7f0401c9, 0x7f0401ca, 0x7f0401cb, 0x7f0401cc };
+        public static final int[] MaterialRippleLayout = { 0x7f0401c8, 0x7f0401c9, 0x7f0401ca, 0x7f0401cb, 0x7f0401cc, 0x7f0401cd, 0x7f0401ce, 0x7f0401cf, 0x7f0401d0, 0x7f0401d1, 0x7f0401d2, 0x7f0401d3 };
         public static final int MaterialRippleLayout_mrl_rippleAlpha = 0;
         public static final int MaterialRippleLayout_mrl_rippleBackground = 1;
         public static final int MaterialRippleLayout_mrl_rippleColor = 2;

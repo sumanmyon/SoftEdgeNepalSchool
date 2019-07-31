@@ -1,15 +1,13 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.content.Context;
-import android.support.v4.view.ViewCompat;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,44 +15,51 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.ReportCardPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.FragmentAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.ReportCard.Grade;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.ReportCard.Percentage;
 
-public class ReportCardActivity extends AppCompatActivity implements IContractor.View {
-    private TextView loadTextView,
-            reportCardTheoryFullMarksTotal, reportCardTheoryPassMarksTotal,
-            reportCardPracticalFullMarksTotal, reportCardPracticalPassMarksTotal,
-            reportCardObtainMarks;
-    private TextView percentageTextView, positionTextView, resultTextView;
+public class ReportCardActivity extends AppCompatActivity implements IContractor.View{
+    private TextView loadTextView;
     private ProgressBar progressBar;
     private View backpress;
-    private RecyclerView recyclerView;
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     private ReportCardPresenter presenter;
 
-    private String studentId = "3074";
+    private String studentId = "3075";
     private String examId = "2";
 
-    private List<ReportCardCache> reportCardCacheList;
+    public static List<ReportCardCache> reportCardCacheList;
+    private List<String> typeList = new ArrayList<>();
+    private String type;
+    private int typeChoose = 2;   //todo it can be 0, 1 or 2
 
-    private Integer red = getResources().getColor(R.color.red_500);
-    private Integer green = getResources().getColor(R.color.green_500);
+    private void setType(){
+        typeList.add("percentage");
+        typeList.add("grade");
+        typeList.add("both");
+
+        type = typeList.get(typeChoose);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_card);
 
+        setType();
         casting();
 
         presenter = new ReportCardPresenter(this);
@@ -74,21 +79,8 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
         loadTextView = findViewById(R.id.reportCard_loading);
         backpress = findViewById(R.id.reportCard_bt_close);
 
-        recyclerView = findViewById(R.id.reportCard_recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        ViewCompat.setNestedScrollingEnabled(recyclerView, false);
-        recyclerView.setLayoutFrozen(true);
-
-        reportCardTheoryFullMarksTotal = findViewById(R.id.reportCard_theory_total_fm);
-        reportCardTheoryPassMarksTotal = findViewById(R.id.reportCard_theory_total_pm);
-        reportCardPracticalFullMarksTotal = findViewById(R.id.reportCard_practical_total_fm);
-        reportCardPracticalPassMarksTotal = findViewById(R.id.reportCard_practical_total_pm);
-        reportCardObtainMarks = findViewById(R.id.reportCard_total_marks);
-
-        percentageTextView = findViewById(R.id.repordCardPercentage);
-        positionTextView = findViewById(R.id.repordCardPosition);
-        resultTextView = findViewById(R.id.repordCardResult);
+        tabLayout = findViewById(R.id.reportCardTab);
+        viewPager = findViewById(R.id.viewpager);
     }
 
     @Override
@@ -113,7 +105,6 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
 
     @Override
     public Map<String, String> getParams() {
-        //studentId=3074&examId=2
         Map<String, String> params = new HashMap<>();
         params.put("studentId",studentId);
         params.put("examId", examId);
@@ -123,179 +114,87 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
     @Override
     public void setJsonData(JSONObject response) {
         setFieldInvisible();
-       // setMessage(response.toString());
 
         String res = null;
         if(response != null) {
-            //setLog("BusRouteActivity", response.toString());
             reportCardCacheList = new ArrayList<>();
             try {
                 if (response.getString("Status").equals("true")) {
-                    //if (response.getString("Response").equals("Success")) {
                     res  = response.getString("Response");
-                        JSONObject dataObject = response.getJSONObject("Data");
-                        if (!dataObject.equals("{}")) {
-                            String Position = dataObject.getString("Position");
-                            String Result = dataObject.getString("Result");
+                    JSONObject dataObject = response.getJSONObject("Data");
+                    if (!dataObject.equals("{}")) {                                 // || !dataObject.equals("null")
+                        String Position = dataObject.getString("Position");
+                        String Result = dataObject.getString("Result");
 
-                            List<ReportCardCache.Marks> marksList = new ArrayList<>();
-                            JSONArray reportMarksArray = dataObject.getJSONArray("Marks");
-                            for (int i = 0; i < reportMarksArray.length(); i++) {
-                                if (!reportMarksArray.toString().equals("[]")) {
-                                    JSONObject routeDetailsObject = reportMarksArray.getJSONObject(i);
-                                    String SubjectCode = routeDetailsObject.getString("SubjectCode");
-                                    String Subject = routeDetailsObject.getString("Subject");
+                        List<ReportCardCache.Marks> marksList = new ArrayList<>();
+                        JSONArray reportMarksArray = dataObject.getJSONArray("Marks");
+                        for (int i = 0; i < reportMarksArray.length(); i++) {
+                            if (!reportMarksArray.toString().equals("[]")) {
+                                JSONObject routeDetailsObject = reportMarksArray.getJSONObject(i);
+                                String SubjectCode = routeDetailsObject.getString("SubjectCode");
+                                String Subject = routeDetailsObject.getString("Subject");
 
-                                    String FullMarks = routeDetailsObject.getString("FullMarks");
-                                    String PassMarks = routeDetailsObject.getString("PassMarks");
-                                    String ObtainedMarks = routeDetailsObject.getString("ObtainedMarks");
+                                String FullMarks = routeDetailsObject.getString("FullMarks");
+                                String PassMarks = routeDetailsObject.getString("PassMarks");
+                                String ObtainedMarks = routeDetailsObject.getString("ObtainedMarks");
 
-                                    String PracticalFullMarks = routeDetailsObject.getString("PracticalFullMarks");
-                                    String PracticalPassMarks = routeDetailsObject.getString("PracticalPassMarks");
-                                    String PracticalObtainedMarks = routeDetailsObject.getString("PracticalObtainedMarks");
+                                String PracticalFullMarks = routeDetailsObject.getString("PracticalFullMarks");
+                                String PracticalPassMarks = routeDetailsObject.getString("PracticalPassMarks");
+                                String PracticalObtainedMarks = routeDetailsObject.getString("PracticalObtainedMarks");
 
-                                    String IsAbsentPractical = routeDetailsObject.getString("IsAbsentPractical");
-                                    String IsAbsentTheory = routeDetailsObject.getString("IsAbsentTheory");
+                                String IsAbsentPractical = routeDetailsObject.getString("IsAbsentPractical");
+                                String IsAbsentTheory = routeDetailsObject.getString("IsAbsentTheory");
 
-                                    String Highest = routeDetailsObject.getString("Highest");
-                                    String Grade = routeDetailsObject.getString("Grade");
-                                    String GradePoint = routeDetailsObject.getString("GradePoint");
-                                    String CGPA = "";
+                                String Highest = routeDetailsObject.getString("Highest");
+                                String Grade = routeDetailsObject.getString("Grade");
+                                String GradePoint = routeDetailsObject.getString("GradePoint");
+                                String CGPA = "";
 
-                                    marksList.add(new ReportCardCache.Marks(
-                                            SubjectCode,Subject,
-                                            FullMarks, PassMarks, ObtainedMarks,
-                                            PracticalFullMarks, PracticalPassMarks, PracticalObtainedMarks,
-                                            IsAbsentPractical, IsAbsentTheory,
-                                            Highest, Grade, GradePoint, CGPA));
-                                    //routeDetailsList.add(new RoutineCache.Routine(ExamDate, StartTime, EndTime, SubjectNameEng));
-                                }
-
-                                reportCardCacheList.add(new ReportCardCache(Position, Result, marksList));
-                                //routineCacheList.add(new RoutineCache(SystemCode, routeDetailsList));
+                                marksList.add(new ReportCardCache.Marks(
+                                        SubjectCode,Subject,
+                                        FullMarks, PassMarks, ObtainedMarks,
+                                        PracticalFullMarks, PracticalPassMarks, PracticalObtainedMarks,
+                                        IsAbsentPractical, IsAbsentTheory,
+                                        Highest, Grade, GradePoint, CGPA));
                             }
-                    }
-                   // }
-                }
 
-                showInView();
+                            reportCardCacheList.add(new ReportCardCache(Position, Result, marksList));
+                        }
+                    }
+                }
+                //showInView();
             } catch (Exception e) {
-                setLog("ReportCardActivity", e.getMessage());
-                setMessage(res);
+                setMessage(e.getMessage());
             }
+
+            showInView();
         }else {
             loadTextView.setVisibility(View.VISIBLE);
             loadTextView.setText("Please come online to get routine.");
         }
     }
 
+    FragmentAdapter adapter;
+    Fragment[] fragments = null;
+    String[] title = null;
+    int[] icon = new int[]{R.drawable.logo, R.drawable.logo};
     private void showInView(){
-        setMessage(reportCardCacheList.get(0).Result);
-        final int size = reportCardCacheList.get(0).Marks.size();
+        //todo set fragment according to percentage, grade and both
+        Percentage percentage = new Percentage();
+        Grade grade = new Grade();
 
-        RecyclerAdapter adapter = new RecyclerAdapter(this, size) {
-            private TextView recyclerReportCardSN, recyclerReportCardSubject,
-                    recyclerReportCardTheroyFM, recyclerReportCardTheroyPM, recyclerReportCardTheroyOM,
-                    recyclerReportCardPracticalFM, recyclerReportCardPracticalPM, recyclerReportCardPracticalOM,
-                    recyclerReportCardSubjectTotal;
-            float totalTheroyMarks = 0.0f;
-            float passTotalTheroyMarks  = 0.0f;
-            float totalPracticalMarks = 0.0f;
-            float passTotalPracticalMarks  = 0.0f;
-            float obtainTotalMarks  = 0.0f;
-
-            @Override
-            public ViewHolder onCreate(ViewGroup viewGroup, int position) {
-                animation_type = ItemAnimation.NONE;
-
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.reportcard_recyclerview_percentage, viewGroup, false);
-                return new ViewHolder(view);
-            }
-
-            @Override
-            public void inflateUIFields(View itemView) {
-                recyclerReportCardSN = itemView.findViewById(R.id.reportCard_sn);
-                recyclerReportCardSubject = itemView.findViewById(R.id.reportCard_subject);
-                recyclerReportCardTheroyFM = itemView.findViewById(R.id.reportCard_theory_fm);
-                recyclerReportCardTheroyPM = itemView.findViewById(R.id.reportCard_theroy_pm);
-                recyclerReportCardTheroyOM = itemView.findViewById(R.id.reportCard_theroy_om);
-
-                recyclerReportCardPracticalFM= itemView.findViewById(R.id.reportCard_practical_fm);
-                recyclerReportCardPracticalPM= itemView.findViewById(R.id.reportCard_practical_pm);
-                recyclerReportCardPracticalOM= itemView.findViewById(R.id.reportCard_practical_om);
-
-                recyclerReportCardSubjectTotal= itemView.findViewById(R.id.reportCard_subject_total);
-            }
-
-            @Override
-            public void onBind(ViewHolder viewHolder, int position) {
-                ReportCardCache.Marks marks =  reportCardCacheList.get(0).Marks.get(position);
-                recyclerReportCardSN.setText(String.valueOf(position+1));
-                recyclerReportCardSubject.setText(marks.Subject);
-
-                float passM = Float.valueOf(marks.PassMarks);
-                float obtainM = Float.valueOf(marks.ObtainedMarks);
-                recyclerReportCardTheroyFM.setText(marks.FullMarks);
-                recyclerReportCardTheroyPM.setText(passM+"");
-                recyclerReportCardTheroyOM.setText(obtainM+"");
-                if(passM>obtainM){
-                    recyclerReportCardTheroyOM.setTextColor(red);
-                }
-
-                float passPM = Float.valueOf(marks.PassMarks);
-                float obtainPM = Float.valueOf(marks.ObtainedMarks);
-                recyclerReportCardPracticalFM.setText(marks.PracticalFullMarks);
-                recyclerReportCardPracticalPM.setText(marks.PracticalPassMarks);
-                recyclerReportCardPracticalOM.setText(marks.PracticalObtainedMarks);
-                if(passPM>obtainPM){
-                    recyclerReportCardPracticalOM.setTextColor(red);
-                }
-
-                totalTheroyMarks = totalTheroyMarks + Float.valueOf(marks.FullMarks);
-                passTotalTheroyMarks = passTotalTheroyMarks + Float.valueOf(marks.PassMarks);
-                totalPracticalMarks = totalPracticalMarks + Float.valueOf(marks.PracticalFullMarks);
-                passTotalPracticalMarks = passTotalPracticalMarks + Float.valueOf(marks.PracticalPassMarks);
-
-                float total = Float.valueOf(marks.ObtainedMarks) + Float.valueOf(marks.PracticalObtainedMarks);
-                obtainTotalMarks = obtainTotalMarks + total;
-
-                recyclerReportCardSubjectTotal.setText(total+"");
-
-                if(position == size-1){
-                    calculatePercentage(totalTheroyMarks, passTotalTheroyMarks, totalPracticalMarks, passTotalPracticalMarks, obtainTotalMarks);
-                }
-            }
-        };
-
-        recyclerView.setAdapter(adapter);
-    }
-
-    private void calculatePercentage(float totalTheroyMarks, float passTotalTheroyMarks,
-                                     float totalPracticalMarks, float passTotalPracticalMarks,
-                                     float obtainTotalMarks) {
-        reportCardTheoryFullMarksTotal.setText(totalTheroyMarks+"");
-        reportCardTheoryPassMarksTotal.setText(passTotalTheroyMarks+"");
-        reportCardPracticalFullMarksTotal.setText(totalPracticalMarks+"");
-        reportCardPracticalPassMarksTotal.setText(passTotalPracticalMarks+"");
-        reportCardObtainMarks.setText(obtainTotalMarks+"");
-
-        //todo for percentage
-        float percentage = obtainTotalMarks / (totalTheroyMarks + totalPracticalMarks) * 100;
-        DecimalFormat df = new DecimalFormat();
-        df.setMaximumFractionDigits(3);
-        String per = df.format(percentage);
-
-        percentageTextView.setText(per);
-        positionTextView.setText(reportCardCacheList.get(0).Position);
-
-        String result = reportCardCacheList.get(0).Result;
-        resultTextView.setText(result);
-
-        if(result.equals("Pass")) {
-            resultTextView.setTextColor(green);
+        if(type.equals("percentage")){
+            fragments = new Fragment[]{percentage};
+            title = new String[]{"Percentage"};
+        }else if(type.equals("grade")){
+            fragments = new Fragment[]{grade};
+            title = new String[]{"Grade"};
         }else {
-            resultTextView.setTextColor(red);
+            fragments = new Fragment[]{percentage, grade};
+            title = new String[]{"Percentage", "Grade"};
         }
+        adapter = new FragmentAdapter(ReportCardActivity.this, tabLayout, viewPager, getSupportFragmentManager(), fragments, title, icon);
+        adapter.setTablayout(true);
     }
 
     private void setFieldInvisible() {
@@ -303,7 +202,7 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
         progressBar.setVisibility(View.GONE);
     }
 
-    @Override
+        @Override
     protected void onRestart() {
         super.onRestart();
         showInView();
