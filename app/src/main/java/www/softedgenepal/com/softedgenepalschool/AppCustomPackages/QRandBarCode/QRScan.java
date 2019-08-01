@@ -40,7 +40,7 @@ public class QRScan implements View.OnClickListener{
                 }
             }
         }else {
-            //super.onActivityResult(requestCode, resultCode, data);
+            //activity.onActivityResult(requestCode, resultCode, data);
         }
     }
 }

@@ -59,10 +59,15 @@
 
     <!-- TODO: Mapbox -->
     <string name="mapbox_access_token">pk.eyJ1Ijoic29mdGVkZ2VuZXBhbCIsImEiOiJjanh4Mmc5cWQwMzFtM3BxbjAwdTE1NXUyIn0.j4-OvyW9hUFSCBMYPuVNng</string>
-    <string name="RouteName">Route: </string>
+    <string name="RouteName">Route : </string>
 
     <string name="msg_subscribed">subscribed </string>
     <string name="msg_subscribe_failed">subscribe failed </string>
     <string name="loading">Loading...</string>
     <string name="CreatelevApp">Create your Leave Application</string>
+
+    <!-- Report Card Marks View:: flag = percentage, gpa or both -->
+    <string name="percentage">percentage</string>
+    <string name="gpa">gpa</string>
+    <string name="both">both</string>
 </resources>

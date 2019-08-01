@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -57,7 +59,9 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineTranslate;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineWidth;
 
 public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCallback, PermissionsListener {
-    private Toolbar toolbar;
+    private TextView toolbar;
+    private View backpress;
+
     private MapView mapView;
     private MapboxMap mapBoxMap;
     private String setStyle = Style.MAPBOX_STREETS;
@@ -81,6 +85,13 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
         //For mapBox
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
+        backpress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
 
@@ -89,7 +100,7 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
         this.mapBoxMap = mapboxMap;
 
-        //todo remove mapbox icon from map
+        //todo remove mapbox label (i) icon from map
         mapboxMap.getUiSettings().setAttributionEnabled(false);
         mapboxMap.getUiSettings().setLogoEnabled(false);
 
@@ -278,7 +289,8 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
 
     private void casting() {
         toolbar = findViewById(R.id.ShowInMap_toolbar);
-        toolbar.setTitle(getString(R.string.RouteName)+busRouteCache.RouteName);
+        toolbar.setText(getString(R.string.RouteName)+busRouteCache.RouteName);
+        backpress = findViewById(R.id.ShowInMap_bt_close);
 
         mapView = findViewById(R.id.mapView);
     }
@@ -290,4 +302,5 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
     public void setMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+
 }

@@ -64,7 +64,6 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
     public void casting() {
         progressBar = findViewById(R.id.routine_progressbar);
         loadTextView = findViewById(R.id.routine_loading);
-
         backpress = findViewById(R.id.routine_bt_close);
 
         recyclerView = findViewById(R.id.routine_recyclerView);
@@ -110,7 +109,7 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
                 if (response.getString("Status").equals("true")) {
                     if (response.getString("Response").equals("Success")) {
                         JSONArray dataArray = response.getJSONArray("Data");
-                        if (!dataArray.toString().equals("[]")) {
+                        if (!dataArray.toString().equals("[]")||!dataArray.toString().equals("null")) {
                             if (dataArray.length() >= 0) {
                                 for (int i = 0; i < dataArray.length(); i++) {
                                     JSONObject dataObject = dataArray.getJSONObject(i);

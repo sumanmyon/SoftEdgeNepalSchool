@@ -9,7 +9,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActiv
 import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
 
@@ -34,11 +34,11 @@ public class StudentNav {
                 redirectToActivity(RoutineActivity.class);
                 break;
             case R.id.reportCard:
-                showMessage("Coming Soon");
+                redirectToActivity(ReportCardDetailActivity.class);
                 break;
-            case R.id.studentAccount:
-                showMessage("Coming Soon");
-                break;
+//            case R.id.studentAccount:
+//                showMessage("Coming Soon");
+//                break;
             case R.id.studentLeaveApplication:
                 redirectToActivity(ShowAllLeaveApplication.class);
                 break;

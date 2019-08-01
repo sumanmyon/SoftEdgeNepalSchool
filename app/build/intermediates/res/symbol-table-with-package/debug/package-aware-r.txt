@@ -94,6 +94,9 @@ attr behavior_hideable
 attr behavior_overlapTop
 attr behavior_peekHeight
 attr behavior_skipCollapsed
+attr borderAlpha
+attr borderColor
+attr borderLength
 attr borderWidth
 attr borderlessButtonStyle
 attr bottomAppBarStyle
@@ -251,6 +254,7 @@ attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
+attr finderOffset
 attr firstBaselineToTopHeight
 attr floatingActionButtonStyle
 attr font
@@ -311,6 +315,8 @@ attr itemTextAppearanceInactive
 attr itemTextColor
 attr keylines
 attr labelVisibilityMode
+attr laserColor
+attr laserEnabled
 attr lastBaselineToBottomHeight
 attr layout
 attr layoutManager
@@ -472,6 +478,7 @@ attr mapbox_uiRotateGestures
 attr mapbox_uiScrollGestures
 attr mapbox_uiTiltGestures
 attr mapbox_uiZoomGestures
+attr maskColor
 attr materialButtonStyle
 attr materialCardViewStyle
 attr maxActionInlineWidth
@@ -526,6 +533,7 @@ attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr reverseLayout
 attr rippleColor
+attr roundedCorner
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -552,6 +560,7 @@ attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
 attr splitTrack
+attr squaredFinder
 attr srcCompat
 attr stackFromEnd
 attr state_above_anchor
@@ -1772,6 +1781,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id ShowInMap_bt_close
 id ShowInMap_toolbar
 id about
 id about_toolbar
@@ -1987,6 +1997,7 @@ id login_edit_text_username
 id login_image_view
 id logoView
 id logout
+id lyl
 id lyl_2
 id lyt_expand
 id lyt_profile
@@ -2077,11 +2088,49 @@ id recyclerAttendancePichart
 id recyclerAttendancePresentDays
 id recyclerAttendanceTopic
 id recyclerAttendanceWorkingDays
+id recyclerReportCardGrade
+id recyclerReportCardGradeSN
+id recyclerReportCardGradeSubject
+id recyclerReportCardSN
+id recyclerReportCardSubject
 id recyclerView
 id recyclerView_date
 id recyclerView_homework
 id relative_layout
+id repordCardAttendance
+id repordCardGrade
+id repordCardPercentage
+id repordCardPosition
+id repordCardRemarks
+id repordCardResult
 id reportCard
+id reportCardTab
+id reportCard_Practical
+id reportCard_bt_close
+id reportCard_finalGrade
+id reportCard_gradePoint
+id reportCard_grade_recyclerView
+id reportCard_loading
+id reportCard_practical_fm
+id reportCard_practical_om
+id reportCard_practical_pm
+id reportCard_practical_total_fm
+id reportCard_practical_total_om
+id reportCard_practical_total_pm
+id reportCard_progressbar
+id reportCard_recyclerView
+id reportCard_sn
+id reportCard_subject
+id reportCard_subject_total
+id reportCard_theory
+id reportCard_theory_fm
+id reportCard_theory_total_fm
+id reportCard_theory_total_om
+id reportCard_theory_total_pm
+id reportCard_theroy_om
+id reportCard_theroy_pm
+id reportCard_toolbar
+id reportCard_total_marks
 id resultReportCard
 id right
 id right_icon
@@ -2173,7 +2222,6 @@ id standard
 id start
 id status_bar_latest_event_content
 id stretch
-id studentAccount
 id studentAttendance
 id studentLeaveApplication
 id studentProfile
@@ -2193,6 +2241,7 @@ id teacherAttendance
 id teacherLeaveApplication
 id teacherProfile
 id teacherSuggestion
+id terminalTextView
 id text
 id text2
 id textSpacerNoButtons
@@ -2232,6 +2281,7 @@ id userProfile_relativeLayout
 id v1
 id videos
 id view_offset_helper
+id viewpager
 id visible
 id wide
 id withText
@@ -2311,6 +2361,8 @@ layout activity_leave_application2
 layout activity_login
 layout activity_main
 layout activity_profile
+layout activity_qrscan
+layout activity_report_card
 layout activity_routine
 layout activity_runtime
 layout activity_show_all_leave_application
@@ -2345,8 +2397,10 @@ layout design_text_input_password_icon
 layout event_list
 layout fragment_bottom_sheet
 layout fragment_calendar
+layout fragment_grade
 layout fragment_home
 layout fragment_notification
+layout fragment_percentage
 layout fragment_routine
 layout homework_recyclerview
 layout layout_date
@@ -2391,12 +2445,23 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout percentage_report_card
 layout popupmenu_profile
 layout profile
 layout profile_detail_recycler_textview_
 layout profile_detail_recyclerlist
 layout progress_bar
 layout recycler_attendance
+layout report_card_grade_pass_fail
+layout report_card_percentage_pass_fail
+layout reportcard_recyclerview_gpa
+layout reportcard_recyclerview_grade
+layout reportcard_recyclerview_grade_title
+layout reportcard_recyclerview_grade_total
+layout reportcard_recyclerview_percentage
+layout reportcard_recyclerview_percentage_title
+layout reportcard_recyclerview_percentage_total
+layout reportcard_recyclerview_total
 layout routine_list
 layout routine_recycler_list
 layout school
@@ -2505,6 +2570,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
+string both
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
@@ -2536,6 +2602,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string gpa
 string greater_than
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
@@ -2615,6 +2682,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string percentage
 string powered_by_bugfender
 string project_id
 string rationale_ask
@@ -3176,7 +3244,7 @@ styleable AppCompatSeekBar android_thumb tickMark tickMarkTint tickMarkTintMode
 styleable AppCompatTextHelper android_textAppearance android_drawableTop android_drawableBottom android_drawableLeft android_drawableRight android_drawableStart android_drawableEnd
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType firstBaselineToTopHeight fontFamily lastBaselineToBottomHeight lineHeight textAllCaps
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
-styleable BarcodeScannerView shouldScaleToFill
+styleable BarcodeScannerView borderAlpha borderColor borderLength borderWidth cornerRadius finderOffset laserColor laserEnabled maskColor roundedCorner shouldScaleToFill squaredFinder
 styleable BottomAppBar backgroundTint fabAlignmentMode fabCradleMargin fabCradleRoundedCornerRadius fabCradleVerticalOffset hideOnScroll
 styleable BottomNavigationView elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout behavior_fitToContents behavior_hideable behavior_peekHeight behavior_skipCollapsed

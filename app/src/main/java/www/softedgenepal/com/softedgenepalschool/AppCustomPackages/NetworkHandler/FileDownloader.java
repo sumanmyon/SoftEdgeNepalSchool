@@ -130,11 +130,9 @@ public class FileDownloader {
     };
 
     private void openWhereFileIsSaved() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        //intent.setAction(android.content.Intent.ACTION_VIEW);
-
-        Uri uri = Uri.parse(storedFolder);
-        intent.setDataAndType(uri, "text/csv");
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);   //intent.setAction(android.content.Intent.ACTION_VIEW);
+        Uri uri = Uri.parse(storedFolder + "/");
+        intent.setDataAndType(uri, "*/*");  //"file/*");   //"text/csv");
         //activityClass.startActivity(Intent.createChooser(intent, "Open folder"));
 
         ShowNotification notification = new ShowNotification(intent, activityClass, "HomeWork", storedFileName);

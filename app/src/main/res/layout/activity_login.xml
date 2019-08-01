@@ -36,8 +36,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/for_edittext"
+                android:background="@drawable/for_edittext2"
                 android:drawableStart="@drawable/username3"
+                android:drawableTint="@color/green_500"
                 android:drawablePadding="12dp"
                 android:padding="8dp"
                 android:singleLine="true"
@@ -47,14 +48,17 @@
                 android:hint="Username or Email"
                 android:textSize="14sp"
                 android:focusable="true"
-                android:id="@+id/login_edit_text_username"/>
+                android:id="@+id/login_edit_text_username"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:theme="@style/AppCompact.EditText.Blue" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/for_edittext"
+                android:background="@drawable/for_edittext2"
                 android:drawableStart="@drawable/lock"
+                android:drawableTint="@color/green_500"
                 android:drawablePadding="12dp"
                 android:padding="8dp"
                 android:singleLine="true"
@@ -64,7 +68,9 @@
                 android:hint="Password"
                 android:textSize="14sp"
                 android:focusable="true"
-                android:id="@+id/login_edit_text_password"/>
+                android:id="@+id/login_edit_text_password"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:theme="@style/AppCompact.EditText.Blue" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,6 +84,8 @@
                     android:layout_weight="0.5"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
                     android:padding="2dp"
                     android:background="@drawable/for_button2"
                     android:text="QR"
@@ -92,6 +100,8 @@
                     android:layout_weight="0.5"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
                     android:padding="2dp"
                     android:layout_gravity="center"
                     android:background="@drawable/for_button"

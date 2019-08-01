@@ -43,12 +43,16 @@ public class URL {
         return new OnlineUrl().routineUrl;
     }
 
+    public String reportCardUrl(){
+        return new OnlineUrl().reportCardUrl;
+    }
+
     public String attendanceUrl(){
         return new OnlineUrl().attendanceUrl;
     }
 
     private class OnlineUrl{
-        private String onlineUrl = "http://192.168.100.20:400/";
+        private String onlineUrl = "http://192.168.100.102:400/";
         private String loginStudentUrl = onlineUrl + "api/auth/Login?";
 
         private String createLeaveApplicationUrl =onlineUrl + "api/data/Leaveapplication";
@@ -65,6 +69,8 @@ public class URL {
         private String routineUrl = onlineUrl + "api/data/getroutine";
 
         private String attendanceUrl = onlineUrl + "api/data/getattendance";
+
+        private String reportCardUrl = onlineUrl + "api/data/getexammarks";
 
         public OnlineUrl() {
             loginStudentUrl = loginStudentUrl + "UserName=suman&Password=admin123";

@@ -56,10 +56,10 @@
             android:title="@string/ReportCard"
             android:id="@+id/reportCard"
             android:icon="@drawable/ic_report"/>
-        <item
-            android:title="@string/StudentAccount"
-            android:id="@+id/studentAccount"
-            android:icon="@drawable/ic_account"/>
+        <!--<item-->
+            <!--android:title="@string/StudentAccount"-->
+            <!--android:id="@+id/studentAccount"-->
+            <!--android:icon="@drawable/ic_account"/>-->
         <item
             android:title="@string/StudentLeaveApplication"
             android:id="@+id/studentLeaveApplication"

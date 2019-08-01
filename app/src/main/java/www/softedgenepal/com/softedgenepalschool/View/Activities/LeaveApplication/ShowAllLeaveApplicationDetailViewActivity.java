@@ -59,7 +59,7 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
 
             subjectTextView.setText(cache.Subject);
             messageTextView.setText(cache.Message);
-            createDateTextView.setText("Created CalenderDate: "+cache.CreateDate+"\n"+cache.CreateDate);
+            createDateTextView.setText("Created Date: "+cache.CreateDate+"\n"+cache.CreateDate);
             fromToTextView.setText("From: "+cache.From+"\nTo: "+cache.To);
 
             //todo show cancel
