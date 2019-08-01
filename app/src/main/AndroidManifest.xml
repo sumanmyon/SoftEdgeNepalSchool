@@ -39,9 +39,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.Activities.ReportCardActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".View.Activities.ScanActivity" /><!-- for cleartext http traffic -->
+        <activity android:name=".View.Activities.ReportCardActivity"></activity>
+        <activity
+            android:name=".View.Activities.ReportCardDetailActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".View.Activities.ScanActivity" /> <!-- for cleartext http traffic -->
         <activity
             android:name=".View.Activities.RunTimePermissions"
             android:theme="@style/AppTheme_Permission" />

@@ -34,20 +34,20 @@
             android:layout_marginBottom="4dp"
             android:orientation="vertical">
 
-            <include layout="@layout/reportcard_recyclerview_title" />
+            <include layout="@layout/reportcard_recyclerview_percentage_title" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/reportCard_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/app_bar_layout"
-                android:scrollbars="none"/>
+                android:scrollbars="none" />
 
             <include layout="@layout/reportcard_recyclerview_total" />
         </LinearLayout>
 
         <include
-            layout="@layout/report_card_pass_fail"
+            layout="@layout/report_card_percentage_pass_fail"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lyl"

@@ -26,13 +26,14 @@ public class ReportCardCache implements Serializable {
         public String Highest;
         public String Grade;
         public String GradePoint;
-        public String CGPA;
+        public String ThGrade;
+        public String PrGrade;
 
         public Marks(String subjectCode, String subject,
                      String fullMarks, String passMarks, String obtainedMarks,
                      String practicalFullMarks, String practicalPassMarks, String practicalObtainedMarks,
                      String isAbsentPractical, String isAbsentTheory,
-                     String highest, String grade, String gradePoint, String cgpa) {
+                     String highest, String grade, String gradePoint, String thGrade, String prGrade) {
             SubjectCode = subjectCode;
             Subject = subject;
             FullMarks = fullMarks;
@@ -46,7 +47,8 @@ public class ReportCardCache implements Serializable {
             Highest = highest;
             Grade = grade;
             GradePoint = gradePoint;
-            CGPA = CGPA;
+            ThGrade = thGrade;
+            PrGrade = prGrade;
         }
     }
 

@@ -20,7 +20,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity.reportCardCacheList;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity.reportCardCacheList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -135,8 +135,13 @@ public class Percentage extends Fragment {
                 recyclerReportCardTheroyFM.setText(fullM+"");
                 recyclerReportCardTheroyPM.setText(passM+"");
                 recyclerReportCardTheroyOM.setText(obtainM+"");
-                if(passM>obtainM){
-                    recyclerReportCardTheroyOM.setTextColor(red);
+                if(marks.IsAbsentTheory.equals("true")){
+                    recyclerReportCardTheroyOM.setText("Abs");
+                    recyclerReportCardTheroyOM.setTextColor(blue);
+                }else {
+                    if (passM > obtainM) {
+                        recyclerReportCardTheroyOM.setTextColor(red);
+                    }
                 }
 
                 float fullPM = Float.valueOf(marks.PracticalFullMarks);
@@ -145,8 +150,13 @@ public class Percentage extends Fragment {
                 recyclerReportCardPracticalFM.setText(fullPM+"");
                 recyclerReportCardPracticalPM.setText(passPM+"");
                 recyclerReportCardPracticalOM.setText(obtainPM+"");
-                if(passPM>obtainPM){
-                    recyclerReportCardPracticalOM.setTextColor(red);
+                if(marks.IsAbsentPractical.equals("true")){
+                    recyclerReportCardPracticalOM.setText("Abs");
+                    recyclerReportCardPracticalOM.setTextColor(blue);
+                }else {
+                    if (passPM > obtainPM) {
+                        recyclerReportCardPracticalOM.setTextColor(red);
+                    }
                 }
 
                 totalTheroyMarks = totalTheroyMarks + Float.valueOf(marks.FullMarks);

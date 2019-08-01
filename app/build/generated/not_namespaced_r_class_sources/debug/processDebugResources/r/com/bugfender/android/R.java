@@ -39,8 +39,8 @@ public final class R {
         public static final int feedback_title_et = 0x7f0a009e;
         public static final int message_tv = 0x7f0a0109;
         public static final int positive_action_tv = 0x7f0a0127;
-        public static final int root_vg = 0x7f0a015f;
-        public static final int title_tv = 0x7f0a01da;
+        public static final int root_vg = 0x7f0a0169;
+        public static final int title_tv = 0x7f0a01e4;
     }
     public static final class layout {
         private layout() {}

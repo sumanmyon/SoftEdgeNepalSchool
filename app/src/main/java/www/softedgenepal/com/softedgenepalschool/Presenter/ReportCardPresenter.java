@@ -8,13 +8,13 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.ReportCardModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity;
 
 public class ReportCardPresenter implements IContractor.Presenter {
-    private ReportCardActivity percentageFragment;
+    private ReportCardDetailActivity percentageFragment;
     private ReportCardModel reportCardModel;
 
-    public ReportCardPresenter(ReportCardActivity percentageFragment) {
+    public ReportCardPresenter(ReportCardDetailActivity percentageFragment) {
         this.percentageFragment = percentageFragment;
         reportCardModel = new ReportCardModel(this);
     }
