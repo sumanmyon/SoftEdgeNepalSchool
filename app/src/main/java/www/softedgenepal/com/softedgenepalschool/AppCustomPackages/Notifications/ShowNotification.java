@@ -1,6 +1,6 @@
 package www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications;
 
-import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ContentResolver;
@@ -10,10 +10,15 @@ import android.graphics.Color;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.opengl.Visibility;
+import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.mapbox.mapboxsdk.style.layers.Property;
+
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
 
 public class ShowNotification {
     private Intent intent;
@@ -79,19 +84,29 @@ public class ShowNotification {
         //builder.setSound(uri);
         // Each element then alternates between delay, vibrate, sleep, vibrate, sleep
         builder.setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000});
-
-        builder.setPriority(Notification.PRIORITY_MAX);
+        builder.setPriority(NotificationCompat.PRIORITY_MAX);
         //builder.setDefaults(2);
-
         builder.setLights(Color.RED, 3000, 3000);
         //builder.setSound(Uri.parse("uri://point.mp3"));
-
         builder.setContentIntent(p);
 
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        if(notificationId>1073741824){
-            notificationId = 1;
-        }
-        manager.notify(notificationId ++, builder.build());
+
+        // === Removed some obsoletes
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+//        {
+//            CharSequence name = "Channel Name";
+//            String description = "Channel Description";
+//            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+//            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name,
+//                    importance);
+//            channel.setDescription(description);
+//            // Register the channel with the system; you can't change the importance
+//            // or other notification behaviours after this
+//            NotificationManager notificationManager =
+//                    context.getSystemService(NotificationManager.class);
+//            notificationManager.createNotificationChannel(channel);
+//        }
+        manager.notify(notificationId, builder.build());
     }
 }

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.io.File;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.NotificationAboveO;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.ShowNotification;
 
 public class FileDownloader {
@@ -135,8 +136,13 @@ public class FileDownloader {
         intent.setDataAndType(uri, "*/*");  //"file/*");   //"text/csv");
         //activityClass.startActivity(Intent.createChooser(intent, "Open folder"));
 
-        ShowNotification notification = new ShowNotification(intent, activityClass, "HomeWork", storedFileName);
-        notification.show();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationAboveO notification = new NotificationAboveO(intent, activityClass, "HomeWork", storedFileName);
+            notification.show();
+        }else {
+            ShowNotification notification = new ShowNotification(intent, activityClass, "HomeWork", storedFileName);
+            notification.show();
+        }
     }
 
     private void viewInDownloads() {
