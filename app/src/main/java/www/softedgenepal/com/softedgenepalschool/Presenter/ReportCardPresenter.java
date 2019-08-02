@@ -6,16 +6,26 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
+import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.ReportCardDetailModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.ReportCardModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity;
 
 public class ReportCardPresenter implements IContractor.Presenter {
     private ReportCardDetailActivity percentageFragment;
+    private ReportCardActivity reportCardActivity;
+
+    private ReportCardDetailModel reportCardDetailModel;
     private ReportCardModel reportCardModel;
 
     public ReportCardPresenter(ReportCardDetailActivity percentageFragment) {
         this.percentageFragment = percentageFragment;
+        reportCardDetailModel = new ReportCardDetailModel(this);
+    }
+
+    public ReportCardPresenter(ReportCardActivity reportCardActivity) {
+        this.reportCardActivity = reportCardActivity;
         reportCardModel = new ReportCardModel(this);
     }
 
@@ -26,26 +36,46 @@ public class ReportCardPresenter implements IContractor.Presenter {
 
     @Override
     public void setLog(String topic, String body) {
-        percentageFragment.setLog(topic, body);
+        if(percentageFragment!=null)
+            percentageFragment.setLog(topic, body);
+        else if(reportCardActivity != null)
+            reportCardActivity.setLog(topic, body);
     }
 
     @Override
     public Context getCalContext() {
-        return percentageFragment.getCalContext();
+        if(percentageFragment!=null)
+            return percentageFragment.getCalContext();
+        else if(reportCardActivity != null)
+            return reportCardActivity.getCalContext();
+        return null;
     }
 
     @Override
     public void getJsonData() {
-        reportCardModel.getJsonData();
+        if(percentageFragment!=null)
+            reportCardDetailModel.getJsonData();
+        else if(reportCardActivity != null){
+            reportCardModel.getJsonData();
+        }
     }
 
     @Override
     public Map<String, String> getParams() {
-        return percentageFragment.getParams();
+        if(percentageFragment!=null)
+            return percentageFragment.getParams();
+        else if(reportCardActivity != null){
+            return reportCardActivity.getParams();
+        }
+       return null;
     }
 
     @Override
     public void setJsonData(JSONObject response) {
-        percentageFragment.setJsonData(response);
+        if(percentageFragment!=null)
+            percentageFragment.setJsonData(response);
+        else if(reportCardActivity != null){
+            reportCardActivity.setJsonData(response);
+        }
     }
 }

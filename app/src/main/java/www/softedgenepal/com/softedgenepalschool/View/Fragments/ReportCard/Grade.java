@@ -17,21 +17,23 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity.reportCardCacheList;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity.reportCardDetailCacheList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Grade extends Fragment {
     private Integer red, green, blue;
-    private List<ReportCardCache> reportCardCacheLists;
+    private List<ReportCardDetailCache> reportCardDetailCacheLists;
 
     private RecyclerView recyclerView;
-    private TextView gradeTextView, attendanceTextView, remarksTextView;
+    private TextView gradeTextView, attendanceTextView, remarksTextView, terminalTextView;
+
+    private String title = null;
 
     public Grade() {
         // Required empty public constructor
@@ -47,7 +49,8 @@ public class Grade extends Fragment {
         blue = getContext().getResources().getColor(R.color.blue_500);
 
         casting(view);
-        this.reportCardCacheLists = reportCardCacheList;
+        terminalTextView.setText(title);
+        this.reportCardDetailCacheLists = reportCardDetailCacheList;
         showInView();
 
         return view;
@@ -71,11 +74,12 @@ public class Grade extends Fragment {
         gradeTextView = view.findViewById(R.id.repordCardGrade);
         attendanceTextView = view.findViewById(R.id.repordCardAttendance);
         remarksTextView = view.findViewById(R.id.repordCardRemarks);
+        terminalTextView = view.findViewById(R.id.terminalTextView);
     }
 
 
     private void showInView(){
-        final int size = reportCardCacheLists.get(0).Marks.size();
+        final int size = reportCardDetailCacheLists.get(0).Marks.size();
 
         RecyclerAdapter adapter = new RecyclerAdapter(getContext(), size) {
             private TextView recyclerReportCardSN, recyclerReportCardSubject,
@@ -104,7 +108,7 @@ public class Grade extends Fragment {
 
             @Override
             public void onBind(ViewHolder viewHolder, int position) {
-                ReportCardCache.Marks marks =  reportCardCacheLists.get(0).Marks.get(position);
+                ReportCardDetailCache.Marks marks =  reportCardDetailCacheLists.get(0).Marks.get(position);
                 recyclerReportCardSN.setText(String.valueOf(position+1));
                 recyclerReportCardSubject.setText(marks.Subject);
 
@@ -115,12 +119,12 @@ public class Grade extends Fragment {
 
                 if(marks.IsAbsentTheory.equals("true")){
                     recyclerReportCardTheroy.setText("Abs");
-                    recyclerReportCardTheroy.setTextColor(blue);
+                    recyclerReportCardTheroy.setTextColor(red);
                 }
 
                 if(marks.IsAbsentPractical.equals("true")){
                     recyclerReportCardPractical.setText("Abs");
-                    recyclerReportCardPractical.setTextColor(blue);
+                    recyclerReportCardPractical.setTextColor(red);
                 }
 
                 obtainGradePoint = obtainGradePoint + Float.valueOf(marks.GradePoint);
@@ -144,5 +148,9 @@ public class Grade extends Fragment {
 
     private void showOverallResult(float avgGradePoint) {
         gradeTextView.setText(avgGradePoint+"");
+    }
+
+    public void setTitle(String examNameEng) {
+        this.title = examNameEng;
     }
 }

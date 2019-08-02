@@ -16,11 +16,11 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity.reportCardCacheList;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity.reportCardDetailCacheList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,13 +30,12 @@ public class Percentage extends Fragment {
     private TextView reportCardTheoryFullMarksTotal, reportCardTheoryPassMarksTotal,
             reportCardPracticalFullMarksTotal, reportCardPracticalPassMarksTotal,
             reportCardObtainMarks;
-    private TextView percentageTextView, positionTextView, resultTextView;
+    private TextView percentageTextView, positionTextView, resultTextView, terminalTextView;
     private RecyclerView recyclerView;
 
     private Integer red, green, blue;
-
-    private List<ReportCardCache> reportCardCacheLists;
-
+    private List<ReportCardDetailCache> reportCardDetailCacheLists;
+    private String title = null;
 
     public Percentage() {
         // Required empty public constructor
@@ -53,7 +52,8 @@ public class Percentage extends Fragment {
         blue = getContext().getResources().getColor(R.color.blue_500);
 
         casting(view);
-        this.reportCardCacheLists = reportCardCacheList;
+        terminalTextView.setText(title);
+        this.reportCardDetailCacheLists = reportCardDetailCacheList;
         showInView();
 
         return view;
@@ -75,6 +75,7 @@ public class Percentage extends Fragment {
         percentageTextView = view.findViewById(R.id.repordCardPercentage);
         positionTextView = view.findViewById(R.id.repordCardPosition);
         resultTextView = view.findViewById(R.id.repordCardResult);
+        terminalTextView = view.findViewById(R.id.terminalTextView);
     }
 
 
@@ -87,7 +88,7 @@ public class Percentage extends Fragment {
     }
 
     private void showInView(){
-        final int size = reportCardCacheLists.get(0).Marks.size();
+        final int size = reportCardDetailCacheLists.get(0).Marks.size();
 
         RecyclerAdapter adapter = new RecyclerAdapter(getContext(), size) {
             private TextView recyclerReportCardSN, recyclerReportCardSubject,
@@ -125,7 +126,7 @@ public class Percentage extends Fragment {
 
             @Override
             public void onBind(ViewHolder viewHolder, int position) {
-                ReportCardCache.Marks marks =  reportCardCacheLists.get(0).Marks.get(position);
+                ReportCardDetailCache.Marks marks =  reportCardDetailCacheLists.get(0).Marks.get(position);
                 recyclerReportCardSN.setText(String.valueOf(position+1));
                 recyclerReportCardSubject.setText(marks.Subject);
 
@@ -137,7 +138,7 @@ public class Percentage extends Fragment {
                 recyclerReportCardTheroyOM.setText(obtainM+"");
                 if(marks.IsAbsentTheory.equals("true")){
                     recyclerReportCardTheroyOM.setText("Abs");
-                    recyclerReportCardTheroyOM.setTextColor(blue);
+                    recyclerReportCardTheroyOM.setTextColor(red);
                 }else {
                     if (passM > obtainM) {
                         recyclerReportCardTheroyOM.setTextColor(red);
@@ -152,7 +153,7 @@ public class Percentage extends Fragment {
                 recyclerReportCardPracticalOM.setText(obtainPM+"");
                 if(marks.IsAbsentPractical.equals("true")){
                     recyclerReportCardPracticalOM.setText("Abs");
-                    recyclerReportCardPracticalOM.setTextColor(blue);
+                    recyclerReportCardPracticalOM.setTextColor(red);
                 }else {
                     if (passPM > obtainPM) {
                         recyclerReportCardPracticalOM.setTextColor(red);
@@ -197,9 +198,9 @@ public class Percentage extends Fragment {
         String per = df.format(percentage);
 
         percentageTextView.setText(per+"%");
-        positionTextView.setText(reportCardCacheList.get(0).Position);
+        positionTextView.setText(reportCardDetailCacheList.get(0).Position);
 
-        String result = reportCardCacheList.get(0).Result;
+        String result = reportCardDetailCacheList.get(0).Result;
         resultTextView.setText(result);
 
         if(result.equals("Pass")) {
@@ -209,5 +210,9 @@ public class Percentage extends Fragment {
         }else {
             resultTextView.setTextColor(blue);
         }
+    }
+
+    public void setTitle(String examNameEng) {
+        this.title = examNameEng;
     }
 }

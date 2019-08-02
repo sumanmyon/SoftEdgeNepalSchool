@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/reportCard_listSelect"
+        style="@style/RippleStyleBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_xsmall"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginBottom="@dimen/small"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="@dimen/dp42"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginLeft="@dimen/spacing_xsmall"
+                android:layout_marginRight="@dimen/spacing_xsmall"
+                android:background="@android:color/transparent"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_subject" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/small"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reportCard_examList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/spacing_small"
+                    android:text="First Terminal Examination"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/grey_90"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Terminal"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+                    android:textColor="@color/grey_40" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <View
+        android:id="@+id/assignment_list_vertical_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_40" />
+</LinearLayout>

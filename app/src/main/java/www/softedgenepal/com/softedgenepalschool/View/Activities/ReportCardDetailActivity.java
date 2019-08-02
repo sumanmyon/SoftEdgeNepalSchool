@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.ReportCardPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -29,7 +30,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Fragments.ReportCard.Grade
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.ReportCard.Percentage;
 
 public class ReportCardDetailActivity extends AppCompatActivity implements IContractor.View{
-    private TextView loadTextView;
+    private TextView loadTextView, titleTextView;
     private ProgressBar progressBar;
     private View backpress;
 
@@ -38,10 +39,11 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
 
     private ReportCardPresenter presenter;
 
+    private ReportCardCache reportCardCache;
     private String studentId = "3075";
-    private String examId = "2";
+    private String examId;
 
-    public static List<ReportCardCache> reportCardCacheList;
+    public static List<ReportCardDetailCache> reportCardDetailCacheList;
     private List<String> typeList = new ArrayList<>();
     private String type;
     private int typeChoose = 2;   //todo it can be 0, 1 or 2
@@ -59,8 +61,18 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_card);
 
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null){
+            reportCardCache = (ReportCardCache) bundle.getSerializable("cache");
+        }
+
         setType();
         casting();
+
+        if(reportCardCache!=null){
+            examId = reportCardCache.ExamCode;
+            //titleTextView.setText(reportCardCache.ExamNameEng);
+        }
 
         presenter = new ReportCardPresenter(this);
         getJsonData();
@@ -79,6 +91,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         loadTextView = findViewById(R.id.reportCard_loading);
         backpress = findViewById(R.id.reportCard_bt_close);
 
+        titleTextView = findViewById(R.id.reportCard_toolbar);
         tabLayout = findViewById(R.id.reportCardTab);
         viewPager = findViewById(R.id.viewpager);
     }
@@ -117,7 +130,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
 
         String res = null;
         if(response != null) {
-            reportCardCacheList = new ArrayList<>();
+            reportCardDetailCacheList = new ArrayList<>();
             try {
                 if (response.getString("Status").equals("true")) {
                     res  = response.getString("Response");
@@ -126,7 +139,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
                         String Position = dataObject.getString("Position");
                         String Result = dataObject.getString("Result");
 
-                        List<ReportCardCache.Marks> marksList = new ArrayList<>();
+                        List<ReportCardDetailCache.Marks> marksList = new ArrayList<>();
                         JSONArray reportMarksArray = dataObject.getJSONArray("Marks");
                         for (int i = 0; i < reportMarksArray.length(); i++) {
                             if (!reportMarksArray.toString().equals("[]")) {
@@ -151,7 +164,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
                                 String ThGrade = routeDetailsObject.getString("ThGrade");
                                 String PrGrade = routeDetailsObject.getString("PrGrade");
 
-                                marksList.add(new ReportCardCache.Marks(
+                                marksList.add(new ReportCardDetailCache.Marks(
                                         SubjectCode,Subject,
                                         FullMarks, PassMarks, ObtainedMarks,
                                         PracticalFullMarks, PracticalPassMarks, PracticalObtainedMarks,
@@ -159,7 +172,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
                                         Highest, Grade, GradePoint, ThGrade, PrGrade));
                             }
 
-                            reportCardCacheList.add(new ReportCardCache(Position, Result, marksList));
+                            reportCardDetailCacheList.add(new ReportCardDetailCache(Position, Result, marksList));
                         }
                     }
                 }
@@ -182,7 +195,10 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
     private void showInView(){
         //todo set fragment according to percentage, grade and both
         Percentage percentage = new Percentage();
+        percentage.setTitle(reportCardCache.ExamNameEng);
+
         Grade grade = new Grade();
+        grade.setTitle(reportCardCache.ExamNameEng);
 
         if(type.equals("percentage")){
             fragments = new Fragment[]{percentage};
