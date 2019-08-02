@@ -20,6 +20,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DateTimeFormaterChecker.DateTimeFormateCheckerType2;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -59,8 +60,19 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
 
             subjectTextView.setText(cache.Subject);
             messageTextView.setText(cache.Message);
-            createDateTextView.setText("Created Date: "+cache.CreateDate+"\n"+cache.CreateDate);
-            fromToTextView.setText("From: "+cache.From+"\nTo: "+cache.To);
+
+            String date = cache.CreateDate;
+            String From = cache.From;
+            String To = cache.To;
+
+            if(!date.equals("null")) {
+                createDateTextView.setText("Created Date: "+DateTime.DateConvertToNepali(date, "date"));
+            }
+
+            if(!From.equals("null") && !To.equals("null")) {
+                fromToTextView.setText("From: "+DateTime.DateConvertToNepali(From, "date")+
+                        "\nTo: "+DateTime.DateConvertToNepali(To, "date"));
+            }
 
             //todo show cancel
             if(cache.IsActive.equals("false")) {

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -81,7 +82,12 @@ public class AdapterListAnimation extends RecyclerView.Adapter<RecyclerView.View
 
             view.subjectText.setText(cache.Subject);
             view.messageText.setText(cache.Message);
-            view.createDateText.setText(cache.CreateDate);
+            view.createDateText.setText("");
+
+            String date = cache.CreateDate;
+            if(!date.equals("null")) {
+                view.createDateText.setText(DateTime.DateConvertToNepali(date, "date"));
+            }
 
             TextView isActive = view.isActiveText;
             Log.d("Showall_Leave",position+"\t"+cache.IsActive);
