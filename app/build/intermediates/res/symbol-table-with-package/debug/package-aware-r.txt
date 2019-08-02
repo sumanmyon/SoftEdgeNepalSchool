@@ -2107,9 +2107,11 @@ id reportCard
 id reportCardTab
 id reportCard_Practical
 id reportCard_bt_close
+id reportCard_examList
 id reportCard_finalGrade
 id reportCard_gradePoint
 id reportCard_grade_recyclerView
+id reportCard_listSelect
 id reportCard_loading
 id reportCard_practical_fm
 id reportCard_practical_om
@@ -2363,6 +2365,7 @@ layout activity_main
 layout activity_profile
 layout activity_qrscan
 layout activity_report_card
+layout activity_report_card2
 layout activity_routine
 layout activity_runtime
 layout activity_show_all_leave_application
@@ -2454,6 +2457,7 @@ layout progress_bar
 layout recycler_attendance
 layout report_card_grade_pass_fail
 layout report_card_percentage_pass_fail
+layout reportcard_recycleritems
 layout reportcard_recyclerview_gpa
 layout reportcard_recyclerview_grade
 layout reportcard_recyclerview_grade_title

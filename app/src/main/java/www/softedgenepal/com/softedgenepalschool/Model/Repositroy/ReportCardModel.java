@@ -51,8 +51,7 @@ public class ReportCardModel implements IContractor.Model {
 
     private void online(Map<String, String> params) {
         String Url = new URL().reportCardUrl()+
-                "?studentId="+params.get("studentId")+
-                "&examId="+params.get("examId");
+                "?classcode="+params.get("classcode");
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, Url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -71,10 +70,10 @@ public class ReportCardModel implements IContractor.Model {
             }
         });
 
-        request.setRetryPolicy(new DefaultRetryPolicy(
-                100000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//        request.setRetryPolicy(new DefaultRetryPolicy(
+//                100000,
+//                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+//                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(request);
@@ -98,7 +97,6 @@ public class ReportCardModel implements IContractor.Model {
             e.printStackTrace();
         }
     }
-
     @Override
     public void setJsonData(JSONObject response) {
         reportCardPresenter.setJsonData(response);

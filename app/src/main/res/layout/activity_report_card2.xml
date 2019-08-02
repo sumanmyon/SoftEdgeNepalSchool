@@ -1,9 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.Activities.ReportCardActivity">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/reportCard_bt_close"
+                style="@style/RippleStyleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true">
+
+                <ImageButton
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/ic_back" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/reportCard_toolbar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/ReportCard"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reportCard_recyclerView"
+        android:layout_below="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/reportCard_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/loading"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+
+    <ProgressBar
+        android:id="@+id/reportCard_progressbar"
+        style="@android:style/Widget.Holo.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="4dp"
+        android:indeterminate="false"
+        android:padding="8dp" />
+</RelativeLayout>

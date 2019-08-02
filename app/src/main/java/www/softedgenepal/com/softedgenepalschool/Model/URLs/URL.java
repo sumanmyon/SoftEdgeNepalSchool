@@ -47,6 +47,10 @@ public class URL {
         return new OnlineUrl().reportCardUrl;
     }
 
+    public String reportCardDetailUrl(){
+        return new OnlineUrl().reportCardDetailUrl;
+    }
+
     public String attendanceUrl(){
         return new OnlineUrl().attendanceUrl;
     }
@@ -70,7 +74,9 @@ public class URL {
 
         private String attendanceUrl = onlineUrl + "api/data/getattendance";
 
-        private String reportCardUrl = onlineUrl + "api/data/getexammarks";
+        private String reportCardUrl = onlineUrl + "api/data/getpublishedexam";
+
+        private String reportCardDetailUrl = onlineUrl + "api/data/getexammarks";
 
         public OnlineUrl() {
             loginStudentUrl = loginStudentUrl + "UserName=suman&Password=admin123";
