@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="4dp"
+    android:orientation="vertical">
+    <!--
+        ?android:attr/actionBarSize
+        app:fabCustomSize="@dimen/dp42"
+        app:maxImageSize="20dp"
+    -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/dashboardFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/white"
+        app:backgroundTint="@color/orange"
+        app:backgroundTintMode="src_atop"
+        app:elevation="0dp"
+        app:fabSize="mini"
+        app:rippleColor="@color/grey_50"
+        app:srcCompat="@drawable/ic_homework" />
+
+    <TextView
+        android:id="@+id/dashboardTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:gravity="center"
+        android:paddingTop="@dimen/spacing_small"
+        android:text="@string/HomeWork"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/grey_40" />
+</LinearLayout>

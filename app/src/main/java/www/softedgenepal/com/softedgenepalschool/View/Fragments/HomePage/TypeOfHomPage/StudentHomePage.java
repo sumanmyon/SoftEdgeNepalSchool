@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Resources;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
@@ -19,7 +20,12 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.Contractor
 import www.softedgenepal.com.softedgenepalschool.Presenter.StudentHomePagePresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.DashboardCategory;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.SchoolNav;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.StudentNav;
 import www.softedgenepal.com.softedgenepalschool.View.Sibling.SiblingPopUpMenu;
+
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class StudentHomePage implements Contractor.View {
     private Activity activity;
@@ -46,6 +52,37 @@ public class StudentHomePage implements Contractor.View {
         //fetch/get data
         StudentHomePagePresenter presenter = new StudentHomePagePresenter(StudentHomePage.this);
         presenter.getData();
+
+        //dashboard
+        dashboard();
+        dashboard2();
+    }
+
+    private void dashboard() {
+        DashboardCategory category = new DashboardCategory(activity, view, userType) {
+            @Override
+            public void onClickListener(int id) {
+                StudentNav nav = new StudentNav(activity, id);
+                nav.set();
+            }
+        };
+        category.columnSpan = 4;
+        category.userType = userType;
+        category.setDashboard(Resources.student(getContext()));
+        category.setCategoryVisibilityGone();
+    }
+    private void dashboard2() {
+        DashboardCategory category = new DashboardCategory(activity, view, "school") {
+            @Override
+            public void onClickListener(int id) {
+                SchoolNav nav = new SchoolNav(activity, id);
+                nav.set();
+            }
+        };
+        category.columnSpan = 4;
+        category.setTopic = "Others";
+        category.setCategoryText();
+        category.setDashboard(Resources.school(getContext()));
     }
 
     public void userDataList(Cache cache) {

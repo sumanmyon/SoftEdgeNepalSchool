@@ -1623,7 +1623,6 @@ drawable add_white
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_dialog
-drawable background_img2
 drawable bf_bugfender_logo
 drawable bf_ic_close
 drawable border_bottom
@@ -1682,6 +1681,8 @@ drawable ic_bus_stop4
 drawable ic_bus_stop5
 drawable ic_calender_white
 drawable ic_calender_white2
+drawable ic_category_1
+drawable ic_category_2
 drawable ic_chevron_left_black_24dp
 drawable ic_chevron_right_black_24dp
 drawable ic_close
@@ -1768,7 +1769,6 @@ drawable username2
 drawable username3
 drawable userprofile
 drawable userprofile4
-drawable userprofile_suman
 font delius_swash_caps
 font font
 font inder
@@ -1901,6 +1901,10 @@ id customToastImage
 id customToastText
 id cv
 id dark
+id dashboardFloatingActionButton
+id dashboardLinearLayout
+id dashboardRecyclerView
+id dashboardTextView
 id date
 id day_name
 id decor_content_parent
@@ -2227,7 +2231,6 @@ id stretch
 id studentAttendance
 id studentLeaveApplication
 id studentProfile
-id studentSuggestion
 id submenuarrow
 id submit_area
 id suggest_bt_close
@@ -2275,6 +2278,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userProfileDashBoardLinearLayout
 id userProfile_ImageView
 id userProfile_Roll_SubjectTextView
 id userProfile_classTextView
@@ -2383,6 +2387,8 @@ layout bus_route_recyclerview_list
 layout calender_list
 layout custom_snackbar
 layout custom_toast
+layout dashboard_list_items
+layout dashboard_recyclerview
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

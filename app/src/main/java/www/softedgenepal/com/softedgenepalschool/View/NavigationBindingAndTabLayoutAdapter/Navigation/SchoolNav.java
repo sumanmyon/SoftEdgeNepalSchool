@@ -37,6 +37,9 @@ public class SchoolNav {
             case R.id.setting:
                 showMessage("Coming Soon");
                 break;
+            case R.id.logout:
+                showMessage("Coming Soon");
+                break;
             default:
                 break;
         }

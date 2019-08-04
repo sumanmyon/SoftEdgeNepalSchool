@@ -25,9 +25,9 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int bf_bugfender_logo = 0x7f080060;
-        public static final int bf_ic_close = 0x7f080061;
-        public static final int bugfender_logo = 0x7f080063;
+        public static final int bf_bugfender_logo = 0x7f08005f;
+        public static final int bf_ic_close = 0x7f080060;
+        public static final int bugfender_logo = 0x7f080062;
     }
     public static final class id {
         private id() {}
@@ -35,12 +35,12 @@ public final class R {
         public static final int appbar_rl = 0x7f0a002a;
         public static final int bugfender_tv = 0x7f0a0057;
         public static final int close_iv = 0x7f0a006f;
-        public static final int feedback_message_et = 0x7f0a009d;
-        public static final int feedback_title_et = 0x7f0a009e;
-        public static final int message_tv = 0x7f0a0109;
-        public static final int positive_action_tv = 0x7f0a0127;
-        public static final int root_vg = 0x7f0a016b;
-        public static final int title_tv = 0x7f0a01e6;
+        public static final int feedback_message_et = 0x7f0a00a1;
+        public static final int feedback_title_et = 0x7f0a00a2;
+        public static final int message_tv = 0x7f0a010d;
+        public static final int positive_action_tv = 0x7f0a012b;
+        public static final int root_vg = 0x7f0a016f;
+        public static final int title_tv = 0x7f0a01e9;
     }
     public static final class layout {
         private layout() {}

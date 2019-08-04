@@ -27,7 +27,7 @@ public class MaterialColor {
         return returnColor;
     }
 
-    public static int getColor(Context ctx, String str, int index) {
+    public static int getColor(Context ctx, int index) {
         int returnColor = Color.WHITE;
         int arrayId = ctx.getResources().getIdentifier("mdcolor_random", "array", ctx.getPackageName());
 
