@@ -94,8 +94,8 @@
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

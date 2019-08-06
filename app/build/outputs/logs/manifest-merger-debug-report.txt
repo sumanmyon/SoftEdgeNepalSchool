@@ -357,14 +357,14 @@ activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplicat
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:62:9-95
 	android:name
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:62:19-92
-activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:9-67
-	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:19-64
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:9-66
+	android:name
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:19-63
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:64:9-70:20
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:64:19-63
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:64:19-64
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:65:13-69:29
 action#android.intent.action.MAIN
