@@ -1693,8 +1693,10 @@ drawable ic_expand_arrow
 drawable ic_gallery
 drawable ic_home_white
 drawable ic_homework
+drawable ic_language
 drawable ic_leave_application
 drawable ic_location
+drawable ic_logout
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1710,6 +1712,7 @@ drawable ic_setting
 drawable ic_subject
 drawable ic_suggestion
 drawable ic_text_input
+drawable ic_url
 drawable ic_video
 drawable lock
 drawable logo
@@ -2088,6 +2091,9 @@ id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
+id radioButton
+id radioButton2
+id radioButton3
 id recyclerAttendancePichart
 id recyclerAttendancePresentDays
 id recyclerAttendanceTopic
@@ -2190,6 +2196,10 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id setting
+id settingLanguageSwitch
+id settingLanguageText
+id settingSubjectToolbar
+id setting_bt_close
 id shortcut
 id showCustom
 id showHome
@@ -2372,6 +2382,7 @@ layout activity_report_card
 layout activity_report_card2
 layout activity_routine
 layout activity_runtime
+layout activity_setting
 layout activity_show_all_leave_application
 layout activity_show_all_leave_application_detail_view
 layout activity_show_in_map
@@ -2478,6 +2489,11 @@ layout school
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout setting_color
+layout setting_language
+layout setting_notification
+layout setting_report_card
+layout setting_url
 layout show_leave_application_recyclerview
 layout support_simple_spinner_dropdown_item
 layout test

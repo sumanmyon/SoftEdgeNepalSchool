@@ -72,6 +72,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.SettingActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity" />
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity"

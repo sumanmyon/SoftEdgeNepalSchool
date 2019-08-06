@@ -85,6 +85,8 @@ dependencies {
     //firebase for push notification
     implementation 'com.google.firebase:firebase-core:16.0.6'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-storage:16.0.3'
+    implementation 'com.google.firebase:firebase-database:16.0.3'
 
     //Map
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2'

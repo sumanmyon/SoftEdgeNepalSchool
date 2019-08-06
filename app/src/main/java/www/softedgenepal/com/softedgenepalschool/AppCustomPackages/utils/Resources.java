@@ -9,8 +9,7 @@ import java.util.List;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 public class Resources {
-    //todo for students
-
+    //todo for student
     public static List<Dashboard> student(Context context){
                 List<Dashboard> studentDashboard = new ArrayList<>();
         studentDashboard.add(new Dashboard(context.getResources().getString(R.string.HomeWork),
@@ -43,6 +42,7 @@ public class Resources {
         return studentDashboard;
     }
 
+    //todo for school
     public static List<Dashboard> school(Context context){
         List<Dashboard> schoolDashboard = new ArrayList<>();
 
@@ -63,7 +63,7 @@ public class Resources {
                 context.getResources().getDrawable(R.drawable.ic_setting),
                 R.id.setting));
         schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Logout),
-                context.getResources().getDrawable(R.drawable.ic_suggestion),
+                context.getResources().getDrawable(R.drawable.ic_logout),
                 R.id.logout));
 
         return schoolDashboard;

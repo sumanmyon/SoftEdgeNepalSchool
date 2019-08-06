@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c080ebe641f5b994dd766f169f460820\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\76f0af91d96415a8fea066179a4a14dd\AndroidManifest.xml:2:1-18:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\fe11a5adb2488267b614bb5b4a98278b\AndroidManifest.xml:17:1-24:12
@@ -16,9 +16,11 @@ MERGED from [me.dm7.barcodescanner:zxing:1.9.13] C:\Users\suman\.gradle\caches\t
 MERGED from [me.dm7.barcodescanner:core:1.9.13] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\12d251c6e3f7ef0d35dfd1b7ae884781\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\f01b840eb6ad4f1da7fe34219ca3ae77\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-messaging:17.3.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb7ab0572045a10fa6fb7bd9ac0c12\AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-database:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\606a02e5760b71176c18d83ae12b4282\AndroidManifest.xml:15:1-25:12
 MERGED from [com.google.firebase:firebase-core:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7634fca7b58faaec8045cf3ef284f2d7\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e48ea8c6ebc8adbba31e999a3e95b9d8\AndroidManifest.xml:17:1-34:12
 MERGED from [com.google.firebase:firebase-analytics:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fb1363a4fabad71360146fb8423fcca\AndroidManifest.xml:17:1-55:12
+MERGED from [com.google.firebase:firebase-storage:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7710b3f980ab88c6ab4a466ee0774d24\AndroidManifest.xml:15:1-26:12
 MERGED from [com.google.android.gms:play-services-measurement-api:16.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\aa35c1aa49897c9e0f398f7c9f5415c1\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-analytics-impl:16.2.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fbf7258b92e75921ab7c6f642d9b294\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.firebase:firebase-iid:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3bfc55ae5551462f7e4953908e2f51ec\AndroidManifest.xml:17:1-59:12
@@ -27,6 +29,7 @@ MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] C:\Users\suman\.gr
 MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\f85b823d4251e51321affc481c7a3890\AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3d2bf3540ea371edd790c81183098e0e\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9341f81bdb6629edcee934022d265979\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\357e717580b32e4b41a9381a5b982a47\AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.5] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b95af44f9226be5c2d6acc605baebc26\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1e77a30c75aad8d02d45d9b36d5b4e0c\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\147f86bbed564949fa6081afa1d4c41d\AndroidManifest.xml:17:1-24:12
@@ -62,35 +65,35 @@ MERGED from [com.android.support:support-compat:28.0.0] C:\Users\suman\.gradle\c
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\0abf95ec3d56cd0627e15efc6533aa7e\AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\af005c54f22e3d9c4a3b4c52634464bc\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c9363c81509180eb8cde045402f0f858\AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5a75939a94fc3b095260bd7ca64abc12\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\74e0364eeaf87fe140d518ccd0979d8c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5653171b5498055ce47d6c29649c55b5\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb602b956254c68ee8d629bd4764b4\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\a953b296f7293244bffc0c82668f1ebd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\da9a5979be8413f9790c5130d89c03f4\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\4ef9e3601703757b323cae7c58a1533e\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1b5206aa53f8c4e70a4897df976904dc\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\70415e2074cd306ee89c32879fa2c990\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5a75939a94fc3b095260bd7ca64abc12\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\74e0364eeaf87fe140d518ccd0979d8c\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5653171b5498055ce47d6c29649c55b5\AndroidManifest.xml:17:1-22:12
 MERGED from [com.bugfender.sdk:android:1.1.7] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\bd997dde98ec7682fb706a2e9ade298d\AndroidManifest.xml:2:1-20:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.3.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3edfa7dd11093b4779dd0f8eefb9a663\AndroidManifest.xml:2:1-7:12
 MERGED from [com.jakewharton.timber:timber:4.7.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\451b53ed915c0f9df049a364dde35738\AndroidManifest.xml:2:1-9:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:1.2.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7cb1b97cd295ed5b3f6ecedbce269fc8\AndroidManifest.xml:2:1-14:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
-INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
 	package
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:4:5-56
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-87:12
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:1-88:12
 		INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:2:11-69
@@ -98,10 +101,14 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:15:5-67
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\56dad3d4b2e7384043ea2d2253d8b9b4\AndroidManifest.xml:16:5-67
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\56dad3d4b2e7384043ea2d2253d8b9b4\AndroidManifest.xml:16:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\606a02e5760b71176c18d83ae12b4282\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\606a02e5760b71176c18d83ae12b4282\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e48ea8c6ebc8adbba31e999a3e95b9d8\AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e48ea8c6ebc8adbba31e999a3e95b9d8\AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-analytics:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fb1363a4fabad71360146fb8423fcca\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-analytics:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fb1363a4fabad71360146fb8423fcca\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7710b3f980ab88c6ab4a466ee0774d24\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-storage:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7710b3f980ab88c6ab4a466ee0774d24\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-analytics-impl:16.2.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fbf7258b92e75921ab7c6f642d9b294\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-analytics-impl:16.2.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fbf7258b92e75921ab7c6f642d9b294\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3bfc55ae5551462f7e4953908e2f51ec\AndroidManifest.xml:23:5-67
@@ -116,10 +123,14 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:20:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\56dad3d4b2e7384043ea2d2253d8b9b4\AndroidManifest.xml:17:5-79
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\56dad3d4b2e7384043ea2d2253d8b9b4\AndroidManifest.xml:17:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\606a02e5760b71176c18d83ae12b4282\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-database:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\606a02e5760b71176c18d83ae12b4282\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e48ea8c6ebc8adbba31e999a3e95b9d8\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e48ea8c6ebc8adbba31e999a3e95b9d8\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-analytics:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fb1363a4fabad71360146fb8423fcca\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-analytics:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fb1363a4fabad71360146fb8423fcca\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7710b3f980ab88c6ab4a466ee0774d24\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7710b3f980ab88c6ab4a466ee0774d24\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-analytics-impl:16.2.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fbf7258b92e75921ab7c6f642d9b294\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-analytics-impl:16.2.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fbf7258b92e75921ab7c6f642d9b294\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-iid:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3bfc55ae5551462f7e4953908e2f51ec\AndroidManifest.xml:22:5-79
@@ -189,7 +200,7 @@ ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENS
 	android:name
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:32:22-86
 application
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:34:5-85:19
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:34:5-86:19
 MERGED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\76f0af91d96415a8fea066179a4a14dd\AndroidManifest.xml:11:5-16:19
 MERGED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\76f0af91d96415a8fea066179a4a14dd\AndroidManifest.xml:11:5-16:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\fe11a5adb2488267b614bb5b4a98278b\AndroidManifest.xml:22:5-20
@@ -274,118 +285,122 @@ MERGED from [com.jakewharton.timber:timber:4.7.0] C:\Users\suman\.gradle\caches\
 		ADDED from [com.github.keyrunHORNET:date_picker_converter:2.2.2] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\76f0af91d96415a8fea066179a4a14dd\AndroidManifest.xml:12:9-52
 	android:usesCleartextTraffic
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:41:9-44
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.SettingActivity
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:9-78
+	android:name
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:19-66
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:9-81
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:43:9-72
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:42:19-69
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:43:19-69
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:43:9-45:53
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:44:9-46:53
 	android:screenOrientation
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:45:13-50
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:13-50
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:44:13-69
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:45:13-69
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.ScanActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:9-66
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:47:9-66
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:46:19-63
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:47:19-63
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.RunTimePermissions
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:47:9-49:58
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:48:9-50:58
 	android:theme
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:49:13-55
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:50:13-55
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:48:13-63
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:49:13-63
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:50:9-72
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:51:9-72
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:50:19-69
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:51:19-69
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:51:9-69
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:52:9-69
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:51:19-66
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:52:19-66
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:52:9-70
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:53:9-70
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:52:19-67
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:53:19-67
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.ShowInMapActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:53:9-71
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:54:9-71
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:53:19-68
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:54:19-68
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:54:9-70
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:55:9-70
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:54:19-67
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:55:19-67
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:55:9-67
-	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:55:19-64
-activity#www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity
 ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:56:9-67
 	android:name
 		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:56:19-64
+activity#www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:57:9-67
+	android:name
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:57:19-64
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:57:9-112
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:58:9-112
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:57:19-109
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:58:19-109
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:58:9-72
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:59:9-72
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:58:19-69
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:59:19-69
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:59:9-69
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:60:9-69
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:59:19-66
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:60:19-66
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:60:9-94
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:61:9-94
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:60:19-91
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:61:19-91
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:61:9-95
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:62:9-95
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:61:19-92
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:62:19-92
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:62:9-67
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:9-67
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:62:19-64
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:19-64
 activity#www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:9-69:20
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:64:9-70:20
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:63:19-63
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:64:19-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:64:13-68:29
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:65:13-69:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:65:17-69
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:66:17-69
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:65:25-66
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:66:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:67:17-77
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:68:17-77
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:67:27-74
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:68:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:71:9-73:57
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:72:9-74:57
 	android:resource
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:73:13-54
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:74:13-54
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:72:13-43
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:73:13-43
 service#www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.MyFirebaseMessagingService
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:75:9-79:19
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:76:9-80:19
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:75:18-92
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:76:18-92
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:76:13-78:29
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:77:13-79:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:77:17-78
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:78:17-78
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:77:25-75
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:78:25-75
 service#www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.GetDeviceTokenService
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:80:9-84:19
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:81:9-85:19
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:80:18-87
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:81:18-87
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:81:13-83:29
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:82:13-84:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:82:17-80
+ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:83:17-80
 	android:name
-		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:82:25-77
+		ADDED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml:83:25-77
 uses-sdk
 INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\suman\AndroidStudioProjects\AndroidStudioProject2019\SoftENSchool\app\src\main\AndroidManifest.xml
@@ -414,12 +429,16 @@ MERGED from [com.android.support:support-v13:28.0.0] C:\Users\suman\.gradle\cach
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\f01b840eb6ad4f1da7fe34219ca3ae77\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:17.3.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb7ab0572045a10fa6fb7bd9ac0c12\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:17.3.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb7ab0572045a10fa6fb7bd9ac0c12\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\606a02e5760b71176c18d83ae12b4282\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\606a02e5760b71176c18d83ae12b4282\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-core:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7634fca7b58faaec8045cf3ef284f2d7\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7634fca7b58faaec8045cf3ef284f2d7\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e48ea8c6ebc8adbba31e999a3e95b9d8\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e48ea8c6ebc8adbba31e999a3e95b9d8\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fb1363a4fabad71360146fb8423fcca\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics:16.0.6] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fb1363a4fabad71360146fb8423fcca\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-storage:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7710b3f980ab88c6ab4a466ee0774d24\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-storage:16.0.3] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\7710b3f980ab88c6ab4a466ee0774d24\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.gms:play-services-measurement-api:16.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\aa35c1aa49897c9e0f398f7c9f5415c1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:16.0.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\aa35c1aa49897c9e0f398f7c9f5415c1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics-impl:16.2.4] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\6fbf7258b92e75921ab7c6f642d9b294\AndroidManifest.xml:20:5-44
@@ -436,6 +455,8 @@ MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\suman\.
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3d2bf3540ea371edd790c81183098e0e\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9341f81bdb6629edcee934022d265979\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9341f81bdb6629edcee934022d265979\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\357e717580b32e4b41a9381a5b982a47\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\357e717580b32e4b41a9381a5b982a47\AndroidManifest.xml:6:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.5] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b95af44f9226be5c2d6acc605baebc26\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.5] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\b95af44f9226be5c2d6acc605baebc26\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1e77a30c75aad8d02d45d9b36d5b4e0c\AndroidManifest.xml:5:5-44
@@ -506,6 +527,12 @@ MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\suman\.gradle\ca
 MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\af005c54f22e3d9c4a3b4c52634464bc\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c9363c81509180eb8cde045402f0f858\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c9363c81509180eb8cde045402f0f858\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5a75939a94fc3b095260bd7ca64abc12\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5a75939a94fc3b095260bd7ca64abc12\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\74e0364eeaf87fe140d518ccd0979d8c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\74e0364eeaf87fe140d518ccd0979d8c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5653171b5498055ce47d6c29649c55b5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5653171b5498055ce47d6c29649c55b5\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb602b956254c68ee8d629bd4764b4\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\28eb602b956254c68ee8d629bd4764b4\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\a953b296f7293244bffc0c82668f1ebd\AndroidManifest.xml:20:5-44
@@ -518,12 +545,6 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\suman\.gradle\cach
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\1b5206aa53f8c4e70a4897df976904dc\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\70415e2074cd306ee89c32879fa2c990\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\70415e2074cd306ee89c32879fa2c990\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5a75939a94fc3b095260bd7ca64abc12\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5a75939a94fc3b095260bd7ca64abc12\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\74e0364eeaf87fe140d518ccd0979d8c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\74e0364eeaf87fe140d518ccd0979d8c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5653171b5498055ce47d6c29649c55b5\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\5653171b5498055ce47d6c29649c55b5\AndroidManifest.xml:20:5-44
 MERGED from [com.bugfender.sdk:android:1.1.7] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\bd997dde98ec7682fb706a2e9ade298d\AndroidManifest.xml:7:5-9:41
 MERGED from [com.bugfender.sdk:android:1.1.7] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\bd997dde98ec7682fb706a2e9ade298d\AndroidManifest.xml:7:5-9:41
 MERGED from [com.getkeepsafe.relinker:relinker:1.3.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\3edfa7dd11093b4779dd0f8eefb9a663\AndroidManifest.xml:5:5-43
