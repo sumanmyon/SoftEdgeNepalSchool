@@ -651,7 +651,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-595" />
+            <state relative-caret-position="103">
+              <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+            </state>
           </provider>
           <provider editor-type-id="android-manifest" />
         </entry>
@@ -686,7 +688,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/reportcard_recyclerview_grade.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_grade.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/report_card_grade_pass_fail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_report_card.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/softedgenepal/com/softedgenepalschool/Model/Repositroy/ReportCardDetailModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/softedgenepal/com/softedgenepalschool/Model/Repositroy/FetchFromOffline/StoreInSharePreference.java" />
@@ -729,6 +730,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/setting_color.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/softedgenepal/com/softedgenepalschool/View/Activities/SettingActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -984,7 +986,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -992,7 +993,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.17776097" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.17776097" />
       <window_info id="Resources Explorer" order="7" weight="0.32980332" />
       <window_info id="Structure" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.3809524" />
@@ -1002,7 +1003,7 @@
       <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.49924356" weight="0.63095236" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.66156465" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924356" weight="0.34353742" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49924356" visible="true" weight="0.34353742" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32928944" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.457483" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32993197" />
@@ -1560,7 +1561,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595" />
+        <state relative-caret-position="103">
+          <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+        </state>
       </provider>
       <provider editor-type-id="android-manifest" />
     </entry>
