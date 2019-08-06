@@ -1,15 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Mon Aug 05 16:00:37 NPT 2019
+#Tue Aug 06 16:04:44 NPT 2019
 path.2=classes2.dex
-=======
-#Fri Aug 02 11:45:28 NPT 2019
-base.0=C\:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
->>>>>>> master
-=======
-#Tue Aug 06 11:41:56 NPT 2019
-path.2=classes2.dex
->>>>>>> 0a520f97db0a393b94e94ab3e0765aa8f21ab765
 path.1=classes.dex
 path.0=classes.dex
 renamed.2=classes3.dex

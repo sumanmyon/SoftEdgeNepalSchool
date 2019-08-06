@@ -25,6 +25,7 @@ import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLay
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.StudentNav;
 import www.softedgenepal.com.softedgenepalschool.View.Sibling.SiblingPopUpMenu;
 
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userCache;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class StudentHomePage implements Contractor.View {
@@ -54,11 +55,13 @@ public class StudentHomePage implements Contractor.View {
         presenter.getData();
 
         //dashboard
-        dashboard();
-        dashboard2();
+        studentDashboard();
+        schoolDashboard();
+
+        setMessage(userCache.getFullName());
     }
 
-    private void dashboard() {
+    private void studentDashboard() {
         DashboardCategory category = new DashboardCategory(activity, view, userType) {
             @Override
             public void onClickListener(int id) {
@@ -71,7 +74,7 @@ public class StudentHomePage implements Contractor.View {
         category.setDashboard(Resources.student(getContext()));
         category.setCategoryVisibilityGone();
     }
-    private void dashboard2() {
+    private void schoolDashboard() {
         DashboardCategory category = new DashboardCategory(activity, view, "school") {
             @Override
             public void onClickListener(int id) {

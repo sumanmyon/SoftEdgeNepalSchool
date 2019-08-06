@@ -28,6 +28,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import pub.devrel.easypermissions.EasyPermissions;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.ViewPagerAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
@@ -44,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private NavigationListener navigationListener;
-    public static String userType = "student";     // userType :: by default is school ,
+    public static String userType;// = "school";     // userType :: by default is school ,
                                                   // else teacher and student
+    public static UserCache userCache = null;
     //For TabLayout
     private BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;
@@ -81,6 +83,13 @@ public class MainActivity extends AppCompatActivity {
 
         //for runtime permissions
         runTimePermissions();
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null) {
+            userCache = (UserCache) bundle.getSerializable("userCache");
+            userType = userCache.getRole();
+            Toast.makeText(MainActivity.this, userType, Toast.LENGTH_SHORT).show();
+        }
 
         //casting
         casting();

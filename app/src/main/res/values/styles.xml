@@ -44,8 +44,10 @@
         <item name="colorAccent">@color/colorAccentDark</item>
         <item name="colorError">@color/backgroundLight</item>
 
-        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionModeOverlay">false</item>
     </style>
+
+    <style name="AppTheme_PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!--style for ripple library-->
     <style name="RippleStyleWhite">
@@ -119,10 +121,10 @@
     -->
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.MinWidth">
         <!--buttons color-->
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/green_500</item>
         <!--title and message color-->
         <item name="android:textColorPrimary">@color/backgroundLight</item>
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/orange_500</item>
         <!--dialog background-->
         <!--<item name="android:windowBackground">@drawable/background_dialog</item>-->
         <!--<item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>-->
