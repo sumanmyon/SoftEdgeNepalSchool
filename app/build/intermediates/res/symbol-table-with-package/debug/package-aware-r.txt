@@ -2736,6 +2736,7 @@ style AppTheme_Custom
 style AppTheme_Widget_ActionButton
 style AppTheme_NoActionBar
 style AppTheme_Permission
+style AppTheme_PopupOverlay
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

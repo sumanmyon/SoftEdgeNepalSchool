@@ -21,12 +21,12 @@ public class NavigationListener implements NavigationView.OnNavigationItemSelect
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int itemId = menuItem.getItemId();
 
-        if(userType.equals("school")){
+        if(userType.equals("School")){
             new SchoolNav(activity, itemId).set();
-        }else if(userType.equals("teacher")){
+        }else if(userType.equals("Teacher")){
             new SchoolNav(activity, itemId).set();
             new TeacherNav(activity, itemId).set();
-        }else if(userType.equals("student")){
+        }else if(userType.equals("Student")){
             new SchoolNav(activity, itemId).set();
             new StudentNav(activity, itemId).set();
         }
