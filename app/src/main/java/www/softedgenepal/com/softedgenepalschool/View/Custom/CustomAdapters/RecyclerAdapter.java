@@ -14,7 +14,7 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
     private Context context;
     private int keysLength;
     private int size;
-    protected int animation_type = ItemAnimation.BOTTOM_UP;
+    public int animation_type = ItemAnimation.BOTTOM_UP;
 
     protected RecyclerAdapter(Context context, int keysLength) {
         this.context=context;

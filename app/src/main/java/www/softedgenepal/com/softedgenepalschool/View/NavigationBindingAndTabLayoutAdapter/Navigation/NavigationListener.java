@@ -32,7 +32,8 @@ public class NavigationListener implements NavigationView.OnNavigationItemSelect
         }
 
         menuItem.setChecked(true);
-        drawerLayout.closeDrawers();
+        if(drawerLayout!=null)
+            drawerLayout.closeDrawers();
         return true;
     }
 }

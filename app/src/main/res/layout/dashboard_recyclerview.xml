@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp">
+
+    <LinearLayout
+        android:id="@+id/dashboardLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="@dimen/dp42"
+            android:layout_height="@dimen/dp42"
+            android:layout_marginLeft="@dimen/spacing_xsmall"
+            android:layout_marginRight="@dimen/spacing_xsmall"
+            android:background="@android:color/transparent"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_category_2" />
+        <TextView
+            android:id="@+id/dashboardTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/vvsmall"
+            android:paddingTop="@dimen/spacing_small"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorPrimaryDark" />
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/dashboardLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/dashboardRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:padding="2dp"/>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

@@ -43,14 +43,20 @@ public class StudentNav {
             case R.id.studentLeaveApplication:
                 redirectToActivity(ShowAllLeaveApplication.class);
                 break;
-            case R.id.studentSuggestion:
-                redirectToActivity(SuggestionActivity.class);
-                break;
+//            case R.id.studentSuggestion:
+//                redirectToActivity(SuggestionActivity.class);
+//                break;
             case R.id.liveBusTracking:
                 redirectToActivity(BusRouteActivity.class);
                 break;
             case R.id.studentProfile:
                 //redirectToActivity(ProfileActivity.class);
+                showMessage("Comming Soon");
+                break;
+
+            case R.id.sibling:
+                //redirectToActivity(ProfileActivity.class);
+                showMessage("Comming Soon");
                 break;
             default:
                 break;

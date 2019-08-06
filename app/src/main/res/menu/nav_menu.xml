@@ -67,10 +67,10 @@
         <!--<item-->
             <!--android:title="@string/Assignment"-->
             <!--android:id="@+id/assignment"/>-->
-        <item
-            android:title="@string/StudentSuggestion"
-            android:id="@+id/studentSuggestion"
-            android:icon="@drawable/ic_suggestion"/>
+        <!--<item-->
+            <!--android:title="@string/StudentSuggestion"-->
+            <!--android:id="@+id/studentSuggestion"-->
+            <!--android:icon="@drawable/ic_suggestion"/>-->
         <!--<item-->
             <!--android:title="@string/BusRoute"-->
             <!--android:id="@+id/busRoute"/>-->

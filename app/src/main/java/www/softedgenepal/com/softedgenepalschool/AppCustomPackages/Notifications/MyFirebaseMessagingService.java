@@ -42,7 +42,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        ShowNotification notification = new ShowNotification(intent, this, title, body);
-        notification.show();
+//        ShowNotification notification = new ShowNotification(intent, this, title, body);
+//        notification.show();
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationAboveO notification = new NotificationAboveO(intent, this, title, body);
+            notification.show();
+        }else {
+            ShowNotification notification = new ShowNotification(intent, this, title, body);
+            notification.show();
+        }
     }
 }

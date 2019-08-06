@@ -7,6 +7,7 @@ import android.widget.Toast;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SettingActivity;
 
 public class SchoolNav {
     private Activity activity;
@@ -35,6 +36,9 @@ public class SchoolNav {
                 redirectToActivity(AboutActivity.class);
                 break;
             case R.id.setting:
+                redirectToActivity(SettingActivity.class);
+                break;
+            case R.id.logout:
                 showMessage("Coming Soon");
                 break;
             default:
