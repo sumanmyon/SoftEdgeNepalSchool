@@ -32,14 +32,14 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = null;
-        if(userType.equals("school")){
+        if(userType.equals("School")){
             view = inflater.inflate(R.layout.school, container, false);
             new SchoolHomePage(getActivity(),view).setView();
             showMessage("School");
-        }else if(userType.equals("teacher")){
+        }else if(userType.equals("Teacher")){
             view = inflater.inflate(R.layout.fragment_home, container, false);
             showMessage("Teacher");
-        }else if(userType.equals("student")){
+        }else if(userType.equals("Student")){
             view = inflater.inflate(R.layout.user_profile, container, false);
             //setHasOptionsMenu(true);
             onCreateOptionsMenu(view);
@@ -76,7 +76,7 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
 
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
-        if(userType.equals("student")){
+        if(userType.equals("Student")){
             studentHomePage.siblingMenu(menuItem);
         }
         return true;

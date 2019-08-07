@@ -79,7 +79,7 @@ public class URL {
         private String reportCardDetailUrl = onlineUrl + "api/data/getexammarks";
 
         public OnlineUrl() {
-            loginStudentUrl = loginStudentUrl + "UserName=suman&Password=admin123";
+            loginStudentUrl = loginStudentUrl;
         }
 
         public String getLoginStudentUrl() {
