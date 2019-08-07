@@ -150,6 +150,7 @@ public class FormValidation implements View.OnClickListener, Validate{
 
     private void setUserType(){
         MainActivity.userType = userCacheList.get(0).getRole();
+        MainActivity.userCache = userCacheList.get(0);
         redirect();
     }
 

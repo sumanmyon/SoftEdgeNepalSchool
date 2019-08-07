@@ -76,7 +76,7 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
 
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
-        if(userType.equals("student")){
+        if(userType.equals("Student")){
             studentHomePage.siblingMenu(menuItem);
         }
         return true;

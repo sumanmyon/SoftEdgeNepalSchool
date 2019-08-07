@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationListener navigationListener;
     public static String userType;// = "school";     // userType :: by default is school ,
                                                   // else teacher and student
-    public static UserCache userCache = null;
+    public static UserCache userCache;
     //For TabLayout
     private BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         if(bundle!=null) {
             userCache = (UserCache) bundle.getSerializable("userCache");
             userType = userCache.getRole();
-            Toast.makeText(MainActivity.this, userType, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, userCache.getSystemCode(), Toast.LENGTH_SHORT).show();
         }
 
         //casting

@@ -41,6 +41,7 @@ public class StudentHomePage implements Contractor.View {
     public StudentHomePage(Activity activity, View view) {
         this.activity=activity;
         this.view=view;
+        setMessage(userCache.getId());
     }
 
     public void setView() {
@@ -58,7 +59,6 @@ public class StudentHomePage implements Contractor.View {
         studentDashboard();
         schoolDashboard();
 
-        setMessage(userCache.getFullName());
     }
 
     private void studentDashboard() {
@@ -75,7 +75,7 @@ public class StudentHomePage implements Contractor.View {
         category.setCategoryVisibilityGone();
     }
     private void schoolDashboard() {
-        DashboardCategory category = new DashboardCategory(activity, view, "school") {
+        DashboardCategory category = new DashboardCategory(activity, view, "School") {
             @Override
             public void onClickListener(int id) {
                 SchoolNav nav = new SchoolNav(activity, id);
