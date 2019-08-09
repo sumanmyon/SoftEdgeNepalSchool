@@ -2531,8 +2531,10 @@ string Download
 string Download_Completed
 string Download_started
 string Downloading
+string End_Date
 string Event
 string ExamRoutine
+string Examination
 string Falgun
 string Gallery
 string Holidays_and_Events
@@ -2562,6 +2564,10 @@ string ReportCard
 string ResultReportCard
 string RouteName
 string Routine
+string Routine_End_Time
+string Routine_Exam_date
+string Routine_Start_Time
+string Routine_Subject
 string SalaryAccount
 string School
 string Setting
@@ -2569,6 +2575,7 @@ string ShowAllDetailLeaveApplication_ToolBar
 string ShowAllLeaveApplication_ToolBar
 string Shrawan
 string Sibling
+string Start_Date
 string Student
 string StudentAccount
 string StudentAttendance

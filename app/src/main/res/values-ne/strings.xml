@@ -109,6 +109,15 @@
     <string name="Working_Days">हालको दिन</string>
     <string name="Present_Days">हाजिर दिनहरू</string>
 
+    <!-- Routine -->
+    <string name="Examination">परीक्षा</string>
+    <string name="Start_Date">सुरु मिति</string>
+    <string name="End_Date">अन्त्य मिति</string>
+    <string name="Routine_Subject">बिषय</string>
+    <string name="Routine_Exam_date">परीक्षा मिति</string>
+    <string name="Routine_Start_Time">सुरु समय</string>
+    <string name="Routine_End_Time">अन्त समय</string>
+
     <!-- TODO: Mapbox -->
     <string name="mapbox_access_token">pk.eyJ1Ijoic29mdGVkZ2VuZXBhbCIsImEiOiJjanh4Mmc5cWQwMzFtM3BxbjAwdTE1NXUyIn0.j4-OvyW9hUFSCBMYPuVNng</string>
     <string name="RouteName">मार्ग : </string>
