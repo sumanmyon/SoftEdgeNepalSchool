@@ -2554,6 +2554,9 @@ string Open
 string Others
 string Password
 string Poush
+string Present_Days
+string Present_Percentage
+string Present_Today
 string QR
 string ReportCard
 string ResultReportCard
@@ -2578,8 +2581,10 @@ string TeacherLeaveApplication
 string TeacherProfile
 string TeacherSuggestion
 string Today
+string Total_Attendance
 string Username_or_Email
 string Videos
+string Working_Days
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

@@ -100,6 +100,13 @@
     <string name="Download_started">download started.</string>
     <string name="Download_Completed">Download Completed</string>
 
+    <!-- Attendance -->
+    <string name="Total_Attendance">Total Attendance</string>
+    <string name="Present_Percentage">Present Percentage</string>
+    <string name="Present_Today">Present Today</string>
+    <string name="Working_Days">Working Days</string>
+    <string name="Present_Days">Present Days</string>
+
     <!-- TODO: Mapbox -->
     <string name="mapbox_access_token">pk.eyJ1Ijoic29mdGVkZ2VuZXBhbCIsImEiOiJjanh4Mmc5cWQwMzFtM3BxbjAwdTE1NXUyIn0.j4-OvyW9hUFSCBMYPuVNng</string>
     <string name="RouteName">Route : </string>

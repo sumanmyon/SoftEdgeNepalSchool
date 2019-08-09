@@ -50,6 +50,6 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int powered_by_bugfender = 0x7f1100e6;
+        public static final int powered_by_bugfender = 0x7f1100eb;
     }
 }
