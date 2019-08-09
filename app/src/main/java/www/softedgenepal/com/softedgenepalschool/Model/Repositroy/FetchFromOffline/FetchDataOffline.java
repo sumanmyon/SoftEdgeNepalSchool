@@ -117,7 +117,7 @@ public class FetchDataOffline {
     private void checkDataBase(Cursor cursor){
         //todo if there is no data
         if(cursor.getCount() == 0){
-            showMessage("There is no student data in database.");
+            //showMessage("There is no student data in database.");
             return;
         }
         //todo if cursor is at first of row or not

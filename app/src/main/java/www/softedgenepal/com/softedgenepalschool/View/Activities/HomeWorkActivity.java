@@ -114,22 +114,6 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
 
 
     public void setData(List<AssignmentCache> assignmentCacheList) {
-        //setFieldInvisible();
-//
-        //todo work here
-//        adapter = new AssignmentAdapter(this,assignmentCacheList, ItemAnimation.BOTTOM_UP);
-//        recyclerView.setAdapter(adapter);
-
-        //todo show in detail view
-//        adapter.setOnItemClickListener(new AssignmentAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View view, AssignmentCache cache, int position) {
-//                BottomSheetFragment fragment = new BottomSheetFragment();
-//                //some thing here
-//                fragment.setAssignment(cache);
-//                fragment.show(getSupportFragmentManager(), fragment.getTag());
-//            }
-//        });
     }
 
     List<AssignmentCache> assignmentCacheList = null;
@@ -194,9 +178,9 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
 
         TextView textView = view.findViewById(R.id.recyclerView_date);
         if(assignmentCacheList.get(0).CreateDate.equals(today)){
-            textView.setText("Today");
+            textView.setText(getCalContext().getResources().getString(R.string.Today));
         }else {
-            textView.setText("Date: "+assignmentCacheList.get(0).CreateDate);
+            textView.setText(getCalContext().getResources().getString(R.string.Assignment_Date)+assignmentCacheList.get(0).CreateDate);
         }
         RecyclerView recyclerView;
         recyclerView = view.findViewById(R.id.assignmentRecyclerView);

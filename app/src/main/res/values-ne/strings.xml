@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">सफ्ट स्कूल</string>
+
+    <string name="Open">खोल्नुहोस्</string>
+    <string name="Close">बन्द</string>
+    <string name="Home">घर</string>
+    <string name="Others">अन्य</string>
+    <string name="Student">विद्यार्थी</string>
+    <string name="Teacher">शिक्षक</string>
+    <string name="School">स्कूल</string>
+
+    <string name="Network_error">कृपया तपाईंको नेटवर्क जडान जाँच्नुहोस्।</string>
+
+    <!-- Login -->
+    <string name="Username_or_Email">प्रयोगकर्ता नाम वा इमेल</string>
+    <string name="Password">पासवर्ड</string>
+    <string name="QR">QR</string>
+    <string name="Login">लग-इन</string>
+    <string name="username_error">कृपया उपयोगकर्ता नाम टाइप गर्नुहोस्</string>
+    <string name="password_error">कृपया पासवर्ड टाइप गर्नुहोस्</string>
+    <string name="loading_sign_in">साईन ईन....</string>
+    <string name="login_success">सफलतापूर्वक लगईन।</string>
+    <string name="login_failed">लगइन विफल।</string>
+
+    <!--Profile-->
+    <string name="profile_username">नाम: </string>
+    <string name="profile_class">कक्षा: </string>
+    <string name="profile_rollno">रोल नम्बर: </string>
+    <string name="profile_noSiblling">तपाईंको कुनै भाइबहिनी छैन।</string>
+
+    <!--
+        For Navigation menu
+    -->
+    <!-- For all (School, Teacher and Student) -->
+    <string name="Event">घटनाक्रम</string>
+    <string name="Gallery">ग्यालरी</string>
+    <string name="Videos">भिडियोहरू</string>
+    <string name="About">बारेमा</string>
+    <string name="Setting">सेटिंग</string>
+
+    <!-- For Teacher -->
+    <string name="AssignHomeWork">गृहकार्य</string>
+    <string name="TeacherAttendance">उपस्थित</string>
+    <string name="ClassRoutine">कक्षा रुटिन</string>
+    <string name="ExamRoutine">रुटिन</string>
+    <string name="ResultReportCard">रिपोर्ट कार्ड</string>
+    <string name="SalaryAccount">खाता</string>
+    <string name="TeacherLeaveApplication">अनुप्रयोग</string>
+    <string name="TeacherSuggestion">सुझाव</string>
+    <string name="TeacherProfile">प्रोफाइल</string>
+
+    <!-- For Student -->
+    <string name="HomeWork">गृहकार्य</string>
+    <string name="StudentAttendance">उपस्थित</string>
+    <string name="Routine">रुटिन</string>
+    <string name="ReportCard">पोर्ट कार्ड</string>
+    <string name="StudentAccount">खाता</string>
+    <string name="StudentLeaveApplication">अनुप्रयोग</string>
+    <string name="StudentSuggestion">सुझाव</string>
+    <!--<string name="BusRoute">Bus Route</string>    &lt;!&ndash; for particular role &ndash;&gt;-->
+    <string name="LiveBusTracking">बस ट्र्याकिंग</string>
+    <string name="StudentProfile">प्रोफाइल</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">नमस्ते खाली खण्ड</string>
+
+    <!-- For menu -->
+    <string name="Sibling">भाई</string>
+    <string name="AddUser">प्रयोगकर्ता थप्नुहोस्</string>
+    <string name="Logout">बाहिर निस्कनु</string>
+
+    <!-- For Notification -->
+    <string name="Notification">सूचना</string>
+    <string name="Notification_setting_message">सूचनाहरू प्राप्त गर्न तपाईले आफ्नो अनुप्रयोग सेट अप गर्न सक्नुहुन्छ, जस्तै गृहकार्य अनुस्मारकहरू, उपस्थिति, घटनाहरू, छुट्टीहरू आदि।</string>
+    <string name="Base_URL">आधार यूआरएल</string>
+
+    <!-- TODO: For Leave Application -->
+    <string name="ShowAllLeaveApplication_ToolBar">तपाईंको छुट्टी आवेदन</string>
+    <string name="ShowAllDetailLeaveApplication_ToolBar">अनुप्रयोग विवरण छोड्नुहोस्</string>
+    <string name="LeaveApplication_Dialoge_Title">तपाइँको छुट्टी आवेदन रद्द गर्नुहोस्?</string>
+    <string name="LeaveApplication_Dialoge_Body">तपाईंको छुट्टी आवेदन रद्द गर्न होमा थिच्नुहोस्।</string>
+    <string name="yes">हो</string>
+    <string name="no">होईन</string>
+
+    <!-- TODO: For Calender -->
+    <string name="Calender">क्यालेन्डर</string>
+    <string name="less_than">〈</string>
+    <string name="greater_than">〉</string>
+    <string name="Holidays_and_Events">छुट्टी र घटनाक्रम</string>
+    <string name="Created_Date">सिर्जना गरिएको मिति</string>
+    <string name="Deadline">अन्तिम दिन</string>
+
+    <!-- Assignments -->
+    <string name="not_any_assignment">त्यहाँ कुनै कार्यभार छैन।</string>
+    <string name="Today">आज</string>
+    <string name="Assignment_Date">मिति : </string>
+
+    <!--Download -->
+    <string name="Download">डाउनलोड</string>
+    <string name="Downloading">डाउनलोड गर्दै</string>
+    <string name="Download_started">डाउनलोड सुरु भयो।</string>
+    <string name="Download_Completed">डाउनलोड सम्पन्न भयो।</string>
+
+    <!-- TODO: Mapbox -->
+    <string name="mapbox_access_token">pk.eyJ1Ijoic29mdGVkZ2VuZXBhbCIsImEiOiJjanh4Mmc5cWQwMzFtM3BxbjAwdTE1NXUyIn0.j4-OvyW9hUFSCBMYPuVNng</string>
+    <string name="RouteName">मार्ग : </string>
+
+    <string name="msg_subscribed">सदस्यता लिएको </string>
+    <string name="msg_subscribe_failed">सदस्यता असफल भयो</string>
+    <string name="loading">लोड हुँदै ...</string>
+    <string name="CreatelevApp">तपाईंको छुट्टी अनुप्रयोग सिर्जना गर्नुहोस्</string>
+
+    <!-- Report Card Marks View:: flag = percentage, gpa or both -->
+    <string name="percentage">प्रतिशत</string>
+    <string name="gpa">gpa</string>
+    <string name="both">दुबै</string>
+
+    <!-- Setting Activity-->
+    <string name="language_title">भाषा</string>
+    <string name="language_type">नेपा</string>
+</resources>

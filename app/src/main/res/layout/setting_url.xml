@@ -32,7 +32,7 @@
                 android:layout_gravity="center_vertical"
                 android:paddingTop="@dimen/spacing_small"
                 android:paddingBottom="@dimen/spacing_small"
-                android:text="Base URL"
+                android:text="@string/Base_URL"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorPrimaryText"
                 android:textStyle="bold" />
@@ -51,7 +51,6 @@
             android:hint="www.softedgenepal.com"
             android:gravity="end"
             android:textSize="14sp"
-            android:focusable="true"
             android:layout_marginLeft="@dimen/dp42"
             android:layout_marginRight="@dimen/spacing_medium"
             android:id="@+id/login_edit_text_username"

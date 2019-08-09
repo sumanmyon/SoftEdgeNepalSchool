@@ -83,7 +83,7 @@ public class StudentHomePage implements Contractor.View {
             }
         };
         category.columnSpan = 4;
-        category.setTopic = "Others";
+        category.setTopic = getContext().getResources().getString(R.string.Others);
         category.setCategoryText();
         category.setDashboard(Resources.school(getContext()));
     }
@@ -105,10 +105,10 @@ public class StudentHomePage implements Contractor.View {
         glide.loadFailed(R.drawable.userprofile);
         glide.show(userProfileImage);
 
-
-        userNameTextView.setText("Name: "+username);
-        classTextView.setText("Class: "+classSection);
-        roll_SubTextView.setText("Roll No.: "+rollno);
+        //username = String.format("%s%s", getContext().getResources().getString(R.string.profile_username), username);
+        userNameTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_username), username));
+        classTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_class), classSection));
+        roll_SubTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_rollno), rollno));
 
         userProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +144,7 @@ public class StudentHomePage implements Contractor.View {
                 if(cache != null) {
                     contextMenu();
                 }else {
-                    showMessage("You have no sibling.");
+                    showMessage(getContext().getString(R.string.profile_noSiblling));
                 }
                 break;
         }

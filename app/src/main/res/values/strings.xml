@@ -3,6 +3,30 @@
 
     <string name="Open">Open</string>
     <string name="Close">Close</string>
+    <string name="Home">Home</string>
+    <string name="Others">Others</string>
+    <string name="Student">Student</string>
+    <string name="Teacher">Teacher</string>
+    <string name="School">School</string>
+
+    <string name="Network_error">Please check your network connection.</string>
+
+    <!-- Login -->
+    <string name="Username_or_Email">Username or Email</string>
+    <string name="Password">Password</string>
+    <string name="QR">QR</string>
+    <string name="Login">Login</string>
+    <string name="username_error">Please type username</string>
+    <string name="password_error">Please type password</string>
+    <string name="loading_sign_in">Sign in....</string>
+    <string name="login_success">Successfully Login.</string>
+    <string name="login_failed">Login Failed.</string>
+
+    <!--Profile-->
+    <string name="profile_username">Name: </string>
+    <string name="profile_class">Class: </string>
+    <string name="profile_rollno">Roll No.: </string>
+    <string name="profile_noSiblling">You have no sibling.</string>
 
     <!--
         For Navigation menu
@@ -12,16 +36,16 @@
     <string name="Gallery">Gallery</string>
     <string name="Videos">Videos</string>
     <string name="About">About</string>
-    <string name="Setting">Setting</string>
+    <string name="Setting">Settings</string>
 
     <!-- For Teacher -->
-    <string name="AssignHomeWork">Assign Homework</string>
+    <string name="AssignHomeWork">Homework</string>
     <string name="TeacherAttendance">Attendance</string>
     <string name="ClassRoutine">Class Routine</string>
-    <string name="ExamRoutine">Exam Routine</string>
-    <string name="ResultReportCard">Result/Report Card</string>
-    <string name="SalaryAccount">Salary Account</string>
-    <string name="TeacherLeaveApplication">LeaveApplication</string>
+    <string name="ExamRoutine">Routine</string>
+    <string name="ResultReportCard">Report Card</string>
+    <string name="SalaryAccount">Account</string>
+    <string name="TeacherLeaveApplication">Application</string>
     <string name="TeacherSuggestion">Suggestion</string>
     <string name="TeacherProfile">Profile</string>
 
@@ -31,10 +55,10 @@
     <string name="Routine">Routine</string>
     <string name="ReportCard">Report Card</string>
     <string name="StudentAccount">Account</string>
-    <string name="StudentLeaveApplication">Leave Application</string>
+    <string name="StudentLeaveApplication">Application</string>
     <string name="StudentSuggestion">Suggestion</string>
     <!--<string name="BusRoute">Bus Route</string>    &lt;!&ndash; for particular role &ndash;&gt;-->
-    <string name="LiveBusTracking">Live Bus Tracking</string>
+    <string name="LiveBusTracking">Bus Tracking</string>
     <string name="StudentProfile">Profile</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -45,6 +69,10 @@
     <string name="AddUser">Add User</string>
     <string name="Logout">Logout</string>
 
+    <string name="Notification">Notification</string>
+    <string name="Notification_setting_message">You can set up your Application to get notifications, like homework reminders, attendance, events, holidays etc.</string>
+    <string name="Base_URL">Base URL</string>
+
     <!-- TODO: For Leave Application -->
     <string name="ShowAllLeaveApplication_ToolBar">Your Leave Application</string>
     <string name="ShowAllDetailLeaveApplication_ToolBar">Leave Application Detail</string>
@@ -54,8 +82,23 @@
     <string name="no">No</string>
 
     <!-- TODO: For Calender -->
+    <string name="Calender">Calender</string>
     <string name="less_than">〈</string>
     <string name="greater_than">〉</string>
+    <string name="Holidays_and_Events">Holidays and Events</string>
+    <string name="Created_Date">Created Date</string>
+    <string name="Deadline">Deadline</string>
+
+    <!-- Assignments -->
+    <string name="not_any_assignment">There is not any assignment.</string>
+    <string name="Today">Today</string>
+    <string name="Assignment_Date">Date : </string>
+
+    <!--Download -->
+    <string name="Download">Download</string>
+    <string name="Downloading">Downloading</string>
+    <string name="Download_started">download started.</string>
+    <string name="Download_Completed">Download Completed</string>
 
     <!-- TODO: Mapbox -->
     <string name="mapbox_access_token">pk.eyJ1Ijoic29mdGVkZ2VuZXBhbCIsImEiOiJjanh4Mmc5cWQwMzFtM3BxbjAwdTE1NXUyIn0.j4-OvyW9hUFSCBMYPuVNng</string>
@@ -70,4 +113,8 @@
     <string name="percentage">percentage</string>
     <string name="gpa">gpa</string>
     <string name="both">both</string>
+
+    <!-- Setting Activity-->
+    <string name="language_title">Language</string>
+    <string name="language_type">EN</string>
 </resources>

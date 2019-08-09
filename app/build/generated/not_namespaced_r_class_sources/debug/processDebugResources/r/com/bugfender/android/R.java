@@ -40,7 +40,7 @@ public final class R {
         public static final int message_tv = 0x7f0a010d;
         public static final int positive_action_tv = 0x7f0a012b;
         public static final int root_vg = 0x7f0a0172;
-        public static final int title_tv = 0x7f0a01f0;
+        public static final int title_tv = 0x7f0a01f2;
     }
     public static final class layout {
         private layout() {}
@@ -50,6 +50,6 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int powered_by_bugfender = 0x7f1100c8;
+        public static final int powered_by_bugfender = 0x7f1100e6;
     }
 }

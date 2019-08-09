@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
 
@@ -26,11 +27,15 @@ public class LoginActivity extends AppCompatActivity {
     public Button buttonQR, buttonLogin;
     ImageView imageView;
 
-    private static final int REQUEST_CAMERA = 1;
-    private ZXingScannerView mScannerView;
+    private LanguageSetting languageSetting;
+    private String lang;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        languageSetting = new LanguageSetting(this);
+        lang = languageSetting.loadLanguage();
+
         super.onCreate(savedInstanceState);
         loadUI();
 

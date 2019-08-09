@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name: Suman Neupane"
+                android:text="@string/profile_username"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:padding="2dp"
@@ -40,7 +40,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Class: 7(A)"
+                android:text="@string/profile_class"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:padding="2dp"
@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Roll No.: 12"
+                android:text="@string/profile_rollno"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:padding="2dp"

@@ -24,10 +24,8 @@ public class RequestDataForStudent implements Contractor.Model {
 
     public void requestData() {
         if(new NetworkConnection(presenter.getContext()).isConnectionSuccess()){
-            setMessage("online");
             fetchOnline();
         }else {
-            setMessage("offline");
             fetchOffline();
         }
     }
