@@ -107,7 +107,7 @@
     <string name="Present_Percentage">हाजिर प्रतिशत</string>
     <string name="Present_Today">आजको Today</string>
     <string name="Working_Days">हालको दिन</string>
-    <string name="Present_Days">हाजिर दिनहरू</string>
+    <string name="Present_Days">"हाजिरी दिन  "</string>
 
     <!-- Routine -->
     <string name="Examination">परीक्षा</string>
