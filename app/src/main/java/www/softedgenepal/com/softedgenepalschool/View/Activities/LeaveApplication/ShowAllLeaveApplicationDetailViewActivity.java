@@ -56,7 +56,7 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
 
     private void showInView(LeaveApplicationDataCache cache) {
         if(cache != null) {
-            setMessage("There is leave application");
+            //setMessage("There is leave application");
 
             subjectTextView.setText(cache.Subject);
             messageTextView.setText(cache.Message);
@@ -66,12 +66,12 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
             String To = cache.To;
 
             if(!date.equals("null")) {
-                createDateTextView.setText("Created Date: "+DateTime.DateConvertToNepali(date, "date"));
+                createDateTextView.setText(getString(R.string.Created_Date)+": "+DateTime.DateConvertToNepali(date, "date"));
             }
 
             if(!From.equals("null") && !To.equals("null")) {
-                fromToTextView.setText("From: "+DateTime.DateConvertToNepali(From, "date")+
-                        "\nTo: "+DateTime.DateConvertToNepali(To, "date"));
+                fromToTextView.setText(getString(R.string.From)+": "+DateTime.DateConvertToNepali(From, "date")+
+                        "\n"+getString(R.string.To)+": "+DateTime.DateConvertToNepali(To, "date"));
             }
 
             //todo show cancel

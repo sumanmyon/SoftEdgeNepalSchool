@@ -85,7 +85,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
             @Override
             public void show(View v) {
                 if(startDate[0].equals("")){
-                    setMessage("First select start date");
+                    setMessage(getString(R.string.Application_select_startDate));
                 }else {
                     pickDate();
                 }
@@ -122,7 +122,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
             textView.setText(date);
         }else {
             textView.setText("");
-            setMessage("You should pick today date or future day for leave.");
+            setMessage(getString(R.string.Application_select_endDate));
         }
     }
 
@@ -132,13 +132,13 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
             public void onClick(View v) {
                 //checking fields are null or not
                 if(TextUtils.isEmpty(subjectEditText.getText())){
-                    subjectEditText.setError("What is your subject for leave.");
-                } else if(TextUtils.isEmpty(messageEditText.getText())){
-                    messageEditText.setError("Please type message for leave.");
+                    subjectEditText.setError(getString(R.string.Application_Subject_error));
                 }else if(TextUtils.isEmpty(fromTextView.getText())){
-                    fromTextView.setError("Please select date for leave");
+                    fromTextView.setError(getString(R.string.Application_Date_error));
                 }else if(TextUtils.isEmpty(toTextView.getText())){
-                    toTextView.setError("Please select date for leave");
+                    toTextView.setError(getString(R.string.Application_Date_error));
+                }else if(TextUtils.isEmpty(messageEditText.getText())){
+                    messageEditText.setError(getString(R.string.Application_Message_error));
                 }else {
                     sendLeaveMessage();
                 }
@@ -211,6 +211,5 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        //startActivity(new Intent(this, ShowAllLeaveApplication.class));
     }
 }

@@ -2,6 +2,13 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <string name="About">बारेमा</string>
     <string name="AddUser">प्रयोगकर्ता थप्नुहोस्</string>
+    <string name="Application_Date_error">कृपया छुट्टीको लागि मिति चयन गर्नुहोस्।</string>
+    <string name="Application_Message_error">कृपया छुट्टीको लागि सन्देश टाइप गर्नुहोस्।</string>
+    <string name="Application_Subject_error">बिदाको लागि तपाईको विषय के हो?</string>
+    <string name="Application_select_endDate">तपाईंले आजको मिति वा भविष्यको बिदा मिति चयन गर्नुपर्छ।</string>
+    <string name="Application_select_startDate">पहिले सुरू मिति चयन गर्नुहोस्।</string>
+    <string name="Application_test_Message">गम्भीर घाँटी संक्रमणको कारणले मलाई स्कूलबाट बिरामी बिदा लिनु पर्छ भनेर सूचित गर्न म यो पत्र लेख्दैछु। म सेप्टेम्बर २ सम्म, स्कूलबाट छुट्टि लिनछु| मेरो पूरै बिरामी बिदालाई दुई दिन लाएर ......</string>
+    <string name="Application_test_Subject">बिरामी बिदा</string>
     <string name="Ashar"> असार </string>
     <string name="Ashoj"> आस्विन </string>
     <string name="AssignHomeWork">गृहकार्य</string>
@@ -15,6 +22,7 @@
     <string name="Close">बन्द</string>
     <string name="Created_Date">सिर्जना गरिएको मिति</string>
     <string name="CreatelevApp">तपाईंको छुट्टी अनुप्रयोग सिर्जना गर्नुहोस्</string>
+    <string name="Days">दिन</string>
     <string name="Deadline">अन्तिम दिन</string>
     <string name="Download">डाउनलोड</string>
     <string name="Download_Completed">डाउनलोड सम्पन्न भयो।</string>
@@ -25,6 +33,7 @@
     <string name="ExamRoutine">रुटिन</string>
     <string name="Examination">परीक्षा</string>
     <string name="Falgun"> फाल्गुन </string>
+    <string name="From">बाट</string>
     <string name="Gallery">ग्यालरी</string>
     <string name="Holidays_and_Events">छुट्टी र घटनाक्रम</string>
     <string name="Home">घर</string>
@@ -38,6 +47,7 @@
     <string name="Logout">बाहिर निस्कनु</string>
     <string name="Magh">माघ</string>
     <string name="Mangsir"> मंसिर</string>
+    <string name="Message">सन्देश</string>
     <string name="Network_error">कृपया तपाईंको नेटवर्क जडान जाँच्नुहोस्।</string>
     <string name="Notification">सूचना</string>
     <string name="Notification_setting_message">सूचनाहरू प्राप्त गर्न तपाईले आफ्नो अनुप्रयोग सेट अप गर्न सक्नुहुन्छ, जस्तै गृहकार्य अनुस्मारकहरू, उपस्थिति, घटनाहरू, छुट्टीहरू आदि।</string>
@@ -72,11 +82,13 @@
     <string name="StudentLeaveApplication">अनुप्रयोग</string>
     <string name="StudentProfile">प्रोफाइल</string>
     <string name="StudentSuggestion">सुझाव</string>
+    <string name="Subject">बिषय</string>
     <string name="Teacher">शिक्षक</string>
     <string name="TeacherAttendance">उपस्थित</string>
     <string name="TeacherLeaveApplication">अनुप्रयोग</string>
     <string name="TeacherProfile">प्रोफाइल</string>
     <string name="TeacherSuggestion">सुझाव</string>
+    <string name="To">सम्म</string>
     <string name="Today">आज</string>
     <string name="Total_Attendance">कुल उपस्थिति</string>
     <string name="Username_or_Email">प्रयोगकर्ता नाम वा इमेल</string>

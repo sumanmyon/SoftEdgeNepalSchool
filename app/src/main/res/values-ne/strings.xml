@@ -137,6 +137,20 @@
     <string name="grade">ग्रेड</string>
     <string name="both">दुबै</string>
 
+    <!-- Leave Application -->
+    <string name="From">बाट</string>
+    <string name="To">सम्म</string>
+    <string name="Subject">बिषय</string>
+    <string name="Days">दिन</string>
+    <string name="Message">सन्देश</string>
+    <string name="Application_test_Subject">बिरामी बिदा</string>
+    <string name="Application_test_Message">गम्भीर घाँटी संक्रमणको कारणले मलाई स्कूलबाट बिरामी बिदा लिनु पर्छ भनेर सूचित गर्न म यो पत्र लेख्दैछु। म सेप्टेम्बर २ सम्म, स्कूलबाट छुट्टि लिनछु| मेरो पूरै बिरामी बिदालाई दुई दिन लाएर ......</string>
+    <string name="Application_select_startDate">पहिले सुरू मिति चयन गर्नुहोस्।</string>
+    <string name="Application_select_endDate">तपाईंले आजको मिति वा भविष्यको बिदा मिति चयन गर्नुपर्छ।</string>
+    <string name="Application_Subject_error">बिदाको लागि तपाईको विषय के हो?</string>
+    <string name="Application_Date_error">कृपया छुट्टीको लागि मिति चयन गर्नुहोस्।</string>
+    <string name="Application_Message_error">कृपया छुट्टीको लागि सन्देश टाइप गर्नुहोस्।</string>
+
     <!-- Setting Activity-->
     <string name="language_title">भाषा</string>
     <string name="language_type">नेपा</string>

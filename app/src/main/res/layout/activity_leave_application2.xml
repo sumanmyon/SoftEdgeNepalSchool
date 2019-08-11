@@ -96,7 +96,7 @@
                                 android:layout_weight="0.5"
                                 android:padding="8dp"
                                 android:textStyle="bold"
-                                android:text="Subject"
+                                android:text="@string/Subject"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="@dimen/large" />
@@ -107,7 +107,7 @@
                                 android:ellipsize="end"
                                 android:focusable="true"
                                 android:padding="8dp"
-                                android:hint="Sick leave"
+                                android:hint="@string/Application_test_Subject"
                                 android:inputType="text"
                                 android:scrollHorizontally="true"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -152,7 +152,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
                                 android:padding="8dp"
-                                android:text="Days"
+                                android:text="@string/Days"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                 android:textSize="16sp"
@@ -200,7 +200,7 @@
                                         android:singleLine="true"
                                         android:ellipsize="end"
                                         android:scrollHorizontally="true"
-                                        android:hint="Start/From date "
+                                        android:hint="@string/From"
                                         android:textSize="@dimen/vsmall"/>
                                 </LinearLayout>
 
@@ -251,7 +251,7 @@
                                         android:singleLine="true"
                                         android:ellipsize="end"
                                         android:scrollHorizontally="true"
-                                        android:hint="End/To date "
+                                        android:hint="@string/To"
                                         android:textSize="@dimen/vsmall"/>
                                 </LinearLayout>
 
@@ -301,7 +301,7 @@
                                 android:layout_weight="0.5"
                                 android:padding="8dp"
                                 android:textStyle="bold"
-                                android:text="Message"
+                                android:text="@string/Message"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="@dimen/large" />
@@ -313,7 +313,7 @@
                                 android:focusable="true"
                                 android:gravity="top"
                                 android:padding="8dp"
-                                android:hint="I am writing this letter to inform you that I need to take a sick leave from work due to a severe throat infection. I will need to remain off of work until September 26, bringing my total sick leave to two full weeks......"
+                                android:hint="@string/Application_test_Message"
                                 android:theme="@style/AppCompact.EditText.Blue"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                 android:inputType="textMultiLine"

@@ -2513,6 +2513,13 @@ raw point
 raw zxing_beep
 string About
 string AddUser
+string Application_Date_error
+string Application_Message_error
+string Application_Subject_error
+string Application_select_endDate
+string Application_select_startDate
+string Application_test_Message
+string Application_test_Subject
 string Ashar
 string Ashoj
 string AssignHomeWork
@@ -2526,6 +2533,7 @@ string ClassRoutine
 string Close
 string Created_Date
 string CreatelevApp
+string Days
 string Deadline
 string Download
 string Download_Completed
@@ -2536,6 +2544,7 @@ string Event
 string ExamRoutine
 string Examination
 string Falgun
+string From
 string Gallery
 string Holidays_and_Events
 string Home
@@ -2549,6 +2558,7 @@ string Login
 string Logout
 string Magh
 string Mangsir
+string Message
 string Network_error
 string Notification
 string Notification_setting_message
@@ -2583,11 +2593,13 @@ string StudentAttendance
 string StudentLeaveApplication
 string StudentProfile
 string StudentSuggestion
+string Subject
 string Teacher
 string TeacherAttendance
 string TeacherLeaveApplication
 string TeacherProfile
 string TeacherSuggestion
+string To
 string Today
 string Total_Attendance
 string Username_or_Email
