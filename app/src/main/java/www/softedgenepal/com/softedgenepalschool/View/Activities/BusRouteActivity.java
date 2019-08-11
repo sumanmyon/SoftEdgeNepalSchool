@@ -138,7 +138,7 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
             }
         }else {
            loadTextView.setVisibility(View.VISIBLE);
-           loadTextView.setText("Please come online to view live bus tracking.");
+           loadTextView.setText(getString(R.string.BusRoute_online));
         }
     }
 

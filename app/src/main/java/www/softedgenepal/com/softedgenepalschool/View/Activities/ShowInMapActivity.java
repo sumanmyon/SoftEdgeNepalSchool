@@ -289,7 +289,7 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
 
     private void casting() {
         toolbar = findViewById(R.id.ShowInMap_toolbar);
-        toolbar.setText(getString(R.string.RouteName)+busRouteCache.RouteName);
+        toolbar.setText(getString(R.string.RouteName)+" "+busRouteCache.RouteName);
         backpress = findViewById(R.id.ShowInMap_bt_close);
 
         mapView = findViewById(R.id.mapView);

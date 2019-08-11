@@ -151,6 +151,9 @@
     <string name="Application_Date_error">कृपया छुट्टीको लागि मिति चयन गर्नुहोस्।</string>
     <string name="Application_Message_error">कृपया छुट्टीको लागि सन्देश टाइप गर्नुहोस्।</string>
 
+    <!-- Bus Route -->
+    <string name="BusRoute_online">प्रत्यक्ष बस ट्र्याकिंग हेर्न कृपया अनलाइन आउँनुहोस्।</string>
+
     <!-- Setting Activity-->
     <string name="language_title">भाषा</string>
     <string name="language_type">नेपा</string>

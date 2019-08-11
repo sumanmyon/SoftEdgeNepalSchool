@@ -2527,6 +2527,7 @@ string Assignment_Date
 string Baisakh
 string Base_URL
 string Bhadra
+string BusRoute_online
 string Calender
 string Chaitra
 string ClassRoutine

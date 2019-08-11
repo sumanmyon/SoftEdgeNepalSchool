@@ -148,6 +148,9 @@
     <string name="Application_Date_error">Please select date for leave.</string>
     <string name="Application_Message_error">Please type message for leave.</string>
 
+    <!-- Bus Route -->
+    <string name="BusRoute_online">Please come online to view live bus tracking.</string>
+
     <!-- Setting Activity-->
     <string name="language_title">Language</string>
     <string name="language_type">EN</string>
