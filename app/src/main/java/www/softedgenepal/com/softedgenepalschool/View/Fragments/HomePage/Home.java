@@ -2,6 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActi
  */
 public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
     StudentHomePage studentHomePage;
+    View view;
 
     public Home() {
         // Required empty public constructor
@@ -31,24 +33,22 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = null;
+        view = null;
         if(userType.equals("School")){
             view = inflater.inflate(R.layout.school, container, false);
             new SchoolHomePage(getActivity(),view).setView();
-            showMessage("School");
+            showMessage(getActivity().getString(R.string.School));
         }else if(userType.equals("Teacher")){
             view = inflater.inflate(R.layout.fragment_home, container, false);
-            showMessage("Teacher");
+            showMessage(getActivity().getString(R.string.Teacher));
         }else if(userType.equals("Student")){
             view = inflater.inflate(R.layout.user_profile, container, false);
             //setHasOptionsMenu(true);
             onCreateOptionsMenu(view);
 
-            //getActivity().startActivity(new Intent(getContext(), ShowAllLeaveApplicationDetailViewActivity.class));
-
             studentHomePage = new StudentHomePage(getActivity(), view);
             studentHomePage.setView();
-            showMessage("Student");
+            showMessage(getActivity().getString(R.string.Student));
         }
         return view;
     }
@@ -85,4 +85,5 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
     private void showMessage(String message){
         Toast.makeText(getContext(),message,Toast.LENGTH_LONG).show();
     }
+
 }

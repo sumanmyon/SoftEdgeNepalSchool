@@ -24,7 +24,7 @@
             android:layout_weight="0.23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="S.N."
+            android:text="@string/sn"
             android:gravity="right"
             android:layout_gravity="center_vertical"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="8dp"
-            android:text="Subject"
+            android:text="@string/Subject"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@color/colorPrimaryText" />
         <View
@@ -56,7 +56,7 @@
                 android:id="@+id/recyclerReportCardGrade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Theory"
+                android:text="@string/Theory"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorPrimaryText" />
@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.33"
-                    android:text="FM"
+                    android:text="@string/FM"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.33"
-                    android:text="PM"
+                    android:text="@string/PM"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.34"
-                    android:text="OM"
+                    android:text="@string/OM"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -115,7 +115,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Practical"
+                android:text="@string/Practical"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorPrimaryText" />
@@ -132,7 +132,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.33"
-                    android:text="FM"
+                    android:text="@string/FM"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -144,7 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.33"
-                    android:text="PM"
+                    android:text="@string/PM"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -156,7 +156,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.34"
-                    android:text="OM"
+                    android:text="@string/OM"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -172,7 +172,7 @@
             android:layout_weight="0.22"
             android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="Total"
+            android:text="@string/Total"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@color/colorPrimaryText" />
         <View

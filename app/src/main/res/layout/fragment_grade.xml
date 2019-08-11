@@ -34,7 +34,10 @@
             android:layout_marginBottom="4dp"
             android:orientation="vertical">
 
-            <include layout="@layout/reportcard_recyclerview_grade_title" />
+            <include
+                layout="@layout/reportcard_recyclerview_grade_title"
+                android:layout_alignStart="@+id/lyl"
+                android:layout_alignTop="@+id/lyl" />
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/reportCard_grade_recyclerView"
                 android:layout_width="match_parent"

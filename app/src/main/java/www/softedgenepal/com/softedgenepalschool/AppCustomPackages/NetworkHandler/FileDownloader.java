@@ -16,6 +16,7 @@ import java.io.File;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.NotificationAboveO;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Notifications.ShowNotification;
+import www.softedgenepal.com.softedgenepalschool.R;
 
 public class FileDownloader {
     private Activity activityClass;
@@ -121,7 +122,7 @@ public class FileDownloader {
             long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
 
             if(downloadID == id){
-                setMessage("Download Completed");
+                setMessage(context.getResources().getString(R.string.Download_Completed));
                 //viewInDownloads();
                 openWhereFileIsSaved();
             }
