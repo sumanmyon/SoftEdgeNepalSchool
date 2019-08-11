@@ -95,7 +95,7 @@
                     android:id="@+id/te"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Holidays and Events"
+                    android:text="@string/Holidays_and_Events"
                     android:textSize="14dp"
                     android:padding="2dp"
                     android:textStyle="bold"

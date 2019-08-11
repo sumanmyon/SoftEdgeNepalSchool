@@ -83,7 +83,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Created Date"
+                            android:text="@string/Created_Date"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
                             android:textColor="@color/grey_40" />
                     </LinearLayout>

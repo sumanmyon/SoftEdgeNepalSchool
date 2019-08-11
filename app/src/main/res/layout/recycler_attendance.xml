@@ -67,7 +67,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Working Days"
+                            android:text="@string/Working_Days"
                             android:gravity="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
                             android:textColor="@color/grey_40" />
@@ -92,7 +92,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Present Days"
+                            android:text="@string/Present_Days"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
                             android:textColor="@color/grey_40" />
                     </LinearLayout>

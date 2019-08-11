@@ -15,6 +15,7 @@
         <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item><!-- toolbar cap disabling -->
 
         <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -30,6 +31,7 @@
         <item name="colorError">@color/backgroundLight</item>
 
         <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <style name="AppTheme_Permission" parent="Theme.AppCompat.Light.NoActionBar">
@@ -45,6 +47,7 @@
         <item name="colorError">@color/backgroundLight</item>
 
         <item name="windowActionModeOverlay">false</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <style name="AppTheme_PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

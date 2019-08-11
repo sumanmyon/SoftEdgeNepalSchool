@@ -60,9 +60,9 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.Vi
         if(!cache.Deadline.equals("")) {
             //String[] endD = cache.Deadline.split("-");
             //endDate = DateTime.convertToNepali(endD);
-            holder.assignmanetDate.setText("Deadline: "+cache.Deadline);       //"Date: "+startDate+"\n
+            holder.assignmanetDate.setText(context.getResources().getString(R.string.Deadline)+": "+cache.Deadline);       //"Date: "+startDate+"\n
         }else {
-            holder.assignmanetDate.setText("Deadline: ");       //"Date: "+startDate+"\n
+            holder.assignmanetDate.setText(context.getResources().getString(R.string.Deadline)+": ");       //"Date: "+startDate+"\n
         }
         //holder.assignmanetDate.setText("Deadline: "+endDate);       //"Date: "+startDate+"\n
 

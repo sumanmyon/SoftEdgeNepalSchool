@@ -34,7 +34,7 @@
                 android:layout_gravity="center_vertical"
                 android:paddingTop="@dimen/spacing_small"
                 android:paddingBottom="@dimen/spacing_small"
-                android:text="Notification"
+                android:text="@string/Notification"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorPrimaryText"
                 android:textStyle="bold" />
@@ -45,7 +45,7 @@
                 android:layout_gravity="center_vertical|end"
                 android:gravity="end">
                 <Switch
-                    android:id="@+id/settingLanguageSwitch"
+                    android:id="@+id/settingLanguageSwitc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -63,34 +63,7 @@
             android:paddingTop="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_small"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="You can set up your Application to get notifications, like homework reminders, attendance, events, holidays etc."/>
-
-        <!--<RadioGroup-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="end">-->
-            <!--<RadioButton-->
-                <!--android:id="@+id/radioButton"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Percentage"-->
-                <!--android:buttonTint="@color/green_500"/>-->
-
-            <!--<RadioButton-->
-                <!--android:id="@+id/radioButton2"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Grade"-->
-                <!--android:buttonTint="@color/green_500"/>-->
-
-            <!--<RadioButton-->
-                <!--android:id="@+id/radioButton3"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Both"-->
-                <!--android:checked="true"-->
-                <!--android:buttonTint="@color/green_500"/>-->
-        <!--</RadioGroup>-->
+            android:text="@string/Notification_setting_message"/>
     </LinearLayout>
 
 

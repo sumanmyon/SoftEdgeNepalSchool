@@ -24,6 +24,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOffli
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.Presenter.AssignmentPresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.AssignmentContractor;
+import www.softedgenepal.com.softedgenepalschool.R;
 
 public class AssignmentModel implements AssignmentContractor.Model {
     private AssignmentPresenter assignmentPresenter;
@@ -76,7 +77,7 @@ public class AssignmentModel implements AssignmentContractor.Model {
         String data = preference.getData();
 
         if(data==null){
-            setMessage("There is not any assignment.");
+            setMessage(getContext().getResources().getString(R.string.not_any_assignment));
             return;
         }
 

@@ -62,9 +62,9 @@ public class FormValidation implements View.OnClickListener, Validate{
         //todo validating form
         if(TextUtils.isEmpty(editTextUserName.getText())){
             if(drawable!=null){
-                new EditTextError().setErrorForEditText(editTextUserName,"Please type username", drawable);
+                new EditTextError().setErrorForEditText(editTextUserName,activity.getResources().getString(R.string.username_error), drawable);
             }else {
-                new EditTextError().setErrorForEditText(editTextUserName,"Please type username");
+                new EditTextError().setErrorForEditText(editTextUserName,activity.getResources().getString(R.string.username_error));
             }
             user = false;
         }else {
@@ -73,9 +73,9 @@ public class FormValidation implements View.OnClickListener, Validate{
 
         if(TextUtils.isEmpty(editTextPassword.getText())){
             if(drawable!=null){
-                new EditTextError().setErrorForEditText(editTextPassword,"Please type password",drawable);
+                new EditTextError().setErrorForEditText(editTextPassword,activity.getResources().getString(R.string.password_error),drawable);
             }else {
-                new EditTextError().setErrorForEditText(editTextPassword,"Please type password");
+                new EditTextError().setErrorForEditText(editTextPassword,activity.getResources().getString(R.string.password_error));
             }
             password = false;
         }else {
@@ -93,11 +93,11 @@ public class FormValidation implements View.OnClickListener, Validate{
 
     }
 
-    @Override                                           //admin123
+    @Override                               //nanda             //admin123
     public void validateWithDataBase(String userName, String password) {
         progressDialog = new ProgressDialog(activity, R.style.AlertDialogTheme);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Sign in....");
+        progressDialog.setMessage(activity.getResources().getString(R.string.loading_sign_in));
         progressDialog.show();
 
        // DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
@@ -128,14 +128,14 @@ public class FormValidation implements View.OnClickListener, Validate{
                 }
 
                 String enPass = Base64EncodeAndDecode.encode(passW).trim();
-                setMessage(enPass);
+                //setMessage(enPass);
                 if(enPass.equals(userCacheList.get(0).getPassword())){
                     progressDialog.dismiss();
                     setUserType();
-                    setMessage("Successfully Login.");
+                    setMessage(activity.getResources().getString(R.string.login_success));
                 }else {
                     progressDialog.dismiss();
-                    setMessage("Login Failed.");
+                    setMessage(activity.getResources().getString(R.string.login_failed));
                 }
             }else {
                 progressDialog.dismiss();

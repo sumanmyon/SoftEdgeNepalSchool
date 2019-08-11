@@ -1,5 +1,6 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -28,6 +29,8 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import pub.devrel.easypermissions.EasyPermissions;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LocaleHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.ViewPagerAdapter;
@@ -46,13 +49,11 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private NavigationListener navigationListener;
     public static String userType;// = "school";     // userType :: by default is school ,
-                                                  // else teacher and student
+                                                    // else teacher and student
     public static UserCache userCache;
+
     //For TabLayout
     private BottomNavigationView bottomNavigationView;
-    private ViewPager viewPager;
-    private TabLayoutAdapter tabLayoutAdapter;
-    private ViewPagerAdapter viewPagerAdapter;
 
     //Fragments lists
     private Home homeFagment;
@@ -61,31 +62,47 @@ public class MainActivity extends AppCompatActivity {
     private Fragment activeFragment;
     private FragmentManager fragmentManager;
 
+    private LanguageSetting languageSetting;
+    private String lang;
+
     @Override
     protected void onStart() {
         super.onStart();
+//        languageSetting = new LanguageSetting(this);
+//        lang = languageSetting.loadLanguage();
+
         //for runtime permissions
         runTimePermissions();
     }
 
-    private void runTimePermissions(){
-        if(!EasyPermissions.hasPermissions(this, perms)) {
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Intent refresh = new Intent(getApplicationContext(), MainActivity.class);
+        finish();
+        startActivity(refresh);
+    }
+
+
+    private void runTimePermissions() {
+        if (!EasyPermissions.hasPermissions(this, perms)) {
             Intent runIntent = new Intent(this, RunTimePermissions.class);
             startActivity(runIntent);
         }
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        languageSetting = new LanguageSetting(this);
+        lang = languageSetting.loadLanguage();
 
+        setContentView(R.layout.activity_main);
         //for runtime permissions
         runTimePermissions();
 
         Bundle bundle = getIntent().getExtras();
-        if(bundle!=null) {
+        if (bundle != null) {
             userCache = (UserCache) bundle.getSerializable("userCache");
             userType = userCache.getRole();
             Toast.makeText(MainActivity.this, userCache.getSystemCode(), Toast.LENGTH_SHORT).show();
@@ -107,22 +124,19 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView();
 
         //todo all devices
-        FirebaseMessaging.getInstance().subscribeToTopic("allDevices")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = getString(R.string.msg_subscribed);
-                        if (!task.isSuccessful()) {
-                            msg = getString(R.string.msg_subscribe_failed);
-                        }
-                        Log.d("FirebaseMessaging", msg);
-                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
+        FirebaseMessaging.getInstance().subscribeToTopic("allDevices").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                String msg = getString(R.string.msg_subscribed);
+                if (!task.isSuccessful()) {
+                    msg = getString(R.string.msg_subscribe_failed);
+                }
+                Log.d("FirebaseMessaging", msg);
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        Toast.makeText(MainActivity.this,
-                String.valueOf(FirebaseInstanceId.getInstance().getInstanceId()),
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, String.valueOf(FirebaseInstanceId.getInstance().getInstanceId()), Toast.LENGTH_SHORT).show();
 
         //initFragment
         initFragment();
@@ -137,20 +151,20 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.mainActivity_bottomNavigation);
     }
 
-    private void binding(){
+    private void binding() {
         BindingNavigationAccordingToUserType accordingToUserType = new BindingNavigationAccordingToUserType();
         accordingToUserType.setNavigationAccordingToUserType(navigationView);
     }
 
     private void drawerLayout() {
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.Open, R.string.Close);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
     }
 
     private void navigation() {
         ImageView navImage = navigationView.getHeaderView(0).findViewById(R.id.navigation_image_view);
-        SetImageWithCompatibleScreenSize screenSize = new SetImageWithCompatibleScreenSize(this,navImage);
+        SetImageWithCompatibleScreenSize screenSize = new SetImageWithCompatibleScreenSize(this, navImage);
         screenSize.setCompitableForHeight(3.5);
         screenSize.setImage();
 
@@ -158,18 +172,18 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(navigationListener);
     }
 
-    private void initFragment(){
+    private void initFragment() {
         homeFagment = new Home();
         notificationFragment = new Notification();
         calenderFragment = new Calendar();
         activeFragment = homeFagment;
     }
 
-    private void setFragmentManager(){
+    private void setFragmentManager() {
         fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.main_container,calenderFragment, "3").hide(calenderFragment).commit();
-        fragmentManager.beginTransaction().add(R.id.main_container,notificationFragment, "background_img").hide(notificationFragment).commit();
-        fragmentManager.beginTransaction().add(R.id.main_container,homeFagment, "1").commit();
+        fragmentManager.beginTransaction().add(R.id.main_container, calenderFragment, "3").hide(calenderFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.main_container, notificationFragment, "background_img").hide(notificationFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.main_container, homeFagment, "1").commit();
     }
 
 

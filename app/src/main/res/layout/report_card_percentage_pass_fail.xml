@@ -30,7 +30,7 @@
                 android:textColor="@color/colorPrimaryText"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:text="Percentage"
+                android:text="@string/percentage"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             <View
                 android:layout_width="1dp"
@@ -78,7 +78,7 @@
                 android:textColor="@color/colorPrimaryText"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:text="Position"
+                android:text="@string/Position"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             <View
                 android:layout_width="1dp"
@@ -126,7 +126,7 @@
                 android:textColor="@color/colorPrimaryText"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:text="Result"
+                android:text="@string/Result"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             <View
                 android:layout_width="1dp"

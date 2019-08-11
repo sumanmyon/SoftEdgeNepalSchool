@@ -29,6 +29,7 @@
                 app:srcCompat="@drawable/ic_report" />
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -51,14 +52,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green_500"
-                android:text="Percentage" />
+                android:text="@string/percentage" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green_500"
-                android:text="Grade" />
+                android:text="@string/gpa" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
@@ -66,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green_500"
                 android:checked="true"
-                android:text="Both" />
+                android:text="@string/both" />
         </RadioGroup>
     </LinearLayout>
 </android.support.v7.widget.CardView>

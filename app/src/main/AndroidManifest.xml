@@ -39,7 +39,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.Activities.SettingActivity"></activity>
         <activity android:name=".View.Activities.ReportCardActivity" />
         <activity
             android:name=".View.Activities.ReportCardDetailActivity"
@@ -61,6 +60,7 @@
         <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplication" />
         <activity android:name=".View.Activities.LeaveApplication.LeaveApplicationActivity" />
         <activity android:name=".View.Activities.MainActivity" />
+        <activity android:name=".View.Activities.SettingActivity"/>
         <activity android:name=".View.Activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

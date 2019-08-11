@@ -1,6 +1,7 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
@@ -33,6 +35,9 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
     private TextView loadTextView, titleTextView;
     private ProgressBar progressBar;
     private View backpress;
+
+    private LanguageSetting languageSetting;
+    private String lang;
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -56,9 +61,18 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         type = typeList.get(typeChoose);
     }
 
+    protected void refreshLayout() {
+        Intent refresh = new Intent(getApplicationContext(), ReportCardDetailActivity.class);
+        finish();
+        startActivity(refresh);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        languageSetting = new LanguageSetting(this);
+        lang = languageSetting.loadLanguage();
+
         setContentView(R.layout.activity_report_card);
 
         Bundle bundle = getIntent().getExtras();
@@ -184,7 +198,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
             showInView();
         }else {
             loadTextView.setVisibility(View.VISIBLE);
-            loadTextView.setText("Please come online to get routine.");
+            loadTextView.setText(getResources().getString(R.string.ReportCard_comeOnline));
         }
     }
 
@@ -202,13 +216,13 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
 
         if(type.equals("percentage")){
             fragments = new Fragment[]{percentage};
-            title = new String[]{"Percentage"};
+            title = new String[]{getString(R.string.percentage)};
         }else if(type.equals("grade")){
             fragments = new Fragment[]{grade};
-            title = new String[]{"Grade"};
+            title = new String[]{getString(R.string.grade)};
         }else {
             fragments = new Fragment[]{percentage, grade};
-            title = new String[]{"Percentage", "Grade"};
+            title = new String[]{getString(R.string.percentage),getString(R.string.grade)};
         }
         adapter = new FragmentAdapter(ReportCardDetailActivity.this, tabLayout, viewPager, getSupportFragmentManager(), fragments, title, icon);
         adapter.setTablayout(true);
@@ -222,6 +236,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         @Override
     protected void onRestart() {
         super.onRestart();
+        //refreshLayout();
         showInView();
     }
 

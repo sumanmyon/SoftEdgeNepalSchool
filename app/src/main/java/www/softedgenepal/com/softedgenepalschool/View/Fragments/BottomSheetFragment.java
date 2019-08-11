@@ -309,15 +309,15 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
             if(new NetworkConnection(getContext()).isConnectionSuccess()) {
                 //String url= "http://appeteria.com/video.mp4";
                 //String fileName = "video.mp4";
-                String title = "Download";
-                String description = "downloading " + formate + " ...";
+                String title = getResources().getString(R.string.Download);
+                String description = getResources().getString(R.string.Downloading)+" " + formate + " ...";
                 FileDownloader downloader = new FileDownloader(getActivity());
                 downloader.downloadFile(imgUrl, fileName, formate, title, description);
 
                 downloader.registerReciver();
-                showToast(fileName+" download started.");
+                showToast(fileName+" "+getResources().getString(R.string.Download_started));
             }else{
-                showMessage("Please check your network connection.");
+                showMessage(getResources().getString(R.string.Network_error));
             }
         }
     }

@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.ReportCardModel;
@@ -43,9 +44,22 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
 
     private List<ReportCardCache> reportCardCacheList;
 
+    private LanguageSetting languageSetting;
+    private String lang;
+
+    protected void refreshLayout() {
+        Intent refresh = new Intent(getApplicationContext(), ReportCardActivity.class);
+        finish();
+        startActivity(refresh);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        languageSetting = new LanguageSetting(this);
+        lang = languageSetting.loadLanguage();
+
         setContentView(R.layout.activity_report_card2);
 
         casting();
@@ -129,7 +143,7 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
             showInView();
         } else {
             loadTextView.setVisibility(View.VISIBLE);
-            loadTextView.setText("Please come online to get routine.");
+            loadTextView.setText(getResources().getString(R.string.ReportCard_comeOnline));
         }
     }
 
@@ -181,7 +195,8 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
     @Override
     protected void onRestart() {
         super.onRestart();
-        showInView();
+        //showInView();
+        refreshLayout();
     }
 
     @Override
