@@ -129,7 +129,7 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
             showInView();
         } else {
             loadTextView.setVisibility(View.VISIBLE);
-            loadTextView.setText("Please come online to get routine.");
+            loadTextView.setText(getResources().getString(R.string.ReportCard_comeOnline));
         }
     }
 

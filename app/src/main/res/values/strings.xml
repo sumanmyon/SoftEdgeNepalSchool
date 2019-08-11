@@ -125,9 +125,13 @@
     <string name="loading">Loading...</string>
     <string name="CreatelevApp">Create your Leave Application</string>
 
+    <!-- ReportCard -->
+    <string name="ReportCard_comeOnline">Please come online to get routine.</string>
+
     <!-- Report Card Marks View:: flag = percentage, gpa or both -->
     <string name="percentage">percentage</string>
     <string name="gpa">gpa</string>
+    <string name="grade">grade</string>
     <string name="both">both</string>
 
     <!-- Setting Activity-->

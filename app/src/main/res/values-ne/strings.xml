@@ -127,9 +127,14 @@
     <string name="loading">लोड हुँदै ...</string>
     <string name="CreatelevApp">तपाईंको छुट्टी अनुप्रयोग सिर्जना गर्नुहोस्</string>
 
+    <!-- ReportCard -->
+    <string name="ReportCard_comeOnline">पोर्ट कार्ड पाउन अनलाइन आउँनुहोस्।</string>
+
+
     <!-- Report Card Marks View:: flag = percentage, gpa or both -->
     <string name="percentage">प्रतिशत</string>
     <string name="gpa">gpa</string>
+    <string name="grade">ग्रेड</string>
     <string name="both">दुबै</string>
 
     <!-- Setting Activity-->

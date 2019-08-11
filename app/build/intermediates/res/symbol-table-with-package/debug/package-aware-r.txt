@@ -2561,6 +2561,7 @@ string Present_Percentage
 string Present_Today
 string QR
 string ReportCard
+string ReportCard_comeOnline
 string ResultReportCard
 string RouteName
 string Routine
@@ -2666,6 +2667,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string gpa
+string grade
 string greater_than
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior

@@ -1119,6 +1119,7 @@
     <string name="Present_Today">Present Today</string>
     <string name="QR">QR</string>
     <string name="ReportCard">Report Card</string>
+    <string name="ReportCard_comeOnline">Please come online to get routine.</string>
     <string name="ResultReportCard">Report Card</string>
     <string name="RouteName">Route : </string>
     <string name="Routine">Routine</string>
@@ -1224,6 +1225,7 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBPzSvIO3MZQNqgfAHOy8k7eQ84V1S-coI</string>
     <string name="google_storage_bucket" translatable="false">softschool-93d74.appspot.com</string>
     <string name="gpa">gpa</string>
+    <string name="grade">grade</string>
     <string name="greater_than">〉</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">android.support.design.behavior.HideBottomViewOnScrollBehavior</string>

@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        languageSetting = new LanguageSetting(this);
-        lang = languageSetting.loadLanguage();
+//        languageSetting = new LanguageSetting(this);
+//        lang = languageSetting.loadLanguage();
 
         //for runtime permissions
         runTimePermissions();
