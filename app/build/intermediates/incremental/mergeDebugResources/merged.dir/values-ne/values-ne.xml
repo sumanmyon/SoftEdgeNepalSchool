@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="About">बारेमा</string>
+    <string name="About">हाम्रो बारेमा</string>
     <string name="AddUser">प्रयोगकर्ता थप्नुहोस्</string>
     <string name="Application_Date_error">कृपया छुट्टीको लागि मिति चयन गर्नुहोस्।</string>
     <string name="Application_Message_error">कृपया छुट्टीको लागि सन्देश टाइप गर्नुहोस्।</string>
@@ -13,6 +13,7 @@
     <string name="Ashoj"> आस्विन </string>
     <string name="AssignHomeWork">गृहकार्य</string>
     <string name="Assignment_Date">मिति : </string>
+    <string name="Avg_Grade_Point">औसत ग्रेड अंक</string>
     <string name="Baisakh"> बैशाख </string>
     <string name="Base_URL">आधार यूआरएल</string>
     <string name="Bhadra">भदौ</string>
@@ -33,9 +34,13 @@
     <string name="Event">घटनाक्रम</string>
     <string name="ExamRoutine">रुटिन</string>
     <string name="Examination">परीक्षा</string>
+    <string name="FM">पूर्णाङ्क</string>
     <string name="Falgun"> फाल्गुन </string>
+    <string name="Final_Grade">ग्रेड प्राप्त</string>
     <string name="From">बाट</string>
     <string name="Gallery">ग्यालरी</string>
+    <string name="Grade_Obtained">ग्रेड</string>
+    <string name="Grade_Point">ग्रेड अंक</string>
     <string name="Holidays_and_Events">छुट्टी र घटनाक्रम</string>
     <string name="Home">घर</string>
     <string name="HomeWork">गृहकार्य</string>
@@ -43,7 +48,7 @@
     <string name="Kartik"> कार्तिक </string>
     <string name="LeaveApplication_Dialoge_Body">तपाईंको छुट्टी आवेदन रद्द गर्न होमा थिच्नुहोस्।</string>
     <string name="LeaveApplication_Dialoge_Title">तपाइँको छुट्टी आवेदन रद्द गर्नुहोस्?</string>
-    <string name="LiveBusTracking">बस ट्र्याकिंग</string>
+    <string name="LiveBusTracking">बस ट्रयाकिंग</string>
     <string name="Login">लग-इन</string>
     <string name="Logout">बाहिर निस्कनु</string>
     <string name="Magh">माघ</string>
@@ -52,16 +57,22 @@
     <string name="Network_error">कृपया तपाईंको नेटवर्क जडान जाँच्नुहोस्।</string>
     <string name="Notification">सूचना</string>
     <string name="Notification_setting_message">सूचनाहरू प्राप्त गर्न तपाईले आफ्नो अनुप्रयोग सेट अप गर्न सक्नुहुन्छ, जस्तै गृहकार्य अनुस्मारकहरू, उपस्थिति, घटनाहरू, छुट्टीहरू आदि।</string>
+    <string name="OM">प्राप्ताङ्क</string>
     <string name="Open">खोल्नुहोस्</string>
     <string name="Others">अन्य</string>
+    <string name="PM">उत्तीर्णाङ्क</string>
     <string name="Password">पासवर्ड</string>
+    <string name="Position">स्थान</string>
     <string name="Poush"> पुस</string>
+    <string name="Practical">प्राक्टिकल</string>
     <string name="Present_Days">हाजिर दिनहरू</string>
     <string name="Present_Percentage">हाजिर प्रतिशत</string>
     <string name="Present_Today">आजको Today</string>
     <string name="QR">QR</string>
-    <string name="ReportCard">पोर्ट कार्ड</string>
+    <string name="Remarks">अवलोकन</string>
+    <string name="ReportCard">रिपोर्ट कार्ड</string>
     <string name="ReportCard_comeOnline">पोर्ट कार्ड पाउन अनलाइन आउँनुहोस्।</string>
+    <string name="Result">नतीजा</string>
     <string name="ResultReportCard">रिपोर्ट कार्ड</string>
     <string name="RouteName">मार्ग : </string>
     <string name="Routine">रुटिन</string>
@@ -75,22 +86,24 @@
     <string name="ShowAllDetailLeaveApplication_ToolBar">अनुप्रयोग विवरण छोड्नुहोस्</string>
     <string name="ShowAllLeaveApplication_ToolBar">तपाईंको छुट्टी आवेदन</string>
     <string name="Shrawan"> श्रावण</string>
-    <string name="Sibling">भाई</string>
+    <string name="Sibling">भाइबहिनी</string>
     <string name="Start_Date">सुरु मिति</string>
     <string name="Student">विद्यार्थी</string>
     <string name="StudentAccount">खाता</string>
     <string name="StudentAttendance">उपस्थित</string>
-    <string name="StudentLeaveApplication">अनुप्रयोग</string>
+    <string name="StudentLeaveApplication">बिधा फारम</string>
     <string name="StudentProfile">प्रोफाइल</string>
     <string name="StudentSuggestion">सुझाव</string>
     <string name="Subject">बिषय</string>
     <string name="Teacher">शिक्षक</string>
     <string name="TeacherAttendance">उपस्थित</string>
-    <string name="TeacherLeaveApplication">अनुप्रयोग</string>
+    <string name="TeacherLeaveApplication">बिधा फारम</string>
     <string name="TeacherProfile">प्रोफाइल</string>
     <string name="TeacherSuggestion">सुझाव</string>
+    <string name="Theory">थेओरी</string>
     <string name="To">सम्म</string>
     <string name="Today">आज</string>
+    <string name="Total">टोटल</string>
     <string name="Total_Attendance">कुल उपस्थिति</string>
     <string name="Username_or_Email">प्रयोगकर्ता नाम वा इमेल</string>
     <string name="Videos">भिडियोहरू</string>
@@ -143,7 +156,7 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"साइन इन गर्नुहोस्"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Google मार्फत साइन‍ इन गर्नुहोस्"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"विविध"</string>
-    <string name="gpa">gpa</string>
+    <string name="gpa">GPA</string>
     <string name="grade">ग्रेड</string>
     <string name="greater_than">〉</string>
     <string name="hello_blank_fragment">नमस्ते खाली खण्ड</string>
@@ -183,6 +196,7 @@
     <string name="profile_rollno">रोल नम्बर: </string>
     <string name="profile_username">नाम: </string>
     <string msgid="146198913615257606" name="search_menu_title">"खोज्नुहोस्"</string>
+    <string name="sn">क्र. स.</string>
     <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"९९९+"</string>
     <string name="titleDialog">गते रोज्नुहोस्</string>
     <string name="username_error">कृपया उपयोगकर्ता नाम टाइप गर्नुहोस्</string>

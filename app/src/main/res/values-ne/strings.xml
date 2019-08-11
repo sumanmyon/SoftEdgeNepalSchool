@@ -36,7 +36,7 @@
     <string name="Event">घटनाक्रम</string>
     <string name="Gallery">ग्यालरी</string>
     <string name="Videos">भिडियोहरू</string>
-    <string name="About">बारेमा</string>
+    <string name="About">हाम्रो बारेमा</string>
     <string name="Setting">सेटिंग</string>
 
     <!-- For Teacher -->
@@ -46,7 +46,7 @@
     <string name="ExamRoutine">रुटिन</string>
     <string name="ResultReportCard">रिपोर्ट कार्ड</string>
     <string name="SalaryAccount">खाता</string>
-    <string name="TeacherLeaveApplication">अनुप्रयोग</string>
+    <string name="TeacherLeaveApplication">बिधा फारम</string>
     <string name="TeacherSuggestion">सुझाव</string>
     <string name="TeacherProfile">प्रोफाइल</string>
 
@@ -54,19 +54,19 @@
     <string name="HomeWork">गृहकार्य</string>
     <string name="StudentAttendance">उपस्थित</string>
     <string name="Routine">रुटिन</string>
-    <string name="ReportCard">पोर्ट कार्ड</string>
+    <string name="ReportCard">रिपोर्ट कार्ड</string>
     <string name="StudentAccount">खाता</string>
-    <string name="StudentLeaveApplication">अनुप्रयोग</string>
+    <string name="StudentLeaveApplication">बिधा फारम</string>
     <string name="StudentSuggestion">सुझाव</string>
     <!--<string name="BusRoute">Bus Route</string>    &lt;!&ndash; for particular role &ndash;&gt;-->
-    <string name="LiveBusTracking">बस ट्र्याकिंग</string>
+    <string name="LiveBusTracking">बस ट्रयाकिंग</string>
     <string name="StudentProfile">प्रोफाइल</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">नमस्ते खाली खण्ड</string>
 
     <!-- For menu -->
-    <string name="Sibling">भाई</string>
+    <string name="Sibling">भाइबहिनी</string>
     <string name="AddUser">प्रयोगकर्ता थप्नुहोस्</string>
     <string name="Logout">बाहिर निस्कनु</string>
 
@@ -129,11 +129,24 @@
 
     <!-- ReportCard -->
     <string name="ReportCard_comeOnline">पोर्ट कार्ड पाउन अनलाइन आउँनुहोस्।</string>
-
+    <string name="sn">क्र. स.</string>
+    <string name="Theory">थेओरी</string>
+    <string name="Practical">प्राक्टिकल</string>
+    <string name="Total">टोटल</string>
+    <string name="FM">पूर्णाङ्क</string>
+    <string name="PM">उत्तीर्णाङ्क</string>
+    <string name="OM">प्राप्ताङ्क</string>
+    <string name="Position">स्थान</string>
+    <string name="Result">नतीजा</string>
+    <string name="Grade_Obtained">ग्रेड</string>
+    <string name="Final_Grade">ग्रेड प्राप्त</string> <!-- कुल -->
+    <string name="Grade_Point">ग्रेड अंक</string>
+    <string name="Avg_Grade_Point">औसत ग्रेड अंक</string>
+    <string name="Remarks">अवलोकन</string>     <!--observations = अवलोकन Remarks = टिप्पणी  evaluation = मूल्यांकन-->
 
     <!-- Report Card Marks View:: flag = percentage, gpa or both -->
     <string name="percentage">प्रतिशत</string>
-    <string name="gpa">gpa</string>
+    <string name="gpa">GPA</string>
     <string name="grade">ग्रेड</string>
     <string name="both">दुबै</string>
 

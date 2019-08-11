@@ -127,12 +127,26 @@
 
     <!-- ReportCard -->
     <string name="ReportCard_comeOnline">Please come online to get routine.</string>
+    <string name="sn">S. N.</string>
+    <string name="Theory">Theory</string>
+    <string name="Practical">Practical</string>
+    <string name="Total">Total</string>
+    <string name="FM">F.M.</string>
+    <string name="PM">P.M.</string>
+    <string name="OM">O.M.</string>
+    <string name="Position">Position</string>
+    <string name="Result">Result</string>
+    <string name="Grade_Obtained">Grade Obtained</string>
+    <string name="Final_Grade">Final Grade</string>
+    <string name="Grade_Point">Grade Point</string>
+    <string name="Avg_Grade_Point">Avg. Grade Point</string>
+    <string name="Remarks">Remarks.</string>
 
     <!-- Report Card Marks View:: flag = percentage, gpa or both -->
-    <string name="percentage">percentage</string>
-    <string name="gpa">gpa</string>
-    <string name="grade">grade</string>
-    <string name="both">both</string>
+    <string name="percentage">Percentage</string>
+    <string name="gpa">GPA</string>
+    <string name="grade">Grade</string>
+    <string name="both">Both</string>
 
     <!-- Leave Application -->
     <string name="From">From</string>

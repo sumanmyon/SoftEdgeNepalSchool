@@ -24,7 +24,7 @@
             android:layout_weight="0.23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="S.N."
+            android:text="@string/sn"
             android:gravity="right"
             android:layout_gravity="center_vertical"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="8dp"
-            android:text="Subject"
+            android:text="@string/Subject"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@color/colorPrimaryText" />
         <View
@@ -56,7 +56,7 @@
                 android:id="@+id/recyclerReportCardGrade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Grade Obtained"
+                android:text="@string/Grade_Obtained"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorPrimaryText" />
@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Th."
+                    android:text="@string/Theory"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="Pr."
+                    android:text="@string/Practical"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/colorPrimaryText" />
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.205"
-                android:text="Final Grade"
+                android:text="@string/Final_Grade"
                 android:gravity="center"
                 android:layout_gravity="center_vertical"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -114,7 +114,7 @@
             android:layout_weight="0.205"
             android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:text="Grade Point"
+            android:text="@string/Grade_Point"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@color/colorPrimaryText" />
         <View
