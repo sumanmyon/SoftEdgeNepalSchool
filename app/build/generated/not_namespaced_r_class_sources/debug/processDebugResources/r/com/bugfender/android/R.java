@@ -40,7 +40,7 @@ public final class R {
         public static final int message_tv = 0x7f0a010d;
         public static final int positive_action_tv = 0x7f0a012b;
         public static final int root_vg = 0x7f0a0173;
-        public static final int title_tv = 0x7f0a01f4;
+        public static final int title_tv = 0x7f0a01f5;
     }
     public static final class layout {
         private layout() {}

@@ -3,7 +3,9 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -12,6 +14,10 @@ import android.widget.Toast;
 
 import com.balysv.materialripple.MaterialRippleLayout;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.BaseUrlSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.NotificationSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.ReportCardSetting;
@@ -26,9 +32,12 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private RadioGroup radioGroup;
     private RadioButton radioButtonPercentage, radioButtonGPA, radioButtonBoth;
     private RadioButton radioButton;
+    private EditText urlEditText;
 
     private String reportType = "";
     private String notificationType = "";
+    private String urlMatcheRegex = "<\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]>"; // matches <http://google.com>
+    private String urlMatcheRegex2 = "<^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]>"; // does not match <http://google.com>
 
     private LanguageSetting languageSetting;
     String lang;
@@ -64,6 +73,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 onBackPressed();
             }
         });
+
+        String url = BaseUrlSetting.getUrl(this);
+        if(!url.equals("No name defined")){
+            urlEditText.setText(url);
+        }
 
         switchUpdate(lang);
         reAnimateView();
@@ -143,6 +157,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         radioButtonGPA = findViewById(R.id.radioButton_gpa);
         radioButtonBoth = findViewById(R.id.radioButton_both);
 
+        urlEditText = findViewById(R.id.settingBaseUrlEditText);
+
         setting_done = findViewById(R.id.setting_done);
     }
 
@@ -203,9 +219,19 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void saveReportCardSetting() {
-        //radioButton.getText().toString().trim();
         ReportCardSetting.setCardFormate(this, reportType);
         NotificationSetting.setNotification(getApplicationContext(), notificationType);
+        if(!TextUtils.isEmpty(urlEditText.getText())){
+//            Pattern patt = Pattern.compile(urlMatcheRegex);
+//            Matcher matcher = patt.matcher(urlEditText.getText().toString());
+//            boolean b = matcher.matches();
+//            if(b){
+                BaseUrlSetting.setUrl(getApplicationContext(), urlEditText.getText().toString());
+                showMessage("Base Url successfully " +getString(R.string.Saved));
+//            }else {
+//                showMessage("Error");
+//            }
+        }
         showMessage(getString(R.string.Saved));
     }
 }

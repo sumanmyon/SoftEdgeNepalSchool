@@ -24,6 +24,7 @@ public class StoreInSharePreference {
     public String Language = "language";
     public String ReportCardSetting = "ReportCardSetting";
     public String NotificationSetting = "NotificationSetting";
+    public String BaseUrlSetting = "BaseUrlSetting";
 
     public StoreInSharePreference(Context context) {
         this.context = context;
@@ -83,6 +84,11 @@ public class StoreInSharePreference {
         if(type.equals(NotificationSetting)){
             MY_PREFS_NAME ="NotificationSetting";
             stringName = NotificationSetting;
+        }
+
+        if(type.equals(BaseUrlSetting)){
+            MY_PREFS_NAME ="BaseUrlSetting";
+            stringName = BaseUrlSetting;
         }
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
     }
