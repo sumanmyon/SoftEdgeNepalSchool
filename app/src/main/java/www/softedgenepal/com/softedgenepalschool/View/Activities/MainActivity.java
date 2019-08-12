@@ -31,6 +31,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.NotificationSetting;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
@@ -116,20 +117,24 @@ public class MainActivity extends AppCompatActivity {
         //bottom navigation
         bottomNavigationView();
 
-        //todo all devices
-        FirebaseMessaging.getInstance().subscribeToTopic("allDevices").addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                String msg = getString(R.string.msg_subscribed);
-                if (!task.isSuccessful()) {
-                    msg = getString(R.string.msg_subscribe_failed);
+        //todo only get notification when setting is turn on
+        if(NotificationSetting.getNotification(this).equals("TurnOn")
+                || NotificationSetting.getNotification(this).equals("No name defined")) {
+            //todo all devices
+            FirebaseMessaging.getInstance().subscribeToTopic("allDevices").addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d("FirebaseMessaging", msg);
+                    //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 }
-                Log.d("FirebaseMessaging", msg);
-                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
-        });
+            });
+        }
 
-        Toast.makeText(MainActivity.this, String.valueOf(FirebaseInstanceId.getInstance().getInstanceId()), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this, String.valueOf(FirebaseInstanceId.getInstance().getInstanceId()), Toast.LENGTH_SHORT).show();
 
         //initFragment
         initFragment();

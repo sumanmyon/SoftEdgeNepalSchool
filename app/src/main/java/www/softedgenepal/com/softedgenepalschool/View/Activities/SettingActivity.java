@@ -205,7 +205,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private void saveReportCardSetting() {
         //radioButton.getText().toString().trim();
         ReportCardSetting.setCardFormate(this, reportType);
-        NotificationSetting.setNotification(getApplicationContext(), "TurnOff");
+        NotificationSetting.setNotification(getApplicationContext(), notificationType);
         showMessage(getString(R.string.Saved));
     }
 }

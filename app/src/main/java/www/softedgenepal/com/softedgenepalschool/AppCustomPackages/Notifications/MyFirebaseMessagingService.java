@@ -19,6 +19,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.NotificationSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Rumble;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
@@ -33,9 +34,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // message, here is where that should be initiated.
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
-        notification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
 
-
+        //todo only get notification when setting is turn on
+        if(NotificationSetting.getNotification(this).equals("TurnOn")
+                || NotificationSetting.getNotification(this).equals("No name defined")) {
+            notification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
+        }
     }
 
     private void notification(String title, String body) {
