@@ -2196,10 +2196,10 @@ int id search_voice_btn 0x7f0a019f
 int id select_dialog_listview 0x7f0a01a0
 int id selected 0x7f0a01a1
 int id setting 0x7f0a01a2
-int id settingLanguageSwitc 0x7f0a01a3
-int id settingLanguageSwitch 0x7f0a01a4
-int id settingLanguageText 0x7f0a01a5
-int id settingLanguageTitle 0x7f0a01a6
+int id settingLanguageSwitch 0x7f0a01a3
+int id settingLanguageText 0x7f0a01a4
+int id settingLanguageTitle 0x7f0a01a5
+int id settingNotificationSwitch 0x7f0a01a6
 int id settingSubjectToolbar 0x7f0a01a7
 int id setting_bt_close 0x7f0a01a8
 int id setting_done 0x7f0a01a9

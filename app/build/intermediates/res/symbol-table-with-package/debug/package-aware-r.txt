@@ -2197,10 +2197,10 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id setting
-id settingLanguageSwitc
 id settingLanguageSwitch
 id settingLanguageText
 id settingLanguageTitle
+id settingNotificationSwitch
 id settingSubjectToolbar
 id setting_bt_close
 id setting_done

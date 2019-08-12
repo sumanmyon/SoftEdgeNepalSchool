@@ -13,18 +13,22 @@ import android.widget.Toast;
 import com.balysv.materialripple.MaterialRippleLayout;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.NotificationSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.ReportCardSetting;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
     private View backpress;
     private MaterialRippleLayout setting_done;
-    public Switch aSwitch;
+    public Switch aSwitch, notificationSwitch;
     public TextView settingLanguageText, settingLanguageTitle;
     private RadioGroup radioGroup;
     private RadioButton radioButtonPercentage, radioButtonGPA, radioButtonBoth;
     private RadioButton radioButton;
+
     private String reportType = "";
+    private String notificationType = "";
 
     private LanguageSetting languageSetting;
     String lang;
@@ -44,6 +48,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         languageSetting = new LanguageSetting(this);
         lang = languageSetting.loadLanguage();
 
+        notificationType = NotificationSetting.getNotification(this);
+        if(notificationType.equals("No name defined")){
+            notificationType = "TurnOn";
+        }
+
         setContentView(R.layout.activity_setting);
 
         //casting
@@ -58,8 +67,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         switchUpdate(lang);
         reAnimateView();
+        updateNotificationSwitch(notificationType);
+
         forLanguageSetting();
         forReportCardRadioGoupAndButton();
+        forNotificationSetting();
         forSaveSetting();
     }
 
@@ -89,6 +101,21 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         loadReportCardSetting();
     }
 
+    private void forNotificationSetting() {
+        notificationSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!notificationSwitch.isChecked()){
+                    notificationType = "TurnOff";
+                    updateNotificationSwitch("TurnOff");
+                }else {
+                    notificationType = "TurnOn";
+                    updateNotificationSwitch("TurnOn");
+                }
+            }
+        });
+    }
+
     private void forSaveSetting() {
         setting_done.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,13 +131,18 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void casting() {
         backpress = findViewById(R.id.setting_bt_close);
+
         aSwitch = findViewById(R.id.settingLanguageSwitch);
+        notificationSwitch = findViewById(R.id.settingNotificationSwitch);
+
         settingLanguageText = findViewById(R.id.settingLanguageText);
         settingLanguageTitle = findViewById(R.id.settingLanguageTitle);
+
         radioGroup = findViewById(R.id.reportCard_radioGroup);
         radioButtonPercentage = findViewById(R.id.radioButton_percentage);
         radioButtonGPA = findViewById(R.id.radioButton_gpa);
         radioButtonBoth = findViewById(R.id.radioButton_both);
+
         setting_done = findViewById(R.id.setting_done);
     }
 
@@ -125,6 +157,14 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             aSwitch.setChecked(false);
         } else if (b.equals("ne")) {
             aSwitch.setChecked(true);
+        }
+    }
+
+    private void updateNotificationSwitch(String turn) {
+        if(turn.equals("TurnOff")){
+            notificationSwitch.setChecked(false);
+        }else if(turn.equals("TurnOn")) {
+            notificationSwitch.setChecked(true);
         }
     }
 
@@ -163,8 +203,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void saveReportCardSetting() {
-        String type = reportType;//radioButton.getText().toString().trim();
-        ReportCardSetting.setCardFormate(this, type);
+        //radioButton.getText().toString().trim();
+        ReportCardSetting.setCardFormate(this, reportType);
+        NotificationSetting.setNotification(getApplicationContext(), "TurnOff");
         showMessage(getString(R.string.Saved));
     }
 }

@@ -7033,10 +7033,10 @@ public final class R {
     public static final int select_dialog_listview=0x7f0a01a0;
     public static final int selected=0x7f0a01a1;
     public static final int setting=0x7f0a01a2;
-    public static final int settingLanguageSwitc=0x7f0a01a3;
-    public static final int settingLanguageSwitch=0x7f0a01a4;
-    public static final int settingLanguageText=0x7f0a01a5;
-    public static final int settingLanguageTitle=0x7f0a01a6;
+    public static final int settingLanguageSwitch=0x7f0a01a3;
+    public static final int settingLanguageText=0x7f0a01a4;
+    public static final int settingLanguageTitle=0x7f0a01a5;
+    public static final int settingNotificationSwitch=0x7f0a01a6;
     public static final int settingSubjectToolbar=0x7f0a01a7;
     public static final int setting_bt_close=0x7f0a01a8;
     public static final int setting_done=0x7f0a01a9;

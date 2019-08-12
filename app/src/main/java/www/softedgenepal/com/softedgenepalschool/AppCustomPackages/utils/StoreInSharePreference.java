@@ -23,6 +23,7 @@ public class StoreInSharePreference {
     //todo for Setting
     public String Language = "language";
     public String ReportCardSetting = "ReportCardSetting";
+    public String NotificationSetting = "NotificationSetting";
 
     public StoreInSharePreference(Context context) {
         this.context = context;
@@ -73,9 +74,15 @@ public class StoreInSharePreference {
             MY_PREFS_NAME ="Language";
             stringName = Language;
         }
+
         if(type.equals(ReportCardSetting)){
             MY_PREFS_NAME ="ReportCardSetting";
             stringName = ReportCardSetting;
+        }
+
+        if(type.equals(NotificationSetting)){
+            MY_PREFS_NAME ="NotificationSetting";
+            stringName = NotificationSetting;
         }
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
     }
