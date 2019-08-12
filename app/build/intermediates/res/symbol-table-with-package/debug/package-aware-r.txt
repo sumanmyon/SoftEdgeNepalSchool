@@ -2091,9 +2091,9 @@ id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
-id radioButton
-id radioButton2
-id radioButton3
+id radioButton_both
+id radioButton_gpa
+id radioButton_percentage
 id recyclerAttendancePichart
 id recyclerAttendancePresentDays
 id recyclerAttendanceTopic
@@ -2130,6 +2130,7 @@ id reportCard_practical_total_fm
 id reportCard_practical_total_om
 id reportCard_practical_total_pm
 id reportCard_progressbar
+id reportCard_radioGroup
 id reportCard_recyclerView
 id reportCard_sn
 id reportCard_subject
@@ -2202,6 +2203,7 @@ id settingLanguageText
 id settingLanguageTitle
 id settingSubjectToolbar
 id setting_bt_close
+id setting_done
 id shortcut
 id showCustom
 id showHome

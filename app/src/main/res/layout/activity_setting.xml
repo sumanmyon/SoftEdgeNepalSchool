@@ -49,6 +49,19 @@
                     android:text="@string/Setting"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
                     android:textColor="@android:color/white" />
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:id="@+id/setting_done"
+                    style="@style/RippleStyleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true">
+                    <ImageButton
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@android:color/white"
+                        app:srcCompat="@drawable/ic_done" />
+                </com.balysv.materialripple.MaterialRippleLayout>
             </LinearLayout>
         </android.support.design.widget.AppBarLayout>
 

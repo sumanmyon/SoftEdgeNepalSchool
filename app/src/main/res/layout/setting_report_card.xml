@@ -42,27 +42,28 @@
         </LinearLayout>
 
         <RadioGroup
+            android:id="@+id/reportCard_radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginLeft="@dimen/dp42">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButton_percentage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green_500"
                 android:text="@string/percentage" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioButton_gpa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green_500"
                 android:text="@string/gpa" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radioButton_both"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green_500"

@@ -20,8 +20,9 @@ public class StoreInSharePreference {
     public String ReportCard = "report_card";
     public String ReportDetailCard = "report_detail_card";
 
-    //todo for language Setting
+    //todo for Setting
     public String Language = "language";
+    public String ReportCardSetting = "ReportCardSetting";
 
     public StoreInSharePreference(Context context) {
         this.context = context;
@@ -72,7 +73,10 @@ public class StoreInSharePreference {
             MY_PREFS_NAME ="Language";
             stringName = Language;
         }
-
+        if(type.equals(ReportCardSetting)){
+            MY_PREFS_NAME ="ReportCardSetting";
+            stringName = ReportCardSetting;
+        }
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
     }
 
@@ -85,7 +89,7 @@ public class StoreInSharePreference {
     public String getData(){
         String getUserData = null;
         try {
-            String data = prefs.getString(stringName, "en");//"No name defined" is the default value.
+            String data = prefs.getString(stringName, "No name defined");//"No name defined" is the default value.
             getUserData = data;
         }catch (Exception e){
             getUserData = null;
