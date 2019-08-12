@@ -24,6 +24,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private RadioGroup radioGroup;
     private RadioButton radioButtonPercentage, radioButtonGPA, radioButtonBoth;
     private RadioButton radioButton;
+    private String reportType = "";
 
     private LanguageSetting languageSetting;
     String lang;
@@ -135,28 +136,35 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if(id == R.id.radioButton_percentage || id == R.id.radioButton_gpa || id == R.id.radioButton_both) {
-            int checkId = radioGroup.getCheckedRadioButtonId();
-            radioButton = findViewById(checkId);
-            //showMessage(radioButton.getText().toString());
+        int checkId = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(checkId);
+        if(id == R.id.radioButton_percentage){
+            reportType = "Percentage";
+        }else if(id == R.id.radioButton_gpa){
+            reportType = "GPA";
+        }else if(id == R.id.radioButton_both){
+            reportType = "Both";
         }
     }
 
     private void loadReportCardSetting() {
         String type = ReportCardSetting.getCardFormate(this);
-        if(type.equals("No name defined")|| type.equals(getString(R.string.both))){
+        if(type.equals("No name defined")|| type.equals("Both")){
             radioGroup.check(R.id.radioButton_both);
-        }else if(type.equals(getString(R.string.percentage))){
+            reportType = "Both";
+        }else if(type.equals("Percentage")){
             radioGroup.check(R.id.radioButton_percentage);
-        }else if(type.equals(getString(R.string.gpa))){
+            reportType = "Percentage";
+        }else if(type.equals("GPA")){
             radioGroup.check(R.id.radioButton_gpa);
+            reportType = "GPA";
         }
         radioButton = findViewById(radioGroup.getCheckedRadioButtonId());
     }
 
     private void saveReportCardSetting() {
-        String type = radioButton.getText().toString().trim();
+        String type = reportType;//radioButton.getText().toString().trim();
         ReportCardSetting.setCardFormate(this, type);
-        showMessage(type);
+        showMessage(getString(R.string.Saved));
     }
 }

@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.ReportCardSetting;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
@@ -59,6 +60,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         typeList.add("both");
 
         type = typeList.get(typeChoose);
+        type = ReportCardSetting.getCardFormate(this);
     }
 
     protected void refreshLayout() {
@@ -214,10 +216,10 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         Grade grade = new Grade();
         grade.setTitle(reportCardCache.ExamNameEng);
 
-        if(type.equals("percentage")){
+        if(type.equals("Percentage")){
             fragments = new Fragment[]{percentage};
             title = new String[]{getString(R.string.percentage)};
-        }else if(type.equals("grade")){
+        }else if(type.equals("GPA")){
             fragments = new Fragment[]{grade};
             title = new String[]{getString(R.string.grade)};
         }else {

@@ -2594,6 +2594,7 @@ string Routine_Exam_date
 string Routine_Start_Time
 string Routine_Subject
 string SalaryAccount
+string Saved
 string School
 string Setting
 string ShowAllDetailLeaveApplication_ToolBar

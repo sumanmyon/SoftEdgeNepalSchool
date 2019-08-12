@@ -168,4 +168,5 @@
     <!-- Setting Activity-->
     <string name="language_title">Language</string>
     <string name="language_type">EN</string>
+    <string name="Saved">Saved</string>
 </resources>

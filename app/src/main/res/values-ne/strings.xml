@@ -170,4 +170,5 @@
     <!-- Setting Activity-->
     <string name="language_title">भाषा</string>
     <string name="language_type">नेपा</string>
+    <string name="Saved">सेटिंग सुरक्षित गरियो|</string>
 </resources>

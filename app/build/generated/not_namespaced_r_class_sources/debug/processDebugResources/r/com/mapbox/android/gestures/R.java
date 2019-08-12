@@ -129,8 +129,8 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int app_name = 0x7f110093;
-        public static final int status_bar_notification_info_overflow = 0x7f110118;
+        public static final int app_name = 0x7f110094;
+        public static final int status_bar_notification_info_overflow = 0x7f110119;
     }
     public static final class style {
         private style() {}
