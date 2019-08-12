@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Resources;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;

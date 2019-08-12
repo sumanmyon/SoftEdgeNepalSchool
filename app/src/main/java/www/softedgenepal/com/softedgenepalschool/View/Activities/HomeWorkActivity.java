@@ -30,6 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.CalenderDate;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
@@ -54,9 +55,15 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
     private AssignmentAdapter adapter;
     String today;
 
+    private LanguageSetting languageSetting;
+    private String lang;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        languageSetting = new LanguageSetting(this);
+        languageSetting.loadLanguage();
+
         setContentView(R.layout.activity_assignment);
         //casting
         casting();
@@ -178,9 +185,9 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
 
         TextView textView = view.findViewById(R.id.recyclerView_date);
         if(assignmentCacheList.get(0).CreateDate.equals(today)){
-            textView.setText(getCalContext().getResources().getString(R.string.Today));
+            textView.setText(getResources().getString(R.string.Today));
         }else {
-            textView.setText(getCalContext().getResources().getString(R.string.Assignment_Date)+assignmentCacheList.get(0).CreateDate);
+            textView.setText(String.format("%s%s",getResources().getString(R.string.Assignment_Date),assignmentCacheList.get(0).CreateDate));
         }
         RecyclerView recyclerView;
         recyclerView = view.findViewById(R.id.assignmentRecyclerView);

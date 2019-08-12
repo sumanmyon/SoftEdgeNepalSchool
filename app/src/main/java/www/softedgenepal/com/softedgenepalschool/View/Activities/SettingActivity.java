@@ -1,6 +1,5 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LocaleHelper;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 public class SettingActivity extends AppCompatActivity {
@@ -86,11 +84,6 @@ public class SettingActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
     }
 
-//    @Override
-//    protected void attachBaseContext(Context base) {
-//        super.attachBaseContext(LocaleHelper.onAttach(base, lang));
-//    }
-
 
     private void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
@@ -115,7 +108,6 @@ public class SettingActivity extends AppCompatActivity {
         } else if (b.equals("ne")) {
             aSwitch.setChecked(true);
         }
-
     }
 
     public void reAnimateView() {

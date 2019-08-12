@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
-import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOffline.StoreInSharePreference;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.ReportCardPresenter;

@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         languageSetting = new LanguageSetting(this);
-        lang = languageSetting.loadLanguage();
+        languageSetting.loadLanguage();
 
         super.onCreate(savedInstanceState);
         loadUI();

@@ -2,12 +2,12 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,16 +30,14 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import pub.devrel.easypermissions.EasyPermissions;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LocaleHelper;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserCache;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.ViewPagerAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Home;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.NavigationListener;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.TabLayoutAdapter;
 
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.RunTimePermissions.perms;
 
@@ -62,15 +60,11 @@ public class MainActivity extends AppCompatActivity {
     private Fragment activeFragment;
     private FragmentManager fragmentManager;
 
-    private LanguageSetting languageSetting;
-    private String lang;
+    private LanguageSettingv2 languageSetting;
 
     @Override
     protected void onStart() {
         super.onStart();
-//        languageSetting = new LanguageSetting(this);
-//        lang = languageSetting.loadLanguage();
-
         //for runtime permissions
         runTimePermissions();
     }
@@ -83,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(refresh);
     }
 
-
     private void runTimePermissions() {
         if (!EasyPermissions.hasPermissions(this, perms)) {
             Intent runIntent = new Intent(this, RunTimePermissions.class);
@@ -94,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        languageSetting = new LanguageSetting(this);
-        lang = languageSetting.loadLanguage();
+        languageSetting = new LanguageSettingv2(this);
+        languageSetting.loadLanguage();
 
         setContentView(R.layout.activity_main);
         //for runtime permissions
