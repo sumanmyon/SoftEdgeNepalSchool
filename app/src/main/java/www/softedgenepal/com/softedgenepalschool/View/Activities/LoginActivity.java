@@ -7,28 +7,35 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 
+import org.json.JSONArray;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Login.CheckUserLogin;
 import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
 
 import static android.Manifest.permission_group.CAMERA;
 
 public class LoginActivity extends AppCompatActivity {
     //casting
-    static public EditText editTextUserName,  editTextPassword;
+    static public EditText editTextUserName, editTextPassword;
     public Button buttonQR, buttonLogin;
     ImageView imageView;
 
     private LanguageSetting languageSetting;
     private String lang;
+    private CheckUserLogin checkUserLogin;
 
 
     @Override
@@ -43,10 +50,27 @@ public class LoginActivity extends AppCompatActivity {
         qRScan();
 
         //login button
-        buttonLogin.setOnClickListener(new FormValidation(this,editTextUserName, editTextPassword));
+        buttonLogin.setOnClickListener(new FormValidation(this, editTextUserName, editTextPassword));
     }
 
-    private void loadUI(){
+    @Override
+    protected void onStart() {
+        super.onStart();
+        try {
+            StoreInSharePreference preference = new StoreInSharePreference(this);
+            preference.setType(preference.LoginCredential);
+            String data = preference.getData();
+            JSONArray array = new JSONArray(data);
+            checkUserLogin = new CheckUserLogin();
+            checkUserLogin.parseData(array, this);
+            checkUserLogin.setUserType();
+        } catch (Exception e) {
+            setLog("LoginForm", e.getMessage());
+            //setMessage(getResources().getString(R.string.login_failed));
+        }
+    }
+
+    private void loadUI() {
         setContentView(R.layout.activity_login);
 
         //casting
@@ -61,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         imageView = findViewById(R.id.login_image_view);
     }
 
-    private void qRScan(){
+    private void qRScan() {
         buttonQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +93,14 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void setMessage(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+    }
+
+    private void setLog(String topic, String message) {
+        Log.d(topic, message);
     }
 
 }

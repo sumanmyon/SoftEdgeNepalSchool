@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private NavigationListener navigationListener;
-    public static String userType;// = "school";     // userType :: by default is school ,
+    public static String userType = "school";     // userType :: by default is school ,
                                                     // else teacher and student
     public static UserCache userCache;
 

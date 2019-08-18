@@ -26,85 +26,93 @@ public class StoreInSharePreference {
     public String NotificationSetting = "NotificationSetting";
     public String BaseUrlSetting = "BaseUrlSetting";
 
+    //todo for Setting
+    public String LoginCredential = "LoginCredential";
+
     public StoreInSharePreference(Context context) {
         this.context = context;
     }
 
-    public void setType(String type){
-        if(type.equals(Calender)){
-            MY_PREFS_NAME ="Calender";
+    public void setType(String type) {
+        if (type.equals(Calender)) {
+            MY_PREFS_NAME = "Calender";
             stringName = Calender;
         }
 
-        if(type.equals(Assignment)){
-            MY_PREFS_NAME ="Assignment";
+        if (type.equals(Assignment)) {
+            MY_PREFS_NAME = "Assignment";
             stringName = Assignment;
         }
 
-        if(type.equals(BusRoute)){
-            MY_PREFS_NAME ="BusRoute";
+        if (type.equals(BusRoute)) {
+            MY_PREFS_NAME = "BusRoute";
             stringName = BusRoute;
         }
 
-        if(type.equals(Routine)){
-            MY_PREFS_NAME ="Routine";
+        if (type.equals(Routine)) {
+            MY_PREFS_NAME = "Routine";
             stringName = Routine;
         }
 
-        if(type.equals(LeaveApplication)){
-            MY_PREFS_NAME ="LeaveApplication";
+        if (type.equals(LeaveApplication)) {
+            MY_PREFS_NAME = "LeaveApplication";
             stringName = LeaveApplication;
         }
 
-        if(type.equals(Attendance)){
-            MY_PREFS_NAME ="Attendance";
+        if (type.equals(Attendance)) {
+            MY_PREFS_NAME = "Attendance";
             stringName = Attendance;
         }
 
-        if(type.equals(ReportCard)){
-            MY_PREFS_NAME ="ReportCard";
+        if (type.equals(ReportCard)) {
+            MY_PREFS_NAME = "ReportCard";
             stringName = ReportCard;
         }
 
-        if(type.equals(ReportDetailCard)){
-            MY_PREFS_NAME ="ReportDetailCard";
+        if (type.equals(ReportDetailCard)) {
+            MY_PREFS_NAME = "ReportDetailCard";
             stringName = ReportDetailCard;
         }
 
-        if(type.equals(Language)){
-            MY_PREFS_NAME ="Language";
+        if (type.equals(Language)) {
+            MY_PREFS_NAME = "Language";
             stringName = Language;
         }
 
-        if(type.equals(ReportCardSetting)){
-            MY_PREFS_NAME ="ReportCardSetting";
+        if (type.equals(ReportCardSetting)) {
+            MY_PREFS_NAME = "ReportCardSetting";
             stringName = ReportCardSetting;
         }
 
-        if(type.equals(NotificationSetting)){
-            MY_PREFS_NAME ="NotificationSetting";
+        if (type.equals(NotificationSetting)) {
+            MY_PREFS_NAME = "NotificationSetting";
             stringName = NotificationSetting;
         }
 
-        if(type.equals(BaseUrlSetting)){
-            MY_PREFS_NAME ="BaseUrlSetting";
+        if (type.equals(BaseUrlSetting)) {
+            MY_PREFS_NAME = "BaseUrlSetting";
             stringName = BaseUrlSetting;
+        }
+
+        if (type.equals(LoginCredential)) {
+            MY_PREFS_NAME = "LoginCredential";
+            stringName = LoginCredential;
         }
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
     }
 
-    public void storeData(String data){
-        SharedPreferences.Editor editor= prefs.edit();
+    public void storeData(String data) {
+        SharedPreferences.Editor editor = prefs.edit();
         editor.putString(stringName, data);
         editor.apply();
     }
 
-    public String getData(){
+    public String getData() {
         String getUserData = null;
         try {
             String data = prefs.getString(stringName, "No name defined");//"No name defined" is the default value.
             getUserData = data;
-        }catch (Exception e){
+        } catch (Exception e) {
             getUserData = null;
         }
         //showMessage(getUserData);
@@ -112,7 +120,17 @@ public class StoreInSharePreference {
         return getUserData;
     }
 
+    //todo Removing single preference:
+    public void clear() {
+        prefs.edit().remove(stringName).apply();  //commit()
+    }
+
+    //todo Removing all preferences:
+    public void clearAll() {
+        prefs.edit().clear().apply();
+    }
+
     private void showMessage(String message) {
-        Toast.makeText(context,message,Toast.LENGTH_LONG).show();
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
 }

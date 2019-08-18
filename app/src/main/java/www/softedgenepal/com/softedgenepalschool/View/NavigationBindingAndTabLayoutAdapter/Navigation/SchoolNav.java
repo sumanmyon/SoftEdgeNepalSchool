@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SettingActivity;
 
 public class SchoolNav {
@@ -39,11 +42,23 @@ public class SchoolNav {
                 redirectToActivity(SettingActivity.class);
                 break;
             case R.id.logout:
-                showMessage("Coming Soon");
+                StoreInSharePreference preference = new StoreInSharePreference(activity);
+                preference.setType(preference.LoginCredential);
+                preference.clear();
+
+                reDirectToMainActivityAfterLogout();
                 break;
             default:
                 break;
         }
+    }
+    private void reDirectToMainActivityAfterLogout(){
+        showMessage("log out successfully");
+        Intent intent = new Intent(activity, MainActivity.class);
+        MainActivity.userType = "School";
+        MainActivity.userCache = null;
+        activity.startActivity(intent);
+        activity.finish();
     }
     private void redirectToActivity(Class<?> activityClass) {
         Intent intent = new Intent(activity, activityClass);
