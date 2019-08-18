@@ -48,6 +48,10 @@ public class SchoolNav {
 
                 reDirectToMainActivityAfterLogout();
                 break;
+            case R.id.login:
+                redirectToActivity(LoginActivity.class);
+                activity.finish();
+                break;
             default:
                 break;
         }

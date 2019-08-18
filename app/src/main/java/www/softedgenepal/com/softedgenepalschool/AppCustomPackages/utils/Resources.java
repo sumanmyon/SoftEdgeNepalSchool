@@ -8,6 +8,8 @@ import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.R;
 
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
+
 public class Resources {
     //todo for student
     public static List<Dashboard> student(Context context){
@@ -62,9 +64,11 @@ public class Resources {
         schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Setting),
                 context.getResources().getDrawable(R.drawable.ic_setting),
                 R.id.setting));
-        schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Logout),
-                context.getResources().getDrawable(R.drawable.ic_logout),
-                R.id.logout));
+        if(!userType.equals("School")) {
+            schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Logout), context.getResources().getDrawable(R.drawable.ic_logout), R.id.logout));
+        }else {
+            schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Login), context.getResources().getDrawable(R.drawable.ic_logout), R.id.login));
+        }
 
         return schoolDashboard;
     }

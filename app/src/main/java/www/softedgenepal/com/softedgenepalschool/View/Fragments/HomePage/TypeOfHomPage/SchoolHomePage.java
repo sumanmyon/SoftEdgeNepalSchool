@@ -7,7 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Resources;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.DashboardCategory;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.SchoolNav;
+
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class SchoolHomePage {
     private Activity activity;
@@ -25,9 +30,24 @@ public class SchoolHomePage {
         casting();
 
         //fetch/get data
+        schoolDashboard();
 
         //set data
         setInFields();
+    }
+
+    private void schoolDashboard() {
+        DashboardCategory category = new DashboardCategory(activity, view, userType) {
+            @Override
+            public void onClickListener(int id) {
+                SchoolNav nav = new SchoolNav(activity, id);
+                nav.set();
+            }
+        };
+        category.columnSpan = 4;
+        category.setTopic = getContext().getResources().getString(R.string.Others);
+        category.setCategoryText();
+        category.setDashboard(Resources.school(getContext()));
     }
 
     public Context getContext(){

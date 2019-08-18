@@ -19,4 +19,9 @@
             android:title="@string/Logout"
             android:tint="@color/white"
             android:id="@+id/logout"/>
+    <item
+        android:visible="false"
+        android:title="@string/Login"
+        android:tint="@color/white"
+        android:id="@+id/login"/>
 </menu>

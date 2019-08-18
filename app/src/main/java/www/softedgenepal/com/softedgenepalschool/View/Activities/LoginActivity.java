@@ -19,6 +19,7 @@ import com.google.zxing.Result;
 import org.json.JSONArray;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -26,6 +27,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Login.CheckUserLogin;
 import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
 
 import static android.Manifest.permission_group.CAMERA;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class LoginActivity extends AppCompatActivity {
     //casting
@@ -56,17 +58,20 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        try {
+        if (!userType.equals("School")) {
             StoreInSharePreference preference = new StoreInSharePreference(this);
             preference.setType(preference.LoginCredential);
             String data = preference.getData();
-            JSONArray array = new JSONArray(data);
-            checkUserLogin = new CheckUserLogin();
-            checkUserLogin.parseData(array, this);
-            checkUserLogin.setUserType();
-        } catch (Exception e) {
-            setLog("LoginForm", e.getMessage());
-            //setMessage(getResources().getString(R.string.login_failed));
+            try {
+                JSONArray array = new JSONArray(data);
+                checkUserLogin = new CheckUserLogin();
+                checkUserLogin.parseData(array, this);
+                checkUserLogin.setUserType();
+            } catch (Exception e) {
+                setLog("LoginForm", e.getMessage());
+                checkUserLogin = new CheckUserLogin(this);
+                checkUserLogin.setSchoolType();
+            }
         }
     }
 

@@ -37,6 +37,10 @@ public class CheckUserLogin {
 
     }
 
+    public  CheckUserLogin( Activity context){
+        this.context = context;
+    }
+
     public CheckUserLogin(String userName, String password, Activity context){
         this.userName = userName;
         this.password = password;

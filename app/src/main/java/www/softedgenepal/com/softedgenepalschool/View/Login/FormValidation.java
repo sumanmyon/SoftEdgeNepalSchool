@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomMessage.EditTextError;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Base64EncodeAndDecode;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DataSnapshotConverterToGson;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
@@ -106,10 +107,17 @@ public class FormValidation implements View.OnClickListener, Validate {
         // DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
         userName = userName.toUpperCase();
         this.passW = password;
-
-        new CheckUserLogin(userName, password, activity).queryDataBaseOnline(progressDialog);
+        if (new NetworkConnection(activity).isConnectionSuccess()) {
+            new CheckUserLogin(userName, password, activity).queryDataBaseOnline(progressDialog);
+        } else {
+            progressDialog.dismiss();
+            setMessage(activity.getString(R.string.Network_error));
+        }
     }
 
+    private void setMessage(String message) {
+        Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+    }
 //    private ValueEventListener valueEventListener = new ValueEventListener() {
 //        @Override
 //        public void onDataChange(DataSnapshot dataSnapshot) {
