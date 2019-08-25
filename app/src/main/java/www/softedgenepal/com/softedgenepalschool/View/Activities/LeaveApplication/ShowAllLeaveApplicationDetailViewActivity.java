@@ -20,6 +20,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DateTimeFormaterChecker.DateTimeFormateCheckerType2;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
@@ -33,10 +34,14 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
     private TextView subjectTextView, messageTextView, createDateTextView, fromToTextView, cancelTextView;
     private CardView cardView;
     private View backpress;
+    LanguageSettingv2 languageSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        languageSetting = new LanguageSettingv2(this);
+        languageSetting.loadLanguage();
         setContentView(R.layout.activity_show_all_leave_application_detail_view);
 
         //casting

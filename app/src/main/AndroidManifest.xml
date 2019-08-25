@@ -38,7 +38,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:configChanges="layoutDirection|locale">
         <activity android:name=".View.Activities.ReportCardActivity" />
         <activity
             android:name=".View.Activities.ReportCardDetailActivity"

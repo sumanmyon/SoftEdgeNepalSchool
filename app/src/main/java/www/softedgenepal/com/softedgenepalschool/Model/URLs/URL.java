@@ -13,8 +13,8 @@ public class URL {
     }
     public URL(){}
 
-    public String getUrl(){
-        return new OnlineUrl().getLoginStudentUrl();
+    public String getLoginUrl(){
+        return new OnlineUrl().getLoginUrl();
     }
     public String getCreateLeaveApplicationUrl(){
         return new OnlineUrl().createLeaveApplication();
@@ -57,7 +57,7 @@ public class URL {
 
     private class OnlineUrl{
         private String onlineUrl = "http://192.168.100.102:400/";
-        private String loginStudentUrl = onlineUrl + "api/auth/Login?";
+        private String loginUrl = onlineUrl + "api/data/Login?";
 
         private String createLeaveApplicationUrl =onlineUrl + "api/data/Leaveapplication";
         private String getLeaveApplicationUrl = onlineUrl + "api/data/getLeaveapplication";
@@ -79,12 +79,12 @@ public class URL {
         private String reportCardDetailUrl = onlineUrl + "api/data/getexammarks";
 
         public OnlineUrl() {
-            loginStudentUrl = loginStudentUrl;
+            loginUrl = loginUrl;
         }
 
-        public String getLoginStudentUrl() {
+        public String getLoginUrl() {
             //192.168.100.100:423/api/auth/Login?UserName=superadmin&Password=admin123
-            return loginStudentUrl;
+            return loginUrl;
         }
 
         public String createLeaveApplication(){

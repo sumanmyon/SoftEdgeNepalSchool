@@ -1696,7 +1696,9 @@ drawable ic_homework
 drawable ic_language
 drawable ic_leave_application
 drawable ic_location
+drawable ic_login
 drawable ic_logout
+drawable ic_menu
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1997,6 +1999,7 @@ id line3
 id listMode
 id list_item
 id liveBusTracking
+id login
 id login_button_QR
 id login_button_login
 id login_edit_text_password
@@ -2054,6 +2057,7 @@ id monthYear
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id navMenu_School
 id navigation
 id navigation_calender
 id navigation_header_container
@@ -2091,9 +2095,9 @@ id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
-id radioButton
-id radioButton2
-id radioButton3
+id radioButton_both
+id radioButton_gpa
+id radioButton_percentage
 id recyclerAttendancePichart
 id recyclerAttendancePresentDays
 id recyclerAttendanceTopic
@@ -2130,6 +2134,7 @@ id reportCard_practical_total_fm
 id reportCard_practical_total_om
 id reportCard_practical_total_pm
 id reportCard_progressbar
+id reportCard_radioGroup
 id reportCard_recyclerView
 id reportCard_sn
 id reportCard_subject
@@ -2196,12 +2201,14 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id setting
-id settingLanguageSwitc
+id settingBaseUrlEditText
 id settingLanguageSwitch
 id settingLanguageText
 id settingLanguageTitle
+id settingNotificationSwitch
 id settingSubjectToolbar
 id setting_bt_close
+id setting_done
 id shortcut
 id showCustom
 id showHome
@@ -2560,6 +2567,7 @@ string Kartik
 string LeaveApplication_Dialoge_Body
 string LeaveApplication_Dialoge_Title
 string LiveBusTracking
+string Loading
 string Login
 string Logout
 string Magh
@@ -2592,6 +2600,7 @@ string Routine_Exam_date
 string Routine_Start_Time
 string Routine_Subject
 string SalaryAccount
+string Saved
 string School
 string Setting
 string ShowAllDetailLeaveApplication_ToolBar

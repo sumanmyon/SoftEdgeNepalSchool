@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Presenter.CalenderPresenter;
@@ -35,10 +36,14 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
     private EventAdapter adapter;
     private RecyclerView recyclerView;
     private View backpress;
+    private LanguageSettingv2 languageSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        languageSetting = new LanguageSettingv2(this);
+        languageSetting.loadLanguage();
         setContentView(R.layout.activity_event);
 
         casting();

@@ -19,7 +19,7 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
-import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOffline.StoreInSharePreference;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.Presenter.CalenderPresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.CalenderContractor;

@@ -58,7 +58,7 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
         super.onCreate(savedInstanceState);
 
         languageSetting = new LanguageSetting(this);
-        lang = languageSetting.loadLanguage();
+        languageSetting.loadLanguage();
 
         setContentView(R.layout.activity_report_card2);
 

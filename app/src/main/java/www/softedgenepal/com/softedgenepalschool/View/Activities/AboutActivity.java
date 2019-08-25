@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.R;
 
 public class AboutActivity extends AppCompatActivity {
@@ -17,9 +18,13 @@ public class AboutActivity extends AppCompatActivity {
     private ImageView schoolLogoImageView;
     private TextView schoolNameTextView,addressTextView, phoneNoTextView, faxTextView, emailTextView, webTextView;
 
+    private LanguageSettingv2 languageSetting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        languageSetting = new LanguageSettingv2(this);
+        languageSetting.loadLanguage();
         setContentView(R.layout.activity_about);
 
         //casting

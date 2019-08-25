@@ -2,12 +2,13 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -27,30 +28,35 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import org.json.JSONArray;
+
 import pub.devrel.easypermissions.EasyPermissions;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LocaleHelper;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.NotificationSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.ViewPagerAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Calendar;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Home;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
+import www.softedgenepal.com.softedgenepalschool.View.Login.CheckUserLogin;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.BindingNavigationAccordingToUserType;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.NavigationListener;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.TabLayoutAdapter;
 
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.RunTimePermissions.perms;
 
 public class MainActivity extends AppCompatActivity {
     //For Navigation
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
+    public static DrawerLayout drawerLayout;
+    public static NavigationView navigationView;
     private NavigationListener navigationListener;
-    public static String userType;// = "school";     // userType :: by default is school ,
+    public static String userType = "school";     // userType :: by default is school ,
                                                     // else teacher and student
-    public static UserCache userCache;
+    public static UserModel user;
 
     //For TabLayout
     private BottomNavigationView bottomNavigationView;
@@ -62,17 +68,38 @@ public class MainActivity extends AppCompatActivity {
     private Fragment activeFragment;
     private FragmentManager fragmentManager;
 
-    private LanguageSetting languageSetting;
-    private String lang;
+    private LanguageSettingv2 languageSetting;
+    private CheckUserLogin checkUserLogin;
 
     @Override
     protected void onStart() {
         super.onStart();
-//        languageSetting = new LanguageSetting(this);
-//        lang = languageSetting.loadLanguage();
-
         //for runtime permissions
         runTimePermissions();
+
+        //checkuser login online
+        checkUserLogin();
+    }
+
+    private void checkUserLogin() {
+        if(!userType.equals("School")){
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    //Do something after 5000ms = 5sec
+                    if (new NetworkConnection(getApplicationContext()).isConnectionSuccess()) {
+                        try {
+                            checkUserLogin = new CheckUserLogin(user.UserName, user.Password, MainActivity.this);
+                            checkUserLogin.fromAPICall(null);
+                        }catch (Exception e){
+                            checkUserLogin = new CheckUserLogin(MainActivity.this);
+                            checkUserLogin.setSchoolType();
+                        }
+                    }
+                }
+            }, 5*1000);
+        }
     }
 
     @Override
@@ -82,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
         startActivity(refresh);
     }
-
 
     private void runTimePermissions() {
         if (!EasyPermissions.hasPermissions(this, perms)) {
@@ -94,19 +120,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        languageSetting = new LanguageSetting(this);
-        lang = languageSetting.loadLanguage();
+        languageSetting = new LanguageSettingv2(this);
+        languageSetting.loadLanguage();
 
         setContentView(R.layout.activity_main);
         //for runtime permissions
         runTimePermissions();
-
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            userCache = (UserCache) bundle.getSerializable("userCache");
-            userType = userCache.getRole();
-            Toast.makeText(MainActivity.this, userCache.getSystemCode(), Toast.LENGTH_SHORT).show();
-        }
 
         //casting
         casting();
@@ -123,20 +142,24 @@ public class MainActivity extends AppCompatActivity {
         //bottom navigation
         bottomNavigationView();
 
-        //todo all devices
-        FirebaseMessaging.getInstance().subscribeToTopic("allDevices").addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                String msg = getString(R.string.msg_subscribed);
-                if (!task.isSuccessful()) {
-                    msg = getString(R.string.msg_subscribe_failed);
+        //todo only get notification when setting is turn on
+        if(NotificationSetting.getNotification(this).equals("TurnOn")
+                || NotificationSetting.getNotification(this).equals("No name defined")) {
+            //todo all devices
+            FirebaseMessaging.getInstance().subscribeToTopic("allDevices").addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d("FirebaseMessaging", msg);
+                    //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 }
-                Log.d("FirebaseMessaging", msg);
-                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
-        });
+            });
+        }
 
-        Toast.makeText(MainActivity.this, String.valueOf(FirebaseInstanceId.getInstance().getInstanceId()), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this, String.valueOf(FirebaseInstanceId.getInstance().getInstanceId()), Toast.LENGTH_SHORT).show();
 
         //initFragment
         initFragment();
@@ -213,5 +236,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void setMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    private void setLog(String topic, String message) {
+        Log.d(topic, message);
     }
 }

@@ -4,9 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.PreferencesForObject;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SettingActivity;
 
 public class SchoolNav {
@@ -23,9 +28,6 @@ public class SchoolNav {
             case R.id.event:
                 redirectToActivity(EventActivity.class);
                 break;
-//            case R.id.blog:
-//                showMessage("Coming Soon");
-//                break;
             case R.id.gallery:
                 showMessage("Coming Soon");
                 break;
@@ -39,11 +41,24 @@ public class SchoolNav {
                 redirectToActivity(SettingActivity.class);
                 break;
             case R.id.logout:
-                showMessage("Coming Soon");
+                PreferencesForObject.clear(Constants.LoginCredential);
+                reDirectToMainActivityAfterLogout();
+                break;
+            case R.id.login:
+                redirectToActivity(LoginActivity.class);
+                activity.finish();
                 break;
             default:
                 break;
         }
+    }
+    private void reDirectToMainActivityAfterLogout(){
+        showMessage("log out successfully");
+        Intent intent = new Intent(activity, MainActivity.class);
+        MainActivity.userType = "School";
+        MainActivity.user = null;
+        activity.startActivity(intent);
+        activity.finish();
     }
     private void redirectToActivity(Class<?> activityClass) {
         Intent intent = new Intent(activity, activityClass);

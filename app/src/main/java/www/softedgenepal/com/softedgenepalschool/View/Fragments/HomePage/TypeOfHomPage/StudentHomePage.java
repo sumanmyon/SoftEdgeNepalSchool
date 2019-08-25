@@ -3,15 +3,20 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOf
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.internal.NavigationMenuView;
+import android.support.v4.view.GravityCompat;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.balysv.materialripple.MaterialRippleLayout;
+
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Resources;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
@@ -25,13 +30,16 @@ import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLay
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.StudentNav;
 import www.softedgenepal.com.softedgenepalschool.View.Sibling.SiblingPopUpMenu;
 
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userCache;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.drawerLayout;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.navigationView;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class StudentHomePage implements Contractor.View {
     private Activity activity;
     private View view;
     ProgressBar progressBar;
+    private MaterialRippleLayout navMenu;
 
     private CircleImageView userProfileImage;
     private TextView userNameTextView, classTextView, roll_SubTextView;
@@ -41,7 +49,7 @@ public class StudentHomePage implements Contractor.View {
     public StudentHomePage(Activity activity, View view) {
         this.activity=activity;
         this.view=view;
-        setMessage(userCache.getId());
+        setMessage(user.Id);
     }
 
     public void setView() {
@@ -58,7 +66,6 @@ public class StudentHomePage implements Contractor.View {
         //dashboard
         studentDashboard();
         schoolDashboard();
-
     }
 
     private void studentDashboard() {

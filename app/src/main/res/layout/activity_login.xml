@@ -107,7 +107,7 @@
                     android:background="@drawable/for_button"
                     android:text="@string/Login"
                     android:textAllCaps="false"
-                    android:textColor="@color/colorPrimaryText"
+                    android:textColor="@color/white_color"
                     android:textSize="14sp"
                     android:id="@+id/login_button_login"/>
 

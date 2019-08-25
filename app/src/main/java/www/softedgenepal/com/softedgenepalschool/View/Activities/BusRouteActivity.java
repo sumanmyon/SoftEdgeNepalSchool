@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.BusRouteCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.MapBoxPresenter;
@@ -30,10 +31,13 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
     private RecyclerView recyclerView;
 
     private MapBoxPresenter presenter;
+    private LanguageSettingv2 languageSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        languageSetting = new LanguageSettingv2(this);
+        languageSetting.loadLanguage();
         setContentView(R.layout.activity_bus_route);
 
         //casting

@@ -49,12 +49,13 @@
     <string name="LeaveApplication_Dialoge_Body">तपाईंको छुट्टी आवेदन रद्द गर्न होमा थिच्नुहोस्।</string>
     <string name="LeaveApplication_Dialoge_Title">तपाइँको छुट्टी आवेदन रद्द गर्नुहोस्?</string>
     <string name="LiveBusTracking">बस ट्रयाकिंग</string>
+    <string name="Loading">कृपया पर्खनुहोस्....</string>
     <string name="Login">लग-इन</string>
     <string name="Logout">बाहिर निस्कनु</string>
     <string name="Magh">माघ</string>
     <string name="Mangsir"> मंसिर</string>
     <string name="Message">सन्देश</string>
-    <string name="Network_error">कृपया तपाईंको नेटवर्क जडान जाँच्नुहोस्।</string>
+    <string name="Network_error">कृपया तपाईंको नेटवर्क जडान जाँच्नुहोस् र पुन: प्रयास गर्नुहोस्!</string>
     <string name="Notification">सूचना</string>
     <string name="Notification_setting_message">सूचनाहरू प्राप्त गर्न तपाईले आफ्नो अनुप्रयोग सेट अप गर्न सक्नुहुन्छ, जस्तै गृहकार्य अनुस्मारकहरू, उपस्थिति, घटनाहरू, छुट्टीहरू आदि।</string>
     <string name="OM">प्राप्ताङ्क</string>
@@ -81,6 +82,7 @@
     <string name="Routine_Start_Time">सुरु समय</string>
     <string name="Routine_Subject">बिषय</string>
     <string name="SalaryAccount">खाता</string>
+    <string name="Saved">सेटिंग सुरक्षित गरियो|</string>
     <string name="School">स्कूल</string>
     <string name="Setting">सेटिंग</string>
     <string name="ShowAllDetailLeaveApplication_ToolBar">अनुप्रयोग विवरण छोड्नुहोस्</string>

@@ -25,6 +25,7 @@ import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DatePicker;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DateCompare;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -47,10 +48,14 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     private String engendDate;
 
     private final String uid = "1";
+    LanguageSettingv2 languageSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        languageSetting = new LanguageSettingv2(this);
+        languageSetting.loadLanguage();
         setContentView(R.layout.activity_leave_application2);
         this.activity = this;
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
