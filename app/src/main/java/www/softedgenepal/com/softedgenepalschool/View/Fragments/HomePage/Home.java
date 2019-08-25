@@ -4,6 +4,7 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAlertDialog.A
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.SchoolHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.drawerLayout;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 /**
@@ -71,6 +73,20 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
             @Override
             public void onClick(View v) {
                 getActivity().onBackPressed();
+            }
+        });
+
+        toolbar.getChildAt(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Find logo
+                if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
+                    toolbar.getChildAt(0).animate().alpha(0.3f);
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    toolbar.getChildAt(0).animate().alpha(1.0f);
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
             }
         });
     }

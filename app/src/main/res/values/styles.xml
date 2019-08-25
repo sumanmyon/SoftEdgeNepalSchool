@@ -73,6 +73,7 @@
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
         <!--<item name="navigationIcon">@drawable/menu_icon_black</item>-->
         <item name="android:background">?colorPrimary</item>
+        <item name="colorControlHighlight">#8096989A</item>
 
     </style>
 

@@ -2,9 +2,13 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOf
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.design.internal.NavigationMenuView;
+import android.support.v4.view.GravityCompat;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.balysv.materialripple.MaterialRippleLayout;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.MobileDisplaySize.SetImageWithCompatibleScreenSize;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Resources;
@@ -12,6 +16,8 @@ import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.DashboardCategory;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.SchoolNav;
 
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.drawerLayout;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.navigationView;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class SchoolHomePage {
@@ -19,6 +25,8 @@ public class SchoolHomePage {
     private View view;
     private ImageView schoolLogoImageView;
     private TextView schoolNameTextView,addressTextView, phoneNoTextView, faxTextView, emailTextView, webTextView;
+
+    private MaterialRippleLayout navMenu;
 
     public SchoolHomePage(Activity activity, View view) {
         this.activity=activity;
@@ -34,6 +42,25 @@ public class SchoolHomePage {
 
         //set data
         setInFields();
+
+        if (navigationView != null) {
+            NavigationMenuView navigationMenuView = (NavigationMenuView) navigationView.getChildAt(0);
+            if (navigationMenuView != null) {
+                navigationMenuView.setVerticalScrollBarEnabled(false);
+            }
+        }
+
+        navMenu = view.findViewById(R.id.navMenu_School);
+        navMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+            }
+        });
     }
 
     private void schoolDashboard() {
@@ -45,8 +72,9 @@ public class SchoolHomePage {
             }
         };
         category.columnSpan = 4;
-        category.setTopic = getContext().getResources().getString(R.string.Others);
+        category.setTopic = getContext().getResources().getString(R.string.School);
         category.setCategoryText();
+        category.setCategoryVisibilityGone();
         category.setDashboard(Resources.school(getContext()));
     }
 

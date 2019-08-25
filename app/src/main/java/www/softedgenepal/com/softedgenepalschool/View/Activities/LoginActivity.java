@@ -21,7 +21,11 @@ import org.json.JSONArray;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.PreferencesForObject;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Login.CheckUserLogin;
 import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
@@ -35,14 +39,13 @@ public class LoginActivity extends AppCompatActivity {
     public Button buttonQR, buttonLogin;
     ImageView imageView;
 
-    private LanguageSetting languageSetting;
-    private String lang;
+    private LanguageSettingv2 languageSetting;
     private CheckUserLogin checkUserLogin;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        languageSetting = new LanguageSetting(this);
+        languageSetting = new LanguageSettingv2(this);
         languageSetting.loadLanguage();
 
         super.onCreate(savedInstanceState);
@@ -59,14 +62,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (!userType.equals("School")) {
-            StoreInSharePreference preference = new StoreInSharePreference(this);
-            preference.setType(preference.LoginCredential);
-            String data = preference.getData();
+            UserModel data = (UserModel) PreferencesForObject.get(this, Constants.LoginCredential, Constants.LoginCredential, null, UserModel.class);
             try {
-                JSONArray array = new JSONArray(data);
-                checkUserLogin = new CheckUserLogin();
-                checkUserLogin.parseData(array, this);
-                checkUserLogin.setUserType();
+                checkUserLogin = new CheckUserLogin(this);
+                checkUserLogin.fromOfflineCall(data);
             } catch (Exception e) {
                 setLog("LoginForm", e.getMessage());
                 checkUserLogin = new CheckUserLogin(this);

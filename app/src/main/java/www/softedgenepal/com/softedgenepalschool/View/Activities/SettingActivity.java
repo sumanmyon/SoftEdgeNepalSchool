@@ -47,6 +47,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         super.onRestart();
         Intent intent = getIntent();
         finish();
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
@@ -165,7 +166,10 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         finish();
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     private void switchUpdate(String b) {

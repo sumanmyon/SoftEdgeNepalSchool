@@ -10,7 +10,8 @@
     <string name="Teacher">शिक्षक</string>
     <string name="School">स्कूल</string>
 
-    <string name="Network_error">कृपया तपाईंको नेटवर्क जडान जाँच्नुहोस्।</string>
+    <string name="Loading">कृपया पर्खनुहोस्....</string>
+    <string name="Network_error">कृपया तपाईंको नेटवर्क जडान जाँच्नुहोस् र पुन: प्रयास गर्नुहोस्!</string>
 
     <!-- Login -->
     <string name="Username_or_Email">प्रयोगकर्ता नाम वा इमेल</string>

@@ -67,7 +67,7 @@ public class Resources {
         if(!userType.equals("School")) {
             schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Logout), context.getResources().getDrawable(R.drawable.ic_logout), R.id.logout));
         }else {
-            schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Login), context.getResources().getDrawable(R.drawable.ic_logout), R.id.login));
+            schoolDashboard.add(new Dashboard(context.getResources().getString(R.string.Login), context.getResources().getDrawable(R.drawable.ic_login), R.id.login));
         }
 
         return schoolDashboard;

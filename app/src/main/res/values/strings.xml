@@ -9,7 +9,8 @@
     <string name="Teacher">Teacher</string>
     <string name="School">School</string>
 
-    <string name="Network_error">Please check your network connection.</string>
+    <string name="Loading">Please wait....</string>
+    <string name="Network_error">Please check your network connection and try again!</string>
 
     <!-- Login -->
     <string name="Username_or_Email">Username or Email</string>

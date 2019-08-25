@@ -1696,7 +1696,9 @@ drawable ic_homework
 drawable ic_language
 drawable ic_leave_application
 drawable ic_location
+drawable ic_login
 drawable ic_logout
+drawable ic_menu
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -2055,6 +2057,7 @@ id monthYear
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id navMenu_School
 id navigation
 id navigation_calender
 id navigation_header_container
@@ -2564,6 +2567,7 @@ string Kartik
 string LeaveApplication_Dialoge_Body
 string LeaveApplication_Dialoge_Title
 string LiveBusTracking
+string Loading
 string Login
 string Logout
 string Magh

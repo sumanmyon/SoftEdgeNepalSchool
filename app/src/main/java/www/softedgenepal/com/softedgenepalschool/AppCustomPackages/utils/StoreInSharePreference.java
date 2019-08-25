@@ -26,7 +26,7 @@ public class StoreInSharePreference {
     public String NotificationSetting = "NotificationSetting";
     public String BaseUrlSetting = "BaseUrlSetting";
 
-    //todo for Setting
+    //todo for login
     public String LoginCredential = "LoginCredential";
 
     public StoreInSharePreference(Context context) {

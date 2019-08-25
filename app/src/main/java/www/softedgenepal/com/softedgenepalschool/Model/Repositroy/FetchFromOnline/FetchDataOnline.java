@@ -23,8 +23,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentSiblingHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.RequestDataForStudent;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
-
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userCache;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 public class FetchDataOnline {
     RequestDataForStudent requestDataForStudent;
@@ -32,8 +31,8 @@ public class FetchDataOnline {
     String uid;
     public FetchDataOnline(RequestDataForStudent requestDataForStudent) {
         this.requestDataForStudent=requestDataForStudent;
-        uid = userCache.getSystemCode();
-        url = new URL(requestDataForStudent.getContext()).getUrl()+"UserName="+userCache.getUserName()+"Password="+userCache.getPassword();     //+ "UserName=suman&Password=admin123"
+        uid = user.Id;
+        //url = new URL(requestDataForStudent.getContext()).getLoginUrl()+"UserName="+userCache.getUserName()+"Password="+userCache.getPassword();     //+ "UserName=suman&Password=admin123"
     }
 
     public void getJson() {

@@ -108,7 +108,7 @@ public class FormValidation implements View.OnClickListener, Validate {
         userName = userName.toUpperCase();
         this.passW = password;
         if (new NetworkConnection(activity).isConnectionSuccess()) {
-            new CheckUserLogin(userName, password, activity).queryDataBaseOnline(progressDialog);
+            new CheckUserLogin(userName, password, activity).fromAPICall(progressDialog);//.queryDataBaseOnline(progressDialog);
         } else {
             progressDialog.dismiss();
             setMessage(activity.getString(R.string.Network_error));

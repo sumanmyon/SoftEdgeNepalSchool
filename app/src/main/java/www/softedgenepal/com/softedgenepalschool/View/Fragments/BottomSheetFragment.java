@@ -35,6 +35,8 @@ import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.FileDownloader;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ImageSplitter;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Tools;
@@ -58,10 +60,13 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     private final int GRID_SPAN = 4;        //3
 
     private AssignmentCache cache;
+    private LanguageSettingv2 languageSetting;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final BottomSheetDialog dialog = (BottomSheetDialog) super.onCreateDialog(savedInstanceState);
+        languageSetting = new LanguageSettingv2(getActivity());
+        languageSetting.loadLanguage();
         final View view = View.inflate(getContext(), R.layout.fragment_bottom_sheet, null);
 
         dialog.setContentView(view);
