@@ -3,7 +3,7 @@ package www.softedgenepal.com.softedgenepalschool.Model.Cache;
 import java.io.Serializable;
 
 public class StudentDataCache implements Serializable{
-
+    public String registrationNo;
     public String username;
     public String userclass;
     public String section;
@@ -22,11 +22,13 @@ public class StudentDataCache implements Serializable{
     public String busRoute;
     public String imageUrl;
 
-    public StudentDataCache(String username, String userclass, String section, String rollno,
+    public StudentDataCache(String registrationNo,
+                            String username, String userclass, String section, String rollno,
                             String gender, String dateOfBirthBS, String dateOfBirthAD,
                             String contact, String email, String house, String religion,
                             String caste, String address, String bloodGroup, String busStop,
                             String busRoute, String imageUrl) {
+        this.registrationNo = registrationNo;
         this.username = username;
         this.userclass = userclass;
         this.section = section;

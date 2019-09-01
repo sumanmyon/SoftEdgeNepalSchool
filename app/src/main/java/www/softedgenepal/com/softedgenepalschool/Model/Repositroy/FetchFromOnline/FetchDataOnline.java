@@ -17,6 +17,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentGuardianHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentParentHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentProfileHelper;
@@ -29,19 +30,25 @@ public class FetchDataOnline {
     RequestDataForStudent requestDataForStudent;
     String url;
     String uid;
+    String role;
+
     public FetchDataOnline(RequestDataForStudent requestDataForStudent) {
         this.requestDataForStudent=requestDataForStudent;
-        uid = user.Id;
-        //url = new URL(requestDataForStudent.getContext()).getLoginUrl()+"UserName="+userCache.getUserName()+"Password="+userCache.getPassword();     //+ "UserName=suman&Password=admin123"
+        UserModel model = user;
+        role = model.Role;
+        uid = model.Id;
+
+        url = new URL().getProfileUrl()+"?role="+role+"&id="+uid;
     }
 
     public void getJson() {
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,
                 null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                //requestDataForStudent.setMessage(response.toString());
                 parseJson(response);
+                //showMessage(response.toString());
             }
         }, new Response.ErrorListener() {
             @Override
@@ -75,7 +82,7 @@ public class FetchDataOnline {
         }
 
         //todo store student parent data
-        if(cache.isParent.equals("true")){
+
             StudentParentHelper parentHelper = new StudentParentHelper(requestDataForStudent.getContext());
             Cursor cursor1 = parentHelper.showParent(uid);
             if(cursor1.getCount() ==0){
@@ -86,13 +93,12 @@ public class FetchDataOnline {
                     studentParent(parentHelper,cache);
                 }
             }
-        }
+
 
         //todo store student parent data
-        if(cache.isGuardian.equals("true")){
             StudentGuardianHelper guardianHelper = new StudentGuardianHelper(requestDataForStudent.getContext());
-            Cursor cursor1 = guardianHelper.showGurdain(uid);
-            if(cursor1.getCount() == 0){
+            Cursor cursor2 = guardianHelper.showGurdain(uid);
+            if(cursor2.getCount() == 0){
                 studentGuardian(guardianHelper, cache);
             }else {
                 if(guardianHelper.delete(uid)!=0){
@@ -100,7 +106,7 @@ public class FetchDataOnline {
                     studentGuardian(guardianHelper, cache);
                 }
             }
-        }
+
 
         //todo store student sibling data
         if(cache.isSibling.equals("true")){
@@ -126,8 +132,7 @@ public class FetchDataOnline {
                 studentDataCache.dateOfBirthAD,studentDataCache.contact,studentDataCache.email,
                 studentDataCache.house,studentDataCache.religion,studentDataCache.caste,
                 studentDataCache.address,studentDataCache.bloodGroup,studentDataCache.busStop,
-                studentDataCache.busRoute,studentDataCache.imageUrl,
-                cache.isParent,cache.isGuardian,cache.isSibling,
+                studentDataCache.busRoute,studentDataCache.imageUrl,cache.isSibling,
                 uid);
         if(isProfileSuccess){
             showMessage("Student user :: Successfully Stored in database");
@@ -190,7 +195,7 @@ public class FetchDataOnline {
     }
 
     public void showMessage(String message){
-        //requestDataForStudent.handleMessage(message);
+        requestDataForStudent.handleMessage(message);
     }
 
 }

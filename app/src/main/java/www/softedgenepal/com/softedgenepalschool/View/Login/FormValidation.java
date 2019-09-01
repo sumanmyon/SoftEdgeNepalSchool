@@ -43,7 +43,8 @@ public class FormValidation implements View.OnClickListener, Validate {
     private String passW;
 
     private List<UserCache> userCacheList;
-
+    private String qrScan;
+    private String fid;
     Activity activity;
     EditText editTextUserName;
     EditText editTextPassword;
@@ -54,10 +55,15 @@ public class FormValidation implements View.OnClickListener, Validate {
 
     private ProgressDialog progressDialog;
 
-    public FormValidation(Activity activity, EditText editTextUserName, EditText editTextPassword) {
+    public FormValidation(Activity activity, EditText editTextUserName, EditText editTextPassword, String qrScan, String fid) {
         this.activity = activity;
         this.editTextUserName = editTextUserName;
         this.editTextPassword = editTextPassword;
+        this.qrScan = qrScan;
+        this.fid = fid;
+        if(qrScan!=null){
+            request();
+        }
     }
 
     public FormValidation(EditText editTextUserName, EditText editTextPassword, Drawable drawable) {
@@ -68,47 +74,61 @@ public class FormValidation implements View.OnClickListener, Validate {
 
     @Override
     public void onClick(View v) {
+       request();
+    }
+
+    private void request(){
         //todo validating form
-        if (TextUtils.isEmpty(editTextUserName.getText())) {
-            if (drawable != null) {
-                new EditTextError().setErrorForEditText(editTextUserName, activity.getResources().getString(R.string.username_error), drawable);
+        if(qrScan != null){
+            validateWithDataBase(null, null, qrScan, fid);
+        }else {
+            if (TextUtils.isEmpty(editTextUserName.getText())) {
+                if (drawable != null) {
+                    new EditTextError().setErrorForEditText(editTextUserName, activity.getResources().getString(R.string.username_error), drawable);
+                } else {
+                    new EditTextError().setErrorForEditText(editTextUserName, activity.getResources().getString(R.string.username_error));
+                }
+                user = false;
             } else {
-                new EditTextError().setErrorForEditText(editTextUserName, activity.getResources().getString(R.string.username_error));
+                user = true;
             }
-            user = false;
-        } else {
-            user = true;
-        }
 
-        if (TextUtils.isEmpty(editTextPassword.getText())) {
-            if (drawable != null) {
-                new EditTextError().setErrorForEditText(editTextPassword, activity.getResources().getString(R.string.password_error), drawable);
+            if (TextUtils.isEmpty(editTextPassword.getText())) {
+                if (drawable != null) {
+                    new EditTextError().setErrorForEditText(editTextPassword, activity.getResources().getString(R.string.password_error), drawable);
+                } else {
+                    new EditTextError().setErrorForEditText(editTextPassword, activity.getResources().getString(R.string.password_error));
+                }
+                password = false;
             } else {
-                new EditTextError().setErrorForEditText(editTextPassword, activity.getResources().getString(R.string.password_error));
+                password = true;
             }
-            password = false;
-        } else {
-            password = true;
-        }
 
-        if (user && password) {
-            //todo request to server and, validate and get/store token
-            validateWithDataBase(editTextUserName.getText().toString(), editTextPassword.getText().toString());
+            if (user && password) {
+                //todo request to server and, validate and get/store token
+                validateWithDataBase(editTextUserName.getText().toString(), editTextPassword.getText().toString(), qrScan, fid);
+            }
         }
     }
 
     @Override                               //nanda             //admin123
-    public void validateWithDataBase(String userName, String password) {
+    public void validateWithDataBase(String userName, String password, String QRScan, String FID) {
         progressDialog = new ProgressDialog(activity, R.style.AlertDialogTheme);
         progressDialog.setCancelable(false);
         progressDialog.setMessage(activity.getResources().getString(R.string.loading_sign_in));
         progressDialog.show();
 
         // DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-        userName = userName.toUpperCase();
-        this.passW = password;
         if (new NetworkConnection(activity).isConnectionSuccess()) {
-            new CheckUserLogin(userName, password, activity).fromAPICall(progressDialog);//.queryDataBaseOnline(progressDialog);
+            if(qrScan != null) {
+                //todo for qr
+                new CheckUserLogin(userName, password, qrScan, fid, activity).fromAPICall(progressDialog);//.queryDataBaseOnline(progressDialog);
+            }else {
+                userName = userName.toUpperCase();
+                this.passW = password;
+                new CheckUserLogin(userName, password, qrScan, fid, activity).fromAPICall(progressDialog);//.queryDataBaseOnline(progressDialog);
+            }
+
         } else {
             progressDialog.dismiss();
             setMessage(activity.getString(R.string.Network_error));

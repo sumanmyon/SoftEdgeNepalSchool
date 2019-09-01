@@ -103,13 +103,13 @@ public final class R {
         public static final int notification_background = 0x7f0a0120;
         public static final int notification_main_column = 0x7f0a0121;
         public static final int notification_main_column_container = 0x7f0a0122;
-        public static final int right_icon = 0x7f0a0172;
-        public static final int right_side = 0x7f0a0173;
-        public static final int tag_transition_group = 0x7f0a01dd;
-        public static final int text = 0x7f0a01e6;
-        public static final int text2 = 0x7f0a01e7;
-        public static final int time = 0x7f0a01f0;
-        public static final int title = 0x7f0a01f4;
+        public static final int right_icon = 0x7f0a0173;
+        public static final int right_side = 0x7f0a0174;
+        public static final int tag_transition_group = 0x7f0a01de;
+        public static final int text = 0x7f0a01e7;
+        public static final int text2 = 0x7f0a01e8;
+        public static final int time = 0x7f0a01f1;
+        public static final int title = 0x7f0a01f5;
     }
     public static final class integer {
         private integer() {}
@@ -130,7 +130,7 @@ public final class R {
         private string() {}
 
         public static final int app_name = 0x7f110095;
-        public static final int status_bar_notification_info_overflow = 0x7f11011a;
+        public static final int status_bar_notification_info_overflow = 0x7f11011d;
     }
     public static final class style {
         private style() {}

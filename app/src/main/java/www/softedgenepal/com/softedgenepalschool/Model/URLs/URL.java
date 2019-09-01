@@ -7,6 +7,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.FakeApi.StudentApi;
 public class URL {
     Context context;
     public String url = new OnlineUrl().onlineUrl;
+    public String imgUrl = new OnlineUrl().baseUrl;
 
     public URL(Context context) {
         this.context = context;
@@ -15,6 +16,10 @@ public class URL {
 
     public String getLoginUrl(){
         return new OnlineUrl().getLoginUrl();
+    }
+
+    public String getProfileUrl(){
+        return new OnlineUrl().profile;
     }
     public String getCreateLeaveApplicationUrl(){
         return new OnlineUrl().createLeaveApplication();
@@ -56,27 +61,25 @@ public class URL {
     }
 
     private class OnlineUrl{
-        private String onlineUrl = "http://192.168.100.102:400/";
-        private String loginUrl = onlineUrl + "api/data/Login?";
+        private String baseUrl = "http://192.168.100.102:400/";
+        private String onlineUrl = baseUrl + "api/data/";
+        private String loginUrl = onlineUrl + "Login?";
+        private String profile = onlineUrl + "getprofile";
 
-        private String createLeaveApplicationUrl =onlineUrl + "api/data/Leaveapplication";
-        private String getLeaveApplicationUrl = onlineUrl + "api/data/getLeaveapplication";
-        private String cancelLeaveApplicationUrl = onlineUrl + "api/data/cancelLeaveapplication";
+        private String createLeaveApplicationUrl =onlineUrl + "Leaveapplication";
+        private String getLeaveApplicationUrl = onlineUrl + "getLeaveapplication";
+        private String cancelLeaveApplicationUrl = onlineUrl + "cancelLeaveapplication";
 
-        private String calenderAndEventsUrl = onlineUrl + "api/data/geteventinfo";//?From=10/10/1995&To=12/12/2023";
+        private String calenderAndEventsUrl = onlineUrl + "geteventinfo";//?From=10/10/1995&To=12/12/2023";
         //http://192.168.100.100:423/api/data/geteventinfo?From=10/10/1995&To=12/12/2020
+        private String assignmentUrl = onlineUrl + "gethomework";
+        private String busRouteUrl = onlineUrl + "getbusroutes";
 
-        private String assignmentUrl = onlineUrl + "/api/data/gethomework";
+        private String routineUrl = onlineUrl + "getroutine";
+        private String attendanceUrl = onlineUrl + "getattendance";
 
-        private String busRouteUrl = onlineUrl + "api/data/getbusroutes";
-
-        private String routineUrl = onlineUrl + "api/data/getroutine";
-
-        private String attendanceUrl = onlineUrl + "api/data/getattendance";
-
-        private String reportCardUrl = onlineUrl + "api/data/getpublishedexam";
-
-        private String reportCardDetailUrl = onlineUrl + "api/data/getexammarks";
+        private String reportCardUrl = onlineUrl + "getpublishedexam";
+        private String reportCardDetailUrl = onlineUrl + "getexammarks";
 
         public OnlineUrl() {
             loginUrl = loginUrl;

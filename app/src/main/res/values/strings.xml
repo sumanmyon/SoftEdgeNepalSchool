@@ -28,6 +28,9 @@
     <string name="profile_class">Class: </string>
     <string name="profile_rollno">Roll No.: </string>
     <string name="profile_noSiblling">You have no sibling.</string>
+    <string name="personal_detail">Personal Detail</string>
+    <string name="parent_detail">Parent Detail</string>
+    <string name="guardian_deatil">Guardian Detail</string>
 
     <!--
         For Navigation menu

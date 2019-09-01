@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     //Do something after 5000ms = 5sec
                     if (new NetworkConnection(getApplicationContext()).isConnectionSuccess()) {
                         try {
-                            checkUserLogin = new CheckUserLogin(user.UserName, user.Password, MainActivity.this);
+                            checkUserLogin = new CheckUserLogin(user.UserName, user.Password, user.QrScan, user.FID, MainActivity.this);
                             checkUserLogin.fromAPICall(null);
                         }catch (Exception e){
                             checkUserLogin = new CheckUserLogin(MainActivity.this);

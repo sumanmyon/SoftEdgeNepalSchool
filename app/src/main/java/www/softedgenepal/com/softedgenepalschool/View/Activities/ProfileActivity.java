@@ -2,6 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Cache cache;
     private TextView userNameTextView;
     private CircleImageView userImageView;
+    private View backpress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,41 +36,39 @@ public class ProfileActivity extends AppCompatActivity {
         //getting cached data
         this.cache = StudentHomePage.cache;
         //cache = (Cache) getIntent().getSerializableExtra("cache");
-        if(cache != null) {
+        if (cache != null) {
             userNameTextView.setText(cache.studentDataCaches.get(0).username);
 
             //todo show image and store image for offline
             //Glide.with(userImageView).load(cache.studentDataCaches.get(0).imageUrl).into(userImageView);
             ShowInGlide glide = new ShowInGlide(this);
             glide.loadURL(cache.studentDataCaches.get(0).imageUrl);
-            glide.loadFailed(R.drawable.userprofile);
+            glide.loadFailed(R.drawable.userprofile4);
             glide.show(userImageView);
 
             //todo inflating ui for Student profile
-            studentProfile("Personal Detail");
-            if(cache.isParent.equals("true"))
-                studentParent();
-            if(cache.isGuardian.equals("true"))
-                studentGuardian();
-        }else {
-
+            studentProfile(getString(R.string.personal_detail));
+            studentParent();
+            studentGuardian();
         }
+
+        backpress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void studentProfile(String text) {
         String title = text;
 
-        final String[] keys = new String[]{
-                "Class","section","Roll no","Gender",
-                "CalenderDate Of Birth (BS)", "CalenderDate Of Birth (AD)",
-                "Contact", "Email", "House",
-                "Religion", "Caste", "Address",
-                "Blood Group", "Bus Stop", "Bus Route"
-        };
+        final String[] keys = new String[]{"RegistrationNo", "Class", "section", "Roll no", "Gender", "Birth Date (BS)", "Birth Date (AD)", "Contact", "Email", "House", "Religion", "Caste", "Address", "Blood Group", "Bus Stop", "Bus Route"};
 
         final StudentDataCache studentDataCache = cache.studentDataCaches.get(0);
 
         final List<String> value = new ArrayList<>();
+        value.add(studentDataCache.registrationNo);
         value.add(studentDataCache.userclass);
         value.add(studentDataCache.section);
         value.add(studentDataCache.rollno);
@@ -89,17 +89,14 @@ public class ProfileActivity extends AppCompatActivity {
         value.add(studentDataCache.busStop);
         value.add(studentDataCache.busRoute);
 
-        SetProfile setProfile = new SetProfile(this,title, keys, value);
+        SetProfile setProfile = new SetProfile(this, title, keys, value);
         setProfile.start();
     }
 
     private void studentParent() {
-        String title = "Parent Detail";
+        String title = getString(R.string.parent_detail);
 
-        String[] keys = new String[]{
-                "Father Name", "Father Occupation", "Father Contact",
-                "Mother Name", "Mother Occupation", "Mother Contact"
-        };
+        String[] keys = new String[]{"Father Name", "Father Occupation", "Father Contact", "Mother Name", "Mother Occupation", "Mother Contact"};
 
         ParentDataCache parentDataCache = cache.parentDataCaches.get(0);
         List<String> values = new ArrayList<>();
@@ -116,11 +113,9 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void studentGuardian() {
-        String title = "Guardian Detail";
+        String title = getString(R.string.guardian_deatil);
 
-        String[] keys = new String[]{
-                "Guardian Name", "Guardian Occupation", "Guardian Contact"
-        };
+        String[] keys = new String[]{"Guardian Name", "Guardian Occupation", "Guardian Contact"};
 
         GuardianDataCache guardianDataCache = cache.guardianDataCaches.get(0);
         List<String> values = new ArrayList<>();
@@ -134,18 +129,25 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void studentSibling(String text) {
         List<StudentDataCache> siblingDataCache = cache.siblingDataCaches;
-        for(int i=0; i<siblingDataCache.size(); i++){
+        for (int i = 0; i < siblingDataCache.size(); i++) {
 
         }
     }
 
     private void casting() {
+        backpress = findViewById(R.id.profile_bt_close);
         userNameTextView = findViewById(R.id.profile_detail_username);
         userImageView = findViewById(R.id.profile_detail_ImageView);
     }
 
     private void showMessage(String message) {
-        Toast.makeText(this,message, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
 }

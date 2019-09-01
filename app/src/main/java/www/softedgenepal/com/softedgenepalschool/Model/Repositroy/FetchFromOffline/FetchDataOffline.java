@@ -15,6 +15,8 @@ import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentSiblingHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.RequestDataForStudent;
 
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
+
 public class FetchDataOffline {
     RequestDataForStudent requestDataForStudent;
 
@@ -23,7 +25,7 @@ public class FetchDataOffline {
     private List<GuardianDataCache> guardianDataCacheList = null;
     private List<StudentDataCache> siblingDataCacheList = null;
 
-    private String uid = "1";
+    private String uid = user.Id;
 
     public Cache offlineCache;
 
@@ -38,15 +40,11 @@ public class FetchDataOffline {
             Cursor cursor = dataBase.showProfile(uid);
             if (cursor != null) {
                 studentProfile(cursor);
-
-                //todo for student parent
-                if (cursor.getString(18).equals("true")) studentParent();
-
-                //todo for student guardian
-                if (cursor.getString(19).equals("true")) studentGuardian();
+                studentParent();
+                studentGuardian();
 
                 //todo for student sibling
-                if (cursor.getString(20).equals("true")) studentSibling();
+                if (cursor.getString(17).equals("true")) studentSibling();
 
                 //todo storing all student related data to offline cache
                 cacheOffline(cursor);
@@ -61,7 +59,7 @@ public class FetchDataOffline {
         //todo showing latest updated student data
         //cursor.moveToLast();
         studentDataCacheList = new ArrayList<>();
-        studentDataCacheList.add(new StudentDataCache(
+        studentDataCacheList.add(new StudentDataCache(cursor.getString(19),
                 cursor.getString(1), cursor.getString(2),
                 cursor.getString(3), cursor.getString(4), cursor.getString(5),
                 cursor.getString(6), cursor.getString(7), cursor.getString(8),
@@ -103,13 +101,13 @@ public class FetchDataOffline {
         //todo showing latest updated sibling data
         siblingDataCacheList = new ArrayList<>();
         do{
-            siblingDataCacheList.add(new StudentDataCache(
+            siblingDataCacheList.add(new StudentDataCache(cursor.getString(19),
                     cursor.getString(1), cursor.getString(2),
                     cursor.getString(3), cursor.getString(4), cursor.getString(5),
-                    cursor.getString(6), cursor.getString(7), cursor.getString(7),
-                    cursor.getString(8), cursor.getString(9), cursor.getString(10),
-                    cursor.getString(11), cursor.getString(12), cursor.getString(13),
-                    cursor.getString(14), cursor.getString(15), cursor.getString(16)
+                    cursor.getString(6), cursor.getString(7), cursor.getString(8),
+                    cursor.getString(9), cursor.getString(10), cursor.getString(11),
+                    cursor.getString(12), cursor.getString(13), cursor.getString(14),
+                    cursor.getString(15), cursor.getString(16),cursor.getString(17)
             ));
         }while (cursor.moveToNext());
     }
@@ -127,8 +125,9 @@ public class FetchDataOffline {
     }
 
     private void cacheOffline(Cursor cursor){
-        offlineCache = new Cache(cursor.getString(18), cursor.getString(19),cursor.getString(20),
+        offlineCache = new Cache(cursor.getString(17),
                 studentDataCacheList,parentDataCacheList,guardianDataCacheList,siblingDataCacheList);
+        showMessage(offlineCache.studentDataCaches.get(0).address);
         requestDataForStudent.studentData(offlineCache);
     }
 

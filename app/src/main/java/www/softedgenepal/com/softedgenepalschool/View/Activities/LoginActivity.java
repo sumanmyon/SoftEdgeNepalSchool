@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.zxing.Result;
 
 import org.json.JSONArray;
@@ -29,19 +30,23 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Login.CheckUserLogin;
 import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
+import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.SchoolNav;
 
 import static android.Manifest.permission_group.CAMERA;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class LoginActivity extends AppCompatActivity {
     //casting
     static public EditText editTextUserName, editTextPassword;
-    public Button buttonQR, buttonLogin;
+    static public Button buttonLogin;
+    public Button buttonQR;
     ImageView imageView;
 
     private LanguageSettingv2 languageSetting;
     private CheckUserLogin checkUserLogin;
 
+    public static LoginActivity loginActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +54,18 @@ public class LoginActivity extends AppCompatActivity {
         languageSetting.loadLanguage();
 
         super.onCreate(savedInstanceState);
+
+        loginActivity = this;
+
         loadUI();
 
         //QR Scan
         qRScan();
 
+        Constants.GENERATE_TOKEN = FirebaseInstanceId.getInstance().getToken();
+//        setLog("GENERATE_TOKEN", Constants.GENERATE_TOKEN);
         //login button
-        buttonLogin.setOnClickListener(new FormValidation(this, editTextUserName, editTextPassword));
+        buttonLogin.setOnClickListener(new FormValidation(this, editTextUserName, editTextPassword, null, Constants.GENERATE_TOKEN));
     }
 
     @Override
@@ -104,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setLog(String topic, String message) {
-        Log.d(topic, message);
+//        Log.d(topic, message);
     }
 
 }

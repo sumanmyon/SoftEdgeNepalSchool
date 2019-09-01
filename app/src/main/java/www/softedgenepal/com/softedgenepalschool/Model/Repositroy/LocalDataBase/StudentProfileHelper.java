@@ -27,8 +27,6 @@ public class StudentProfileHelper extends StudentDataBase {
     private static final String busRoute = "busRoute";
     private static final String imageUrl = "imageUrl";
 
-    private static final String isParent = "isParent";
-    private static final String isGuardian = "isGuardian";
     private static final String isSibling = "isSibling";
     private static final String sid = "sid";
 
@@ -42,7 +40,7 @@ public class StudentProfileHelper extends StudentDataBase {
                           String srollno, String sgender, String sdateOfBirthBS, String sdateOfBirthAD,
                           String scontact, String semail, String shouse, String sreligion,
                           String scaste, String saddress, String sbloodGroup, String sbusStop,
-                          String sbusRoute, String simageUrl, String sisParent, String sisGuardian,
+                          String sbusRoute, String simageUrl,
                           String sisSibling, String ssid){
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -67,8 +65,7 @@ public class StudentProfileHelper extends StudentDataBase {
 
         values.put(busRoute,sbusRoute);
         values.put(imageUrl,simageUrl);
-        values.put(isParent,sisParent);
-        values.put(isGuardian,sisGuardian);
+
         values.put(isSibling, sisSibling);
 
         values.put(sid, ssid);
