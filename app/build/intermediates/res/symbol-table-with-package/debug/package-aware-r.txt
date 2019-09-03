@@ -1888,7 +1888,6 @@ id chains
 id checkbox
 id chronometer
 id circle_back
-id classRoutine
 id clip_horizontal
 id clip_vertical
 id close_iv
@@ -2082,6 +2081,7 @@ id pin
 id popupmenu_ImageView
 id popupmenu_TextView
 id positive_action_tv
+id profile_bt_close
 id profile_detail_ImageView
 id profile_detail_linearLayout
 id profile_detail_username
@@ -2264,7 +2264,6 @@ id te
 id teacherAttendance
 id teacherLeaveApplication
 id teacherProfile
-id teacherSuggestion
 id terminalTextView
 id text
 id text2
@@ -2704,6 +2703,7 @@ string google_storage_bucket
 string gpa
 string grade
 string greater_than
+string guardian_deatil
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string language_title
@@ -2783,6 +2783,7 @@ string msg_subscribed
 string mtrl_chip_close_icon_content_description
 string no
 string not_any_assignment
+string parent_detail
 string password_error
 string password_toggle_content_description
 string path_password_eye
@@ -2790,6 +2791,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string percentage
+string personal_detail
 string powered_by_bugfender
 string profile_class
 string profile_noSiblling

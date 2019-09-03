@@ -29,6 +29,9 @@
     <string name="profile_class">कक्षा: </string>
     <string name="profile_rollno">रोल नम्बर: </string>
     <string name="profile_noSiblling">तपाईंको कुनै भाइबहिनी छैन।</string>
+    <string name="personal_detail">व्यक्तिगत विवरण</string>
+    <string name="parent_detail">अभिभावकको विवरण</string>
+    <string name="guardian_deatil">Guardian Detail</string>
 
     <!--
         For Navigation menu

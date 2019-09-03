@@ -26,9 +26,9 @@ public class TeacherNav {
             case R.id.teacherAttendance:
                 showMessage("Coming Soon");
                 break;
-            case R.id.classRoutine:
-                showMessage("Coming Soon");
-                break;
+//            case R.id.classRoutine:
+//                showMessage("Coming Soon");
+//                break;
             case R.id.examRoutine:
                 showMessage("Coming Soon");
                 break;
@@ -39,11 +39,11 @@ public class TeacherNav {
                 showMessage("Coming Soon");
                 break;
             case R.id.teacherLeaveApplication:
-                redirectToActivity(ShowAllLeaveApplication.class);
+                showMessage("Coming Soon");
                 break;
-            case R.id.teacherSuggestion:
-                redirectToActivity(SuggestionActivity.class);
-                break;
+//            case R.id.teacherSuggestion:
+//                redirectToActivity(SuggestionActivity.class);
+//                break;
             case R.id.teacherProfile:
                 showMessage("Coming Soon");
                 break;

@@ -44,6 +44,37 @@ public class Resources {
         return studentDashboard;
     }
 
+    public static List<Dashboard> teacher(Context context){
+        List<Dashboard> teacherDashboard = new ArrayList<>();
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.AssignHomeWork),
+                context.getResources().getDrawable(R.drawable.ic_homework),
+                R.id.assignHomeWork));
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.TeacherAttendance),
+                context.getResources().getDrawable(R.drawable.ic_attendance),
+                R.id.teacherAttendance));
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.ExamRoutine),
+                context.getResources().getDrawable(R.drawable.ic_assignment),
+                R.id.examRoutine));
+
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.ResultReportCard),
+                context.getResources().getDrawable(R.drawable.ic_report),
+                R.id.resultReportCard));
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.SalaryAccount),
+                context.getResources().getDrawable(R.drawable.ic_account),
+                R.id.salaryAccount));
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.TeacherLeaveApplication),
+                context.getResources().getDrawable(R.drawable.ic_leave_application),
+                R.id.teacherLeaveApplication));
+
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.TeacherProfile),
+                context.getResources().getDrawable(R.drawable.ic_profile_img),
+                R.id.teacherProfile));
+
+        return teacherDashboard;
+    }
+
+
+
     //todo for school
     public static List<Dashboard> school(Context context){
         List<Dashboard> schoolDashboard = new ArrayList<>();

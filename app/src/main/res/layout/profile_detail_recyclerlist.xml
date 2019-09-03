@@ -1,56 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:weightSum="1">
 
-    <Button
+    <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:layout_gravity="center"
-        android:background="@color/colorPrimaryText"/>
+        android:background="@color/blue_50" />
 
-        <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:layout_marginBottom="2dp"
+        app:cardCornerRadius="12dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="0dp">
+        <!--app:cardBackgroundColor="@color/colorPrimaryLight">-->
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            app:cardCornerRadius="12dp"
-            app:contentPadding="0dp"
-            app:cardPreventCornerOverlap="false"
-            app:cardUseCompatPadding="true"
-            app:cardBackgroundColor="@color/colorPrimaryLight">
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/profile_recyclerView_title_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="12dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Personal Detail"
-                    android:textColor="@color/colorPrimaryText"
-                    android:background="@color/colorSecondary"
-                    android:textSize="20sp"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
-                    android:gravity="center_horizontal"
-                    android:layout_marginTop="12dp"
-                    android:id="@+id/profile_recyclerView_title_textView"/>
+                android:layout_marginTop="12dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="@string/parent_detail"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <android.support.v7.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/profile_personal_recyclerView">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/profile_personal_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_recyclerView_title_textView">
 
-                    </android.support.v7.widget.RecyclerView>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

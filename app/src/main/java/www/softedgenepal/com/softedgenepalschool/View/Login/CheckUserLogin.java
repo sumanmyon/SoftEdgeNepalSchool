@@ -23,6 +23,7 @@ import com.google.gson.reflect.TypeToken;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,21 +42,21 @@ public class CheckUserLogin {
     private Activity context;
     private String userName;
     private String password;
+    private String qrScan;
+    private String fid;
     private List<UserCache> userCacheList;
     private UserModel user;
     private ProgressDialog progressDialog;
-
-    public CheckUserLogin() {
-
-    }
 
     public CheckUserLogin(Activity context) {
         this.context = context;
     }
 
-    public CheckUserLogin(String userName, String password, Activity context) {
+    public CheckUserLogin(String userName, String password, String qrScan, String fid, Activity context) {
         this.userName = userName;
         this.password = password;
+        this.qrScan = qrScan;
+        this.fid = fid;
         this.context = context;
     }
 
@@ -162,25 +163,23 @@ public class CheckUserLogin {
     public void setSchoolType() {
         MainActivity.userType = "School";
         MainActivity.user = null;
-        redirect();
+        if (context instanceof MainActivity) {
+            setLog("LoginForm", "6. ");
+        } else {
+            redirect();
+            setLog("LoginForm", "7. ");
+        }
     }
 
     public void setUserType() {
         MainActivity.userType = user.Role;
         MainActivity.user = user;
         if (context instanceof MainActivity) {
-
+            setLog("LoginForm", "4. ");
         } else {
             redirect();
+            setLog("LoginForm", "5. ");
         }
-    }
-
-    private void reDirectToMainActivityAfterLogout() {
-        setMessage(context.getResources().getString(R.string.login_failed));
-        Intent intent = new Intent(context, LoginActivity.class);
-        setSchoolType();
-        context.startActivity(intent);
-        context.finish();
     }
 
     private void storeUserCredentials() {
@@ -189,8 +188,8 @@ public class CheckUserLogin {
 
     private void redirect() {
         Intent intent = new Intent(context, MainActivity.class);
-        context.startActivity(intent);
         context.finish();
+        context.startActivity(intent);
     }
 
     private void setMessage(String message) {
@@ -202,46 +201,63 @@ public class CheckUserLogin {
     }
 
     public void fromAPICall(ProgressDialog progressDialog) {
-        this.progressDialog = progressDialog;
-        String url = new URL().getLoginUrl() + "UserName=" + userName + "&Password=" + password + "&QRCode&FID";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    if (response.getString("Status").equals("false")) {
-                        dismissProgessBar();
-                        failedMessage();
-                    } else {
-                        dismissProgessBar();
-                        successMessage();
+        try {
+            this.progressDialog = progressDialog;
+            String url = new URL().getLoginUrl();
+            if (qrScan != null) {
+                url = url + "UserName&Password&QRCode="+URLEncoder.encode( qrScan, "UTF-8");
+            } else {
+                url = url + "UserName=" + userName + "&Password=" + password + "&QRCode";
+            }
+            url = url +"&FID=" + URLEncoder.encode( fid, "UTF-8");
 
-                        parseDataFromAPI(response.getString("Data"), context);
-                        setUserType();
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        if (response.getString("Status").equals("false")) {
+                            dismissProgessBar();
+                            failedMessage();
+                        } else {
+                            dismissProgessBar();
+                            successMessage();
+
+                            parseDataFromAPI(response.getString("Data"), context);
+                            setUserType();
+                        }
+                    } catch (Exception e) {
+                        dismissProgessBar();
+                        setMessage(e.getMessage());
                     }
-                } catch (Exception e) {
-                    dismissProgessBar();
-                    setMessage(e.getMessage());
+
                 }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    dismissProgessBar();
+                    if (progressDialog != null) setMessage(error.getStackTrace().toString());
+                }
+            });
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                dismissProgessBar();
-                if (progressDialog != null) setMessage(error.getStackTrace().toString());
-            }
-        });
-
-        RequestQueue requestQueue = Volley.newRequestQueue(context);
-        requestQueue.add(request);
+            RequestQueue requestQueue = Volley.newRequestQueue(context);
+            requestQueue.add(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void parseDataFromAPI(String data, Activity context) {
         this.context = context;
         user = new Gson().fromJson(data, new TypeToken<UserModel>() {
         }.getType());
-        user.UserName = userName;
-        user.Password = password;
+        if (qrScan != null) {
+            user.QrScan = qrScan;
+        } else {
+            user.UserName = userName;
+            user.Password = password;
+        }
+        user.FID = fid;
 
         //todo save userId, role, userName, password
         storeUserCredentials();

@@ -5,4 +5,6 @@ public class UserModel {
     public String Id;
     public String UserName;
     public String Password;
+    public String QrScan = null;
+    public String FID;
 }

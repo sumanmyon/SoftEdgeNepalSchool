@@ -29,9 +29,6 @@ import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.Dash
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.SchoolNav;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.StudentNav;
 import www.softedgenepal.com.softedgenepalschool.View.Sibling.SiblingPopUpMenu;
-
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.drawerLayout;
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.navigationView;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
@@ -49,7 +46,7 @@ public class StudentHomePage implements Contractor.View {
     public StudentHomePage(Activity activity, View view) {
         this.activity=activity;
         this.view=view;
-        setMessage(user.Id);
+        //setMessage(user.Id);
     }
 
     public void setView() {
@@ -100,7 +97,7 @@ public class StudentHomePage implements Contractor.View {
         //set data
         this.studentDataCacheList = cache.studentDataCaches;
         setData(this.studentDataCacheList.get(0).username,
-                this.studentDataCacheList.get(0).userclass+"("+ this.studentDataCacheList.get(0).section+")",
+                this.studentDataCacheList.get(0).userclass+" ("+ this.studentDataCacheList.get(0).section+")",
                 this.studentDataCacheList.get(0).rollno, this.studentDataCacheList.get(0).imageUrl);
     }
 
@@ -109,13 +106,13 @@ public class StudentHomePage implements Contractor.View {
 
         ShowInGlide glide = new ShowInGlide(activity);
         glide.loadURL(imageUrl);
-        glide.loadFailed(R.drawable.userprofile);
+        glide.loadFailed(R.drawable.userprofile4);
         glide.show(userProfileImage);
 
         //username = String.format("%s%s", getContext().getResources().getString(R.string.profile_username), username);
-        userNameTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_username), username));
-        classTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_class), classSection));
-        roll_SubTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_rollno), rollno));
+        userNameTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_username), " "+username));
+        classTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_class)," "+ classSection));
+        roll_SubTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_rollno), " "+rollno));
 
         userProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +148,7 @@ public class StudentHomePage implements Contractor.View {
                 if(cache != null) {
                     contextMenu();
                 }else {
-                    showMessage(getContext().getString(R.string.profile_noSiblling));
+                    setMessage(getContext().getString(R.string.profile_noSiblling));
                 }
                 break;
         }
@@ -162,7 +159,4 @@ public class StudentHomePage implements Contractor.View {
         SiblingPopUpMenu popUpMenu = new SiblingPopUpMenu(activity, cache.siblingDataCaches);
     }
 
-    private void showMessage(String message){
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
-    }
 }

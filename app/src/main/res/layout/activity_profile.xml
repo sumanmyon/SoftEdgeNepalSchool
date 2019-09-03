@@ -1,41 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activities.View.Activities.ProfileActivity"
-    android:scrollbars="none">
-    <!--android:background="@color/backgroundLightGray"-->
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:id="@+id/profile_bt_close"
+                    style="@style/RippleStyleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true">
+
+                    <ImageButton
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@android:color/white"
+                        app:srcCompat="@drawable/ic_back" />
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="0dp" />
+
+                <TextView
+                    android:id="@+id/assignment_subject_toolbar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/StudentProfile"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </android.support.design.widget.AppBarLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        tools:context=".Activities.View.Activities.ProfileActivity">
+        <!--android:background="@color/backgroundLightGray"-->
         <LinearLayout
+            android:id="@+id/profile_detail_linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/profile_detail_linearLayout">
+            android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_detail_ImageView"
                 android:layout_width="196dp"
                 android:layout_height="196dp"
                 android:layout_gravity="center"
-                android:padding="2dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="2dp"
+                android:padding="2dp"
                 android:src="@drawable/userprofile4"
-                app:civ_border_width="2dp"
                 app:civ_border_color="@color/colorPrimaryText"
-                android:id="@+id/profile_detail_ImageView"/>
+                app:civ_border_width="2dp" />
 
             <TextView
+                android:id="@+id/profile_detail_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Suman Neupane"
-                android:textColor="@color/colorPrimaryText"
-                android:textSize="24sp"
+                android:layout_marginTop="2dp"
+                android:gravity="center_horizontal"
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:id="@+id/profile_detail_username"/>
+                android:text="Suman Neupane"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="24sp" />
         </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

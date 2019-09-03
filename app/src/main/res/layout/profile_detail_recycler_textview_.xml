@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:text="Name "
             android:textColor="@color/colorPrimaryText"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:padding="4dp"
             android:layout_weight="0.5"
             android:id="@+id/profile_list_key_TextView"/>
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Suman Neupane "
             android:textColor="@color/colorPrimaryText"
-            android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:padding="4dp"
             android:layout_weight="0.5"
             android:id="@+id/profile_list_value_TextView"/>

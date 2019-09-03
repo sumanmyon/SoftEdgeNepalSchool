@@ -9,6 +9,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActiv
 import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity;
@@ -50,8 +51,7 @@ public class StudentNav {
                 redirectToActivity(BusRouteActivity.class);
                 break;
             case R.id.studentProfile:
-                //redirectToActivity(ProfileActivity.class);
-                showMessage("Comming Soon");
+                redirectToActivity(ProfileActivity.class);
                 break;
 
             case R.id.sibling:

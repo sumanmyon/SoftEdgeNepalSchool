@@ -5,7 +5,11 @@ import android.os.Bundle;
 
 import com.google.zxing.Result;
 
+import java.net.URLEncoder;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
+import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
 
 public class ScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
 
@@ -37,7 +41,8 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         // Log.v("tag", rawResult.getText()); // Prints scan results
         // Log.v("tag", rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
 
-        LoginActivity.editTextUserName.setText(rawResult.getText());
+        LoginActivity.buttonLogin.setOnClickListener(new FormValidation(LoginActivity.loginActivity,
+                null, null, rawResult.getText(), Constants.GENERATE_TOKEN));
         onBackPressed();
 
         // If you would like to resume scanning, call this method below:
