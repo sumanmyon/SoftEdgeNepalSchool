@@ -59,7 +59,7 @@ public class StudentParseJson {
                     studentDetail(new JSONObject(parseJson.getString("StudentDetail")), HasSibling);  //here isSibling : false
 
                     //todo for parent
-                    parentDetail(new JSONObject(parseJson.getString("ParentInfo")));
+                    parentDetail(new JSONObject(parseJson.getString("ParentDetail")));
 
                     //todo for Guardian
                     guardianDetail(new JSONObject(parseJson.getString("GuardianDetail")));

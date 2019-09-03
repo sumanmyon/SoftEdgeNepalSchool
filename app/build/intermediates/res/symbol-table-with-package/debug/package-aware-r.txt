@@ -1888,7 +1888,6 @@ id chains
 id checkbox
 id chronometer
 id circle_back
-id classRoutine
 id clip_horizontal
 id clip_vertical
 id close_iv
@@ -2265,7 +2264,6 @@ id te
 id teacherAttendance
 id teacherLeaveApplication
 id teacherProfile
-id teacherSuggestion
 id terminalTextView
 id text
 id text2

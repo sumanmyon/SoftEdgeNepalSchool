@@ -2,6 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLa
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
@@ -54,11 +55,12 @@ public class SchoolNav {
     }
     private void reDirectToMainActivityAfterLogout(){
         showMessage("log out successfully");
+        Log.d("LoginForm", "3. log out successfully");
         Intent intent = new Intent(activity, MainActivity.class);
         MainActivity.userType = "School";
         MainActivity.user = null;
-        activity.startActivity(intent);
         activity.finish();
+        activity.startActivity(intent);
     }
     private void redirectToActivity(Class<?> activityClass) {
         Intent intent = new Intent(activity, activityClass);

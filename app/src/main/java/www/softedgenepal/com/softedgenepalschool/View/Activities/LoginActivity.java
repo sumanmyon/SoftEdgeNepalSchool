@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
         qRScan();
 
         Constants.GENERATE_TOKEN = FirebaseInstanceId.getInstance().getToken();
-//        setLog("GENERATE_TOKEN", Constants.GENERATE_TOKEN);
+
         //login button
         buttonLogin.setOnClickListener(new FormValidation(this, editTextUserName, editTextPassword, null, Constants.GENERATE_TOKEN));
     }
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                 checkUserLogin = new CheckUserLogin(this);
                 checkUserLogin.fromOfflineCall(data);
             } catch (Exception e) {
-                setLog("LoginForm", e.getMessage());
+                setLog("LoginForm", "1. "+e.getMessage());
                 checkUserLogin = new CheckUserLogin(this);
                 checkUserLogin.setSchoolType();
             }

@@ -46,7 +46,7 @@ public class StudentHomePage implements Contractor.View {
     public StudentHomePage(Activity activity, View view) {
         this.activity=activity;
         this.view=view;
-        setMessage(user.Id);
+        //setMessage(user.Id);
     }
 
     public void setView() {
@@ -148,7 +148,7 @@ public class StudentHomePage implements Contractor.View {
                 if(cache != null) {
                     contextMenu();
                 }else {
-                    showMessage(getContext().getString(R.string.profile_noSiblling));
+                    setMessage(getContext().getString(R.string.profile_noSiblling));
                 }
                 break;
         }
@@ -159,7 +159,4 @@ public class StudentHomePage implements Contractor.View {
         SiblingPopUpMenu popUpMenu = new SiblingPopUpMenu(activity, cache.siblingDataCaches);
     }
 
-    private void showMessage(String message){
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
-    }
 }

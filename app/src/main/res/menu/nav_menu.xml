@@ -8,32 +8,38 @@
         <item
             android:title="@string/AssignHomeWork"
             android:id="@+id/assignHomeWork"
-            android:icon="@drawable/ic_assignment"
+            android:icon="@drawable/ic_homework"
             />
         <item
             android:title="@string/TeacherAttendance"
-            android:id="@+id/teacherAttendance"/>
-        <item
-            android:title="@string/ClassRoutine"
-            android:id="@+id/classRoutine"/>
+            android:id="@+id/teacherAttendance"
+            android:icon="@drawable/ic_attendance"/>
+        <!--<item-->
+            <!--android:title="@string/ClassRoutine"-->
+            <!--android:id="@+id/classRoutine"/>-->
         <item
             android:title="@string/ExamRoutine"
-            android:id="@+id/examRoutine"/>
+            android:id="@+id/examRoutine"
+            android:icon="@drawable/ic_assignment"/>
         <item
             android:title="@string/ResultReportCard"
-            android:id="@+id/resultReportCard"/>
+            android:id="@+id/resultReportCard"
+            android:icon="@drawable/ic_report"/>
         <item
             android:title="@string/SalaryAccount"
-            android:id="@+id/salaryAccount"/>
+            android:id="@+id/salaryAccount"
+            android:icon="@drawable/ic_account"/>
         <item
             android:title="@string/TeacherLeaveApplication"
-            android:id="@+id/teacherLeaveApplication"/>
-        <item
-            android:title="@string/TeacherSuggestion"
-            android:id="@+id/teacherSuggestion"/>
+            android:id="@+id/teacherLeaveApplication"
+            android:icon="@drawable/ic_leave_application"/>
+        <!--<item-->
+            <!--android:title="@string/TeacherSuggestion"-->
+            <!--android:id="@+id/teacherSuggestion"/>-->
         <item
             android:title="@string/TeacherProfile"
-            android:id="@+id/teacherProfile"/>
+            android:id="@+id/teacherProfile"
+            android:icon="@drawable/ic_profile_img"/>
     </group>
 
     <group

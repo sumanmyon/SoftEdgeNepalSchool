@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public static NavigationView navigationView;
     private NavigationListener navigationListener;
     public static String userType = "school";     // userType :: by default is school ,
-                                                    // else teacher and student
+    // else teacher and student
     public static UserModel user;
 
     //For TabLayout
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                             checkUserLogin = new CheckUserLogin(user.UserName, user.Password, user.QrScan, user.FID, MainActivity.this);
                             checkUserLogin.fromAPICall(null);
                         }catch (Exception e){
+                            setLog("LoginForm", "2. "+e.getMessage());
                             checkUserLogin = new CheckUserLogin(MainActivity.this);
                             checkUserLogin.setSchoolType();
                         }
@@ -102,13 +103,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Intent refresh = new Intent(getApplicationContext(), MainActivity.class);
-        finish();
-        startActivity(refresh);
-    }
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        Intent refresh = new Intent(getApplicationContext(), MainActivity.class);
+//        finish();
+//        startActivity(refresh);
+//    }
 
     private void runTimePermissions() {
         if (!EasyPermissions.hasPermissions(this, perms)) {

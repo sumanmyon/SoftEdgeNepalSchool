@@ -17,6 +17,7 @@ import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAlertDialog.AlertDialog;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.SchoolHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.TeacherHomePage;
 
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.drawerLayout;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
@@ -26,6 +27,7 @@ import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActi
  */
 public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
     StudentHomePage studentHomePage;
+    TeacherHomePage teacherHomePage;
     View view;
 
     public Home() {
@@ -40,10 +42,14 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
         if(userType.equals("School")){
             view = inflater.inflate(R.layout.school, container, false);
             new SchoolHomePage(getActivity(),view).setView();
-            showMessage(getActivity().getString(R.string.School));
+
         }else if(userType.equals("Teacher")){
-            view = inflater.inflate(R.layout.fragment_home, container, false);
-            showMessage(getActivity().getString(R.string.Teacher));
+            view = inflater.inflate(R.layout.user_profile, container, false);
+            onCreateOptionsMenu(view);
+
+            teacherHomePage = new TeacherHomePage(getActivity(), view);
+            teacherHomePage.setView();
+
         }else if(userType.equals("Student")){
             view = inflater.inflate(R.layout.user_profile, container, false);
             //setHasOptionsMenu(true);
@@ -51,7 +57,7 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
 
             studentHomePage = new StudentHomePage(getActivity(), view);
             studentHomePage.setView();
-            showMessage(getActivity().getString(R.string.Student));
+
         }
         return view;
     }
@@ -60,11 +66,11 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar_profile);
         toolbar.inflateMenu(R.menu.menu);
 
-        if(userType.equals("school")){
+        if(userType.equals("School")){
             toolbar.getMenu().setGroupVisible(R.id.group_for_student, false);
-        }else if(userType.equals("parent")){
+        }else if(userType.equals("Teacher")){
             toolbar.getMenu().setGroupVisible(R.id.group_for_student, false);
-        }else if(userType.equals("student")){
+        }else if(userType.equals("Student")){
             toolbar.getMenu().setGroupVisible(R.id.group_for_student, true);
         }
 

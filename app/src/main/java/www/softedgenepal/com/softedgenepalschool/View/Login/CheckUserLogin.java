@@ -48,10 +48,6 @@ public class CheckUserLogin {
     private UserModel user;
     private ProgressDialog progressDialog;
 
-    public CheckUserLogin() {
-
-    }
-
     public CheckUserLogin(Activity context) {
         this.context = context;
     }
@@ -167,25 +163,23 @@ public class CheckUserLogin {
     public void setSchoolType() {
         MainActivity.userType = "School";
         MainActivity.user = null;
-        redirect();
+        if (context instanceof MainActivity) {
+            setLog("LoginForm", "6. ");
+        } else {
+            redirect();
+            setLog("LoginForm", "7. ");
+        }
     }
 
     public void setUserType() {
         MainActivity.userType = user.Role;
         MainActivity.user = user;
         if (context instanceof MainActivity) {
-
+            setLog("LoginForm", "4. ");
         } else {
             redirect();
+            setLog("LoginForm", "5. ");
         }
-    }
-
-    private void reDirectToMainActivityAfterLogout() {
-        setMessage(context.getResources().getString(R.string.login_failed));
-        Intent intent = new Intent(context, LoginActivity.class);
-        setSchoolType();
-        context.startActivity(intent);
-        context.finish();
     }
 
     private void storeUserCredentials() {
@@ -194,8 +188,8 @@ public class CheckUserLogin {
 
     private void redirect() {
         Intent intent = new Intent(context, MainActivity.class);
-        context.startActivity(intent);
         context.finish();
+        context.startActivity(intent);
     }
 
     private void setMessage(String message) {
