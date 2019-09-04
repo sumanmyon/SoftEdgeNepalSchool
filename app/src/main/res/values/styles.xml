@@ -20,7 +20,7 @@
 
     <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:fontFamily">@font/font</item><!-- Apply custom font to whole app -->
-        <item name="android:textColor">@color/backgroundLight</item> <!-- popup menu text color         //-->
+        <item name="android:textColor">@color/colorSecondary</item> <!-- popup menu text color   backgroundLight      //-->
         <item name="android:itemBackground">@color/colorPrimaryDark</item><!-- popup menu background    //-->
         <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item><!-- toolbar cap disabling -->
 
@@ -128,7 +128,7 @@
         <item name="colorAccent">@color/green_500</item>
         <!--title and message color-->
         <item name="android:textColorPrimary">@color/backgroundLight</item>
-        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
         <!--dialog background-->
         <!--<item name="android:windowBackground">@drawable/background_dialog</item>-->
         <!--<item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>-->

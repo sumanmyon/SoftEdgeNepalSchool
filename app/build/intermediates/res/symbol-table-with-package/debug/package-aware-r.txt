@@ -1685,11 +1685,13 @@ drawable ic_category_1
 drawable ic_category_2
 drawable ic_chevron_left_black_24dp
 drawable ic_chevron_right_black_24dp
+drawable ic_class
 drawable ic_close
 drawable ic_date_range
 drawable ic_directions_bus
 drawable ic_done
 drawable ic_expand_arrow
+drawable ic_faculty
 drawable ic_gallery
 drawable ic_home_white
 drawable ic_homework
@@ -1888,8 +1890,10 @@ id chains
 id checkbox
 id chronometer
 id circle_back
+id classSpinner
 id clip_horizontal
 id clip_vertical
+id close
 id close_iv
 id collapseActionView
 id compassView
@@ -1940,6 +1944,7 @@ id examRoutine
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id facultySpinner
 id feedback_message_et
 id feedback_title_et
 id fill
@@ -2198,6 +2203,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id sectionSpinner
 id select_dialog_listview
 id selected
 id setting
@@ -2250,6 +2256,7 @@ id stretch
 id studentAttendance
 id studentLeaveApplication
 id studentProfile
+id subjectSpinner
 id submenuarrow
 id submit_area
 id suggest_bt_close
@@ -2283,6 +2290,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id title_tv
+id toolBarTitleText
 id toolbar_profile
 id top
 id topPanel
@@ -2399,6 +2407,7 @@ layout activity_sibling_pop_up
 layout activity_sibling_pop_up2
 layout activity_suggestion
 layout alert_dialog
+layout app_bar_layout
 layout assignment_list
 layout assignment_list2
 layout bf_feedback_screen
@@ -2530,6 +2539,7 @@ string Application_test_Subject
 string Ashar
 string Ashoj
 string AssignHomeWork
+string AssignTechHomework
 string Assignment_Date
 string Avg_Grade_Point
 string Baisakh
@@ -2538,6 +2548,7 @@ string Bhadra
 string BusRoute_online
 string Calender
 string Chaitra
+string Class
 string ClassRoutine
 string Close
 string Created_Date
@@ -2553,6 +2564,7 @@ string Event
 string ExamRoutine
 string Examination
 string FM
+string Faculty
 string Falgun
 string Final_Grade
 string From

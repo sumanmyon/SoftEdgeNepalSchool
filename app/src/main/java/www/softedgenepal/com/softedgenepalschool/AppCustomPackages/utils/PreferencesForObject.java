@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
+import java.lang.reflect.Type;
+
 public class PreferencesForObject {
     //https://stackoverflow.com/questions/7145606/how-android-sharedpreferences-save-store-object
     private static SharedPreferences preferences;
@@ -21,6 +23,23 @@ public class PreferencesForObject {
     public static Object get(Context context, String prefName, String key, String defaultValue, Class<?> aClass) {
         preferences = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
         return gson.fromJson(preferences.getString(key, defaultValue), aClass);
+    }
+
+    public static Object get(Context context, String prefName, String key, String defaultValue, Type aClass) {
+        preferences = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        return gson.fromJson(preferences.getString(key, defaultValue), aClass);
+    }
+
+    public static void storeString(Context context, String prefName, String key, String value) {
+        preferences = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    public static String getString(Context context, String prefName, String key, String defaultValue) {
+        preferences = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        return preferences.getString(key, defaultValue);
     }
 
     //todo Removing single preference:

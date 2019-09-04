@@ -96,9 +96,12 @@
     <string name="Deadline">अन्तिम दिन</string>
 
     <!-- Assignments -->
+    <string name="Faculty">संकाय</string>
+    <string name="Class">कक्षा</string>
     <string name="not_any_assignment">त्यहाँ कुनै कार्यभार छैन।</string>
     <string name="Today">आज</string>
     <string name="Assignment_Date">मिति : </string>
+    <string name="AssignTechHomework">पढ्नुहोस् र लेख्नुहोस्, पृष्ठ नम्बर. १२१ Q.no १०, ११ र १२</string>
 
     <!--Download -->
     <string name="Download">डाउनलोड</string>

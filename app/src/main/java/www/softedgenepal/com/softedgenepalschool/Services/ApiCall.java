@@ -24,17 +24,19 @@ public class ApiCall {
     private ProgressDialog progressDialog;
 
     private static ApiCall call = new ApiCall();
-    public static ApiCall getInstance(){
+
+    public static ApiCall getInstance() {
         return call;
     }
 
-    public void connect(Context context, final String url, int method,
-                        HashMap<String, String> params, ResultListener listener, String loadMessage){
+    public void connect(Context context, final String url, int method, HashMap<String, String> params, ResultListener listener, String loadMessage) {
         try {
             if (new NetworkConnection(context).isConnectionSuccess()) {
-                if(showDialog)
-                    loadMessage = (loadMessage != null) ? loadMessage : context.getString(R.string.Loading);
-                showDialog(context, loadMessage);
+                if(!loadMessage.equals("")) {
+                    if (showDialog)
+                        loadMessage = (loadMessage != null) ? loadMessage : context.getString(R.string.Loading);
+                    showDialog(context, loadMessage);
+                }
 
                 NetworkRequset requset = new NetworkRequset(context, url, method, params, new Response.Listener<JSONObject>() {
                     @Override
@@ -51,17 +53,18 @@ public class ApiCall {
                 });
                 requset.setRetryPolicy(new DefaultRetryPolicy(50000, 2, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
                 Volley.newRequestQueue(context).add(requset);
-            }else {
-                Toast.makeText(context, context.getString(R.string.Network_error), Toast.LENGTH_SHORT).show();
+            } else {
+                //Toast.makeText(context, context.getString(R.string.Network_error), Toast.LENGTH_SHORT).show();
+                listener.onFailed();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     private void showDialog(Context context, String loadMessage) {
         try {
-            if(progressDialog != null && progressDialog.isShowing()){
+            if (progressDialog != null && progressDialog.isShowing()) {
                 progressDialog.dismiss();
             }
 
@@ -70,12 +73,14 @@ public class ApiCall {
             progressDialog.setMessage(loadMessage);
             progressDialog.show();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     public interface ResultListener {
         void onResult(String url, boolean isSuccess, JSONObject jsonObject, VolleyError volleyError, ProgressDialog progressDialog);
+        void onFailed();
     }
 }

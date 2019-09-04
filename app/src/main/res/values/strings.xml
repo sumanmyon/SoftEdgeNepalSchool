@@ -94,9 +94,12 @@
     <string name="Deadline">Deadline</string>
 
     <!-- Assignments -->
+    <string name="Faculty">Faculty</string>
+    <string name="Class">Class</string>
     <string name="not_any_assignment">There is not any assignment.</string>
     <string name="Today">Today</string>
     <string name="Assignment_Date">Date : </string>
+    <string name="AssignTechHomework">Learn and write, page no. 123 Q.no 10, 11 and 12</string>
 
     <!--Download -->
     <string name="Download">Download</string>

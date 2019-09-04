@@ -1,9 +1,457 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".View.Activities.Teacher.CreateTeacherHomeWrok">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/app_bar_layout"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="2dp"
+            android:scrollbars="none"
+            android:scrollingCache="true"
+            android:layout_below="@+id/leave_toolbar"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            app:srcCompat="@drawable/ic_faculty"
+                            android:tint="@color/colorPrimaryDark"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="top"
+                            android:backgroundTint="@color/transparent"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.5"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:text="@string/Faculty"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/large" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1">
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/facultySpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/for_edittext2"
+                                        android:dropDownWidth="wrap_content"
+                                        android:spinnerMode="dialog"
+                                        android:layout_gravity="bottom"
+                                        android:padding="@dimen/spacing_medium"/>
+                                </TableRow>
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/grey_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            app:srcCompat="@drawable/sibling"
+                            android:tint="@color/colorPrimaryDark"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="top"
+                            android:backgroundTint="@color/transparent"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.5"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:text="@string/Class"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/large" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1">
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/classSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.5"
+                                        android:background="@drawable/for_edittext2"
+                                        android:dropDownWidth="wrap_content"
+                                        android:spinnerMode="dialog"
+                                        android:layout_gravity="bottom"
+                                        android:padding="@dimen/spacing_medium" />
+
+                                    <Spinner
+                                        android:id="@+id/sectionSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="0.5"
+                                        android:background="@drawable/for_edittext2"
+                                        android:dropDownWidth="wrap_content"
+                                        android:spinnerMode="dialog"
+                                        android:layout_gravity="bottom"
+                                        android:padding="@dimen/spacing_medium" />
+                                </TableRow>
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/grey_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            app:srcCompat="@drawable/ic_subject"
+                            android:tint="@color/colorPrimaryDark"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="top"
+                            android:backgroundTint="@color/transparent"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.5"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:text="@string/Subject"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/large" />
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1">
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/subjectSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/for_edittext2"
+                                        android:dropDownWidth="wrap_content"
+                                        android:spinnerMode="dialog"
+                                        android:layout_gravity="bottom"
+                                        android:padding="@dimen/spacing_medium" />
+                                </TableRow>
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/grey_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:layout_marginTop="12dp"
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            app:srcCompat="@drawable/ic_calender_white"
+                            android:tint="@color/colorPrimaryDark"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="top"
+                            android:backgroundTint="@color/transparent"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:padding="8dp"
+                                    android:text="@string/Days"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_vertical"
+                                    android:weightSum="1">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_weight="0.8">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:ellipsize="end"
+                                            android:layout_marginLeft="8dp"
+                                            android:scrollHorizontally="true"
+                                            android:hint="15/4/2076"
+                                            android:textColor="@color/colorPrimaryText"
+                                            android:textSize="14sp"
+                                            android:id="@+id/leave_application_text_view_leave_from"/>
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="4dp"
+                                            android:layout_gravity="center"
+                                            android:background="@color/grey_10" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:singleLine="true"
+                                            android:ellipsize="end"
+                                            android:scrollHorizontally="true"
+                                            android:hint="@string/Created_Date"
+                                            android:textSize="@dimen/vsmall"/>
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/leave_application_from_button"
+                                        android:layout_width="@dimen/dp42"
+                                        android:layout_height="@dimen/dp42"
+                                        android:layout_weight="0.2"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:buttonTint="@color/green_500"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:layout_weight="0.8">
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:ellipsize="end"
+                                            android:scrollHorizontally="true"
+                                            android:hint="16/4/2076"
+                                            android:textColor="@color/colorPrimaryText"
+                                            android:textSize="14sp"
+                                            android:layout_marginLeft="8dp"
+                                            android:id="@+id/leave_application_text_view_leave_to"/>
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_marginLeft="4dp"
+                                            android:layout_gravity="center"
+                                            android:background="@color/grey_10" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:singleLine="true"
+                                            android:ellipsize="end"
+                                            android:scrollHorizontally="true"
+                                            android:hint="@string/Deadline"
+                                            android:textSize="@dimen/vsmall"/>
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/leave_application_to_button"
+                                        android:layout_width="@dimen/dp42"
+                                        android:layout_height="@dimen/dp42"
+                                        android:layout_weight="0.2"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:buttonTint="@color/green_500"/>
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/grey_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            app:srcCompat="@drawable/ic_homework"
+                            android:tint="@color/colorPrimaryDark"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="top"
+                            android:backgroundTint="@color/transparent"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.5"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:text="@string/HomeWork"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/large" />
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/leave_application_edit_text_message"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/for_edittext2"
+                                android:focusable="true"
+                                android:gravity="top"
+                                android:padding="8dp"
+                                android:hint="@string/AssignTechHomework"
+                                android:theme="@style/AppCompact.EditText.Blue"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:inputType="textMultiLine"
+                                android:minLines="6" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_gravity="center"
+                        android:background="@color/grey_10"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/leave_application_send_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_margin="8dp"
+                            app:backgroundTint="@color/green_500"
+                            app:srcCompat="@drawable/ic_send" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
+
+</LinearLayout>
