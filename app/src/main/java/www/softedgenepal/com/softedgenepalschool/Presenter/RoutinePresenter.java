@@ -8,7 +8,7 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.Routine.RoutineModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.RoutineActivity;
 
 public class RoutinePresenter implements IContractor.Presenter {
     private RoutineActivity routineActivity;

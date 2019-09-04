@@ -2,7 +2,6 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.widget.Toolbar;
@@ -12,9 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAlertDialog.AlertDialog;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.SchoolHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.TeacherHomePage;

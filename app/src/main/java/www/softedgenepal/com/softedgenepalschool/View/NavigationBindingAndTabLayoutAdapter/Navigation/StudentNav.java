@@ -5,15 +5,13 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.AttendanceActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.HomeWorkActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.BusRouteActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ProfileActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.RoutineActivity;
 
 public class StudentNav {
     private Activity activity;

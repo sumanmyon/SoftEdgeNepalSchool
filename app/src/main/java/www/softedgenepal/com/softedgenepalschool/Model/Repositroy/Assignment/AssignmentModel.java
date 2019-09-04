@@ -1,6 +1,7 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Repositroy.Assignment;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,10 +47,12 @@ public class AssignmentModel implements AssignmentContractor.Model {
                 "?dateFrom="+params.get("From")+
                 "&dateTo="+params.get("To")+
                 "&studentId="+params.get("studentId");
+       // setMessage(Url);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, Url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
+                Log.d("Url", response.toString());
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.Assignment);
@@ -59,7 +62,7 @@ public class AssignmentModel implements AssignmentContractor.Model {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                setMessage(error.toString());
+                Log.d("Url", error.getMessage());
                 offline();
             }
         });

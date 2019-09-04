@@ -3,8 +3,6 @@ package www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOf
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.internal.NavigationMenuView;
-import android.support.v4.view.GravityCompat;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -16,7 +14,6 @@ import com.balysv.materialripple.MaterialRippleLayout;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Resources;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
@@ -24,12 +21,12 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.Contractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.StudentHomePagePresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ProfileActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.DashboardCategory;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.SchoolNav;
 import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.StudentNav;
 import www.softedgenepal.com.softedgenepalschool.View.Sibling.SiblingPopUpMenu;
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
+
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class StudentHomePage implements Contractor.View {

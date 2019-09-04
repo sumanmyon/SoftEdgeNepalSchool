@@ -15,7 +15,6 @@ import org.json.JSONObject;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAlertDialog.AlertDialog;
 
 public class CancelLeaveApplication{
     private ShowAllLeaveApplication context;

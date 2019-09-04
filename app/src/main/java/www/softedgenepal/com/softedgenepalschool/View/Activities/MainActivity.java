@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private LanguageSettingv2 languageSetting;
     private CheckUserLogin checkUserLogin;
 
+
     @Override
     protected void onStart() {
         super.onStart();

@@ -64,7 +64,7 @@ public class ReportCardModel implements IContractor.Model {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                setMessage(error.toString());
+                //setMessage(error.toString());
                 offline();
             }
         });

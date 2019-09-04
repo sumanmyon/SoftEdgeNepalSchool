@@ -29,6 +29,7 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.Lang
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
 
 public class LeaveApplicationActivity extends AppCompatActivity implements LeaveApplicationContractor.View {
     private Activity activity;
@@ -47,7 +48,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     private String engstartDate;
     private String engendDate;
 
-    private final String uid = "1";
+    private final String uid = MainActivity.user.Id;
     LanguageSettingv2 languageSetting;
 
     @Override

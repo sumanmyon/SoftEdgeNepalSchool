@@ -1,6 +1,7 @@
 package www.softedgenepal.com.softedgenepalschool.Model.Repositroy.FetchFromOnline.LeaveApplication;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,6 +33,7 @@ public class ShowLeaveApplicationOnline {
     public void get(Map<String, String> params){
         //url = url + "?UserId=1&datebefore=12/12/2055";
         url = url + "?UserId="+params.get("UserId")+"&datebefore="+params.get("datebefore");
+        Log.d("Url", url);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

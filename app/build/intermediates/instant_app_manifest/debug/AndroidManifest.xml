@@ -74,24 +74,25 @@
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true" >
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.CreateTeacherHomeWrok" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardActivity" />
         <activity
-            android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity"
+            android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardDetailActivity"
             android:screenOrientation="landscape" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ScanActivity" /> <!-- for cleartext http traffic -->
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.RunTimePermissions"
             android:theme="@style/AppTheme_Permission" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.RoutineActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.AttendanceActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.RoutineActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.BusRouteActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ShowInMapActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.HomeWorkActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity" /> <!-- android:hardwareAccelerated="true"> -->
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ProfileActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ProfileActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity" />

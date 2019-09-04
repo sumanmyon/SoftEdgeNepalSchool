@@ -26,7 +26,7 @@ public class NetworkRequset extends Request<JSONObject> {
 
     public NetworkRequset(Context context, String url, int method, Map<String, String> params,
                           Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(method,new URL().url, errorListener);
+        super(method,new URL().url + url, errorListener);
 
         try{
             this.context = context;

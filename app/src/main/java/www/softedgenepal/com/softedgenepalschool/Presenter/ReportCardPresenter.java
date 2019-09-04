@@ -9,8 +9,8 @@ import java.util.Map;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.ReportCardDetailModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.ReportCardModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardDetailActivity;
 
 public class ReportCardPresenter implements IContractor.Presenter {
     private ReportCardDetailActivity percentageFragment;

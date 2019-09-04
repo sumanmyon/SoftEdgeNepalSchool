@@ -10,7 +10,7 @@ import java.util.Map;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.Assignment.AssignmentModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.AssignmentContractor;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.HomeWorkActivity;
 
 public class AssignmentPresenter implements AssignmentContractor.Presenter {
     private HomeWorkActivity homeWorkActivity;

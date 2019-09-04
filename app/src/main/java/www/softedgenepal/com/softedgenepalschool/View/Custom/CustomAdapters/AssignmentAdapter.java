@@ -15,7 +15,7 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTim
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.HomeWorkActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.HomeWorkActivity;
 
 public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.ViewHolder> {
     HomeWorkActivity context;

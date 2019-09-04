@@ -8,7 +8,7 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.AttendanceModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.AttendanceActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.AttendanceActivity;
 
 public class AttendancePresenter implements IContractor.Presenter {
     private AttendanceActivity attendanceActivity;

@@ -12,61 +12,65 @@ public class URL {
     public URL(Context context) {
         this.context = context;
     }
-    public URL(){}
 
-    public String getLoginUrl(){
+    public URL() {
+    }
+
+    public String getLoginUrl() {
         return new OnlineUrl().getLoginUrl();
     }
 
-    public String getProfileUrl(){
+    public String getProfileUrl() {
         return new OnlineUrl().profile;
     }
-    public String getCreateLeaveApplicationUrl(){
+
+    public String getCreateLeaveApplicationUrl() {
         return new OnlineUrl().createLeaveApplication();
     }
 
-    public String getLeaveApplicationUrl(){
+    public String getLeaveApplicationUrl() {
         return new OnlineUrl().getGetLeaveApplicationUrl();
     }
-    public String cancelLeaveApplicationUrl(){
+
+    public String cancelLeaveApplicationUrl() {
         return new OnlineUrl().cancelLeaveApplicationUrl;
     }
 
-    public String calenderUrl(){
+    public String calenderUrl() {
         return new OnlineUrl().calenderAndEventsUrl;
     }
 
-    public String assignmentUrl(){
+    public String assignmentUrl() {
         return new OnlineUrl().assignmentUrl;
     }
 
-    public String busRouteUrl(){
+    public String busRouteUrl() {
         return new OnlineUrl().busRouteUrl;
     }
 
-    public String routineUrl(){
+    public String routineUrl() {
         return new OnlineUrl().routineUrl;
     }
 
-    public String reportCardUrl(){
+    public String reportCardUrl() {
         return new OnlineUrl().reportCardUrl;
     }
 
-    public String reportCardDetailUrl(){
+    public String reportCardDetailUrl() {
         return new OnlineUrl().reportCardDetailUrl;
     }
 
-    public String attendanceUrl(){
+    public String attendanceUrl() {
         return new OnlineUrl().attendanceUrl;
     }
 
-    private class OnlineUrl{
+    private class OnlineUrl {
         private String baseUrl = "http://192.168.100.102:400/";
         private String onlineUrl = baseUrl + "api/data/";
         private String loginUrl = onlineUrl + "Login?";
         private String profile = onlineUrl + "getprofile";
 
-        private String createLeaveApplicationUrl =onlineUrl + "Leaveapplication";
+        private String createLeaveApplicationUrl = onlineUrl + "Leaveapplication";
         private String getLeaveApplicationUrl = onlineUrl + "getLeaveapplication";
         private String cancelLeaveApplicationUrl = onlineUrl + "cancelLeaveapplication";
 
@@ -90,7 +94,7 @@ public class URL {
             return loginUrl;
         }
 
-        public String createLeaveApplication(){
+        public String createLeaveApplication() {
             return createLeaveApplicationUrl;
         }
 
@@ -99,14 +103,6 @@ public class URL {
         }
     }
 
-    private class OfflineUrl{
-        StudentApi studentApi;
-        public OfflineUrl() {
-            studentApi = new StudentApi(context);
-        }
+    public static final String getFacultyClassDetail = "getFacultyClassDetail";
 
-        public String getStudentUrl() {
-            return studentApi.getS();
-        }
-    }
 }

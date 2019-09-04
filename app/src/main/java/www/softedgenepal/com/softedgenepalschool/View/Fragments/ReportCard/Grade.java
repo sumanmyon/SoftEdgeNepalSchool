@@ -21,7 +21,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCac
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.ReportCardDetailActivity.reportCardDetailCacheList;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardDetailActivity.reportCardDetailCacheList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,7 +51,11 @@ public class Grade extends Fragment {
         casting(view);
         terminalTextView.setText(title);
         this.reportCardDetailCacheLists = reportCardDetailCacheList;
-        showInView();
+        try {
+            showInView();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return view;
     }
@@ -78,7 +82,7 @@ public class Grade extends Fragment {
     }
 
 
-    private void showInView(){
+    private void showInView() throws Exception{
         final int size = reportCardDetailCacheLists.get(0).Marks.size();
 
         RecyclerAdapter adapter = new RecyclerAdapter(getContext(), size) {

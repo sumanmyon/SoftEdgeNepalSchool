@@ -32,8 +32,7 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveAppli
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.AdapterListAnimation;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAlertDialog.AlertDialog;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveApplicationContractor.View,
         LeaveApplicationContractor.View.Get {
@@ -44,7 +43,7 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     protected TextView messageHandleTextView;
     private View backpress;
 
-    private final String uid = "1";
+    private final String uid = user.Id;
     private List<LeaveApplicationDataCache> leaveApplicationDataCacheList;
 
     //for animation

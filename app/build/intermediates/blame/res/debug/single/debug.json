@@ -48,6 +48,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\a4e5421f631a8043bc5f844ef002a946\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_create_teacher_home_wrok.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\activity_create_teacher_home_wrok.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_chevron_right_black_24dp.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\76f0af91d96415a8fea066179a4a14dd\\res\\drawable-xxxhdpi-v4\\ic_chevron_right_black_24dp.png"
     },

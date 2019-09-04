@@ -33,35 +33,36 @@
 
     <application
         android:allowBackup="true"
+        android:configChanges="layoutDirection|locale"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar"
-        android:usesCleartextTraffic="true"
-        android:configChanges="layoutDirection|locale">
-        <activity android:name=".View.Activities.ReportCardActivity" />
+        android:usesCleartextTraffic="true">
+        <activity android:name=".View.Activities.Teacher.CreateTeacherHomeWrok"></activity>
+        <activity android:name=".View.Activities.Student.ReportCardActivity" />
         <activity
-            android:name=".View.Activities.ReportCardDetailActivity"
+            android:name=".View.Activities.Student.ReportCardDetailActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".View.Activities.ScanActivity" /> <!-- for cleartext http traffic -->
         <activity
             android:name=".View.Activities.RunTimePermissions"
             android:theme="@style/AppTheme_Permission" />
-        <activity android:name=".View.Activities.AttendanceActivity" />
-        <activity android:name=".View.Activities.RoutineActivity" />
-        <activity android:name=".View.Activities.BusRouteActivity" />
+        <activity android:name=".View.Activities.Student.AttendanceActivity" />
+        <activity android:name=".View.Activities.Student.RoutineActivity" />
+        <activity android:name=".View.Activities.Student.BusRouteActivity" />
         <activity android:name=".View.Activities.ShowInMapActivity" />
-        <activity android:name=".View.Activities.HomeWorkActivity" />
+        <activity android:name=".View.Activities.Student.HomeWorkActivity" />
         <activity android:name=".View.Activities.EventActivity" />
         <activity android:name=".View.Activities.AboutActivity" />
         <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity" />
         <activity android:name=".View.Activities.SuggestionActivity" /> <!-- android:hardwareAccelerated="true"> -->
-        <activity android:name=".View.Activities.ProfileActivity" />
+        <activity android:name=".View.Activities.Student.ProfileActivity" />
         <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplication" />
         <activity android:name=".View.Activities.LeaveApplication.LeaveApplicationActivity" />
         <activity android:name=".View.Activities.MainActivity" />
-        <activity android:name=".View.Activities.SettingActivity"/>
+        <activity android:name=".View.Activities.SettingActivity" />
         <activity android:name=".View.Activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

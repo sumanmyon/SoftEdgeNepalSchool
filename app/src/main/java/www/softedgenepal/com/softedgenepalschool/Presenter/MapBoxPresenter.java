@@ -8,7 +8,7 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.BusRouteAndLiveBusTracking.MapBoxModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.BusRouteActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.BusRouteActivity;
 
 public class MapBoxPresenter implements IContractor.Presenter {
     private BusRouteActivity busRouteActivity;

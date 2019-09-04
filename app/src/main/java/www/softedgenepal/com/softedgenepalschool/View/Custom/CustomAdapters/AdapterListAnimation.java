@@ -74,6 +74,7 @@ public class AdapterListAnimation extends RecyclerView.Adapter<RecyclerView.View
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+        try {
         Log.e("onBindViewHolder", "onBindViewHolder : " + position);
         if (holder instanceof OriginalViewHolder) {
             OriginalViewHolder view = (OriginalViewHolder) holder;
@@ -125,6 +126,9 @@ public class AdapterListAnimation extends RecyclerView.Adapter<RecyclerView.View
                 }
             });
             setAnimation(view.itemView, position);
+        }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
