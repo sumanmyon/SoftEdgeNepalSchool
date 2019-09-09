@@ -6,11 +6,10 @@ import android.support.v7.app.AlertDialog;
 
 import www.softedgenepal.com.softedgenepalschool.R;
 
-public class CustomAlertDialogs {
-    private static AlertDialog.Builder builder1;
+class CustomAlertDialogs {
 
-    public static void showErrorPopUp(String title, String message, Context context){
-        builder1 = new AlertDialog.Builder(context);//, R.style.AppTheme2);
+    static void showErrorPopUp(String title, String message, Context context){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(context);//, R.style.AppTheme2);
         builder1.setMessage(message);
         builder1.setTitle(title);
         builder1.setIcon(context.getResources().getDrawable(R.drawable.logo));

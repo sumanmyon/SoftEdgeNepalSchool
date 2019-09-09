@@ -9,6 +9,8 @@ import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplicatio
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.CreateTeacherHomeWrok;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.ShowTeacherHomeWork;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherAttendance;
 
 public class TeacherNav {
     private Activity activity;
@@ -22,10 +24,10 @@ public class TeacherNav {
     public void set(){
         switch (itemId){
             case R.id.assignHomeWork:
-                redirectToActivity(CreateTeacherHomeWrok.class);
+                redirectToActivity(ShowTeacherHomeWork.class);
                 break;
             case R.id.teacherAttendance:
-                showMessage("Coming Soon");
+                redirectToActivity(TeacherAttendance.class);
                 break;
 //            case R.id.classRoutine:
 //                showMessage("Coming Soon");

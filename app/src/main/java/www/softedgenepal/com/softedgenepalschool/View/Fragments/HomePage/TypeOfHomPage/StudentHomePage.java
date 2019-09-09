@@ -54,8 +54,8 @@ public class StudentHomePage implements Contractor.View {
         progressBar.setVisibility(View.VISIBLE);
 
         //fetch/get data
-        StudentHomePagePresenter presenter = new StudentHomePagePresenter(StudentHomePage.this);
-        presenter.getData();
+//        StudentHomePagePresenter presenter = new StudentHomePagePresenter(StudentHomePage.this);
+//        presenter.getData();
 
         //dashboard
         studentDashboard();

@@ -13,7 +13,7 @@ public class CustomFragment extends Fragment {
 
     protected void showErrorPopUp(String title, String message) {
         CustomAlertDialogs dialog = new CustomAlertDialogs();
-        dialog.showErrorPopUp(title, message, fragment.getContext());
+        CustomAlertDialogs.showErrorPopUp(title, message, fragment.getContext());
     }
 
     protected void displayMessage(String message) {

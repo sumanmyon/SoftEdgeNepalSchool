@@ -34,6 +34,8 @@ public abstract class DatePicker implements View.OnClickListener, DatePickerDial
         dpd.setAccentColor("#D81B60");
 
         dpd.setTitle("Pick CalenderDate");
+
+        //dpd.notifyOnDateListener();
     }
 
     public String getTodayDate(){

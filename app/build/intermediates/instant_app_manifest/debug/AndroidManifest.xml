@@ -74,7 +74,10 @@
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherAttendance" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.ShowTeacherHomeWork" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.CreateTeacherHomeWrok" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.EditTeacherHomework" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardActivity" />
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ReportCardDetailActivity"

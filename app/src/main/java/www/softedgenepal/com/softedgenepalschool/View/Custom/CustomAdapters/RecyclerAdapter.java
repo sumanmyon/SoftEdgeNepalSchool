@@ -46,6 +46,8 @@ public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapt
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        public boolean isCollapse = false;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             inflateUIFields(itemView);

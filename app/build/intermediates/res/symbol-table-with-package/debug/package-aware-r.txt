@@ -1671,6 +1671,7 @@ drawable googleg_standard_color_18
 drawable graphchart
 drawable ic_about_us
 drawable ic_account
+drawable ic_add
 drawable ic_assignment
 drawable ic_attendance
 drawable ic_back
@@ -1701,6 +1702,7 @@ drawable ic_location
 drawable ic_login
 drawable ic_logout
 drawable ic_menu
+drawable ic_minus
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1890,9 +1892,11 @@ id chains
 id checkbox
 id chronometer
 id circle_back
+id classSectionTextView
 id classSpinner
 id clip_horizontal
 id clip_vertical
+id clopaseButton
 id close
 id close_iv
 id collapseActionView
@@ -1901,6 +1905,13 @@ id container
 id content
 id contentPanel
 id coordinator
+id createDateTextView
+id createHlw_Deadline_button
+id createHlw_Deadline_textView
+id createHlw_createdDate_button
+id createHlw_createdDate_textView
+id createHlw_message_editText
+id createHlw_post_button
 id custom
 id customPanel
 id customSnackImage
@@ -1915,6 +1926,7 @@ id dashboardRecyclerView
 id dashboardTextView
 id date
 id day_name
+id deadlineTextView
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -1945,6 +1957,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id facultySpinner
+id facultyTextView
 id feedback_message_et
 id feedback_title_et
 id fill
@@ -1954,6 +1967,7 @@ id filled
 id fitCenter
 id fitXY
 id fixed
+id floating_button
 id forever
 id gallery
 id ghost_view
@@ -1967,6 +1981,7 @@ id groups
 id home
 id homeAsUp
 id homeWork
+id homeWorkTextView
 id homeWork_recy_lyl
 id homeWork_recy_lyl2
 id home_frameLayout
@@ -2020,6 +2035,7 @@ id mainActivity_bottomNavigation
 id main_container
 id mapView
 id masked
+id materialRippleLayout
 id mdtp_am_label
 id mdtp_ampm_layout
 id mdtp_animator
@@ -2257,6 +2273,7 @@ id studentAttendance
 id studentLeaveApplication
 id studentProfile
 id subjectSpinner
+id subjectTextView
 id submenuarrow
 id submit_area
 id suggest_bt_close
@@ -2282,6 +2299,7 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id textview_monthtitle
+id thomeWorklyl
 id time
 id time_display_background
 id time_picker
@@ -2353,7 +2371,6 @@ interpolator mtrl_fast_out_linear_in
 interpolator mtrl_fast_out_slow_in
 interpolator mtrl_linear
 interpolator mtrl_linear_out_slow_in
-layout a
 layout abc_action_bar_title_item
 layout abc_action_bar_up_container
 layout abc_action_menu_item_layout
@@ -2403,9 +2420,11 @@ layout activity_setting
 layout activity_show_all_leave_application
 layout activity_show_all_leave_application_detail_view
 layout activity_show_in_map
+layout activity_show_teacher_home_work
 layout activity_sibling_pop_up
 layout activity_sibling_pop_up2
 layout activity_suggestion
+layout activity_teacher_attendance
 layout alert_dialog
 layout app_bar_layout
 layout assignment_list
@@ -2513,6 +2532,7 @@ layout setting_notification
 layout setting_report_card
 layout setting_url
 layout show_leave_application_recyclerview
+layout show_teacher_homework_list
 layout support_simple_spinner_dropdown_item
 layout test
 layout user_profile
@@ -2617,6 +2637,7 @@ string School
 string Setting
 string ShowAllDetailLeaveApplication_ToolBar
 string ShowAllLeaveApplication_ToolBar
+string ShowHomework
 string Shrawan
 string Sibling
 string Start_Date

@@ -102,6 +102,7 @@
     <string name="Today">आज</string>
     <string name="Assignment_Date">मिति : </string>
     <string name="AssignTechHomework">पढ्नुहोस् र लेख्नुहोस्, पृष्ठ नम्बर. १२१ Q.no १०, ११ र १२</string>
+    <string name="ShowHomework">गृहकार्य सूचीहरू</string>
 
     <!--Download -->
     <string name="Download">डाउनलोड</string>
@@ -166,7 +167,7 @@
     <string name="Application_test_Subject">बिरामी बिदा</string>
     <string name="Application_test_Message">गम्भीर घाँटी संक्रमणको कारणले मलाई स्कूलबाट बिरामी बिदा लिनु पर्छ भनेर सूचित गर्न म यो पत्र लेख्दैछु। म सेप्टेम्बर २ सम्म, स्कूलबाट छुट्टि लिनछु| मेरो पूरै बिरामी बिदालाई दुई दिन लाएर ......</string>
     <string name="Application_select_startDate">पहिले सुरू मिति चयन गर्नुहोस्।</string>
-    <string name="Application_select_endDate">तपाईंले आजको मिति वा भविष्यको बिदा मिति चयन गर्नुपर्छ।</string>
+    <string name="Application_select_endDate">तपाईंले आजको मिति वा भविष्यको मिति चयन गर्नुपर्छ।</string>
     <string name="Application_Subject_error">बिदाको लागि तपाईको विषय के हो?</string>
     <string name="Application_Date_error">कृपया छुट्टीको लागि मिति चयन गर्नुहोस्।</string>
     <string name="Application_Message_error">कृपया छुट्टीको लागि सन्देश टाइप गर्नुहोस्।</string>

@@ -3,7 +3,6 @@ package www.softedgenepal.com.softedgenepalschool.Services;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Response;
@@ -29,7 +28,7 @@ public class ApiCall {
         return call;
     }
 
-    public void connect(Context context, final String url, int method, HashMap<String, String> params, ResultListener listener, String loadMessage) {
+    public void connect(Context context, final String url, int method, String parameters, HashMap<String, String> params, ResultListener listener, String loadMessage) {
         try {
             if (new NetworkConnection(context).isConnectionSuccess()) {
                 if(!loadMessage.equals("")) {
@@ -38,7 +37,7 @@ public class ApiCall {
                     showDialog(context, loadMessage);
                 }
 
-                NetworkRequset requset = new NetworkRequset(context, url, method, params, new Response.Listener<JSONObject>() {
+                NetworkRequset requset = new NetworkRequset(context, url, method, parameters, params, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.e(TAG, "onResponse() called");
@@ -55,7 +54,7 @@ public class ApiCall {
                 Volley.newRequestQueue(context).add(requset);
             } else {
                 //Toast.makeText(context, context.getString(R.string.Network_error), Toast.LENGTH_SHORT).show();
-                listener.onFailed();
+                listener.onNetworkFailed(url, context.getString(R.string.Network_error));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,6 +80,7 @@ public class ApiCall {
 
     public interface ResultListener {
         void onResult(String url, boolean isSuccess, JSONObject jsonObject, VolleyError volleyError, ProgressDialog progressDialog);
-        void onFailed();
+
+        void onNetworkFailed(String url, String message);
     }
 }

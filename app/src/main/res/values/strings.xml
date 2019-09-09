@@ -100,6 +100,7 @@
     <string name="Today">Today</string>
     <string name="Assignment_Date">Date : </string>
     <string name="AssignTechHomework">Learn and write, page no. 123 Q.no 10, 11 and 12</string>
+    <string name="ShowHomework">Homework lists.</string>
 
     <!--Download -->
     <string name="Download">Download</string>
@@ -164,7 +165,7 @@
     <string name="Application_test_Subject">Sick leave</string>
     <string name="Application_test_Message">I am writing this letter to inform you that I need to take a sick leave from work due to a severe throat infection. I will need to remain off of work until September 26, bringing my total sick leave to two full weeks......</string>
     <string name="Application_select_startDate">First select start date.</string>
-    <string name="Application_select_endDate">You should pick today date or future day for leave.</string>
+    <string name="Application_select_endDate">You should pick today date or future date.</string>
     <string name="Application_Subject_error">What is your subject for leave?</string>
     <string name="Application_Date_error">Please select date for leave.</string>
     <string name="Application_Message_error">Please type message for leave.</string>

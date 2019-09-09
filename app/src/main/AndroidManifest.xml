@@ -40,7 +40,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.Activities.Teacher.CreateTeacherHomeWrok"></activity>
+        <activity android:name=".View.Activities.Teacher.TeacherAttendance"></activity>
+        <activity android:name=".View.Activities.Teacher.ShowTeacherHomeWork" />
+        <activity android:name=".View.Activities.Teacher.CreateTeacherHomeWrok" />
+        <activity android:name=".View.Activities.Teacher.EditTeacherHomework" />
         <activity android:name=".View.Activities.Student.ReportCardActivity" />
         <activity
             android:name=".View.Activities.Student.ReportCardDetailActivity"

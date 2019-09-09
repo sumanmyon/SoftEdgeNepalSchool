@@ -289,7 +289,7 @@
                                             android:hint="15/4/2076"
                                             android:textColor="@color/colorPrimaryText"
                                             android:textSize="14sp"
-                                            android:id="@+id/leave_application_text_view_leave_from"/>
+                                            android:id="@+id/createHlw_createdDate_textView"/>
                                         <View
                                             android:layout_width="match_parent"
                                             android:layout_height="1dp"
@@ -309,7 +309,7 @@
                                     </LinearLayout>
 
                                     <RadioButton
-                                        android:id="@+id/leave_application_from_button"
+                                        android:id="@+id/createHlw_createdDate_button"
                                         android:layout_width="@dimen/dp42"
                                         android:layout_height="@dimen/dp42"
                                         android:layout_weight="0.2"
@@ -340,7 +340,7 @@
                                             android:textColor="@color/colorPrimaryText"
                                             android:textSize="14sp"
                                             android:layout_marginLeft="8dp"
-                                            android:id="@+id/leave_application_text_view_leave_to"/>
+                                            android:id="@+id/createHlw_Deadline_textView"/>
                                         <View
                                             android:layout_width="match_parent"
                                             android:layout_height="1dp"
@@ -360,7 +360,7 @@
                                     </LinearLayout>
 
                                     <RadioButton
-                                        android:id="@+id/leave_application_to_button"
+                                        android:id="@+id/createHlw_Deadline_button"
                                         android:layout_width="@dimen/dp42"
                                         android:layout_height="@dimen/dp42"
                                         android:layout_weight="0.2"
@@ -410,7 +410,7 @@
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="@dimen/large" />
                             <android.support.v7.widget.AppCompatEditText
-                                android:id="@+id/leave_application_edit_text_message"
+                                android:id="@+id/createHlw_message_editText"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/for_edittext2"
@@ -441,7 +441,7 @@
                         android:gravity="center">
 
                         <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/leave_application_send_button"
+                            android:id="@+id/createHlw_post_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|end"

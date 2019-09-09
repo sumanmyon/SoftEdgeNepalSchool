@@ -9,4 +9,6 @@ public class Constants {
 
     //for teacher store in local
     public static final String FacultyClassDetail = "FacultyClassDetail";
+    public static final String CreateHomeWorkTeacher = "createhomework";
+    public static final String ShowHomeWorkTeacher = "gethomeworkforteacher";
 }

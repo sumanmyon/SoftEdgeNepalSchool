@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomFragment;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.SchoolHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.TeacherHomePage;
@@ -22,7 +23,7 @@ import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActi
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
+public class Home extends CustomFragment implements Toolbar.OnMenuItemClickListener {
     StudentHomePage studentHomePage;
     TeacherHomePage teacherHomePage;
     View view;
@@ -44,7 +45,7 @@ public class Home extends Fragment implements Toolbar.OnMenuItemClickListener {
             view = inflater.inflate(R.layout.user_profile, container, false);
             onCreateOptionsMenu(view);
 
-            teacherHomePage = new TeacherHomePage(getActivity(), view);
+            teacherHomePage = new TeacherHomePage(this, view);
             teacherHomePage.setView();
 
         }else if(userType.equals("Student")){
