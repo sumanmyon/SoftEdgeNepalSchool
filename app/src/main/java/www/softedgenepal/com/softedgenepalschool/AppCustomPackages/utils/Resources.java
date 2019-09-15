@@ -37,9 +37,6 @@ public class Resources {
         studentDashboard.add(new Dashboard(context.getResources().getString(R.string.StudentProfile),
                 context.getResources().getDrawable(R.drawable.ic_profile_img),
                 R.id.studentProfile));
-        studentDashboard.add(new Dashboard(context.getResources().getString(R.string.Sibling),
-                context.getResources().getDrawable(R.drawable.sibling),
-                R.id.sibling));
 
         return studentDashboard;
     }

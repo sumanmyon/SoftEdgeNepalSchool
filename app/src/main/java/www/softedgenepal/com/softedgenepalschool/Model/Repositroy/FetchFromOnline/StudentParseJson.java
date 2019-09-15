@@ -8,9 +8,9 @@ import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.GuardianDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ParentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.RequestDataForStudent;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.Presenter.StudentHomePagePresenter;
@@ -86,24 +86,24 @@ public class StudentParseJson {
 
     private void studentDetail(JSONObject studentDetail, String isSibling) throws Exception {
         String registrationNo = studentDetail.getString("RegistrationNo");
-        String username = studentDetail.getString("Username");
+        String username = studentDetail.getString("StudentName");
 
-        String userclass = studentDetail.getString("Class");
-        String section = studentDetail.getString("Section");
-        String rollno = studentDetail.getString("Rollno");
+        String userclass = studentDetail.getString("ClassName");
+        String section = studentDetail.getString("SectionName");
+        String rollno = studentDetail.getString("RollNo");
         String gender = studentDetail.getString("Gender");
 
-        String dateOfBirthBS = studentDetail.getString("DateOfBirthBS");
+        String dateOfBirthBS = studentDetail.getString("DateofBirth");
         if(!dateOfBirthBS.equals("null") || !dateOfBirthBS.equals("")) {
             dateOfBirthBS = DateTime.splitDateOrTime(dateOfBirthBS, "date");
         }
 
-        String dateOfBirthAD = studentDetail.getString("DateOfBirthAD");
-        if(!dateOfBirthAD.equals("null") || !dateOfBirthAD.equals("")) {
-            dateOfBirthAD = DateTime.splitDateOrTime(dateOfBirthAD, "date");
-        }
+        String dateOfBirthAD = "";
 
         String contact = studentDetail.getString("Contact");
+        if(contact.equals("null")){
+            contact = "";
+        }
         String email = studentDetail.getString("Email");
         String house = studentDetail.getString("House");
 
@@ -129,10 +129,10 @@ public class StudentParseJson {
 
         if (isSibling.equals("false")) {
             // presenter.handleMessage("StudentDetail\n"+studentDetail.toString());
-            studentDataCacheList.add(new StudentDataCache(registrationNo, username, userclass, section, rollno, gender, dateOfBirthBS, dateOfBirthAD, contact, email, house, religion, caste, address, bloodGroup, busStop, busRoute, image));
+           // studentDataCacheList.add(new StudentDataCache(registrationNo, username, userclass, section, rollno, gender, dateOfBirthBS, dateOfBirthAD, contact, email, house, religion, caste, address, bloodGroup, busStop, busRoute, image));
         } else {
             //presenter.handleMessage("siblingDetail\n"+studentDetail.toString());
-            siblingDataCacheList.add(new StudentDataCache(registrationNo, username, userclass, section, rollno, gender, dateOfBirthBS, dateOfBirthAD, contact, email, house, religion, caste, address, bloodGroup, busStop, busRoute, image));
+            //siblingDataCacheList.add(new StudentDataCache(registrationNo, username, userclass, section, rollno, gender, dateOfBirthBS, dateOfBirthAD, contact, email, house, religion, caste, address, bloodGroup, busStop, busRoute, image));
         }
     }
 
@@ -144,7 +144,7 @@ public class StudentParseJson {
         String motherOccupation = parentDetail.getString("MotherOccupation");
         String motherContact = parentDetail.getString("MotherContact");
 
-        parentDataCacheList.add(new ParentDataCache(fatherName, fatherOccupation, fatherContact, motherName, motherOccupation, motherContact));
+        //parentDataCacheList.add(new ParentDataCache(fatherName, fatherOccupation, fatherContact, motherName, motherOccupation, motherContact));
         //presenter.handleMessage("parentDetail\n"+parentDetail.toString());
     }
 
@@ -153,7 +153,7 @@ public class StudentParseJson {
         String guardianOccupation = guardianDetail.getString("GuardianOccupation");
         String guardianContact = guardianDetail.getString("GuardianContact");
 
-        guardianDataCacheList.add(new GuardianDataCache(guardianName, guardianOccupation, guardianContact));
+        //guardianDataCacheList.add(new GuardianDataCache(guardianName, guardianOccupation, guardianContact));
     }
 
     private void siblingDetail(JSONArray siblingDetail, String isSibling) throws Exception {

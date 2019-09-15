@@ -32,7 +32,7 @@ public class CancelLeaveApplication{
 
     private void callApi(Map<String, String> params) {
         //todo set url missing
-        String Url = new URL(context).cancelLeaveApplicationUrl() + "?SystemCode="+params.get("SystemCode");
+        String Url = new URL(context).cancelLeaveApplicationUrl() + "?SystemCode="+params.get("SystemCode")+"&Role="+params.get("Role");
         JsonObjectRequest jsonOblect = new JsonObjectRequest(Request.Method.POST, Url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

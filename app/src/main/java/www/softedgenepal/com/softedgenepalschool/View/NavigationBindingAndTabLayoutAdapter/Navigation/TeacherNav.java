@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.LeaveApplicationActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.LeaveApplication.ShowAllLeaveApplication;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.SuggestionActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.CreateTeacherHomeWrok;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.ShowTeacherHomeWork;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.HomeWork.ShowTeacherHomeWork;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.LeaveApplication.ShowTeacherLeaveAppActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherAttendance;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherProfileActivity;
+
+import static www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.TeacherHomePage.profileTeacherModel;
 
 public class TeacherNav {
     private Activity activity;
@@ -26,30 +26,33 @@ public class TeacherNav {
             case R.id.assignHomeWork:
                 redirectToActivity(ShowTeacherHomeWork.class);
                 break;
+
             case R.id.teacherAttendance:
                 redirectToActivity(TeacherAttendance.class);
                 break;
-//            case R.id.classRoutine:
-//                showMessage("Coming Soon");
-//                break;
+
             case R.id.examRoutine:
                 showMessage("Coming Soon");
                 break;
+
             case R.id.resultReportCard:
                 showMessage("Coming Soon");
                 break;
+
             case R.id.salaryAccount:
                 showMessage("Coming Soon");
                 break;
+
             case R.id.teacherLeaveApplication:
-                showMessage("Coming Soon");
+                redirectToActivity(ShowTeacherLeaveAppActivity.class);
                 break;
-//            case R.id.teacherSuggestion:
-//                redirectToActivity(SuggestionActivity.class);
-//                break;
+
             case R.id.teacherProfile:
-                showMessage("Coming Soon");
+                Intent intent = new Intent(activity, TeacherProfileActivity.class);
+                intent.putExtra("profileModel", profileTeacherModel);
+                activity.startActivity(intent);
                 break;
+
             default:
                 break;
         }

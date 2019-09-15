@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,15 +22,12 @@ import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.BusRouteCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.RoutineCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.RoutineCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.RoutinePresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
-import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.EventAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
-import www.softedgenepal.com.softedgenepalschool.View.Fragments.BottomSheetFragment;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.RoutineFragment;
 
 public class RoutineActivity extends AppCompatActivity implements IContractor.View {

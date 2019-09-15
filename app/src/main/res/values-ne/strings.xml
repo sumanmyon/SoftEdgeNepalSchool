@@ -159,8 +159,14 @@
     <string name="both">दुबै</string>
 
     <!-- Leave Application -->
+    <string name="CreateLeaveApplication"> बिरामी बिदा सिर्जना गर्नुहोस्</string>
     <string name="From">बाट</string>
     <string name="To">सम्म</string>
+    <string name="FromDate">Date From</string>
+    <string name="ToDate">Date To</string>
+    <string name="HalfDate">Half day leave date</string>
+    <string name="NeedHalfDayLeave">Do you need half day leave.</string>
+    <string name="LeaveType">Leave Type</string>
     <string name="Subject">बिषय</string>
     <string name="Days">दिन</string>
     <string name="Message">सन्देश</string>

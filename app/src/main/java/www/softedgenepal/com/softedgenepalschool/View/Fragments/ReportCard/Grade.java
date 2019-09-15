@@ -17,7 +17,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 

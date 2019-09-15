@@ -34,6 +34,14 @@ public class DateTime {
                 .convertToNepali();
     }
 
+    public static CalenderDate calenderToEnglish(String[] date){
+        return new CalenderDate(
+                Integer.valueOf(date[0]),
+                Integer.valueOf(date[1]),
+                Integer.valueOf(date[2]))
+                .convertToEnglish();
+    }
+
     public static String getTodayDate() {
         SimpleDateFormat formatter= new SimpleDateFormat("MM/dd/yyyy");
         Date date = new Date(System.currentTimeMillis());
@@ -51,6 +59,15 @@ public class DateTime {
         if(dateOrTime.equals("date")) {
             String[] s = data.split("-");
             return String.valueOf(convertToNepali(s));
+        }else
+            return null;
+    }
+
+    public static String DateConvertToEnglish(String date, String dateOrTime){
+        String data = splitDateOrTime(date, dateOrTime);
+        if(dateOrTime.equals("date")) {
+            String[] s = data.split("-");
+            return String.valueOf(calenderToEnglish(s));
         }else
             return null;
     }

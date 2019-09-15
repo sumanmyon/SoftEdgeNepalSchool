@@ -14,9 +14,9 @@ import org.json.JSONObject;
 import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.GuardianDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ParentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentGuardianHelper;
 import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.LocalDataBase.StudentParentHelper;
@@ -56,7 +56,7 @@ public class FetchDataOnline {
                 requestDataForStudent.setMessage(error.getMessage());
             }
         });
-//
+
         //calling volley interface to get data
         final RequestQueue requestQueue = Volley.newRequestQueue(requestDataForStudent.getContext());
         requestQueue.add(jsonObjectRequest);
@@ -124,74 +124,74 @@ public class FetchDataOnline {
 
 
     private void studentProfile(StudentProfileHelper profileHelper, Cache cache) {
-        List<StudentDataCache> studentDataList = cache.studentDataCaches;
-        StudentDataCache studentDataCache = studentDataList.get(0);
-        boolean isProfileSuccess = profileHelper.insertProfile(
-                studentDataCache.username,studentDataCache.userclass, studentDataCache.section,
-                studentDataCache.rollno, studentDataCache.gender, studentDataCache.dateOfBirthBS,
-                studentDataCache.dateOfBirthAD,studentDataCache.contact,studentDataCache.email,
-                studentDataCache.house,studentDataCache.religion,studentDataCache.caste,
-                studentDataCache.address,studentDataCache.bloodGroup,studentDataCache.busStop,
-                studentDataCache.busRoute,studentDataCache.imageUrl,cache.isSibling,
-                uid);
-        if(isProfileSuccess){
-            showMessage("Student user :: Successfully Stored in database");
-        }else {
-            showMessage("Student user :: Failed Stored in database");
-        }
+//        List<StudentDataCache> studentDataList = cache.studentDataCaches;
+//        StudentDataCache studentDataCache = studentDataList.get(0);
+//        boolean isProfileSuccess = profileHelper.insertProfile(
+//                studentDataCache.username,studentDataCache.userclass, studentDataCache.section,
+//                studentDataCache.rollno, studentDataCache.gender, studentDataCache.dateOfBirthBS,
+//                studentDataCache.dateOfBirthAD,studentDataCache.contact,studentDataCache.email,
+//                studentDataCache.house,studentDataCache.religion,studentDataCache.caste,
+//                studentDataCache.address,studentDataCache.bloodGroup,studentDataCache.busStop,
+//                studentDataCache.busRoute,studentDataCache.imageUrl,cache.isSibling,
+//                uid);
+//        if(isProfileSuccess){
+//            showMessage("Student user :: Successfully Stored in database");
+//        }else {
+//            showMessage("Student user :: Failed Stored in database");
+//        }
     }
 
     private void studentParent(StudentParentHelper parentHelper, Cache cache) {
-        List<ParentDataCache> parentDataCacheList = cache.parentDataCaches;
-        ParentDataCache parentDataCache = parentDataCacheList.get(0);
-        boolean isParentSuccess = parentHelper.insertParent(
-                parentDataCache.fatherName, parentDataCache.fatherOccupation, parentDataCache.fatherContact,
-                parentDataCache.motherName, parentDataCache.motherOccupation, parentDataCache.motherContact,
-                uid
-        );
-        if(isParentSuccess){
-            showMessage("Parent user :: Successfully Stored in database");
-        }else {
-            showMessage("Parent user :: Failed Stored in database");
-        }
+//        List<ParentDataCache> parentDataCacheList = cache.parentDataCaches;
+//        ParentDataCache parentDataCache = parentDataCacheList.get(0);
+//        boolean isParentSuccess = parentHelper.insertParent(
+//                parentDataCache.fatherName, parentDataCache.fatherOccupation, parentDataCache.fatherContact,
+//                parentDataCache.motherName, parentDataCache.motherOccupation, parentDataCache.motherContact,
+//                uid
+//        );
+//        if(isParentSuccess){
+//            showMessage("Parent user :: Successfully Stored in database");
+//        }else {
+//            showMessage("Parent user :: Failed Stored in database");
+//        }
     }
 
 
     private void studentGuardian(StudentGuardianHelper guardianHelper, Cache cache) {
-        List<GuardianDataCache> guardianDataCacheList = cache.guardianDataCaches;
-        GuardianDataCache guardianDataCache = guardianDataCacheList.get(0);
-        boolean isGuardianSuccess = guardianHelper.insertGuardian(
-                guardianDataCache.guardianName, guardianDataCache.guardianOccupation, guardianDataCache.guardianContact,
-                uid
-        );
-
-        if(isGuardianSuccess){
-            showMessage("Guardian user :: Successfully Stored in database");
-        }else {
-            showMessage("Guardian user :: Failed Stored in database");
-        }
+//        List<GuardianDataCache> guardianDataCacheList = cache.guardianDataCaches;
+//        GuardianDataCache guardianDataCache = guardianDataCacheList.get(0);
+//        boolean isGuardianSuccess = guardianHelper.insertGuardian(
+//                guardianDataCache.guardianName, guardianDataCache.guardianOccupation, guardianDataCache.guardianContact,
+//                uid
+//        );
+//
+//        if(isGuardianSuccess){
+//            showMessage("Guardian user :: Successfully Stored in database");
+//        }else {
+//            showMessage("Guardian user :: Failed Stored in database");
+//        }
     }
 
     private void studentSibling(StudentSiblingHelper siblingHelper, Cache cache) {
-        List<StudentDataCache> siblingDataCacheList = cache.siblingDataCaches;
-        //todo looping no.s of sibling data
-        for(int i=0; i<siblingDataCacheList.size(); i++) {
-            StudentDataCache siblingDataCache = siblingDataCacheList.get(i);
-            boolean isSiblingSuccess = siblingHelper.insertSibling(
-                    siblingDataCache.username, siblingDataCache.userclass,
-                    siblingDataCache.section, siblingDataCache.rollno,
-                    siblingDataCache.gender, siblingDataCache.dateOfBirthBS,
-                    siblingDataCache.dateOfBirthAD, siblingDataCache.contact,
-                    siblingDataCache.email, siblingDataCache.house, siblingDataCache.religion,
-                    siblingDataCache.caste, siblingDataCache.address, siblingDataCache.bloodGroup,
-                    siblingDataCache.busStop, siblingDataCache.busRoute, siblingDataCache.imageUrl,
-                    uid);
-            if (isSiblingSuccess) {
-                showMessage("Sibling user :: Successfully Stored in database");
-            } else {
-                showMessage("Sibling user :: Failed Stored in database");
-            }
-        }
+//        List<StudentDataCache> siblingDataCacheList = cache.siblingDataCaches;
+//        //todo looping no.s of sibling data
+//        for(int i=0; i<siblingDataCacheList.size(); i++) {
+//            StudentDataCache siblingDataCache = siblingDataCacheList.get(i);
+//            boolean isSiblingSuccess = siblingHelper.insertSibling(
+//                    siblingDataCache.username, siblingDataCache.userclass,
+//                    siblingDataCache.section, siblingDataCache.rollno,
+//                    siblingDataCache.gender, siblingDataCache.dateOfBirthBS,
+//                    siblingDataCache.dateOfBirthAD, siblingDataCache.contact,
+//                    siblingDataCache.email, siblingDataCache.house, siblingDataCache.religion,
+//                    siblingDataCache.caste, siblingDataCache.address, siblingDataCache.bloodGroup,
+//                    siblingDataCache.busStop, siblingDataCache.busRoute, siblingDataCache.imageUrl,
+//                    uid);
+//            if (isSiblingSuccess) {
+//                showMessage("Sibling user :: Successfully Stored in database");
+//            } else {
+//                showMessage("Sibling user :: Failed Stored in database");
+//            }
+//        }
     }
 
     public void showMessage(String message){

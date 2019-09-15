@@ -20,7 +20,6 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -31,11 +30,9 @@ import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AttendanceCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.AttendanceCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.AttendancePresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -89,11 +86,11 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
 
     private void loadProfile() {
         if(studentDataList != null) {
-            attendanceUserName.setText(studentDataList.get(0).username);
-            attendanceClass.setText(studentDataList.get(0).userclass + " ("+studentDataList.get(0).section+")");
+            attendanceUserName.setText(studentDataList.get(0).StudentName);
+            attendanceClass.setText(studentDataList.get(0).ClassName + " ("+studentDataList.get(0).SectionName+")");
 
             ShowInGlide glide = new ShowInGlide(this);
-            glide.loadURL(studentDataList.get(0).imageUrl);
+            glide.loadURL(studentDataList.get(0).ImageUrl);
             glide.loadFailed(R.drawable.ic_profile_img);
             glide.show(attendanceProfile);
         }

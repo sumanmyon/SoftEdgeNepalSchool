@@ -10,7 +10,6 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,7 +19,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.RoutineCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.RoutineCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 

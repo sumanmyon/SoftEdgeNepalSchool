@@ -1718,6 +1718,7 @@ drawable ic_setting
 drawable ic_subject
 drawable ic_suggestion
 drawable ic_text_input
+drawable ic_three_dots
 drawable ic_url
 drawable ic_video
 drawable lock
@@ -1883,7 +1884,9 @@ id calendar_headers
 id calendar_title
 id calender_loading
 id calender_progressbar
+id cancel
 id cancel_action
+id cardCitizenView
 id center
 id centerCrop
 id center_horizontal
@@ -1892,6 +1895,7 @@ id chains
 id checkbox
 id chronometer
 id circle_back
+id citizenImageView
 id classSectionTextView
 id classSpinner
 id clip_horizontal
@@ -1929,6 +1933,7 @@ id day_name
 id deadlineTextView
 id decor_content_parent
 id default_activity_button
+id delete
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1938,6 +1943,8 @@ id dimensions
 id direct
 id disableHome
 id drawerLayout
+id edit
+id editGrp
 id edit_query
 id end
 id end_padder
@@ -1969,6 +1976,9 @@ id fitXY
 id fixed
 id floating_button
 id forever
+id fromDateButton
+id fromDateTextView
+id fromToTextView
 id gallery
 id ghost_view
 id glide_custom_view_target_tag
@@ -1978,6 +1988,12 @@ id group_for_all
 id group_for_student
 id group_for_teacher
 id groups
+id halfDateButton
+id halfDateTextView
+id halfDayLeaveSwitch
+id halfDayLeaveTextView
+id halfDayTypeSpinner
+id halfdayLyl
 id home
 id homeAsUp
 id homeWork
@@ -1996,11 +2012,14 @@ id info
 id infowindow_description
 id infowindow_title
 id invisible
+id isAppraovedTextView
 id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
 id leaveApp_bt_close
+id leaveTypeSpinner
+id leaveTypeTextView
 id leave_application_edit_text_leave_subject
 id leave_application_edit_text_message
 id leave_application_from_button
@@ -2036,6 +2055,7 @@ id main_container
 id mapView
 id masked
 id materialRippleLayout
+id materialRippleLayout3dots
 id mdtp_am_label
 id mdtp_ampm_layout
 id mdtp_animator
@@ -2132,6 +2152,8 @@ id recyclerView
 id recyclerView_date
 id recyclerView_homework
 id relative_layout
+id remarksEditText
+id remarksTextView
 id repordCardAttendance
 id repordCardGrade
 id repordCardPercentage
@@ -2222,6 +2244,7 @@ id search_voice_btn
 id sectionSpinner
 id select_dialog_listview
 id selected
+id sendButton
 id setting
 id settingBaseUrlEditText
 id settingLanguageSwitch
@@ -2252,6 +2275,7 @@ id showall_leave_application_progress_bar
 id showall_leave_floating_button
 id showall_leave_recycleView
 id sibling
+id siblingLylView
 id sibling_popupmenu_recyclerView
 id smallLabel
 id snackbar_action
@@ -2308,6 +2332,8 @@ id title
 id titleDividerNoCustom
 id title_template
 id title_tv
+id toDateButton
+id toDateTextView
 id toolBarTitleText
 id toolbar_profile
 id top
@@ -2405,6 +2431,8 @@ layout activity_attendance
 layout activity_bus_route
 layout activity_calender
 layout activity_create_teacher_home_wrok
+layout activity_create_teacher_leave_app
+layout activity_edit_teacher_leave_app
 layout activity_event
 layout activity_leave_application
 layout activity_leave_application2
@@ -2421,10 +2449,13 @@ layout activity_show_all_leave_application
 layout activity_show_all_leave_application_detail_view
 layout activity_show_in_map
 layout activity_show_teacher_home_work
+layout activity_show_teacher_leave_app
+layout activity_show_teacher_leave_app_detail
 layout activity_sibling_pop_up
 layout activity_sibling_pop_up2
 layout activity_suggestion
 layout activity_teacher_attendance
+layout activity_teacher_profile
 layout alert_dialog
 layout app_bar_layout
 layout assignment_list
@@ -2533,6 +2564,7 @@ layout setting_report_card
 layout setting_url
 layout show_leave_application_recyclerview
 layout show_teacher_homework_list
+layout showteacher_leaveapp_list
 layout support_simple_spinner_dropdown_item
 layout test
 layout user_profile
@@ -2541,6 +2573,7 @@ layout zxing_capture
 menu menu
 menu menu_bottom_navigation_shifting
 menu nav_menu
+menu options_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
@@ -2571,6 +2604,7 @@ string Chaitra
 string Class
 string ClassRoutine
 string Close
+string CreateLeaveApplication
 string Created_Date
 string CreatelevApp
 string Days
@@ -2588,9 +2622,11 @@ string Faculty
 string Falgun
 string Final_Grade
 string From
+string FromDate
 string Gallery
 string Grade_Obtained
 string Grade_Point
+string HalfDate
 string Holidays_and_Events
 string Home
 string HomeWork
@@ -2598,6 +2634,7 @@ string Jestha
 string Kartik
 string LeaveApplication_Dialoge_Body
 string LeaveApplication_Dialoge_Title
+string LeaveType
 string LiveBusTracking
 string Loading
 string Login
@@ -2605,6 +2642,7 @@ string Logout
 string Magh
 string Mangsir
 string Message
+string NeedHalfDayLeave
 string Network_error
 string Notification
 string Notification_setting_message
@@ -2655,6 +2693,7 @@ string TeacherProfile
 string TeacherSuggestion
 string Theory
 string To
+string ToDate
 string Today
 string Total
 string Total_Attendance
@@ -2855,6 +2894,7 @@ style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppCompact_EditText_Blue
 style AppTheme
+style AppTheme_AlertDialogue
 style AppTheme_Custom
 style AppTheme_Widget_ActionButton
 style AppTheme_NoActionBar

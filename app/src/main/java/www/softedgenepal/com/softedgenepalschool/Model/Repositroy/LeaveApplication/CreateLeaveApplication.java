@@ -13,6 +13,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
@@ -44,8 +45,8 @@ public class CreateLeaveApplication implements LeaveApplicationContractor.Model,
     public void postUploadData(List<String> data) {
         if(new NetworkConnection(context).isConnectionSuccess()) {
             String Url = new URL(context).getCreateLeaveApplicationUrl();
-            Url = Url + "?UserId=" + data.get(0) + "&Subject=" + data.get(1) + "&Message=" + data.get(2) + "&From=" + data.get(3) + "&To=" + data.get(4);
-            Url = Url.replaceAll(" ", "%20");
+            Url = Url + "?UserId=" + data.get(0) + "&Subject=" + URLEncoder.encode(data.get(1)) + "&Message=" + URLEncoder.encode(data.get(2)) + "&From=" + data.get(3) + "&To=" + data.get(4);
+            Log.d("CreateLeaveApp", Url);
 
             JsonObjectRequest jsonOblect = new JsonObjectRequest(Request.Method.POST, Url, null, new Response.Listener<JSONObject>() {
                 @Override

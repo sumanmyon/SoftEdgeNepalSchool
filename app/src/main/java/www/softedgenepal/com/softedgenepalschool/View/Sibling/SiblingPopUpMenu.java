@@ -17,8 +17,9 @@ import android.widget.Toast;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ImageUrlFormater;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 
@@ -58,10 +59,12 @@ public class SiblingPopUpMenu extends Dialog {
         RecyclerAdapter adapter = new RecyclerAdapter(context,size) {
             private CircleImageView siblingImageView;
             private TextView siblingNameTextView;
+            private View siblingLylView;
             @Override
             public void inflateUIFields(View itemView) {
                 siblingImageView = itemView.findViewById(R.id.popupmenu_ImageView);
                 siblingNameTextView = itemView.findViewById(R.id.popupmenu_TextView);
+                siblingLylView = itemView.findViewById(R.id.siblingLylView);
             }
 
             @Override
@@ -74,12 +77,20 @@ public class SiblingPopUpMenu extends Dialog {
             @Override
             public void onBind(ViewHolder viewHolder, int position) {
                 StudentDataCache dataCache = siblingDataCaches.get(position);
-                siblingNameTextView.setText(dataCache.username);
+                siblingNameTextView.setText(dataCache.StudentName);
+
                 //todo for image
                 ShowInGlide glide = new ShowInGlide((Activity) context);
-                glide.loadURL(dataCache.imageUrl);
-                glide.loadFailed(R.drawable.userprofile);
+                glide.loadURL(new ImageUrlFormater().conver(dataCache.ImageUrl));
+                glide.loadFailed(R.drawable.userprofile4);
                 glide.show(siblingImageView);
+
+                siblingLylView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        setMessage(position+"");
+                    }
+                });
             }
         };
 

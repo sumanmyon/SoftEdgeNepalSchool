@@ -157,8 +157,14 @@
     <string name="both">Both</string>
 
     <!-- Leave Application -->
+    <string name="CreateLeaveApplication">Create Leave Application</string>
     <string name="From">From</string>
     <string name="To">To</string>
+    <string name="FromDate">Date From</string>
+    <string name="ToDate">Date To</string>
+    <string name="HalfDate">Half day leave</string>
+    <string name="NeedHalfDayLeave">Do you need half day leave.</string>
+    <string name="LeaveType">Leave Type</string>
     <string name="Subject">Subject</string>
     <string name="Days">Days</string>
     <string name="Message">Messages</string>

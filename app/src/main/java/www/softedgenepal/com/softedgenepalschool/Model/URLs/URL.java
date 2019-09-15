@@ -65,14 +65,15 @@ public class URL {
     }
 
     private class OnlineUrl {
-        private String baseUrl = "http://192.168.100.102:400/";
+        //private String baseUrl = "http://192.168.0.112:400/";
+        private String baseUrl = "http://192.168.100.10:400/";
         private String onlineUrl = baseUrl + "api/data/";
         private String loginUrl = onlineUrl + "Login?";
-        private String profile = onlineUrl + "getprofile";
+        private String profile = "getprofile";
 
-        private String createLeaveApplicationUrl = onlineUrl + "Leaveapplication";
-        private String getLeaveApplicationUrl = onlineUrl + "getLeaveapplication";
-        private String cancelLeaveApplicationUrl = onlineUrl + "cancelLeaveapplication";
+        private String createLeaveApplicationUrl = onlineUrl + "studentLeaveApplication";
+        private String getLeaveApplicationUrl = onlineUrl + "getLeaveApplication";
+        private String cancelLeaveApplicationUrl = onlineUrl + "cancelLeaveApplication";
 
         private String calenderAndEventsUrl = onlineUrl + "geteventinfo";//?From=10/10/1995&To=12/12/2023";
         //http://192.168.100.100:423/api/data/geteventinfo?From=10/10/1995&To=12/12/2020

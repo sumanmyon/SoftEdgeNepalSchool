@@ -6,9 +6,9 @@ import android.support.v7.app.AlertDialog;
 
 import www.softedgenepal.com.softedgenepalschool.R;
 
-class CustomAlertDialogs {
+public class CustomAlertDialogs {
 
-    static void showErrorPopUp(String title, String message, Context context){
+    public static void showErrorPopUp(String title, String message, Context context){
         AlertDialog.Builder builder1 = new AlertDialog.Builder(context);//, R.style.AppTheme2);
         builder1.setMessage(message);
         builder1.setTitle(title);
@@ -24,5 +24,9 @@ class CustomAlertDialogs {
                 });
         AlertDialog alert11 = builder1.create();
         alert11.show();
+    }
+
+    public static void NetworkError(Context context){
+        showErrorPopUp("Network Problem", context.getString(R.string.Network_error), context);
     }
 }

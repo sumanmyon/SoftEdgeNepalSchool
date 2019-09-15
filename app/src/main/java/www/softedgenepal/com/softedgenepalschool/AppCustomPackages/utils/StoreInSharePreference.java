@@ -7,6 +7,12 @@ import android.widget.Toast;
 import static android.content.Context.MODE_PRIVATE;
 
 public class StoreInSharePreference {
+
+    //todo for student
+
+
+
+
     Context context;
     SharedPreferences prefs;
     static String MY_PREFS_NAME;

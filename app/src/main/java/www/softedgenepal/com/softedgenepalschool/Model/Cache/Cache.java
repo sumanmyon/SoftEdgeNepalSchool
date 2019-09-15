@@ -3,6 +3,10 @@ package www.softedgenepal.com.softedgenepalschool.Model.Cache;
 import java.io.Serializable;
 import java.util.List;
 
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.GuardianDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ParentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+
 public class Cache implements Serializable {
     public String isSibling = "";
     public List<StudentDataCache> studentDataCaches;

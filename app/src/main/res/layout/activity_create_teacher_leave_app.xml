@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.Activities.Teacher.LeaveApplication.CreateTeacherLeaveAppActivity">
+
+    <include layout="@layout/app_bar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/leave_toolbar"
+            android:clipToPadding="false"
+            android:padding="2dp"
+            android:scrollbars="none"
+            android:scrollingCache="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            android:layout_gravity="top"
+                            android:backgroundTint="@color/transparent"
+                            android:scaleType="centerCrop"
+                            android:tint="@color/colorPrimaryDark"
+                            app:srcCompat="@drawable/ic_faculty" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.5"
+                                android:padding="8dp"
+                                android:text="@string/LeaveType"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/large"
+                                android:textStyle="bold" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/leaveTypeSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="bottom"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/for_edittext2"
+                                        android:dropDownWidth="wrap_content"
+                                        android:padding="@dimen/spacing_medium"
+                                        android:spinnerMode="dialog" />
+                                </TableRow>
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/grey_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/transparent"
+                            android:scaleType="centerCrop"
+                            android:tint="@color/colorPrimaryDark"
+                            app:srcCompat="@drawable/ic_calender_white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:padding="8dp"
+                                    android:text="@string/Days"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.8"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/fromDateTextView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:ellipsize="end"
+                                            android:hint="15/4/2076"
+                                            android:focusable="true"
+                                            android:scrollHorizontally="true"
+                                            android:singleLine="true"
+                                            android:textColor="@color/colorPrimaryText"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:ellipsize="end"
+                                            android:hint="@string/FromDate"
+                                            android:scrollHorizontally="true"
+                                            android:singleLine="true"
+                                            android:textSize="@dimen/vsmall" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@color/grey_10" />
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/fromDateButton"
+                                        android:layout_width="@dimen/dp42"
+                                        android:layout_height="@dimen/dp42"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight="0.2"
+                                        android:buttonTint="@color/green_500"
+                                        android:gravity="center_vertical" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight="0.8"
+                                        android:gravity="center_vertical"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/toDateTextView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:ellipsize="end"
+                                            android:hint="16/4/2076"
+                                            android:focusable="true"
+                                            android:scrollHorizontally="true"
+                                            android:singleLine="true"
+                                            android:textColor="@color/colorPrimaryText"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:ellipsize="end"
+                                            android:hint="@string/ToDate"
+                                            android:scrollHorizontally="true"
+                                            android:singleLine="true"
+                                            android:textSize="@dimen/vsmall" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@color/grey_10" />
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/toDateButton"
+                                        android:layout_width="@dimen/dp42"
+                                        android:layout_height="@dimen/dp42"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.2"
+                                        android:buttonTint="@color/green_500"
+                                        android:gravity="center" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/vvsmall"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_weight="0.9"
+                                        android:ellipsize="marquee"
+                                        android:scrollHorizontally="true"
+                                        android:singleLine="true"
+                                        android:text="@string/NeedHalfDayLeave"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                    <Switch
+                                        android:id="@+id/halfDayLeaveSwitch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="0.1"
+                                        android:text="@string/no"
+                                        android:thumbTint="@color/orange_500"
+                                        android:trackTint="@color/orange_500" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/halfdayLyl"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:weightSum="1">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0.8"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/halfDateTextView"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="8dp"
+                                                android:ellipsize="end"
+                                                android:focusable="true"
+                                                android:hint="15/4/2076"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:textColor="@color/colorPrimaryText"
+                                                android:textSize="14sp" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="8dp"
+                                                android:ellipsize="end"
+                                                android:hint="@string/HalfDate"
+                                                android:scrollHorizontally="true"
+                                                android:singleLine="true"
+                                                android:textSize="@dimen/vsmall" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1dp"
+                                                android:layout_gravity="center"
+                                                android:layout_marginLeft="4dp"
+                                                android:background="@color/grey_10" />
+                                        </LinearLayout>
+
+                                        <RadioButton
+                                            android:id="@+id/halfDateButton"
+                                            android:layout_width="@dimen/dp42"
+                                            android:layout_height="@dimen/dp42"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_weight="0.2"
+                                            android:buttonTint="@color/green_500"
+                                            android:gravity="center_vertical" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:weightSum="1">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="8dp"
+                                            android:layout_weight="0.5"
+                                            android:ellipsize="marquee"
+                                            android:singleLine="true"
+                                            android:text="@string/HalfDate"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                        <android.support.design.widget.TextInputLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_weight="0.5">
+
+                                            <TableRow
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content">
+
+                                                <Spinner
+                                                    android:id="@+id/halfDayTypeSpinner"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_gravity="bottom"
+                                                    android:background="@drawable/for_edittext2"
+                                                    android:dropDownWidth="wrap_content"
+                                                    android:padding="@dimen/spacing_medium"
+                                                    android:spinnerMode="dialog" />
+                                            </TableRow>
+                                        </android.support.design.widget.TextInputLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/grey_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:layout_width="@dimen/dp42"
+                            android:layout_height="@dimen/dp42"
+                            android:layout_gravity="top"
+                            android:backgroundTint="@color/transparent"
+                            android:scaleType="centerCrop"
+                            android:tint="@color/colorPrimaryDark"
+                            app:srcCompat="@drawable/ic_homework" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.5"
+                                android:padding="8dp"
+                                android:text="@string/Remarks"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/large"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="12dp"
+                                android:background="@color/grey_10" />
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/remarksEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/for_edittext2"
+                                android:focusable="true"
+                                android:gravity="top"
+                                android:hint="@string/Application_test_Message"
+                                android:inputType="textMultiLine"
+                                android:minLines="6"
+                                android:padding="8dp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:theme="@style/AppCompact.EditText.Blue" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/grey_10" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/sendButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_margin="8dp"
+                            app:backgroundTint="@color/green_500"
+                            app:srcCompat="@drawable/ic_send" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
+</LinearLayout>

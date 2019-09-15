@@ -6,8 +6,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Calender.StoreData.CalenderCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.AssignmentCache;
 
 public interface AssignmentContractor {
     interface View{

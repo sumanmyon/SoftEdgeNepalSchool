@@ -48,6 +48,10 @@ public class CustomAppCompatActivity extends AppCompatActivity implements View.O
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+    protected void showErrorInTextView(TextView textView, String message){
+        textView.setError(message);
+    }
+
     protected void redirect(Class<?> aClass){
         Intent intent = new Intent(this, aClass);
         startActivity(intent);
@@ -58,5 +62,7 @@ public class CustomAppCompatActivity extends AppCompatActivity implements View.O
         backpress = findViewById(R.id.close);
         backpress.setOnClickListener(this);
     }
+
+
 }
 

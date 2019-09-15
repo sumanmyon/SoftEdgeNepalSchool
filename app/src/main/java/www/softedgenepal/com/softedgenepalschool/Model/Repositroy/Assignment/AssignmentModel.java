@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.Presenter.AssignmentPresenter;

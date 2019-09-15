@@ -28,6 +28,7 @@ import java.util.Map;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -43,7 +44,7 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     protected TextView messageHandleTextView;
     private View backpress;
 
-    private final String uid = user.Id;
+    private final UserModel userModel = user;
     private List<LeaveApplicationDataCache> leaveApplicationDataCacheList;
 
     //for animation
@@ -90,8 +91,9 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
         LeaveApplicationPresenter presenter = new LeaveApplicationPresenter(this);
 
         Map<String, String> params = new HashMap<>();
-        params.put("UserId", uid);
-        params.put("datebefore","12/12/2055");
+        params.put("UserId", userModel.Id);
+        params.put("Role", userModel.Role);
+        params.put("From","12/12/2018");
 
         presenter.getAllLeaveApplication(params);
     }
@@ -142,7 +144,7 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
             @Override
             public void onClick(View v) {
                 Map<String, String> params = new HashMap<>();
-                params.put("UserId", obj.StudentID);
+                params.put("Role", user.Role);
                 params.put("SystemCode",obj.SystemCode);
                 CancelLeaveApplication cancelLeaveApplication = new CancelLeaveApplication(ShowAllLeaveApplication.this, this);
                 cancelLeaveApplication.cancelRequest(params);
@@ -240,7 +242,7 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     @Override
     protected void onRestart() {
         super.onRestart();
-        setAllLeaveApplication(leaveApplicationDataCacheList);
+        getLeaveApplication();
     }
 
     public Context getActivity() {

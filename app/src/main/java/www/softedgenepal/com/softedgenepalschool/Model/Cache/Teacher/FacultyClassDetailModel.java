@@ -15,8 +15,7 @@ public class FacultyClassDetailModel {
         public List<SubjectList> SubjectList;
     }
 
-    public class SectionList
-    {
+    public class SectionList {
         public String SectionCode;
         public String SectionName;
     }

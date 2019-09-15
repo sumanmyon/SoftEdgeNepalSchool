@@ -2,10 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.Presenter.Contractor;
 
 import android.content.Context;
 
-import java.util.List;
-
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
 
 public interface Contractor {
     interface View{

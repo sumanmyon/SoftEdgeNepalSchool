@@ -23,8 +23,8 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.ReportCardSetting;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ReportCardDetailCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ReportCardCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ReportCardDetailCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.ReportCardPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;

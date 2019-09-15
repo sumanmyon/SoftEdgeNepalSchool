@@ -24,7 +24,7 @@ import java.util.Map;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.AssignmentCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.AssignmentCache;
 import www.softedgenepal.com.softedgenepalschool.Presenter.AssignmentPresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.AssignmentContractor;
 import www.softedgenepal.com.softedgenepalschool.R;

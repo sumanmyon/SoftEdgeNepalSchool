@@ -5,6 +5,7 @@ import android.database.Cursor;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
@@ -125,10 +126,10 @@ public class FetchDataOffline {
     }
 
     private void cacheOffline(Cursor cursor){
-        offlineCache = new Cache(cursor.getString(17),
-                studentDataCacheList,parentDataCacheList,guardianDataCacheList,siblingDataCacheList);
-        showMessage(offlineCache.studentDataCaches.get(0).address);
-        requestDataForStudent.studentData(offlineCache);
+//        offlineCache = new Cache(cursor.getString(17),
+//                studentDataCacheList,parentDataCacheList,guardianDataCacheList,siblingDataCacheList);
+//        showMessage(offlineCache.studentDataCaches.get(0).address);
+//        requestDataForStudent.studentData(offlineCache);
     }
 
     private void showMessage(String message){

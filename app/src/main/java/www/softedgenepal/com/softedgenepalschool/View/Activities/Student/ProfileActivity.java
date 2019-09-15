@@ -12,15 +12,16 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Cache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.GuardianDataCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.ParentDataCache;
-import www.softedgenepal.com.softedgenepalschool.Model.Cache.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.GuardianDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ParentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomViews.SetProfile;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 
 public class ProfileActivity extends AppCompatActivity {
-    private Cache cache;
+    private StudentProfileModel cache;
     private TextView userNameTextView;
     private CircleImageView userImageView;
     private View backpress;
@@ -34,15 +35,15 @@ public class ProfileActivity extends AppCompatActivity {
         casting();
 
         //getting cached data
-        this.cache = StudentHomePage.cache;
+        this.cache = StudentHomePage.studentProfileModel;
         //cache = (Cache) getIntent().getSerializableExtra("cache");
         if (cache != null) {
-            userNameTextView.setText(cache.studentDataCaches.get(0).username);
+            userNameTextView.setText(cache.StudentDetail.StudentName);
 
             //todo show image and store image for offline
             //Glide.with(userImageView).load(cache.studentDataCaches.get(0).imageUrl).into(userImageView);
             ShowInGlide glide = new ShowInGlide(this);
-            glide.loadURL(cache.studentDataCaches.get(0).imageUrl);
+            glide.loadURL(cache.StudentDetail.ImageUrl);
             glide.loadFailed(R.drawable.userprofile4);
             glide.show(userImageView);
 
@@ -63,31 +64,30 @@ public class ProfileActivity extends AppCompatActivity {
     private void studentProfile(String text) {
         String title = text;
 
-        final String[] keys = new String[]{"RegistrationNo", "Class", "section", "Roll no", "Gender", "Birth Date (BS)", "Birth Date (AD)", "Contact", "Email", "House", "Religion", "Caste", "Address", "Blood Group", "Bus Stop", "Bus Route"};
+        final String[] keys = new String[]{"RegistrationNo", "Class", "section", "Roll no", "Gender", "Birth Date", "Contact", "Email", "House", "Religion", "Caste", "Address", "Blood Group", "Bus Stop", "Bus Route"};
 
-        final StudentDataCache studentDataCache = cache.studentDataCaches.get(0);
+        final StudentDataCache studentDataCache = cache.StudentDetail;
 
         final List<String> value = new ArrayList<>();
-        value.add(studentDataCache.registrationNo);
-        value.add(studentDataCache.userclass);
-        value.add(studentDataCache.section);
-        value.add(studentDataCache.rollno);
-        value.add(studentDataCache.gender);
+        value.add(studentDataCache.RegistrationNo);
+        value.add(studentDataCache.ClassName);
+        value.add(studentDataCache.SectionName);
+        value.add(studentDataCache.RollNo);
+        value.add(studentDataCache.Gender);
 
-        value.add(studentDataCache.dateOfBirthBS);
-        value.add(studentDataCache.dateOfBirthAD);
+        value.add(studentDataCache.DateofBirth);
 
-        value.add(studentDataCache.contact);
-        value.add(studentDataCache.email);
-        value.add(studentDataCache.house);
+        value.add(studentDataCache.Contact);
+        value.add(studentDataCache.Email);
+        value.add(studentDataCache.House);
 
-        value.add(studentDataCache.religion);
-        value.add(studentDataCache.caste);
-        value.add(studentDataCache.address);
+        value.add(studentDataCache.Religion);
+        value.add(studentDataCache.Caste);
+        value.add(studentDataCache.Address);
 
-        value.add(studentDataCache.bloodGroup);
-        value.add(studentDataCache.busStop);
-        value.add(studentDataCache.busRoute);
+        value.add(studentDataCache.Blood);
+        value.add(studentDataCache.BusStop);
+        value.add(studentDataCache.BusRoute);
 
         SetProfile setProfile = new SetProfile(this, title, keys, value);
         setProfile.start();
@@ -98,15 +98,15 @@ public class ProfileActivity extends AppCompatActivity {
 
         String[] keys = new String[]{"Father Name", "Father Occupation", "Father Contact", "Mother Name", "Mother Occupation", "Mother Contact"};
 
-        ParentDataCache parentDataCache = cache.parentDataCaches.get(0);
+        ParentDataCache parentDataCache = cache.ParentDetail;
         List<String> values = new ArrayList<>();
-        values.add(parentDataCache.fatherName);
-        values.add(parentDataCache.fatherOccupation);
-        values.add(parentDataCache.fatherContact);
+        values.add(parentDataCache.FatherName);
+        values.add(parentDataCache.FatherOccupation);
+        values.add(parentDataCache.FatherContact);
 
-        values.add(parentDataCache.motherName);
-        values.add(parentDataCache.motherOccupation);
-        values.add(parentDataCache.motherContact);
+        values.add(parentDataCache.MotherName);
+        values.add(parentDataCache.MotherOccupation);
+        values.add(parentDataCache.MotherContact);
 
         SetProfile setProfile = new SetProfile(this, title, keys, values);
         setProfile.start();
@@ -117,21 +117,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         String[] keys = new String[]{"Guardian Name", "Guardian Occupation", "Guardian Contact"};
 
-        GuardianDataCache guardianDataCache = cache.guardianDataCaches.get(0);
+        GuardianDataCache guardianDataCache = cache.GuardianDetail;
         List<String> values = new ArrayList<>();
-        values.add(guardianDataCache.guardianName);
-        values.add(guardianDataCache.guardianOccupation);
-        values.add(guardianDataCache.guardianContact);
+        values.add(guardianDataCache.GuardianName);
+        values.add(guardianDataCache.GuardianOccupation);
+        values.add(guardianDataCache.GuardianContact);
 
         SetProfile setProfile = new SetProfile(this, title, keys, values);
         setProfile.start();
-    }
-
-    private void studentSibling(String text) {
-        List<StudentDataCache> siblingDataCache = cache.siblingDataCaches;
-        for (int i = 0; i < siblingDataCache.size(); i++) {
-
-        }
     }
 
     private void casting() {

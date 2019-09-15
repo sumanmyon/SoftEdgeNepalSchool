@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +18,12 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import okhttp3.internal.Util;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.FacultyClassDetailModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.HomeWorkModel;
-import www.softedgenepal.com.softedgenepalschool.Model.Repositroy.Teacher.TeacherDataStore;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.TeacherDataStore;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.EditTeacherHomework;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.HomeWork.EditTeacherHomework;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -41,14 +41,14 @@ public class TeacherHomeworkAdapter extends RecyclerView.Adapter<TeacherHomework
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, final int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.show_teacher_homework_list, viewGroup, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        HomeWorkModel model = homeWorkModelList.get(i);
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+        final HomeWorkModel model = homeWorkModelList.get(i);
         String facultyCode = model.FacultyCode;
         String classCode = model.ClassCode;
         String sectionCode = model.SectionCode;
@@ -76,7 +76,8 @@ public class TeacherHomeworkAdapter extends RecyclerView.Adapter<TeacherHomework
                         List<FacultyClassDetailModel.SubjectList> subjectLists = facultyClassDetailModels.get(j).ClassSectionSubDetail.get(k).SubjectList;
                         for (int l = 0; l < subjectLists.size() ; l++) {
                             if(subjectLists.get(l).SubjectCode.equals(subjectCode)){
-                                viewHolder.subjectTextView.setText(subjectLists.get(k).SubjectName);
+                                viewHolder.subjectTextView.setText(subjectLists.get(l).SubjectName);
+                                Log.d("facultyClass", subjectCode+"\t"+subjectLists.get(k).SubjectCode+"\t"+subjectLists.get(l).SubjectName );
                             }
                         }
                     }

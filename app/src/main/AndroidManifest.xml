@@ -2,35 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="www.softedgenepal.com.softedgenepalschool">
-    <!-- support for all sizes -->
-    <!-- <supports-screens -->
-    <!-- android:smallScreens="true" -->
-    <!-- android:normalScreens="true" -->
-    <!-- android:largeScreens="true" -->
-    <!-- android:xlargeScreens="true"/> -->
-    <!--
-        Allows Glide to monitor connectivity status and restart failed requests if users go from a
-        a disconnected to a connected network state.
-    -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--
-        Network state is not required but it helps to handle flaky network connections and airplane mode.
-        Automatically monitor connectivity status
-    -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- to store and load file from local storage. -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- to store and load file from external storage -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- for QR and Barcode -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.hardware.camera" />
-
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-
+    <!-- for QR and Barcode -->
     <application
         android:allowBackup="true"
         android:configChanges="layoutDirection|locale"
@@ -40,10 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.Activities.Teacher.TeacherAttendance"></activity>
-        <activity android:name=".View.Activities.Teacher.ShowTeacherHomeWork" />
-        <activity android:name=".View.Activities.Teacher.CreateTeacherHomeWrok" />
-        <activity android:name=".View.Activities.Teacher.EditTeacherHomework" />
+        <activity android:name=".View.Activities.Teacher.TeacherProfileActivity"></activity>
+        <activity
+            android:name=".View.Activities.Teacher.LeaveApplication.ShowTeacherLeaveAppDetailActivity"
+            android:theme="@style/AppTheme.AlertDialogue" />
+        <activity android:name=".View.Activities.Teacher.LeaveApplication.CreateTeacherLeaveAppActivity" />
+        <activity
+            android:name=".View.Activities.Teacher.LeaveApplication.EditTeacherLeaveAppActivity"
+            android:parentActivityName=".View.Activities.MainActivity" />
+        <activity
+            android:name=".View.Activities.Teacher.LeaveApplication.ShowTeacherLeaveAppActivity"
+            android:parentActivityName=".View.Activities.MainActivity" />
+        <activity android:name=".View.Activities.Teacher.TeacherAttendance" />
+        <activity android:name=".View.Activities.Teacher.HomeWork.ShowTeacherHomeWork" />
+        <activity android:name=".View.Activities.Teacher.HomeWork.CreateTeacherHomeWrok" />
+        <activity android:name=".View.Activities.Teacher.HomeWork.EditTeacherHomework" />
         <activity android:name=".View.Activities.Student.ReportCardActivity" />
         <activity
             android:name=".View.Activities.Student.ReportCardDetailActivity"
@@ -89,5 +72,19 @@
             </intent-filter>
         </service>
     </application>
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
 </manifest>

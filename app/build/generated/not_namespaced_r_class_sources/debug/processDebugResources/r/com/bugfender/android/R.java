@@ -34,22 +34,22 @@ public final class R {
 
         public static final int appbar_rl = 0x7f0a002a;
         public static final int bugfender_tv = 0x7f0a0057;
-        public static final int close_iv = 0x7f0a0072;
-        public static final int feedback_message_et = 0x7f0a00ae;
-        public static final int feedback_title_et = 0x7f0a00af;
-        public static final int message_tv = 0x7f0a011e;
-        public static final int positive_action_tv = 0x7f0a013d;
-        public static final int root_vg = 0x7f0a0186;
-        public static final int title_tv = 0x7f0a020b;
+        public static final int close_iv = 0x7f0a0075;
+        public static final int feedback_message_et = 0x7f0a00b4;
+        public static final int feedback_title_et = 0x7f0a00b5;
+        public static final int message_tv = 0x7f0a0131;
+        public static final int positive_action_tv = 0x7f0a0150;
+        public static final int root_vg = 0x7f0a019b;
+        public static final int title_tv = 0x7f0a0222;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int bf_feedback_screen = 0x7f0d003a;
+        public static final int bf_feedback_screen = 0x7f0d003f;
     }
     public static final class string {
         private string() {}
 
-        public static final int powered_by_bugfender = 0x7f110117;
+        public static final int powered_by_bugfender = 0x7f11011d;
     }
 }
