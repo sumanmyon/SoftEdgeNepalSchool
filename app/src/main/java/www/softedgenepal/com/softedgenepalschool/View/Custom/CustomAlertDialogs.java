@@ -12,7 +12,7 @@ public class CustomAlertDialogs {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(context);//, R.style.AppTheme2);
         builder1.setMessage(message);
         builder1.setTitle(title);
-        builder1.setIcon(context.getResources().getDrawable(R.drawable.logo));
+        builder1.setIcon(context.getResources().getDrawable(R.drawable.ic_error));
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(

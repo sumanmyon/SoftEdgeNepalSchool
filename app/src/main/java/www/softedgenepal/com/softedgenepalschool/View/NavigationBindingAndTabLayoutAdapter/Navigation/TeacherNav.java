@@ -8,6 +8,7 @@ import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.HomeWork.ShowTeacherHomeWork;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.LeaveApplication.ShowTeacherLeaveAppActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherAttendance;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherClassRoutineActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherProfileActivity;
 
 import static www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.TeacherHomePage.profileTeacherModel;
@@ -31,9 +32,13 @@ public class TeacherNav {
                 redirectToActivity(TeacherAttendance.class);
                 break;
 
-            case R.id.examRoutine:
-                showMessage("Coming Soon");
+            case R.id.classRoutine:
+                redirectToActivity(TeacherClassRoutineActivity.class);
                 break;
+
+//            case R.id.examRoutine:
+//                showMessage("Coming Soon");
+//                break;
 
             case R.id.resultReportCard:
                 showMessage("Coming Soon");

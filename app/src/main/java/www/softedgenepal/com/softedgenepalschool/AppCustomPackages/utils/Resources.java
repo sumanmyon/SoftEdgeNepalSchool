@@ -49,9 +49,9 @@ public class Resources {
         teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.TeacherAttendance),
                 context.getResources().getDrawable(R.drawable.ic_attendance),
                 R.id.teacherAttendance));
-        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.ExamRoutine),
+        teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.ClassRoutine),
                 context.getResources().getDrawable(R.drawable.ic_assignment),
-                R.id.examRoutine));
+                R.id.classRoutine));
 
         teacherDashboard.add(new Dashboard(context.getResources().getString(R.string.ResultReportCard),
                 context.getResources().getDrawable(R.drawable.ic_report),

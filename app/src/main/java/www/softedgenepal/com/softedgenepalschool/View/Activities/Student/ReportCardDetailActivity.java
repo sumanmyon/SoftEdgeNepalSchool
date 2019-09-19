@@ -64,12 +64,6 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         type = ReportCardSetting.getCardFormate(this);
     }
 
-    protected void refreshLayout() {
-        Intent refresh = new Intent(getApplicationContext(), ReportCardDetailActivity.class);
-        finish();
-        startActivity(refresh);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

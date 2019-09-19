@@ -44,7 +44,7 @@ public class CustomAppCompatActivity extends AppCompatActivity implements View.O
         CustomAlertDialogs.showErrorPopUp(title, message, activity);
     }
 
-    protected void displayMessage(String message){
+    public void displayMessage(String message){
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
@@ -62,7 +62,5 @@ public class CustomAppCompatActivity extends AppCompatActivity implements View.O
         backpress = findViewById(R.id.close);
         backpress.setOnClickListener(this);
     }
-
-
 }
 

@@ -12,6 +12,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.HomeWorkMod
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.LeaveApplicationModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.LeaveTypeModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.ProfileTeacherModel;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.TeacherClassRoutineModel;
 
 public class TeacherDataStore {
     //Type for list<?> model list
@@ -32,8 +33,8 @@ public class TeacherDataStore {
             PreferencesForObject.store(context, Constants.ShowHomeWorkTeacher, Constants.ShowHomeWorkTeacher, data);
         }
 
-        public static Object get(Context context, Class<?> type){
-            return PreferencesForObject.get(context, Constants.FacultyClassDetail, Constants.FacultyClassDetail, "null", type);
+        public static Object get(Context context, Type type){
+            return PreferencesForObject.get(context, Constants.ShowHomeWorkTeacher, Constants.ShowHomeWorkTeacher, "null", type);
         }
     }
 
@@ -52,7 +53,7 @@ public class TeacherDataStore {
             PreferencesForObject.store(context, Constants.ShowStaffLeaveApplication, Constants.ShowStaffLeaveApplication, data);
         }
 
-        public static Object get(Context context,Type type){
+        public static Object get(Context context, Type type){
             return PreferencesForObject.get(context, Constants.ShowStaffLeaveApplication, Constants.ShowStaffLeaveApplication, "null", type);
         }
     }
@@ -64,6 +65,16 @@ public class TeacherDataStore {
 
         public static Object get(Context context, Class<?> type){
             return PreferencesForObject.get(context, Constants.ProfileTeacher, Constants.ProfileTeacher, "null", type);
+        }
+    }
+
+    public static class ClassRoutine{
+        public static void store(Context context, List<List<TeacherClassRoutineModel>> data){
+            PreferencesForObject.store(context, Constants.ClassRoutineTeacher, Constants.ClassRoutineTeacher, data);
+        }
+
+        public static Object get(Context context, Type type){
+            return PreferencesForObject.get(context, Constants.ClassRoutineTeacher, Constants.ClassRoutineTeacher, "null", type);
         }
     }
 }

@@ -2,6 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -17,6 +18,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Objects;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.FacultyClassDetailModel;
@@ -86,14 +88,12 @@ public class TeacherHomeworkAdapter extends RecyclerView.Adapter<TeacherHomework
         }
 
         String createDate = model.CreatedDate;
-        if(!createDate.equals("") || createDate != null || !createDate.equals("null")) {
+        if(!createDate.equals("")) {
             viewHolder.createDateTextView.setText(DateTime.DateConvertToNepali(createDate, "date"));
         }
 
         String deadline = model.Deadline;
-        if(deadline != null) {
-            viewHolder.deadlineTextView.setText(DateTime.DateConvertToNepali(deadline, "date"));
-        }
+        setText(viewHolder.deadlineTextView, DateTime.DateConvertToNepali(deadline, "date"));
 
         viewHolder.homeWorkTextView.setText(Html.fromHtml(model.Homework));
 
@@ -161,5 +161,11 @@ public class TeacherHomeworkAdapter extends RecyclerView.Adapter<TeacherHomework
 
     private void showMessage(String message){
         Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+    }
+
+    private void setText(TextView textView, String s) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            textView.setText(Objects.toString(s, ""));
+        }
     }
 }

@@ -24,7 +24,6 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.BusRouteCac
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.MapBoxPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
-import www.softedgenepal.com.softedgenepalschool.View.Activities.ShowInMapActivity;
 
 public class BusRouteActivity extends AppCompatActivity implements IContractor.View {
     private TextView loadTextView;

@@ -14,13 +14,14 @@
             android:title="@string/TeacherAttendance"
             android:id="@+id/teacherAttendance"
             android:icon="@drawable/ic_attendance"/>
-        <!--<item-->
-            <!--android:title="@string/ClassRoutine"-->
-            <!--android:id="@+id/classRoutine"/>-->
         <item
-            android:title="@string/ExamRoutine"
-            android:id="@+id/examRoutine"
+            android:title="@string/ClassRoutine"
+            android:id="@+id/classRoutine"
             android:icon="@drawable/ic_assignment"/>
+<!--        <item-->
+<!--            android:title="@string/ExamRoutine"-->
+<!--            android:id="@+id/examRoutine"-->
+<!--            />-->
         <item
             android:title="@string/ResultReportCard"
             android:id="@+id/resultReportCard"

@@ -1691,6 +1691,7 @@ drawable ic_close
 drawable ic_date_range
 drawable ic_directions_bus
 drawable ic_done
+drawable ic_error
 drawable ic_expand_arrow
 drawable ic_faculty
 drawable ic_gallery
@@ -1826,6 +1827,7 @@ id alertDialogTitle
 id alertTitle
 id all
 id always
+id app_bar
 id app_bar_layout
 id appbar_rl
 id assignHomeWork
@@ -1896,6 +1898,7 @@ id checkbox
 id chronometer
 id circle_back
 id citizenImageView
+id classRoutine
 id classSectionTextView
 id classSpinner
 id clip_horizontal
@@ -1959,7 +1962,6 @@ id event_message
 id event_progressbar
 id event_recyclerView
 id event_title
-id examRoutine
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2143,6 +2145,13 @@ id recyclerAttendancePichart
 id recyclerAttendancePresentDays
 id recyclerAttendanceTopic
 id recyclerAttendanceWorkingDays
+id recyclerClassRoutineClass
+id recyclerClassRoutineDay
+id recyclerClassRoutineFaculty
+id recyclerClassRoutineSN
+id recyclerClassRoutineShift
+id recyclerClassRoutineSubject
+id recyclerClassRoutineTime
 id recyclerReportCardGrade
 id recyclerReportCardGradeSN
 id recyclerReportCardGradeSubject
@@ -2363,6 +2372,9 @@ id wide
 id withText
 id wrap
 id wrap_content
+id youtube
+id youtubeTime
+id youtubeTitle
 id zxing_back_button
 id zxing_barcode_scanner
 id zxing_barcode_surface
@@ -2455,7 +2467,10 @@ layout activity_sibling_pop_up
 layout activity_sibling_pop_up2
 layout activity_suggestion
 layout activity_teacher_attendance
+layout activity_teacher_class_routine
+layout activity_teacher_class_routinev2
 layout activity_teacher_profile
+layout activity_videos
 layout alert_dialog
 layout app_bar_layout
 layout assignment_list
@@ -2566,8 +2581,12 @@ layout show_leave_application_recyclerview
 layout show_teacher_homework_list
 layout showteacher_leaveapp_list
 layout support_simple_spinner_dropdown_item
+layout teacher_classroutine_recyclerview_body
+layout teacher_classroutine_recyclerview_title
 layout test
 layout user_profile
+layout youtube_fragment
+layout youtube_video_list
 layout zxing_barcode_scanner
 layout zxing_capture
 menu menu

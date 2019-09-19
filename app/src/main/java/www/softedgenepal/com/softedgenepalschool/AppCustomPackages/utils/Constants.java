@@ -39,4 +39,22 @@ public class Constants {
 
     //for profile
     public static final String ProfileTeacher = "getprofile";
+
+    //for class routine
+    public static final String ClassRoutineTeacher = "getClassRoutineForTeacher";
+
+
+    //todo for school
+    //for youtube
+    //https://www.googleapis.com/youtube/v3/videos?id=9bZkp7q19f0&part=contentDetails&key=AIzaSyCl6oVQxU3sGNHcjvFz6UOVnGMDikyhxmk
+    public static final String Youtube_APIkey="AIzaSyCl6oVQxU3sGNHcjvFz6UOVnGMDikyhxmk";
+    public static final String YouTube_BaseUrl = "https://www.googleapis.com/youtube/v3/";
+
+    //for playlist
+    public static final String YouTube_PlayList = "playlistItems";
+    public static final String YouTube_playlistId = "PL59C5594169CCAB9B";
+    public static final String YouTube_maxResults = "50";
+
+    //for video
+    public static final String YouTube_Video = "videos";
 }

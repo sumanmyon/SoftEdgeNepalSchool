@@ -14,6 +14,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.LoginActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.SettingActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.VideosActivity;
 
 public class SchoolNav {
     private Activity activity;
@@ -33,7 +34,7 @@ public class SchoolNav {
                 showMessage("Coming Soon");
                 break;
             case R.id.videos:
-                showMessage("Coming Soon");
+                redirectToActivity(VideosActivity.class);
                 break;
             case R.id.about:
                 redirectToActivity(AboutActivity.class);

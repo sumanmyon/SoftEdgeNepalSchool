@@ -45,7 +45,8 @@
         android:required="false" />
 
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- for QR and Barcode -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
     <application
         android:name="com.hornet.dateconverter.App"
         android:allowBackup="true"
@@ -59,6 +60,11 @@
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.VideosActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherClassRoutinev2Activity" />
+        <activity
+            android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherClassRoutineActivity"
+            android:screenOrientation="landscape" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherProfileActivity" />
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.LeaveApplication.ShowTeacherLeaveAppDetailActivity"
@@ -85,7 +91,7 @@
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.AttendanceActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.RoutineActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.BusRouteActivity" />
-        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ShowInMapActivity" />
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.ShowInMapActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.HomeWorkActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.EventActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.AboutActivity" />

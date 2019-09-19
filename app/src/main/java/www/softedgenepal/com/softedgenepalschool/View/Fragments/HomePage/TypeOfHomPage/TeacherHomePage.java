@@ -155,10 +155,12 @@ public class TeacherHomePage implements ApiCall.ResultListener {
                         break;
 
                 }
+            }else {
+                offline();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            progressBar.setVisibility(View.GONE);
+            offline();
         }
 
         if (progressDialog != null && progressDialog.isShowing() && activity.pendingRequestsCount == 0)

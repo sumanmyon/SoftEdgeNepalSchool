@@ -15,11 +15,13 @@ import com.google.gson.reflect.TypeToken;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.util.List;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.HomeWorkModel;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.TeacherClassRoutineModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.TeacherDataStore;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.Services.ApiCall;
@@ -97,11 +99,11 @@ public class ShowTeacherHomeWork extends CustomAppCompatActivity implements ApiC
                         break;
                 }
             } else {
-                showErrorPopUp("Faileded", volleyError.getStackTrace().toString());
+                offline();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            showErrorPopUp("Failed", e.getMessage());
+            offline();
         }
 
         if (progressDialog != null && progressDialog.isShowing() && pendingRequestsCount == 0)
@@ -129,7 +131,9 @@ public class ShowTeacherHomeWork extends CustomAppCompatActivity implements ApiC
     }
 
     private void offline() {
-        homeWorkModelList = (List<HomeWorkModel>) TeacherDataStore.HomeWorkDetail.get(this, HomeWorkModel.class);
+        Type type = new TypeToken<List<HomeWorkModel>>() {
+        }.getType();
+        homeWorkModelList = (List<HomeWorkModel>) TeacherDataStore.HomeWorkDetail.get(this, type);
         populateInView();
     }
 

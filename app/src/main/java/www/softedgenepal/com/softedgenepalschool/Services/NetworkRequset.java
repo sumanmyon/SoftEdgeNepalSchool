@@ -14,7 +14,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.VideosActivity;
 
 public class NetworkRequset extends Request<JSONObject> {
     private final String TAG = "NetworkRequest";
@@ -26,7 +28,11 @@ public class NetworkRequset extends Request<JSONObject> {
 
     public NetworkRequset(Context context, String url, int method, String parameters, Map<String, String> params,
                           Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(method,new URL().url + url + parameters, errorListener);
+        super(method,
+                context instanceof VideosActivity
+                ?  Constants.YouTube_BaseUrl + url + parameters
+                        : new URL().url + url + parameters
+                , errorListener);
 
         try{
             this.context = context;
