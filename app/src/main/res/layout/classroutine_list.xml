@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_40" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="1">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_40" />
+        <TextView
+            android:id="@+id/recyclerTextView"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="@dimen/spacing_xxsmall"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time\nDay"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorPrimaryText" />
+        <View
+            android:id="@+id/viewLineHorizontal"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_40"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/viewLineVertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_40"
+        android:visibility="gone"/>
+
+</LinearLayout>

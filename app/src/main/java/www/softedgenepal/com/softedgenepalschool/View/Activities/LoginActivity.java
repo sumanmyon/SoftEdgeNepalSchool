@@ -1,12 +1,16 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.annotation.Nullable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,25 +19,18 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.zxing.Result;
 
-import org.json.JSONArray;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.PreferencesForObject;
-import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Login.CheckUserLogin;
 import www.softedgenepal.com.softedgenepalschool.View.Login.FormValidation;
-import www.softedgenepal.com.softedgenepalschool.View.NavigationBindingAndTabLayoutAdapter.Navigation.SchoolNav;
 
-import static android.Manifest.permission_group.CAMERA;
-import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.userType;
 
 public class LoginActivity extends AppCompatActivity {
@@ -47,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     private CheckUserLogin checkUserLogin;
 
     public static LoginActivity loginActivity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +62,46 @@ public class LoginActivity extends AppCompatActivity {
 
         Constants.GENERATE_TOKEN = FirebaseInstanceId.getInstance().getToken();
 
+        //todo for login history which devices are connected to app server
+        Constants.DEVICE_MODEL_NAME_AND_IMEI = Build.BRAND + " " + android.os.Build.MODEL + " " + Build.PRODUCT + " imei: "+ imei();
+
+        Log.d("DeviceConfig2", Constants.DEVICE_MODEL_NAME_AND_IMEI);
+
         //login button
         buttonLogin.setOnClickListener(new FormValidation(this, editTextUserName, editTextPassword, null, Constants.GENERATE_TOKEN));
+    }
+
+    public String imei(){
+        try {
+            TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return "";
+            }
+            String imei = "";
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                imei = telephonyManager.getDeviceId(0);
+                imei = imei + " " + telephonyManager.getDeviceId(1);
+            }else {
+                imei = telephonyManager.getDeviceId();
+            }
+
+            Log.e("imei", "=" + imei);
+            if (imei != null && !imei.isEmpty()) {
+                return imei;
+            } else {
+                return Build.SERIAL;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "not_found";
     }
 
     @Override

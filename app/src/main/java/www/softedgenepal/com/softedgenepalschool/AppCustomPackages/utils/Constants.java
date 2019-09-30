@@ -2,6 +2,8 @@ package www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils;
 
 import com.google.zxing.common.StringUtils;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.YoutubeUrlSetting;
+
 public class Constants {
     //Objects.toString(gearBox, "")
     // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -19,6 +21,7 @@ public class Constants {
     public static final String LoginCredential = "LoginCredential";
 
     public static String GENERATE_TOKEN;
+    public static String DEVICE_MODEL_NAME_AND_IMEI;
 
     //todo for student store in local
     public static final String ProfileStudent = "StudentProfile";
@@ -46,13 +49,14 @@ public class Constants {
 
     //todo for school
     //for youtube
+    //https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=PL59C5594169CCAB9B&maxResults=50&key=AIzaSyCl6oVQxU3sGNHcjvFz6UOVnGMDikyhxmk
     //https://www.googleapis.com/youtube/v3/videos?id=9bZkp7q19f0&part=contentDetails&key=AIzaSyCl6oVQxU3sGNHcjvFz6UOVnGMDikyhxmk
-    public static final String Youtube_APIkey="AIzaSyCl6oVQxU3sGNHcjvFz6UOVnGMDikyhxmk";
+    public static final String Youtube_APIkey="AIzaSyBBMxBwRLaRxACVkHRW-1hWjolNMjVAD3s";//"AIzaSyCl6oVQxU3sGNHcjvFz6UOVnGMDikyhxmk";
     public static final String YouTube_BaseUrl = "https://www.googleapis.com/youtube/v3/";
 
     //for playlist
     public static final String YouTube_PlayList = "playlistItems";
-    public static final String YouTube_playlistId = "PL59C5594169CCAB9B";
+    public static final String YouTube_playlistId = "PLzcb1fwVs1bNPdXg1WafBGLTGCjPNzlTd";
     public static final String YouTube_maxResults = "50";
 
     //for video

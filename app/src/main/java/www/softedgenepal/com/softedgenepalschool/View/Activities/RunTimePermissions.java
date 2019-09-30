@@ -21,7 +21,8 @@ public class RunTimePermissions extends AppCompatActivity implements EasyPermiss
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,
             Manifest.permission.VIBRATE,
-            Manifest.permission.WAKE_LOCK
+            Manifest.permission.WAKE_LOCK,
+            Manifest.permission.READ_PHONE_STATE
     };
 
     @Override

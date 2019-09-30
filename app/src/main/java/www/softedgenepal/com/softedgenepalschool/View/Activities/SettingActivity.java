@@ -21,6 +21,7 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.Base
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.NotificationSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.ReportCardSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.YoutubeUrlSetting;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.Notification;
 
@@ -32,7 +33,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private RadioGroup radioGroup;
     private RadioButton radioButtonPercentage, radioButtonGPA, radioButtonBoth;
     private RadioButton radioButton;
-    private EditText urlEditText;
+    private EditText urlEditText, youtubeUrlEditText;
 
     private String reportType = "";
     private String notificationType = "";
@@ -132,35 +133,27 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void forSaveSetting() {
+        String baseUrl = BaseUrlSetting.getUrl(this);
+        if(!baseUrl.equals("No name defined")){
+            urlEditText.setText(baseUrl);
+        }
+
+        String playlist = YoutubeUrlSetting.getUrl(this);
+        if(!playlist.equals("No name defined")){
+            youtubeUrlEditText.setText(playlist);
+        }
+
         setting_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveReportCardSetting();
+                saveSetting();
+                showMessage(getString(R.string.Saved));
             }
         });
     }
 
     private void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    private void casting() {
-        backpress = findViewById(R.id.setting_bt_close);
-
-        aSwitch = findViewById(R.id.settingLanguageSwitch);
-        notificationSwitch = findViewById(R.id.settingNotificationSwitch);
-
-        settingLanguageText = findViewById(R.id.settingLanguageText);
-        settingLanguageTitle = findViewById(R.id.settingLanguageTitle);
-
-        radioGroup = findViewById(R.id.reportCard_radioGroup);
-        radioButtonPercentage = findViewById(R.id.radioButton_percentage);
-        radioButtonGPA = findViewById(R.id.radioButton_gpa);
-        radioButtonBoth = findViewById(R.id.radioButton_both);
-
-        urlEditText = findViewById(R.id.settingBaseUrlEditText);
-
-        setting_done = findViewById(R.id.setting_done);
     }
 
     @Override
@@ -222,7 +215,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         radioButton = findViewById(radioGroup.getCheckedRadioButtonId());
     }
 
-    private void saveReportCardSetting() {
+    private void saveSetting() {
         ReportCardSetting.setCardFormate(this, reportType);
         NotificationSetting.setNotification(getApplicationContext(), notificationType);
         if(!TextUtils.isEmpty(urlEditText.getText())){
@@ -236,6 +229,29 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 //                showMessage("Error");
 //            }
         }
-        showMessage(getString(R.string.Saved));
+
+        if(!TextUtils.isEmpty(youtubeUrlEditText.getText())){
+            //String[] strings = youtubeUrlEditText.getText().toString().split("list=");
+            YoutubeUrlSetting.setUrl(getApplicationContext(), youtubeUrlEditText.getText().toString());
+        }
+    }
+    private void casting() {
+        backpress = findViewById(R.id.setting_bt_close);
+
+        aSwitch = findViewById(R.id.settingLanguageSwitch);
+        notificationSwitch = findViewById(R.id.settingNotificationSwitch);
+
+        settingLanguageText = findViewById(R.id.settingLanguageText);
+        settingLanguageTitle = findViewById(R.id.settingLanguageTitle);
+
+        radioGroup = findViewById(R.id.reportCard_radioGroup);
+        radioButtonPercentage = findViewById(R.id.radioButton_percentage);
+        radioButtonGPA = findViewById(R.id.radioButton_gpa);
+        radioButtonBoth = findViewById(R.id.radioButton_both);
+
+        urlEditText = findViewById(R.id.settingBaseUrlEditText);
+        youtubeUrlEditText = findViewById(R.id.settingYoutubeUrlEditText);
+
+        setting_done = findViewById(R.id.setting_done);
     }
 }

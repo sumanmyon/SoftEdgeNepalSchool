@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ServiceLoader;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.LeaveTypeModel;
@@ -43,6 +44,8 @@ public class TeacherClassRoutineActivity extends CustomAppCompatActivity impleme
         toolBarTitle.setText(R.string.ClassRoutine);
 
         loadData();
+
+        //serviceloader();
     }
 
     private void loadData() {
@@ -77,7 +80,7 @@ public class TeacherClassRoutineActivity extends CustomAppCompatActivity impleme
             classRoutineModel = new Gson().fromJson(jsonArray.toString(), new TypeToken<List<List<TeacherClassRoutineModel>>>() {
             }.getType());
 
-            TeacherDataStore.ClassRoutine.store(this, classRoutineModel);
+            //TeacherDataStore.ClassRoutine.store(this, classRoutineModel);
             populateInView();
 
         } catch (Exception e) {
@@ -122,6 +125,9 @@ public class TeacherClassRoutineActivity extends CustomAppCompatActivity impleme
     @Override
     public void onClick(View v) {
         super.onClick(v);
+    }
+
+    private void  setRecyclerView(){
     }
 
 }

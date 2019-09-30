@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.YoutubeUrlSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.DefaultDataStore;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.YouTubeModel;
@@ -28,6 +29,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.YouT
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAppCompatActivity;
 
 public class VideosActivity extends CustomAppCompatActivity implements ApiCall.ResultListener {
+    private String playlist;
     private List<YouTubeModel> modelList;
     private RecyclerView recyclerView;
 
@@ -38,12 +40,16 @@ public class VideosActivity extends CustomAppCompatActivity implements ApiCall.R
 
         casting();
         toolBarTitle.setText(getString(R.string.Videos));
-
-        loadVideos();
+        playlist = YoutubeUrlSetting.getUrl(this);
+        if(playlist.equals("No name defined")){
+            showErrorPopUp("Youtube playlist", "Please set youtube playlist id.");
+        }else {
+            loadVideos();
+        }
     }
 
     private void loadVideos() {
-        String parameters = "?part=snippet&playlistId=" + Constants.YouTube_playlistId;
+        String parameters = "?part=snippet&playlistId=" + playlist.trim();
         parameters = parameters + "&maxResults=" + Constants.YouTube_maxResults;
         parameters = parameters + "&key=" + Constants.Youtube_APIkey;
         ApiCall.getInstance().connect(this, Constants.YouTube_PlayList, Request.Method.GET, parameters, null, this, "");

@@ -1516,6 +1516,7 @@ dimen spacing_xmedium
 dimen spacing_xmlarge
 dimen spacing_xsmall
 dimen spacing_xxlarge
+dimen spacing_xxsmall
 dimen spacing_xxxlarge
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
@@ -2157,9 +2158,11 @@ id recyclerReportCardGradeSN
 id recyclerReportCardGradeSubject
 id recyclerReportCardSN
 id recyclerReportCardSubject
+id recyclerTextView
 id recyclerView
 id recyclerView_date
 id recyclerView_homework
+id recyclerView_list
 id relative_layout
 id remarksEditText
 id remarksTextView
@@ -2261,6 +2264,7 @@ id settingLanguageText
 id settingLanguageTitle
 id settingNotificationSwitch
 id settingSubjectToolbar
+id settingYoutubeUrlEditText
 id setting_bt_close
 id setting_done
 id shortcut
@@ -2279,7 +2283,6 @@ id showall_detail_leave_from_to
 id showall_detail_leave_isActive
 id showall_detail_leave_message
 id showall_detail_leave_subject
-id showall_detail_leave_toolbar
 id showall_leave_application_progress_bar
 id showall_leave_floating_button
 id showall_leave_recycleView
@@ -2365,6 +2368,8 @@ id userProfile_nameTextView
 id userProfile_relativeLayout
 id v1
 id videos
+id viewLineHorizontal
+id viewLineVertical
 id view_offset_helper
 id viewpager
 id visible
@@ -2479,6 +2484,7 @@ layout bf_feedback_screen
 layout bottom_recycler_list
 layout bus_route_recyclerview_list
 layout calender_list
+layout classroutine_list
 layout custom_snackbar
 layout custom_toast
 layout dashboard_list_items
@@ -2505,6 +2511,7 @@ layout fragment_home
 layout fragment_notification
 layout fragment_percentage
 layout fragment_routine
+layout fragment_teacher_class_routine
 layout homework_recyclerview
 layout layout_date
 layout layout_date_header
@@ -2555,6 +2562,7 @@ layout profile_detail_recycler_textview_
 layout profile_detail_recyclerlist
 layout progress_bar
 layout recycler_attendance
+layout recyclerview_list
 layout report_card_grade_pass_fail
 layout report_card_percentage_pass_fail
 layout reportcard_recycleritems
@@ -2577,6 +2585,7 @@ layout setting_language
 layout setting_notification
 layout setting_report_card
 layout setting_url
+layout setting_youtube_url
 layout show_leave_application_recyclerview
 layout show_teacher_homework_list
 layout showteacher_leaveapp_list
@@ -2719,6 +2728,7 @@ string Total_Attendance
 string Username_or_Email
 string Videos
 string Working_Days
+string Youtube_URL
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

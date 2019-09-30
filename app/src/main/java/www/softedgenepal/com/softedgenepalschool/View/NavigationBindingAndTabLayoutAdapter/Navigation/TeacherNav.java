@@ -9,6 +9,7 @@ import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.HomeWor
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.LeaveApplication.ShowTeacherLeaveAppActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherAttendance;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherClassRoutineActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherClassRoutinev2Activity;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherProfileActivity;
 
 import static www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.TeacherHomePage.profileTeacherModel;
@@ -33,7 +34,7 @@ public class TeacherNav {
                 break;
 
             case R.id.classRoutine:
-                redirectToActivity(TeacherClassRoutineActivity.class);
+                redirectToActivity(TeacherClassRoutinev2Activity.class);
                 break;
 
 //            case R.id.examRoutine:

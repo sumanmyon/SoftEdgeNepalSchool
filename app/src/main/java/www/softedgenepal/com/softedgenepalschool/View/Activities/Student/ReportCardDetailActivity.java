@@ -192,7 +192,6 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
                 setMessage(e.getMessage());
             }
 
-            //showInView();
         }else {
             loadTextView.setVisibility(View.VISIBLE);
             loadTextView.setText(getResources().getString(R.string.ReportCard_comeOnline));

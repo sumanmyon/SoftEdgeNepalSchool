@@ -88,12 +88,14 @@ public class TeacherHomeworkAdapter extends RecyclerView.Adapter<TeacherHomework
         }
 
         String createDate = model.CreatedDate;
-        if(!createDate.equals("")) {
+        if(!createDate.equals("") || createDate != null) {
             viewHolder.createDateTextView.setText(DateTime.DateConvertToNepali(createDate, "date"));
         }
 
         String deadline = model.Deadline;
-        setText(viewHolder.deadlineTextView, DateTime.DateConvertToNepali(deadline, "date"));
+        if(deadline != null) {
+            setText(viewHolder.deadlineTextView, DateTime.DateConvertToNepali(deadline, "date"));
+        }
 
         viewHolder.homeWorkTextView.setText(Html.fromHtml(model.Homework));
 

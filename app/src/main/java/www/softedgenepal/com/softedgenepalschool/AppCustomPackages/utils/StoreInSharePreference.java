@@ -31,6 +31,7 @@ public class StoreInSharePreference {
     public String ReportCardSetting = "ReportCardSetting";
     public String NotificationSetting = "NotificationSetting";
     public String BaseUrlSetting = "BaseUrlSetting";
+    public String YoutubeUrlSetting = "YoutubeUrlSetting";
 
     //todo for login
     public String LoginCredential = "LoginCredential";
@@ -98,6 +99,10 @@ public class StoreInSharePreference {
         if (type.equals(BaseUrlSetting)) {
             MY_PREFS_NAME = "BaseUrlSetting";
             stringName = BaseUrlSetting;
+        }
+        if (type.equals(YoutubeUrlSetting)) {
+            MY_PREFS_NAME = "YoutubeUrlSetting";
+            stringName = YoutubeUrlSetting;
         }
 
         if (type.equals(LoginCredential)) {

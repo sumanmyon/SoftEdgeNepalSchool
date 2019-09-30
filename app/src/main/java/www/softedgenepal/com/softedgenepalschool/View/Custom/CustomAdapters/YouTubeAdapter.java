@@ -59,7 +59,7 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
         viewHolder.youtubeTitle.setText(model1.snippet.title);
 
         if(model1.snippet.thumbnails != null) {
-            String url = model1.snippet.thumbnails.maxres.url;
+            String url = model1.snippet.thumbnails.standard.url;
 
             ShowInGlide glide = new ShowInGlide(videosActivity);
             glide.loadURL(url);

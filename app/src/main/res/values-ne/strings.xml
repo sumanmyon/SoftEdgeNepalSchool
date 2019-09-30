@@ -77,7 +77,8 @@
     <!-- For Notification -->
     <string name="Notification">सूचना</string>
     <string name="Notification_setting_message">सूचनाहरू प्राप्त गर्न तपाईले आफ्नो अनुप्रयोग सेट अप गर्न सक्नुहुन्छ, जस्तै गृहकार्य अनुस्मारकहरू, उपस्थिति, घटनाहरू, छुट्टीहरू आदि।</string>
-    <string name="Base_URL">आधार यूआरएल</string>
+    <string name="Base_URL">आधार URL</string>
+    <string name="Youtube_URL">यूट्यूब URL</string>
 
     <!-- TODO: For Leave Application -->
     <string name="ShowAllLeaveApplication_ToolBar">तपाईंको छुट्टी आवेदन</string>

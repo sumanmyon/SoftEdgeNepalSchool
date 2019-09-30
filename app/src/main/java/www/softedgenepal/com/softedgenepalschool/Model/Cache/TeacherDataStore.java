@@ -13,6 +13,7 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.LeaveApplic
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.LeaveTypeModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.ProfileTeacherModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.TeacherClassRoutineModel;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.TeacherClassRoutineModel2;
 
 public class TeacherDataStore {
     //Type for list<?> model list
@@ -69,7 +70,7 @@ public class TeacherDataStore {
     }
 
     public static class ClassRoutine{
-        public static void store(Context context, List<List<TeacherClassRoutineModel>> data){
+        public static void store(Context context, List<TeacherClassRoutineModel2> data){
             PreferencesForObject.store(context, Constants.ClassRoutineTeacher, Constants.ClassRoutineTeacher, data);
         }
 

@@ -49,9 +49,10 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
     private CircleImageView userProfileImage;
     private TextView userNameTextView, classTextView, roll_SubTextView;
     public static Cache cache;
-    public static StudentProfileModel studentProfileModel;
+    public static StudentProfileModel studentProfileModellist;
+    private StudentProfileModel studentProfileModel;
 
-    public static List<StudentDataCache> studentDataCacheList = null;
+    public static List<StudentDataCache> studentDataCacheList;
 
     public StudentHomePage(Activity activity, View view) {
         this.activity = activity;
@@ -198,13 +199,14 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
     private void online(JSONObject jsonObject) {
         studentProfileModel = new Gson().fromJson(jsonObject.toString(), new TypeToken<StudentProfileModel>() {
         }.getType());
-
+        studentProfileModellist = studentProfileModel;
         StudentDataStore.Profile.store(getContext(), studentProfileModel);
         populateInView();
     }
 
     private void offline() {
         studentProfileModel = (StudentProfileModel) StudentDataStore.Profile.get(getContext(), StudentProfileModel.class);
+        studentProfileModellist = studentProfileModel;
         populateInView();
     }
 

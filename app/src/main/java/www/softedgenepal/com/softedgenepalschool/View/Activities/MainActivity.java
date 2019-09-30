@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
@@ -36,6 +37,8 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandle
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.NotificationSetting;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.Constants;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.PreferencesForObject;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
@@ -101,16 +104,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }, 5*1000);
+        }else {
+            //PreferencesForObject.clear(Constants.LoginCredential);
+            userType = "School";
+            PreferencesForObject.store(this, Constants.LoginCredential, Constants.LoginCredential, null);
         }
     }
-
-//    @Override
-//    protected void onRestart() {
-//        super.onRestart();
-//        Intent refresh = new Intent(getApplicationContext(), MainActivity.class);
-//        finish();
-//        startActivity(refresh);
-//    }
 
     private void runTimePermissions() {
         if (!EasyPermissions.hasPermissions(this, perms)) {
@@ -157,6 +156,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                     Log.d("FirebaseMessaging", msg);
                     //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                @Override
+                public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                    String msg = getString(R.string.msg_subscribed);
+                    if (!task.isSuccessful()) {
+                        msg = getString(R.string.msg_subscribe_failed);
+                    }
+                    Log.d("FirebaseMessaging", Constants.GENERATE_TOKEN);
                 }
             });
         }

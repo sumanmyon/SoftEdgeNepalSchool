@@ -6,9 +6,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
+import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
+
+import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomViews.NonSwipAbleView;
 
 
 public class FragmentAdapter {
@@ -61,6 +65,11 @@ public class FragmentAdapter {
 
         viewPager.setAdapter(fragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setInlineLabel(true);
+    }
+
+    public void setCurrentItem(){
+        viewPager.setCurrentItem(1, true);
     }
 
     public void setIcons(){
@@ -70,14 +79,19 @@ public class FragmentAdapter {
         }
     }
 
+
     public void disableSwipe(){
         //todo disable viewpager swipe
         viewPager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+//                boolean b = viewPager.onInterceptTouchEvent(event);
+//                viewPager.requestDisallowInterceptTouchEvent(true);
+                new NonSwipAbleView(activity).onInterceptTouchEvent(event);
                 return true;
             }
         });
+
 
         //use this to swipe manually
         //viewPager.setCurrentItem(int index);

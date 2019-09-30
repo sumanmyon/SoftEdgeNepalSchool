@@ -51,12 +51,12 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
 
         showInView(cache);
 
-        backpress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+//        backpress.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
     }
 
     private void showInView(LeaveApplicationDataCache cache) {
@@ -92,7 +92,7 @@ public class ShowAllLeaveApplicationDetailViewActivity extends AppCompatActivity
     }
 
     private void casting() {
-        backpress = findViewById(R.id.leaveApp_bt_close);
+        //backpress = findViewById(R.id.leaveApp_bt_close);
 
         subjectTextView = findViewById(R.id.showall_detail_leave_subject);
         messageTextView = findViewById(R.id.showall_detail_leave_message);

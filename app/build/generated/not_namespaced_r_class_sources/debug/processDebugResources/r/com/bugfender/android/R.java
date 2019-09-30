@@ -39,8 +39,8 @@ public final class R {
         public static final int feedback_title_et = 0x7f0a00b6;
         public static final int message_tv = 0x7f0a0132;
         public static final int positive_action_tv = 0x7f0a0151;
-        public static final int root_vg = 0x7f0a01a3;
-        public static final int title_tv = 0x7f0a022a;
+        public static final int root_vg = 0x7f0a01a5;
+        public static final int title_tv = 0x7f0a022c;
     }
     public static final class layout {
         private layout() {}
@@ -50,6 +50,6 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int powered_by_bugfender = 0x7f11011d;
+        public static final int powered_by_bugfender = 0x7f11011e;
     }
 }

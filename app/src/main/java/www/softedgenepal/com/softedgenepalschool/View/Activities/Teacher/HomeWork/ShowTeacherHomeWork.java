@@ -131,9 +131,8 @@ public class ShowTeacherHomeWork extends CustomAppCompatActivity implements ApiC
     }
 
     private void offline() {
-        Type type = new TypeToken<List<HomeWorkModel>>() {
-        }.getType();
-        homeWorkModelList = (List<HomeWorkModel>) TeacherDataStore.HomeWorkDetail.get(this, type);
+        homeWorkModelList = (List<HomeWorkModel>) TeacherDataStore.HomeWorkDetail.get(this, new TypeToken<List<HomeWorkModel>>() {
+        }.getType());
         populateInView();
     }
 

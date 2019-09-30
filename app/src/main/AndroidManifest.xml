@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true">
         <activity android:name=".View.Activities.VideosActivity"></activity>
-        <activity android:name=".View.Activities.Teacher.TeacherClassRoutinev2Activity" />
+        <activity android:name=".View.Activities.Teacher.TeacherClassRoutinev2Activity"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".View.Activities.Teacher.TeacherClassRoutineActivity"
             android:screenOrientation="landscape" />
@@ -47,7 +48,8 @@
         <activity android:name=".View.Activities.Student.HomeWorkActivity" />
         <activity android:name=".View.Activities.EventActivity" />
         <activity android:name=".View.Activities.AboutActivity" />
-        <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity" />
+        <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplicationDetailViewActivity"
+            android:theme="@style/AppTheme.AlertDialogue"/>
         <activity android:name=".View.Activities.SuggestionActivity" /> <!-- android:hardwareAccelerated="true"> -->
         <activity android:name=".View.Activities.Student.ProfileActivity" />
         <activity android:name=".View.Activities.LeaveApplication.ShowAllLeaveApplication" />
@@ -89,7 +91,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
 </manifest>

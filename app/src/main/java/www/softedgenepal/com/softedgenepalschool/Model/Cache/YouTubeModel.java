@@ -17,7 +17,7 @@ public class YouTubeModel implements Serializable {
         public thumbnails thumbnails;
 
         public class thumbnails implements Serializable{
-            public maxres maxres;
+            public maxres standard;
 
             public class maxres implements Serializable{
                 public String url = "";

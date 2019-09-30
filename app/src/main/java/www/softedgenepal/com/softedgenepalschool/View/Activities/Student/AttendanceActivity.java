@@ -39,7 +39,7 @@ import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
-import static www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage.studentDataCacheList;
+import static www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage.studentProfileModellist;
 
 public class AttendanceActivity extends AppCompatActivity implements IContractor.View {
     private TextView loadTextView, attendancePresentDays, attendanceUserName, attendanceClass;
@@ -58,7 +58,7 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
     final float[] totalWorkingDays = new float[1];
     final float[] totalPresentDays = new float[1];
 
-    public List<StudentDataCache> studentDataList = null;
+    public StudentDataCache studentDataList = null;
 
     LanguageSettingv2 languageSetting;
 
@@ -68,8 +68,8 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
         languageSetting = new LanguageSettingv2(this);
         languageSetting.loadLanguage();
         setContentView(R.layout.activity_attendance);
-        this.studentDataList = studentDataCacheList;
 
+        this.studentDataList = studentProfileModellist.StudentDetail;
         casting();
         loadProfile();
 
@@ -86,11 +86,11 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
 
     private void loadProfile() {
         if(studentDataList != null) {
-            attendanceUserName.setText(studentDataList.get(0).StudentName);
-            attendanceClass.setText(studentDataList.get(0).ClassName + " ("+studentDataList.get(0).SectionName+")");
+            attendanceUserName.setText(studentDataList.StudentName);
+            attendanceClass.setText(studentDataList.ClassName + ", "+studentDataList.SectionName);
 
             ShowInGlide glide = new ShowInGlide(this);
-            glide.loadURL(studentDataList.get(0).ImageUrl);
+            glide.loadURL(studentDataList.ImageUrl);
             glide.loadFailed(R.drawable.ic_profile_img);
             glide.show(attendanceProfile);
         }

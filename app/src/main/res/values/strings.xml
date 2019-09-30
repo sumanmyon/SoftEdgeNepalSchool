@@ -76,6 +76,7 @@
     <string name="Notification">Notification</string>
     <string name="Notification_setting_message">You can set up your Application to get notifications, like homework reminders, attendance, events, holidays etc.</string>
     <string name="Base_URL">Base URL</string>
+    <string name="Youtube_URL">Youtube URL</string>
 
     <!-- TODO: For Leave Application -->
     <string name="ShowAllLeaveApplication_ToolBar">Your Leave Application</string>

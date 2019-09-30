@@ -19,9 +19,8 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="112dp"
             android:layout_weight="0.6"
-            android:layout_centerInParent="true"
             android:adjustViewBounds="true" />
         <LinearLayout
             android:layout_width="match_parent"

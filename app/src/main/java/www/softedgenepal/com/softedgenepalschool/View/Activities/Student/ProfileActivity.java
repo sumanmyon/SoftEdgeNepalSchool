@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         casting();
 
         //getting cached data
-        this.cache = StudentHomePage.studentProfileModel;
+        this.cache = StudentHomePage.studentProfileModellist;
         //cache = (Cache) getIntent().getSerializableExtra("cache");
         if (cache != null) {
             userNameTextView.setText(cache.StudentDetail.StudentName);
