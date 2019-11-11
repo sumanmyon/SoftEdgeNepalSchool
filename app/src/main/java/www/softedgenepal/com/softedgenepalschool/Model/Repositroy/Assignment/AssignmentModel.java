@@ -62,7 +62,7 @@ public class AssignmentModel implements AssignmentContractor.Model {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("Url", error.getMessage());
+                //Log.d("Url", error.getMessage());
                 offline();
             }
         });
