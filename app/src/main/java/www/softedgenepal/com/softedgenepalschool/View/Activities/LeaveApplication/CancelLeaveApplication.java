@@ -14,7 +14,9 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
+import www.softedgenepal.com.softedgenepalschool.R;
 
 public class CancelLeaveApplication{
     private ShowAllLeaveApplication context;
@@ -33,46 +35,45 @@ public class CancelLeaveApplication{
     private void callApi(Map<String, String> params) {
         //todo set url missing
         String Url = new URL(context).cancelLeaveApplicationUrl() + "?SystemCode="+params.get("SystemCode")+"&Role="+params.get("Role");
-        JsonObjectRequest jsonOblect = new JsonObjectRequest(Request.Method.POST, Url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            if (response.getString("Status").equals("true")){
-                                setMessage(response.getString("Response"));
-                                //destroy();
-                                refreshShowAllLeaveApplication();
-                            }else {
-                                setMessage(response.getString("Response"));
-                                //destroy();
-                                refreshShowAllLeaveApplication();
-                            }
-                        }catch (Exception e){
-                            setMessage(e.getMessage());
+        if(new NetworkConnection(context).isConnectionSuccess()) {
+            JsonObjectRequest jsonOblect = new JsonObjectRequest(Request.Method.POST, Url, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        if (response.getString("Status").equals("true")) {
+                            setMessage(response.getString("Response"));
+                            //destroy();
+                            refreshShowAllLeaveApplication();
+                        } else {
+                            setMessage(response.getString("Response"));
                             //destroy();
                             refreshShowAllLeaveApplication();
                         }
+                    } catch (Exception e) {
+                        setMessage(e.getMessage());
+                        //destroy();
+                        refreshShowAllLeaveApplication();
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                setMessage(error.getMessage());
-                //destroy();
-                refreshShowAllLeaveApplication();
-            }
-        });
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    setMessage(error.getMessage());
+                    //destroy();
+                    refreshShowAllLeaveApplication();
+                }
+            });
 
-        RequestQueue requestQueue = Volley.newRequestQueue(context);
-        requestQueue.add(jsonOblect);
+            RequestQueue requestQueue = Volley.newRequestQueue(context);
+            requestQueue.add(jsonOblect);
+        }else {
+            setMessage(context.getResources().getString(R.string.Network_error));
+        }
     }
 
     public void setMessage(String message) {
         Toast.makeText(context,message,Toast.LENGTH_LONG).show();
     }
-
-//    public void destroy(){
-//        alertDialog.cancel();
-//    }
 
     private void refreshShowAllLeaveApplication(){
         context.refreshRecyclerView();

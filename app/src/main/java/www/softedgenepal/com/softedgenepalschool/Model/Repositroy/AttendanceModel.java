@@ -22,6 +22,7 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContracto
 
 public class AttendanceModel implements IContractor.Model {
     private AttendancePresenter attendancePresenter;
+    private String regestrationId;
 
     public AttendanceModel(AttendancePresenter attendancePresenter) {
         this.attendancePresenter = attendancePresenter;
@@ -38,7 +39,8 @@ public class AttendanceModel implements IContractor.Model {
     }
 
     @Override
-    public void getJsonData() {
+    public void getJsonData(String studentId) {
+        regestrationId = studentId;
         if(new NetworkConnection(getContext()).isConnectionSuccess()) {
             //todo go online
             online( attendancePresenter.getParams());
@@ -58,13 +60,12 @@ public class AttendanceModel implements IContractor.Model {
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.Attendance);
-                preference.storeData(response.toString());
+                preference.storeData(response.toString(),regestrationId);
                 offline();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //setMessage(error.toString());
                 offline();
             }
         });
@@ -76,7 +77,7 @@ public class AttendanceModel implements IContractor.Model {
     private void offline() {
         StoreInSharePreference preference = new StoreInSharePreference(getContext());
         preference.setType(preference.Attendance);
-        String data = preference.getData();
+        String data = preference.getData(regestrationId);
 
         if(data==null){
             setMessage("There is not any attendance.");
@@ -85,7 +86,6 @@ public class AttendanceModel implements IContractor.Model {
 
         try {
             JSONObject response = new JSONObject(data);
-            // parseJson(response);
             setJsonData(response);
         } catch (JSONException e) {
             e.printStackTrace();

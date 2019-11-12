@@ -85,7 +85,7 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
             @Override
             public void onClickListener(int id) {
                 StudentNav nav = new StudentNav(activity, id);
-                nav.set();
+                nav.set(user.Id);
             }
         };
         category.columnSpan = 4;
@@ -110,9 +110,6 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
 
     public void userDataList(Cache cache) {
         this.cache = cache;
-        //set data
-        //this.studentDataCacheList = cache.studentDataCaches;
-        //setData(this.studentDataCacheList.get(0).username, this.studentDataCacheList.get(0).userclass + " (" + this.studentDataCacheList.get(0).section + ")", this.studentDataCacheList.get(0).rollno, this.studentDataCacheList.get(0).imageUrl);
     }
 
     private void setData(String username, String classSection, String rollno, String imageUrl) {
@@ -123,7 +120,6 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
         glide.loadFailed(R.drawable.userprofile4);
         glide.show(userProfileImage);
 
-        //username = String.format("%s%s", getContext().getResources().getString(R.string.profile_username), username);
         userNameTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_username), " " + username));
         classTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_class), " " + classSection));
         roll_SubTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_rollno), " " + rollno));
@@ -133,7 +129,6 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
             public void onClick(View v) {
                 //todo student user detail page
                 Intent profileIntent = new Intent(activity, ProfileActivity.class);
-                //profileIntent.putExtra("cache",cache);
                 activity.startActivity(profileIntent);
             }
         });
@@ -200,12 +195,12 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
         studentProfileModel = new Gson().fromJson(jsonObject.toString(), new TypeToken<StudentProfileModel>() {
         }.getType());
         studentProfileModellist = studentProfileModel;
-        StudentDataStore.Profile.store(getContext(), studentProfileModel);
+        StudentDataStore.Profile.store(getContext(), user.Id, studentProfileModel);
         populateInView();
     }
 
     private void offline() {
-        studentProfileModel = (StudentProfileModel) StudentDataStore.Profile.get(getContext(), StudentProfileModel.class);
+        studentProfileModel = (StudentProfileModel) StudentDataStore.Profile.get(getContext(), user.Id, StudentProfileModel.class);
         studentProfileModellist = studentProfileModel;
         populateInView();
     }
@@ -218,7 +213,6 @@ public class StudentHomePage implements Contractor.View, ApiCall.ResultListener 
         glide.loadFailed(R.drawable.userprofile4);
         glide.show(userProfileImage);
 
-        //username = String.format("%s%s", getContext().getResources().getString(R.string.profile_username), username);
         userNameTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_username), " " + studentProfileModel.StudentDetail.StudentName));
         classTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_class), " " + studentProfileModel.StudentDetail.ClassName + ", " + studentProfileModel.StudentDetail.SectionName));
         roll_SubTextView.setText(String.format("%s%s", getContext().getResources().getString(R.string.profile_rollno), " " + studentProfileModel.StudentDetail.RollNo));

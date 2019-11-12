@@ -35,8 +35,8 @@ public class MapBoxPresenter implements IContractor.Presenter {
     }
 
     @Override
-    public void getJsonData() {
-        mapBoxModel.getJsonData();
+    public void getJsonData(String studentId) {
+        mapBoxModel.getJsonData(studentId);
     }
 
     @Override

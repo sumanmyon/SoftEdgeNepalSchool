@@ -53,7 +53,7 @@ public class CalenderModel implements CalenderContractor.Model {
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.Calender);
-                preference.storeData(response.toString());
+                preference.storeData(response.toString(), params.get("studentID"));
                 offline();
             }
         }, new Response.ErrorListener() {

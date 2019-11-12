@@ -33,6 +33,8 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
     private MapBoxPresenter presenter;
     private LanguageSettingv2 languageSetting;
 
+    private String StudentId = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +82,7 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
 
     @Override
     public void getJsonData() {
-        presenter.getJsonData();
+        presenter.getJsonData(StudentId);
     }
 
     @Override

@@ -2125,6 +2125,9 @@ id pin
 id popupmenu_ImageView
 id popupmenu_TextView
 id positive_action_tv
+id profile_Class
+id profile_ImageView
+id profile_RollNo
 id profile_bt_close
 id profile_detail_ImageView
 id profile_detail_linearLayout
@@ -2238,6 +2241,7 @@ id schoolPhoneNo_TextView
 id schoolWeb_TextView
 id school_map_button
 id screen
+id scrl
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -2468,6 +2472,7 @@ layout activity_show_in_map
 layout activity_show_teacher_home_work
 layout activity_show_teacher_leave_app
 layout activity_show_teacher_leave_app_detail
+layout activity_sibling
 layout activity_sibling_pop_up
 layout activity_sibling_pop_up2
 layout activity_suggestion

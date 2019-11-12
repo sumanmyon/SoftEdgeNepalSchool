@@ -25,12 +25,13 @@ public class GetAllUserLeaveApplication implements LeaveApplicationContractor.Mo
     }
 
     @Override
-    public void getAllUserLeaveData(Map<String, String> params) {
+    public void getAllUserLeaveData(Map<String, String> params, String studentId) {
+
         online = new ShowLeaveApplicationOnline(this,context);
         if(new NetworkConnection(context).isConnectionSuccess()){
-            online.get(params);
+            online.get(params, studentId);
         }else {
-            online.offline();
+            online.offline(studentId);
         }
     }
 

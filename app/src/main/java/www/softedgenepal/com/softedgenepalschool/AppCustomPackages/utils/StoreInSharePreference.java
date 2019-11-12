@@ -112,6 +112,30 @@ public class StoreInSharePreference {
         prefs = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
     }
 
+    public void storeData(String data, String regrestrationID) {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(stringName+regrestrationID, data);
+        editor.apply();
+    }
+
+    public String getData(String regrestrationID) {
+        String getUserData = null;
+        try {
+            String data = prefs.getString(stringName+regrestrationID, "No name defined");//"No name defined" is the default value.
+            getUserData = data;
+        } catch (Exception e) {
+            getUserData = null;
+        }
+        //showMessage(getUserData);
+
+        return getUserData;
+    }
+
+    //todo Removing single preference:
+    public void clear(String regrestrationID) {
+        prefs.edit().remove(stringName + regrestrationID).apply();  //commit()
+    }
+
     public void storeData(String data) {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(stringName, data);

@@ -25,11 +25,17 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.Lang
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.AssignmentCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.AssignmentPresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.AssignmentContractor;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.AssignmentAdapter;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.BottomSheetFragment;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
+
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 public class HomeWorkActivity extends AppCompatActivity implements AssignmentContractor.View {
@@ -37,13 +43,13 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
     private ProgressBar progressBar;
     private View backpress;
 
-    private String uid = user.Id;
     Map<String, String> params;
     AssignmentPresenter presenter;
 
-    //private List<AssignmentCache> assignmentCacheList;
     private AssignmentAdapter adapter;
+    private String from = "6/2/2019";
     private String today;
+    private String StudentId;
 
     private LanguageSettingv2 languageSetting;
 
@@ -57,17 +63,36 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
         casting();
 
         //get Student Id :: registrationNo
+        //getting cached data
+        Bundle bundle = getIntent().getExtras();
+        String registrationNo = null;
+        if(bundle!=null) {
+            registrationNo = bundle.getString("registrationNo");
+        }
+
+        StudentDataCache studentDataList = StudentHomePage.studentProfileModellist.StudentDetail;
+        if (studentDataList != null) {
+            if(registrationNo.equals(MainActivity.user.Id)){
+                StudentId  = MainActivity.user.Id;
+            }else {
+                StudentProfileModel sibModel = SiblingActivity.siblingProfileModel;
+                if(registrationNo.equals(sibModel.StudentDetail.RegistrationNo)){
+                    StudentId = sibModel.StudentDetail.RegistrationNo;
+                }
+            }
+        }
 
         //getToday CalenderDate
         String[] todaySplit = DateTime.getTodayDate().split("/");
 
         today = DateTime.getTodayDate();//String.valueOf(DateTime.convertToNepali(todaySplit));
+        Log.e("DateToday", today);
 
         //params to fetch url
         params = new HashMap<>();
-        params.put("From","6/2/2019");
-        params.put("To",today);
-        params.put("studentId",uid.trim());
+        params.put("From", from);
+        params.put("To", today);
+        params.put("studentId", StudentId);
 
         FetchData(params);
 
@@ -153,7 +178,11 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
                                 }
                                 setInView();
                             }
+                        }else {
+                            setMessage(getResources().getString(R.string.not_any_assignment));
                         }
+                    }else {
+                        setMessage(getResources().getString(R.string.not_any_assignment));
                     }
                 }
             }
@@ -198,6 +227,7 @@ public class HomeWorkActivity extends AppCompatActivity implements AssignmentCon
             }
         });
     }
+
 
     private void setLog(String topic, String message) {
         Log.d(topic, message);

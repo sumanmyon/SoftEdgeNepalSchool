@@ -16,46 +16,49 @@ import www.softedgenepal.com.softedgenepalschool.View.Activities.Student.Routine
 public class StudentNav {
     private Activity activity;
     private int itemId;
+    private String registrationNo;
 
     public StudentNav(Activity activity, int itemId) {
         this.activity=activity;
         this.itemId=itemId;
     }
 
-    public void set(){
+    public void set(String registrationNo){
+        this.registrationNo = registrationNo;
+
         switch (itemId){
             case R.id.homeWork:
                 redirectToActivity(HomeWorkActivity.class);
                 break;
+
             case R.id.studentAttendance:
                 redirectToActivity(AttendanceActivity.class);
                 break;
+
             case R.id.routine:
                 redirectToActivity(RoutineActivity.class);
                 break;
+
             case R.id.reportCard:
                 redirectToActivity(ReportCardActivity.class);
                 break;
-//            case R.id.studentAccount:
-//                showMessage("Coming Soon");
-//                break;
+
             case R.id.studentLeaveApplication:
                 redirectToActivity(ShowAllLeaveApplication.class);
                 break;
-//            case R.id.studentSuggestion:
-//                redirectToActivity(SuggestionActivity.class);
-//                break;
+
             case R.id.liveBusTracking:
                 redirectToActivity(BusRouteActivity.class);
                 break;
+
             case R.id.studentProfile:
                 redirectToActivity(ProfileActivity.class);
                 break;
 
             case R.id.sibling:
-                //redirectToActivity(ProfileActivity.class);
                 showMessage("Comming Soon");
                 break;
+
             default:
                 break;
         }
@@ -63,6 +66,7 @@ public class StudentNav {
 
     private void redirectToActivity(Class<?> activityClass) {
         Intent intent = new Intent(activity, activityClass);
+        intent.putExtra("registrationNo", registrationNo);
         activity.startActivity(intent);
     }
 

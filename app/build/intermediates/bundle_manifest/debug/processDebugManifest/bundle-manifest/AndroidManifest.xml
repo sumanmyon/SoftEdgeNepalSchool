@@ -60,6 +60,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme_NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.VideosActivity" />
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Teacher.TeacherClassRoutinev2Activity"
@@ -89,6 +90,7 @@
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.ScanActivity" /> <!-- for cleartext http traffic -->
         <activity
             android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.RunTimePermissions"
+            android:parentActivityName="www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity"
             android:theme="@style/AppTheme_Permission" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.AttendanceActivity" />
         <activity android:name="www.softedgenepal.com.softedgenepalschool.View.Activities.Student.RoutineActivity" />

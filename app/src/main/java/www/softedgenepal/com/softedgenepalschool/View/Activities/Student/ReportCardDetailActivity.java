@@ -1,7 +1,6 @@
 package www.softedgenepal.com.softedgenepalschool.View.Activities.Student;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -25,11 +24,15 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.Lang
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.ReportCardSetting;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ReportCardCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ReportCardDetailCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.ReportCardPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.FragmentAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.ReportCard.Grade;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.ReportCard.Percentage;
 
@@ -47,7 +50,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
     private ReportCardPresenter presenter;
 
     private ReportCardCache reportCardCache;
-    private String studentId = MainActivity.user.Id;
+    private String StudentId;
     private String examId;
 
     public static List<ReportCardDetailCache> reportCardDetailCacheList;
@@ -75,6 +78,7 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             reportCardCache = (ReportCardCache) bundle.getSerializable("cache");
+            StudentId = bundle.getString("registrationNo");
         }
 
         setType();
@@ -124,13 +128,13 @@ public class ReportCardDetailActivity extends AppCompatActivity implements ICont
 
     @Override
     public void getJsonData() {
-        presenter.getJsonData();
+        presenter.getJsonData(StudentId);
     }
 
     @Override
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
-        params.put("studentId",studentId);
+        params.put("studentId", StudentId);
         params.put("examId", examId);
         return params;
     }

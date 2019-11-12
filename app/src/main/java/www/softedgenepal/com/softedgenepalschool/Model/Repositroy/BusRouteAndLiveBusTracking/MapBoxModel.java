@@ -26,7 +26,7 @@ public class MapBoxModel implements IContractor.Model {
     }
 
     @Override
-    public void getJsonData() {
+    public void getJsonData(String studentId) {
         if(new NetworkConnection(getContext()).isConnectionSuccess()) {
             //todo go online
             online();

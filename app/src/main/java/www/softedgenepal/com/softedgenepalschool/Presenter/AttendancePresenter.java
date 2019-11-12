@@ -35,8 +35,8 @@ public class AttendancePresenter implements IContractor.Presenter {
     }
 
     @Override
-    public void getJsonData() {
-        model.getJsonData();
+    public void getJsonData(String studentId) {
+        model.getJsonData(studentId);
     }
 
     @Override

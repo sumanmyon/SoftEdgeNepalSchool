@@ -17,11 +17,14 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ParentDataC
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomViews.SetProfile;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 public class ProfileActivity extends AppCompatActivity {
     private StudentProfileModel cache;
+    private StudentProfileModel sibModel;
     private TextView userNameTextView;
     private CircleImageView userImageView;
     private View backpress;
@@ -36,21 +39,33 @@ public class ProfileActivity extends AppCompatActivity {
 
         //getting cached data
         this.cache = StudentHomePage.studentProfileModellist;
-        //cache = (Cache) getIntent().getSerializableExtra("cache");
+
+        Bundle bundle = getIntent().getExtras();
+        String registrationNo = null;
+        if(bundle!=null) {
+             registrationNo = bundle.getString("registrationNo");
+        }
+
         if (cache != null) {
-            userNameTextView.setText(cache.StudentDetail.StudentName);
+            if(registrationNo.equals(user.Id)){
+                populate(cache.StudentDetail);
 
-            //todo show image and store image for offline
-            //Glide.with(userImageView).load(cache.studentDataCaches.get(0).imageUrl).into(userImageView);
-            ShowInGlide glide = new ShowInGlide(this);
-            glide.loadURL(cache.StudentDetail.ImageUrl);
-            glide.loadFailed(R.drawable.userprofile4);
-            glide.show(userImageView);
+                //todo inflating ui for Student profile
+                studentProfile(getString(R.string.personal_detail), cache.StudentDetail);
+                studentParent(cache.ParentDetail);
+                studentGuardian(cache.GuardianDetail);
 
-            //todo inflating ui for Student profile
-            studentProfile(getString(R.string.personal_detail));
-            studentParent();
-            studentGuardian();
+            }else {
+                this.sibModel = SiblingActivity.siblingProfileModel;
+                if(registrationNo.equals(sibModel.StudentDetail.RegistrationNo)){
+                    populate(sibModel.StudentDetail);
+
+                    //todo inflating ui for Sibling profile
+                    studentProfile(getString(R.string.personal_detail), sibModel.StudentDetail);
+                    studentParent(sibModel.ParentDetail);
+                    studentGuardian(sibModel.GuardianDetail);
+                }
+            }
         }
 
         backpress.setOnClickListener(new View.OnClickListener() {
@@ -61,12 +76,22 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
-    private void studentProfile(String text) {
+    private void populate(StudentDataCache studentDetail){
+        userNameTextView.setText(studentDetail.StudentName);
+
+        //todo show image and store image for offline
+        ShowInGlide glide = new ShowInGlide(this);
+        glide.loadURL(studentDetail.ImageUrl);
+        glide.loadFailed(R.drawable.userprofile4);
+        glide.show(userImageView);
+    }
+
+    private void studentProfile(String text, StudentDataCache studentDetail) {
         String title = text;
 
         final String[] keys = new String[]{"RegistrationNo", "Class", "section", "Roll no", "Gender", "Birth Date", "Contact", "Email", "House", "Religion", "Caste", "Address", "Blood Group", "Bus Stop", "Bus Route"};
 
-        final StudentDataCache studentDataCache = cache.StudentDetail;
+        final StudentDataCache studentDataCache = studentDetail;
 
         final List<String> value = new ArrayList<>();
         value.add(studentDataCache.RegistrationNo);
@@ -93,12 +118,12 @@ public class ProfileActivity extends AppCompatActivity {
         setProfile.start();
     }
 
-    private void studentParent() {
+    private void studentParent(ParentDataCache parentDetail) {
         String title = getString(R.string.parent_detail);
 
         String[] keys = new String[]{"Father Name", "Father Occupation", "Father Contact", "Mother Name", "Mother Occupation", "Mother Contact"};
 
-        ParentDataCache parentDataCache = cache.ParentDetail;
+        ParentDataCache parentDataCache = parentDetail;
         List<String> values = new ArrayList<>();
         values.add(parentDataCache.FatherName);
         values.add(parentDataCache.FatherOccupation);
@@ -112,12 +137,12 @@ public class ProfileActivity extends AppCompatActivity {
         setProfile.start();
     }
 
-    private void studentGuardian() {
+    private void studentGuardian(GuardianDataCache guardianDetail) {
         String title = getString(R.string.guardian_deatil);
 
         String[] keys = new String[]{"Guardian Name", "Guardian Occupation", "Guardian Contact"};
 
-        GuardianDataCache guardianDataCache = cache.GuardianDetail;
+        GuardianDataCache guardianDataCache = guardianDetail;
         List<String> values = new ArrayList<>();
         values.add(guardianDataCache.GuardianName);
         values.add(guardianDataCache.GuardianOccupation);

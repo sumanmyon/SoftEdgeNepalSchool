@@ -2200,6 +2200,10 @@
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\a4e5421f631a8043bc5f844ef002a946\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
+        "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sibling.xml.flat",
+        "source": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\src\\main\\res\\layout\\activity_sibling.xml"
+    },
+    {
         "merged": "C:\\Users\\suman\\AndroidStudioProjects\\AndroidStudioProject2019\\SoftENSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\suman\\.gradle\\caches\\transforms-2\\files-2.1\\a4e5421f631a8043bc5f844ef002a946\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },

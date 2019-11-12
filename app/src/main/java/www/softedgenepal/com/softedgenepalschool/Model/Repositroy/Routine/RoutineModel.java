@@ -22,6 +22,7 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.RoutinePresenter;
 
 public class RoutineModel implements IContractor.Model {
     private RoutinePresenter presenter;
+    private String studentId;
 
     public RoutineModel(RoutinePresenter routinePresenter) {
         this.presenter = routinePresenter;
@@ -38,7 +39,8 @@ public class RoutineModel implements IContractor.Model {
     }
 
     @Override
-    public void getJsonData() {
+    public void getJsonData(String studentId) {
+        this.studentId = studentId;
         if(new NetworkConnection(getContext()).isConnectionSuccess()) {
             //todo go online
             online();
@@ -60,7 +62,7 @@ public class RoutineModel implements IContractor.Model {
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.Routine);
-                preference.storeData(response.toString());
+                preference.storeData(response.toString(), studentId);
                 offline();
             }
         }, new Response.ErrorListener() {
@@ -78,7 +80,7 @@ public class RoutineModel implements IContractor.Model {
     private void offline() {
         StoreInSharePreference preference = new StoreInSharePreference(getContext());
         preference.setType(preference.Routine);
-        String data = preference.getData();
+        String data = preference.getData(studentId);
 
         if(data==null){
             setMessage("There is not any assignment.");

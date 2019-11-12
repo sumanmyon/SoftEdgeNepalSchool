@@ -41,7 +41,7 @@ public interface LeaveApplicationContractor {
             void refresh();
         }
         interface Get{
-            void getAllUserLeaveData(Map<String, String> params);
+            void getAllUserLeaveData(Map<String, String> params, String studentId);
             void setMessageInTextView(String message);
         }
 

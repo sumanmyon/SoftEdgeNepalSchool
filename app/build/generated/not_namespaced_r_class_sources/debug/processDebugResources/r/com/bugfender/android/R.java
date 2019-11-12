@@ -39,13 +39,13 @@ public final class R {
         public static final int feedback_title_et = 0x7f0a00b6;
         public static final int message_tv = 0x7f0a0132;
         public static final int positive_action_tv = 0x7f0a0151;
-        public static final int root_vg = 0x7f0a01a5;
-        public static final int title_tv = 0x7f0a022c;
+        public static final int root_vg = 0x7f0a01a8;
+        public static final int title_tv = 0x7f0a0230;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int bf_feedback_screen = 0x7f0d0042;
+        public static final int bf_feedback_screen = 0x7f0d0043;
     }
     public static final class string {
         private string() {}

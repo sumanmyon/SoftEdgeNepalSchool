@@ -26,10 +26,14 @@ import java.util.List;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DatePicker;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.DatePickerAndCalender.DateCompare;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 
 public class LeaveApplicationActivity extends AppCompatActivity implements LeaveApplicationContractor.View {
     private Activity activity;
@@ -42,13 +46,15 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
     private ProgressBar progressBar;
     private View closeButton;
 
+    private String StudentId;
+    private String Role;
+
     private final String[] startDate = {""};
     private final String[] endDate = {""};
 
     private String engstartDate;
     private String engendDate;
 
-    private final String uid = MainActivity.user.Id;
     LanguageSettingv2 languageSetting;
 
     @Override
@@ -65,7 +71,14 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
         casting();
         setProgressBarInVisibility();
 
-        //sendLeave();
+        Bundle bundle = getIntent().getExtras();
+        String registrationNo = null;
+        if(bundle!=null) {
+            registrationNo = bundle.getString("registrationNo");
+        }
+
+        StudentId = registrationNo;
+        Role = MainActivity.user.Role;
 
         //toolbar
         setToolBar();
@@ -157,7 +170,7 @@ public class LeaveApplicationActivity extends AppCompatActivity implements Leave
         LeaveApplicationPresenter presenter = new LeaveApplicationPresenter(this);
 
         List<String> data = new ArrayList<>();
-        data.add(uid);
+        data.add(StudentId);
         data.add(subjectEditText.getText().toString());
         data.add(messageEditText.getText().toString());
         data.add(engstartDate);

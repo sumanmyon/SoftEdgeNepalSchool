@@ -30,7 +30,7 @@ public class ShowLeaveApplicationOnline {
         url = new URL(context).getLeaveApplicationUrl();
     }
 
-    public void get(Map<String, String> params){
+    public void get(Map<String, String> params, String studentId){
         //url = url + "?UserId=1&datebefore=12/12/2055";
         url = url + "?UserId="+params.get("UserId")+"&Role="+params.get("Role")+"&From="+params.get("From")+"&To=";
         Log.d("StudentShowApp", url);
@@ -41,7 +41,7 @@ public class ShowLeaveApplicationOnline {
                         //setMessage(response.toString());
                         StoreInSharePreference preference = new StoreInSharePreference(context);
                         preference.setType(preference.LeaveApplication);
-                        preference.storeData(response.toString());
+                        preference.storeData(response.toString(), studentId);
 
                         parse(response);
                         getProgressBarInVisibility();
@@ -51,7 +51,7 @@ public class ShowLeaveApplicationOnline {
             public void onErrorResponse(VolleyError error) {
                 getProgressBarInVisibility();
                 //setMessageInTextView("Connection Failed!");
-                offline();
+                offline(studentId);
             }
         });
 
@@ -59,10 +59,10 @@ public class ShowLeaveApplicationOnline {
         requestQueue.add(jsonObjectRequest);
     }
 
-    public void offline() {
+    public void offline(String studentId) {
         StoreInSharePreference preference = new StoreInSharePreference(context);
         preference.setType(preference.LeaveApplication);
-        String data = preference.getData();
+        String data = preference.getData(studentId);
 
         if(data==null){
             setMessageInTextView("There is not any Leave Application.");

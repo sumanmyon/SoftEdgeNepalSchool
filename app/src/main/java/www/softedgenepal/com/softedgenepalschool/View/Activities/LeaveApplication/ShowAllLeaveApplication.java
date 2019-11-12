@@ -28,11 +28,17 @@ import java.util.Map;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.ItemAnimation;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.LeaveApplication.LeaveApplicationDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.UserModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.AdapterListAnimation;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
+
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveApplicationContractor.View,
@@ -44,8 +50,10 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     protected TextView messageHandleTextView;
     private View backpress;
 
-    private final UserModel userModel = user;
     private List<LeaveApplicationDataCache> leaveApplicationDataCacheList;
+    private final String from = "12/12/2018";
+    private String StudentId;
+    private String Role;
 
     //for animation
     private RecyclerView recyclerView;
@@ -69,8 +77,24 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
         //casting
         casting();
 
-        //toolbar
-        //toolbar();
+        Bundle bundle = getIntent().getExtras();
+        String registrationNo = null;
+        if(bundle!=null) {
+            registrationNo = bundle.getString("registrationNo");
+        }
+
+        StudentDataCache studentDataList = StudentHomePage.studentProfileModellist.StudentDetail;
+        if (studentDataList != null) {
+            if(registrationNo.equals(MainActivity.user.Id)){
+                StudentId  = MainActivity.user.Id;
+            }else {
+                StudentProfileModel sibModel = SiblingActivity.siblingProfileModel;
+                if(registrationNo.equals(sibModel.StudentDetail.RegistrationNo)){
+                    StudentId = sibModel.StudentDetail.RegistrationNo;
+                }
+            }
+            Role = MainActivity.user.Role;
+        }
 
         //get all leave application of user
         getLeaveApplication();
@@ -91,11 +115,11 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
         LeaveApplicationPresenter presenter = new LeaveApplicationPresenter(this);
 
         Map<String, String> params = new HashMap<>();
-        params.put("UserId", userModel.Id);
-        params.put("Role", userModel.Role);
-        params.put("From","12/12/2018");
+        params.put("UserId", StudentId);
+        params.put("Role", Role);
+        params.put("From", from);
 
-        presenter.getAllLeaveApplication(params);
+        presenter.getAllLeaveApplication(params, StudentId);
     }
 
     @Override
@@ -144,7 +168,7 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
             @Override
             public void onClick(View v) {
                 Map<String, String> params = new HashMap<>();
-                params.put("Role", user.Role);
+                params.put("Role", Role);
                 params.put("SystemCode",obj.SystemCode);
                 CancelLeaveApplication cancelLeaveApplication = new CancelLeaveApplication(ShowAllLeaveApplication.this, this);
                 cancelLeaveApplication.cancelRequest(params);
@@ -187,12 +211,10 @@ public class ShowAllLeaveApplication extends AppCompatActivity implements LeaveA
     }
 
     private void redirect(Class<?> activityClass){
-        startActivity(new Intent(this, activityClass));
+        Intent intent = new Intent(this, activityClass);
+        intent.putExtra("registrationNo", StudentId);
+        startActivity(intent);
     }
-
-//    private void toolbar() {
-//        toolbar.setTitle(getResources().getString(R.string.ShowAllLeaveApplication_ToolBar));
-//    }
 
     @Override
     public void setMessage(String message) {

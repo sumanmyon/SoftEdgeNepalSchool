@@ -23,12 +23,19 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.DateTime;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.RoutineCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.RoutinePresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
 import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
 import www.softedgenepal.com.softedgenepalschool.View.Fragments.RoutineFragment;
+
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
+import static www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage.studentProfileModellist;
 
 public class RoutineActivity extends AppCompatActivity implements IContractor.View {
     private TextView loadTextView;
@@ -36,7 +43,7 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
     private RecyclerView recyclerView;
     private View backpress;
 
-    private String studentId = MainActivity.user.Id;
+    private String StudentId = MainActivity.user.Id;
 
     private RoutinePresenter presenter;
     List<RoutineCache> routineCacheList;
@@ -47,6 +54,24 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
         setContentView(R.layout.activity_routine);
 
         casting();
+
+        //getting cached data
+        Bundle bundle = getIntent().getExtras();
+        String registrationNo = null;
+        if (bundle != null) {
+            registrationNo = bundle.getString("registrationNo");
+        }
+        StudentDataCache studentDataList = StudentHomePage.studentProfileModellist.StudentDetail;
+        if (studentDataList != null) {
+            if (registrationNo.equals(user.Id)) {
+                StudentId = user.Id;
+            } else {
+                StudentProfileModel sibModel = SiblingActivity.siblingProfileModel;
+                if (registrationNo.equals(sibModel.StudentDetail.RegistrationNo)) {
+                    StudentId = sibModel.StudentDetail.RegistrationNo;
+                }
+            }
+        }
 
         presenter = new RoutinePresenter(this);
         getJsonData();
@@ -87,13 +112,13 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
 
     @Override
     public void getJsonData() {
-        presenter.getJsonData();
+        presenter.getJsonData(StudentId);
     }
 
     @Override
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
-        params.put("studentID", studentId);
+        params.put("studentID", StudentId);
         return params;
     }
 
@@ -172,25 +197,34 @@ public class RoutineActivity extends AppCompatActivity implements IContractor.Vi
 
                     String startDate = "";
                     String endDate = "";
-                    if (!routineCache.routine.get(0).ExamDate.equals("null")) {
-                        startDate = DateTime.DateConvertToNepali(routineCache.routine.get(0).ExamDate, "date");
-                    }
-                    if (!routineCache.routine.get(routineCache.routine.size() - 1).ExamDate.equals("null")) {
-                        endDate = DateTime.DateConvertToNepali(routineCache.routine.get(routineCache.routine.size() - 1).ExamDate, "date");
+                    if(routineCache.routine.size() > 0) {
+                        if (!routineCache.routine.get(0).ExamDate.equals("null")) {
+                            startDate = DateTime.DateConvertToNepali(routineCache.routine.get(0).ExamDate, "date");
+                        }
+                        if (!routineCache.routine.get(routineCache.routine.size() - 1).ExamDate.equals("null")) {
+                            endDate = DateTime.DateConvertToNepali(routineCache.routine.get(routineCache.routine.size() - 1).ExamDate, "date");
+                        }
                     }
 
                     startDateTextView.setText(startDate);
                     endDateTextView.setText(endDate);
 
-                listItemSelect.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        RoutineFragment fragment = new RoutineFragment();
-                        //some thing here
-                        fragment.setAssignment(routineCache);
-                        fragment.show(getSupportFragmentManager(), fragment.getTag());
-                    }
-                });
+                    String finalStartDate = startDate;
+                    String finalEndDate = endDate;
+                    listItemSelect.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!finalStartDate.equals("") || !finalEndDate.equals("")) {
+                                RoutineFragment fragment = new RoutineFragment();
+                                //some thing here
+                                fragment.setAssignment(routineCache);
+                                fragment.show(getSupportFragmentManager(), fragment.getTag());
+                            } else {
+                                setMessage("Routine hasn't been set yet !!!");
+                            }
+
+                        }
+                    });
 
                 } catch (Exception e) {
                     e.printStackTrace();

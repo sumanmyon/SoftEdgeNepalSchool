@@ -23,6 +23,7 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.ReportCardPresenter;
 
 public class ReportCardDetailModel implements IContractor.Model {
     private ReportCardPresenter reportCardPresenter;
+    private String studentId;
 
     public ReportCardDetailModel(ReportCardPresenter reportCardPresenter) {
         this.reportCardPresenter = reportCardPresenter;
@@ -39,7 +40,8 @@ public class ReportCardDetailModel implements IContractor.Model {
     }
 
     @Override
-    public void getJsonData() {
+    public void getJsonData(String studentId) {
+        this.studentId = studentId;
         if(new NetworkConnection(getContext()).isConnectionSuccess()) {
             //todo go online
             online( reportCardPresenter.getParams());
@@ -60,7 +62,7 @@ public class ReportCardDetailModel implements IContractor.Model {
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.ReportDetailCard);
-                preference.storeData(response.toString());
+                preference.storeData(response.toString(), studentId);
                 offline();
             }
         }, new Response.ErrorListener() {
@@ -83,7 +85,7 @@ public class ReportCardDetailModel implements IContractor.Model {
     private void offline() {
         StoreInSharePreference preference = new StoreInSharePreference(getContext());
         preference.setType(preference.ReportDetailCard);
-        String data = preference.getData();
+        String data = preference.getData(studentId);
 
         if(data==null){
             setMessage("report card is not yet published.");

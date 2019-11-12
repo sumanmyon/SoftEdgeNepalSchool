@@ -8,12 +8,12 @@ import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfile
 
 public class StudentDataStore {
     public static class Profile{
-        public static void store(Context context, StudentProfileModel data){
-            PreferencesForObject.store(context, Constants.ProfileStudent, Constants.ProfileStudent, data);
+        public static void store(Context context,String id, StudentProfileModel data){
+            PreferencesForObject.store(context, Constants.ProfileStudent + id, Constants.ProfileStudent, data);
         }
 
-        public static Object get(Context context, Class<?> type){
-            return PreferencesForObject.get(context, Constants.ProfileStudent,Constants.ProfileStudent, "null", type);
+        public static Object get(Context context, String id, Class<?> type){
+            return PreferencesForObject.get(context, Constants.ProfileStudent + id, Constants.ProfileStudent, "null", type);
         }
     }
 }

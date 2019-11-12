@@ -42,10 +42,8 @@ public class RunTimePermissions extends AppCompatActivity implements EasyPermiss
     private void openPermissions() {
         if(EasyPermissions.hasPermissions(this,perms)){
             setToast("Opeaning..");
-            finish();
-            onBackPressed();
-//            Intent runIntent = new Intent(this, MainActivity.class);
-//            startActivity(runIntent);
+            redirect();
+
         }else {
             EasyPermissions.requestPermissions(
                     this,
@@ -74,7 +72,6 @@ public class RunTimePermissions extends AppCompatActivity implements EasyPermiss
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
         if(EasyPermissions.somePermissionPermanentlyDenied(this, perms)){
             new AppSettingsDialog.Builder(this).build().show();
-            //onBackPressed();
         }
     }
 
@@ -89,9 +86,10 @@ public class RunTimePermissions extends AppCompatActivity implements EasyPermiss
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    private void redirect(){
+        Intent runIntent = new Intent(this, LoginActivity.class);
         finish();
+        runIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(runIntent);
     }
 }

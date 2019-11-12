@@ -35,8 +35,8 @@ public class RoutinePresenter implements IContractor.Presenter {
     }
 
     @Override
-    public void getJsonData() {
-        routineModel.getJsonData();
+    public void getJsonData(String studentId) {
+        routineModel.getJsonData(studentId);
     }
 
     @Override

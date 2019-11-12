@@ -9,11 +9,13 @@ import android.view.MenuItem;
 public class NavigationListener implements NavigationView.OnNavigationItemSelectedListener {
     Activity activity;
     String userType;
+    String registrationNo;
     DrawerLayout drawerLayout;
 
-    public NavigationListener(Activity activity, String userType, DrawerLayout drawerLayout) {
+    public NavigationListener(Activity activity, String userType, String registrationNo, DrawerLayout drawerLayout) {
         this.activity=activity;
         this.userType=userType;
+        this.registrationNo = registrationNo;
         this.drawerLayout=drawerLayout;
     }
 
@@ -28,7 +30,7 @@ public class NavigationListener implements NavigationView.OnNavigationItemSelect
             new TeacherNav(activity, itemId).set();
         }else if(userType.equals("Student")){
             new SchoolNav(activity, itemId).set();
-            new StudentNav(activity, itemId).set();
+            new StudentNav(activity, itemId).set(registrationNo);
         }
 
         menuItem.setChecked(true);

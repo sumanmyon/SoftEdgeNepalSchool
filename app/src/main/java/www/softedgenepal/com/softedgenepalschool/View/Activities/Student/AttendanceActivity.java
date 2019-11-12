@@ -33,10 +33,14 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.Lang
 import www.softedgenepal.com.softedgenepalschool.CustomImage.ShowInGlide;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.AttendanceCache;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.AttendancePresenter;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
+
 import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 import static www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage.studentProfileModellist;
@@ -51,7 +55,7 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
     private PieChart attendancePichart;
 
     AttendancePresenter presenter;
-    private final String StudentId = user.Id;
+    private String StudentId;
 
     private List<AttendanceCache> attendanceCacheList;
 
@@ -71,7 +75,27 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
 
         this.studentDataList = studentProfileModellist.StudentDetail;
         casting();
-        loadProfile();
+
+        //getting cached data
+        Bundle bundle = getIntent().getExtras();
+        String registrationNo = null;
+        if(bundle!=null) {
+            registrationNo = bundle.getString("registrationNo");
+        }
+
+        if (studentDataList != null) {
+            if(registrationNo.equals(user.Id)){
+                StudentId  = user.Id;
+                loadProfile(studentDataList);
+            }else {
+                StudentProfileModel sibModel = SiblingActivity.siblingProfileModel;
+                if(registrationNo.equals(sibModel.StudentDetail.RegistrationNo)){
+                    StudentId = sibModel.StudentDetail.RegistrationNo;
+                    loadProfile(sibModel.StudentDetail);
+                }
+            }
+        }
+
 
         presenter = new AttendancePresenter(this);
         getJsonData();
@@ -84,13 +108,13 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
         });
     }
 
-    private void loadProfile() {
-        if(studentDataList != null) {
-            attendanceUserName.setText(studentDataList.StudentName);
-            attendanceClass.setText(studentDataList.ClassName + ", "+studentDataList.SectionName);
+    private void loadProfile(StudentDataCache studentData) {
+        if(studentData != null) {
+            attendanceUserName.setText(studentData.StudentName);
+            attendanceClass.setText(studentData.ClassName + ", "+ studentData.SectionName);
 
             ShowInGlide glide = new ShowInGlide(this);
-            glide.loadURL(studentDataList.ImageUrl);
+            glide.loadURL(this.studentDataList.ImageUrl);
             glide.loadFailed(R.drawable.ic_profile_img);
             glide.show(attendanceProfile);
         }
@@ -132,7 +156,7 @@ public class AttendanceActivity extends AppCompatActivity implements IContractor
 
     @Override
     public void getJsonData() {
-        presenter.getJsonData();
+        presenter.getJsonData(StudentId);
     }
 
     @Override

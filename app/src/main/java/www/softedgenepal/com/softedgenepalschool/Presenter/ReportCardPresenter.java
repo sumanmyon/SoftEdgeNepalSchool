@@ -52,11 +52,11 @@ public class ReportCardPresenter implements IContractor.Presenter {
     }
 
     @Override
-    public void getJsonData() {
+    public void getJsonData(String studentId) {
         if(percentageFragment!=null)
-            reportCardDetailModel.getJsonData();
+            reportCardDetailModel.getJsonData(studentId);
         else if(reportCardActivity != null){
-            reportCardModel.getJsonData();
+            reportCardModel.getJsonData(studentId);
         }
     }
 

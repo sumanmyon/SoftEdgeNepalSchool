@@ -2,6 +2,7 @@ package www.softedgenepal.com.softedgenepalschool.View.Activities.Student;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,10 +27,17 @@ import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSetting;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.ReportCardCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.ReportCardPresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
 import www.softedgenepal.com.softedgenepalschool.View.Custom.CustomAdapters.RecyclerAdapter;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
+
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 public class ReportCardActivity extends AppCompatActivity implements IContractor.View {
     private TextView loadTextView;
@@ -38,7 +46,9 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
     private RecyclerView recyclerView;
 
     private ReportCardPresenter presenter;
-    private String classCode = "7";
+    private String registrationNo = null;
+    private String classCode;
+    private String StudentId;
 
     private List<ReportCardCache> reportCardCacheList;
 
@@ -61,6 +71,27 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
         setContentView(R.layout.activity_report_card2);
 
         casting();
+
+        //getting cached data
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null) {
+            registrationNo = bundle.getString("registrationNo");
+        }
+
+        StudentDataCache studentDataList = StudentHomePage.studentProfileModellist.StudentDetail;
+        if (studentDataList != null) {
+            if(registrationNo.equals(MainActivity.user.Id)){
+                StudentId  = MainActivity.user.Id;
+                classCode = studentDataList.ClassCode;
+            }else {
+                StudentProfileModel sibModel = SiblingActivity.siblingProfileModel;
+                if(registrationNo.equals(sibModel.StudentDetail.RegistrationNo)){
+                    StudentId = sibModel.StudentDetail.RegistrationNo;
+                    classCode = sibModel.StudentDetail.ClassCode;
+                }
+            }
+        }
+
         presenter = new ReportCardPresenter(this);
         getJsonData();
 
@@ -101,7 +132,7 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
 
     @Override
     public void getJsonData() {
-        presenter.getJsonData();
+        presenter.getJsonData(StudentId);
     }
 
     @Override
@@ -182,6 +213,7 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
     private void redirectIntent(ReportCardCache reportCardCache){
         Intent intent = new Intent(this, ReportCardDetailActivity.class);
         intent.putExtra("cache", reportCardCache);
+        intent.putExtra("registrationNo", StudentId);
         startActivity(intent);
     }
 
@@ -194,7 +226,7 @@ public class ReportCardActivity extends AppCompatActivity implements IContractor
     protected void onRestart() {
         super.onRestart();
         //showInView();
-        refreshLayout();
+        //refreshLayout();
     }
 
     @Override

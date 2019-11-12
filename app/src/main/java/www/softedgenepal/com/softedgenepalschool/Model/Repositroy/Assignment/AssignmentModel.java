@@ -26,13 +26,14 @@ import www.softedgenepal.com.softedgenepalschool.R;
 
 public class AssignmentModel implements AssignmentContractor.Model {
     private AssignmentPresenter assignmentPresenter;
-    private List<AssignmentCache> assignmentCacheList;
+    private String StudentId;
 
     public AssignmentModel(AssignmentPresenter assignmentPresenter) {
         this.assignmentPresenter = assignmentPresenter;
     }
 
     public void fetchDataFromServer(Map<String, String> params){
+        StudentId = params.get("studentId");
         if(new NetworkConnection(getContext()).isConnectionSuccess()) {
             //todo go online
             online(params);
@@ -47,7 +48,6 @@ public class AssignmentModel implements AssignmentContractor.Model {
                 "?dateFrom="+params.get("From")+
                 "&dateTo="+params.get("To")+
                 "&studentId="+params.get("studentId");
-       // setMessage(Url);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, Url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -56,13 +56,12 @@ public class AssignmentModel implements AssignmentContractor.Model {
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.Assignment);
-                preference.storeData(response.toString());
+                preference.storeData(response.toString(), StudentId);
                 offline();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //Log.d("Url", error.getMessage());
                 offline();
             }
         });
@@ -74,7 +73,7 @@ public class AssignmentModel implements AssignmentContractor.Model {
     private void offline() {
         StoreInSharePreference preference = new StoreInSharePreference(getContext());
         preference.setType(preference.Assignment);
-        String data = preference.getData();
+        String data = preference.getData(StudentId);
 
         if(data==null){
             setMessage(getContext().getResources().getString(R.string.not_any_assignment));
@@ -83,7 +82,6 @@ public class AssignmentModel implements AssignmentContractor.Model {
 
         try {
             JSONObject response = new JSONObject(data);
-           // parseJson(response);
             setJsonDataToView(response);
         } catch (JSONException e) {
             e.printStackTrace();

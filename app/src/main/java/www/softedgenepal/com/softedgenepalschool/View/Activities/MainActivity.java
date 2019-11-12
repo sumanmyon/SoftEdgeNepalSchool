@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, 5*1000);
         }else {
-            //PreferencesForObject.clear(Constants.LoginCredential);
             userType = "School";
             PreferencesForObject.store(this, Constants.LoginCredential, Constants.LoginCredential, null);
         }
@@ -203,7 +202,10 @@ public class MainActivity extends AppCompatActivity {
         screenSize.setCompitableForHeight(3.5);
         screenSize.setImage();
 
-        navigationListener = new NavigationListener(this, userType, drawerLayout);
+        if(user!=null)
+            navigationListener = new NavigationListener(this, userType, user.Id, drawerLayout);
+        else
+            navigationListener = new NavigationListener(this, userType, null, drawerLayout);
         navigationView.setNavigationItemSelectedListener(navigationListener);
     }
 

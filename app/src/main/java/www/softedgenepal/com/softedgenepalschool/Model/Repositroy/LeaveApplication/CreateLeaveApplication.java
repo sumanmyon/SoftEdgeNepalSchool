@@ -20,6 +20,7 @@ import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandle
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.LeaveApplicationContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.LeaveApplicationPresenter;
+import www.softedgenepal.com.softedgenepalschool.R;
 
 import static com.android.volley.DefaultRetryPolicy.DEFAULT_TIMEOUT_MS;
 
@@ -65,7 +66,7 @@ public class CreateLeaveApplication implements LeaveApplicationContractor.Model,
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    setMessage(error.getMessage());
+                    setMessage(context.getResources().getString(R.string.Network_error));
                     leaveApplicationPresenter.createProgressBarInVisibility();
                 }
             });

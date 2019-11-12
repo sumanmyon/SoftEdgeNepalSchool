@@ -36,10 +36,10 @@ public class LeaveApplicationPresenter implements LeaveApplicationContractor.Pre
         }
     }
 
-    public void getAllLeaveApplication(Map<String, String> params){
+    public void getAllLeaveApplication(Map<String, String> params, String StudentId){
         if(showAllLeaveApplication!=null) {
             GetAllUserLeaveApplication getAllUserLeaveApplication = new GetAllUserLeaveApplication(this);
-            getAllUserLeaveApplication.getAllUserLeaveData(params);
+            getAllUserLeaveApplication.getAllUserLeaveData(params, StudentId);
         }else {
             setMessage("null");
         }

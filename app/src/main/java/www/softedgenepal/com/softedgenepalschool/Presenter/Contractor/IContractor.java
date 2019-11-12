@@ -25,7 +25,7 @@ public interface IContractor {
 
         Context getCalContext();
 
-        void getJsonData();
+        void getJsonData(String studentId);
         Map<String, String> getParams();
         void setJsonData(JSONObject response);
     }
@@ -34,7 +34,7 @@ public interface IContractor {
         void setMessage(String message);
         void setLog(String topic, String body);
 
-        void getJsonData();
+        void getJsonData(String studentId);
         void setJsonData(JSONObject response);
     }
 }
