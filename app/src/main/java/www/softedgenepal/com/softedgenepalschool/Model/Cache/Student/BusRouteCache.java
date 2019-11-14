@@ -7,14 +7,19 @@ public class BusRouteCache implements Serializable {
     public String SystemCode;
     public String StaffCode;
     public String FullName;
+
+    public String Driver;
+    public String BusNo;
     public String RouteName;
-    public List<RouteDetails> RouteDetailsList;
+    public List<RouteDetails> RouteDetails;
 
 
     public static class RouteDetails implements Serializable{
         public String StationName;
         public String Latitude;
         public String Longitude;
+        public String PickUpTime;
+        public String DropTime;
         public String Order;
 
         public RouteDetails(String stationName, String latitude, String longitude, String order) {
@@ -30,6 +35,6 @@ public class BusRouteCache implements Serializable {
         StaffCode = staffCode;
         FullName = fullName;
         RouteName = routeName;
-        this.RouteDetailsList = RouteDetailsList;
+        this.RouteDetails = RouteDetailsList;
     }
 }

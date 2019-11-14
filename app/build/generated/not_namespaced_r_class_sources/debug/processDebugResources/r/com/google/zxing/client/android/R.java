@@ -40,20 +40,20 @@ public final class R {
         private id() {}
 
         public static final int centerCrop = 0x7f0a0068;
-        public static final int fitCenter = 0x7f0a00bb;
-        public static final int fitXY = 0x7f0a00bc;
-        public static final int zxing_back_button = 0x7f0a0255;
-        public static final int zxing_barcode_scanner = 0x7f0a0256;
-        public static final int zxing_barcode_surface = 0x7f0a0257;
-        public static final int zxing_camera_error = 0x7f0a0258;
-        public static final int zxing_decode = 0x7f0a0259;
-        public static final int zxing_decode_failed = 0x7f0a025a;
-        public static final int zxing_decode_succeeded = 0x7f0a025b;
-        public static final int zxing_possible_result_points = 0x7f0a025c;
-        public static final int zxing_preview_failed = 0x7f0a025d;
-        public static final int zxing_prewiew_size_ready = 0x7f0a025e;
-        public static final int zxing_status_view = 0x7f0a025f;
-        public static final int zxing_viewfinder_view = 0x7f0a0260;
+        public static final int fitCenter = 0x7f0a00bc;
+        public static final int fitXY = 0x7f0a00bd;
+        public static final int zxing_back_button = 0x7f0a0257;
+        public static final int zxing_barcode_scanner = 0x7f0a0258;
+        public static final int zxing_barcode_surface = 0x7f0a0259;
+        public static final int zxing_camera_error = 0x7f0a025a;
+        public static final int zxing_decode = 0x7f0a025b;
+        public static final int zxing_decode_failed = 0x7f0a025c;
+        public static final int zxing_decode_succeeded = 0x7f0a025d;
+        public static final int zxing_possible_result_points = 0x7f0a025e;
+        public static final int zxing_preview_failed = 0x7f0a025f;
+        public static final int zxing_prewiew_size_ready = 0x7f0a0260;
+        public static final int zxing_status_view = 0x7f0a0261;
+        public static final int zxing_viewfinder_view = 0x7f0a0262;
     }
     public static final class layout {
         private layout() {}
@@ -69,10 +69,10 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int zxing_app_name = 0x7f11012d;
-        public static final int zxing_button_ok = 0x7f11012e;
-        public static final int zxing_msg_camera_framework_bug = 0x7f11012f;
-        public static final int zxing_msg_default_status = 0x7f110130;
+        public static final int zxing_app_name = 0x7f11012e;
+        public static final int zxing_button_ok = 0x7f11012f;
+        public static final int zxing_msg_camera_framework_bug = 0x7f110130;
+        public static final int zxing_msg_default_status = 0x7f110131;
     }
     public static final class style {
         private style() {}

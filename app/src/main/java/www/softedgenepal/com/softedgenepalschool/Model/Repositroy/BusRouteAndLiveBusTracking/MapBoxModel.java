@@ -12,6 +12,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.utils.StoreInSharePreference;
 import www.softedgenepal.com.softedgenepalschool.Model.URLs.URL;
@@ -20,6 +23,7 @@ import www.softedgenepal.com.softedgenepalschool.Presenter.MapBoxPresenter;
 
 public class MapBoxModel implements IContractor.Model {
     MapBoxPresenter mapBoxPresenter;
+    private String studentId;
 
     public MapBoxModel(MapBoxPresenter mapBoxPresenter) {
         this.mapBoxPresenter=mapBoxPresenter;
@@ -27,6 +31,7 @@ public class MapBoxModel implements IContractor.Model {
 
     @Override
     public void getJsonData(String studentId) {
+        this.studentId = studentId;
         if(new NetworkConnection(getContext()).isConnectionSuccess()) {
             //todo go online
             online();
@@ -37,7 +42,10 @@ public class MapBoxModel implements IContractor.Model {
     }
 
     private void online() {
+        Map<String, String> params = mapBoxPresenter.getParams();
         String Url = new URL().busRouteUrl();
+        Url = Url + "?id=" + params.get("id");
+        Url = Url + "&role=" + params.get("role");
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, Url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -45,7 +53,7 @@ public class MapBoxModel implements IContractor.Model {
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.BusRoute);
-                preference.storeData(response.toString());
+                preference.storeData(response.toString(), studentId);
                 offline();
             }
         }, new Response.ErrorListener() {
@@ -63,17 +71,17 @@ public class MapBoxModel implements IContractor.Model {
     private void offline() {
         StoreInSharePreference preference = new StoreInSharePreference(getContext());
         preference.setType(preference.BusRoute);
-        String data = preference.getData();
+        String data = preference.getData(studentId);
 
         if(data==null){
-            setMessage("There is not any assignment.");
+            setMessage("There is not any route.");
             return;
         }
 
         try {
             JSONObject response = new JSONObject(data);
             setJsonData(response);
-        } catch (JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             setJsonData(null);
         }

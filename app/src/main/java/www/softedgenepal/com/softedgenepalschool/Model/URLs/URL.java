@@ -78,7 +78,8 @@ public class URL {
         private String calenderAndEventsUrl = onlineUrl + "geteventinfo";//?From=10/10/1995&To=12/12/2023";
         //http://192.168.100.100:423/api/data/geteventinfo?From=10/10/1995&To=12/12/2020
         private String assignmentUrl = onlineUrl + "gethomework";
-        private String busRouteUrl = onlineUrl + "getbusroutes";
+        //private String busRouteUrl = onlineUrl + "getbusroutes";
+        private String busRouteUrl = onlineUrl + "getBusRouteByUserId";
 
         private String routineUrl = onlineUrl + "getroutine";
         private String attendanceUrl = onlineUrl + "getattendance";

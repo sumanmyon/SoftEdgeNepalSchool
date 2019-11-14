@@ -41,6 +41,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import timber.log.Timber;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomMessage.OnClickActionEventSnackBar;
+import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomMessage.ShowMessageInSnackBar;
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.NetworkHandler.NetworkConnection;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.BusRouteCache;
 import www.softedgenepal.com.softedgenepalschool.R;
@@ -56,6 +58,7 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineWidth;
 public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCallback, PermissionsListener {
     private TextView toolbar;
     private View backpress;
+    private View view;
 
     private MapView mapView;
     private MapboxMap mapBoxMap;
@@ -106,7 +109,10 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
     private void enableLocation(){
         if(PermissionsManager.areLocationPermissionsGranted(this)){
             //yes
-            type1(mapBoxMap);
+            if(busRouteCache != null)
+                type1(mapBoxMap);
+            else
+                showMapBox(mapBoxMap, null);
         }else {
             //no
             permissionsManager = new PermissionsManager(this);
@@ -133,7 +139,7 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
 
     private void type1(MapboxMap mapboxMap){
 
-        List<BusRouteCache.RouteDetails> routeDetails = busRouteCache.RouteDetailsList;
+        List<BusRouteCache.RouteDetails> routeDetails = busRouteCache.RouteDetails;
         List<LatLng> latLngList = new ArrayList<>();
         List<Point> pointList = new ArrayList<>();
 
@@ -147,7 +153,13 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
             latLngList.add(latLng);
             pointList.add(Point.fromLngLat(Double.parseDouble(details.Longitude), Double.parseDouble(details.Latitude)));
 
-            mapboxMap.addMarker(new MarkerOptions().position(latLng).setTitle(details.StationName).icon(icon));
+            String pickTime = details.PickUpTime.split(":")[0]  + ":" + details.PickUpTime.split(":")[1];
+            String dropTime = details.DropTime.split(":")[0] + ":" + details.DropTime.split(":")[1];
+            String title = "Station: "+ details.StationName +
+                    "\nBus no.: " + busRouteCache.BusNo +
+                    "\nPick Time: " + pickTime +
+                    "\nDrop Time: "+ dropTime;
+            mapboxMap.addMarker(new MarkerOptions().position(latLng).setTitle(title).icon(icon));
 
             setLog("ShowInMapActivity", details.StationName + "\t" + latLng.toString());
         }
@@ -155,16 +167,24 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
         mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
-                Toast.makeText(getApplicationContext(), marker.getTitle(), Toast.LENGTH_LONG).show();
+                ShowMessageInSnackBar snackBar = new ShowMessageInSnackBar(mapView, ShowInMapActivity.this);
+                snackBar.showSnackBar(marker.getTitle(), snackBar.snackIndefinedLength);
+                snackBar.setCustomView();
+                snackBar.show();
                 return true;
             }
         });
 
+        showMapBox(mapboxMap, pointList);
+    }
+
+    private void showMapBox(MapboxMap mapboxMap, List<Point> pointList){
         mapboxMap.setStyle(setStyle, new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 mapBoxMap.getStyle(styles -> {
-                    setLoop(styles, pointList);
+                    if(pointList != null)
+                        setLoop(styles, pointList);
                 });
             }
         });
@@ -284,10 +304,12 @@ public class ShowInMapActivity extends AppCompatActivity implements OnMapReadyCa
 
     private void casting() {
         toolbar = findViewById(R.id.ShowInMap_toolbar);
-        toolbar.setText(getString(R.string.RouteName)+" "+busRouteCache.RouteName);
+        String routeName = (busRouteCache == null)? "" : busRouteCache.RouteName;
+        toolbar.setText(getString(R.string.RouteName)+" "+ routeName);
         backpress = findViewById(R.id.ShowInMap_bt_close);
 
         mapView = findViewById(R.id.mapView);
+        view = findViewById(R.id.view);
     }
 
     public void setLog(String topic, String body) {

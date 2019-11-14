@@ -3,6 +3,7 @@ package www.softedgenepal.com.softedgenepalschool.AppCustomPackages.CustomMessag
 import android.app.Activity;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,13 +34,17 @@ public class ShowMessageInSnackBar {
 
     //todo set color
     //eg Color.RED
-    private void setActionColorForButton(int color){
+    public void setActionColorForButton(int color){
         snackbar.setActionTextColor(color);
     }
 
 
     public void show(){
         snackbar.show();
+    }
+
+    public void destroy(){
+        snackbar.dismiss();
     }
 
     public void setAction(int stringResourceId, final OnClickActionEventSnackBar onClickActionEventForSnackBar){
@@ -104,11 +109,40 @@ public class ShowMessageInSnackBar {
         Snackbar.SnackbarLayout snackbarLayout = (Snackbar.SnackbarLayout) snackbar.getView();
         snackbarLayout.setBackground(activity.getResources().getDrawable(R.color.colorSecondary));
         View customView = activity.getLayoutInflater().inflate(R.layout.custom_snackbar, null);
+
         //create layout
         TextView textView = customView.findViewById(R.id.customSnackText);
         ImageView imageView = customView.findViewById(R.id.customSnackImage);
+        View button = customView.findViewById(R.id.customSnackButton);
+
         textView.setText(message);
         imageView.setImageResource(drawableImage);
+        button.setVisibility(View.GONE);
+
+        snackbarLayout.addView(customView);
+    }
+
+    public void setCustomView(){
+        //to implement this method first add
+        //setAction() method
+        snackbar.setText("");
+        Snackbar.SnackbarLayout snackbarLayout = (Snackbar.SnackbarLayout) snackbar.getView();
+        snackbarLayout.setBackground(activity.getResources().getDrawable(R.color.colorSecondary));
+        View customView = activity.getLayoutInflater().inflate(R.layout.custom_snackbar, null);
+
+        //create layout
+        TextView textView = customView.findViewById(R.id.customSnackText);
+        ImageView imageView = customView.findViewById(R.id.customSnackImage);
+        View button = customView.findViewById(R.id.customSnackButton);
+
+        textView.setText(message);
+        textView.setTextColor(activity.getResources().getColor(R.color.blue_500));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        });
         snackbarLayout.addView(customView);
     }
 

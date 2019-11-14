@@ -53,7 +53,7 @@ public class CalenderModel implements CalenderContractor.Model {
                 //Todo store for offline
                 StoreInSharePreference preference = new StoreInSharePreference(getContext());
                 preference.setType(preference.Calender);
-                preference.storeData(response.toString(), params.get("studentID"));
+                preference.storeData(response.toString(), "");
                 offline();
             }
         }, new Response.ErrorListener() {
@@ -71,7 +71,7 @@ public class CalenderModel implements CalenderContractor.Model {
     private void offline() {
         StoreInSharePreference preference = new StoreInSharePreference(getContext());
         preference.setType(preference.Calender);
-        String data = preference.getData();
+        String data = preference.getData("");
 
         if(data==null){
             calender();

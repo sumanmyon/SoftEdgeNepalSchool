@@ -108,38 +108,39 @@ public class EventActivity extends AppCompatActivity implements CalenderContract
     }
 
     private void loadUI() {
-        setMessage(String.valueOf(eventList.size()));
-        //todo show in view
-        int count = 0;
-        List<CalenderCache> getEventList = new ArrayList<>();
-        int i[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-        for (CalenderCache cache : eventList){
-            if(cache.type.equals("0")){      // type = 0 means :: events
-                //todo convert date to nepali
-                //split dates
-                String[] startD = cache.start.split("-");
-                int startMonth = DateTime.convertToNepali(startD).month;
+        if(eventList.size() > 0) {
+            //todo show in view
+            int count = 0;
+            List<CalenderCache> getEventList = new ArrayList<>();
+            int i[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+            for (CalenderCache cache : eventList) {
+                if (cache.type.equals("0")) {      // type = 0 means :: events
+                    //todo convert date to nepali
+                    //split dates
+                    String[] startD = cache.start.split("-");
+                    int startMonth = DateTime.convertToNepali(startD).month;
 
-                String[] endD = cache.start.split("-");
-                int endMonth = DateTime.convertToNepali(endD).month;
+                    String[] endD = cache.start.split("-");
+                    int endMonth = DateTime.convertToNepali(endD).month;
 
-                if(startMonth == endMonth) {
-                    for (int m : i) {
-                        if (startMonth == m) {
-                            String month = getStringsMonth().get(startMonth - 1);
-                            cache.month = month;
-                            cache.expand = false;
-                            getEventList.add(cache);
+                    if (startMonth == endMonth) {
+                        for (int m : i) {
+                            if (startMonth == m) {
+                                String month = getStringsMonth().get(startMonth - 1);
+                                cache.month = month;
+                                cache.expand = false;
+                                getEventList.add(cache);
+                            }
                         }
                     }
                 }
             }
+
+            //todo set data as months wise prewiew
+
+            adapter = new EventAdapter(this, getEventList, getStringsMonth(), ItemAnimation.BOTTOM_UP);
+            recyclerView.setAdapter(adapter);
         }
-
-        //todo set data as months wise prewiew
-
-        adapter = new EventAdapter(this, getEventList, getStringsMonth(), ItemAnimation.BOTTOM_UP);
-        recyclerView.setAdapter(adapter);
     }
 
 

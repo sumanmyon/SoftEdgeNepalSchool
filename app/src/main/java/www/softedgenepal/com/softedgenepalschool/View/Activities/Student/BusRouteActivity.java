@@ -12,18 +12,30 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import www.softedgenepal.com.softedgenepalschool.AppCustomPackages.Settings.LanguageSettingv2;
 import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.BusRouteCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Student.StudentDataCache;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.Teacher.LeaveApplicationModel;
+import www.softedgenepal.com.softedgenepalschool.Model.Cache.User.StudentProfileModel;
 import www.softedgenepal.com.softedgenepalschool.Presenter.Contractor.IContractor;
 import www.softedgenepal.com.softedgenepalschool.Presenter.MapBoxPresenter;
+import www.softedgenepal.com.softedgenepalschool.Presenter.RoutinePresenter;
 import www.softedgenepal.com.softedgenepalschool.R;
+import www.softedgenepal.com.softedgenepalschool.View.Activities.SiblingActivity;
+import www.softedgenepal.com.softedgenepalschool.View.Fragments.HomePage.TypeOfHomPage.StudentHomePage;
+
+import static www.softedgenepal.com.softedgenepalschool.View.Activities.MainActivity.user;
 
 public class BusRouteActivity extends AppCompatActivity implements IContractor.View {
     private TextView loadTextView;
@@ -33,7 +45,8 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
     private MapBoxPresenter presenter;
     private LanguageSettingv2 languageSetting;
 
-    private String StudentId = "";
+    private String StudentId;
+    private String Role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +57,25 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
 
         //casting
         casting();
+
+        Bundle bundle = getIntent().getExtras();
+        String registrationNo = null;
+        if (bundle != null) {
+            registrationNo = bundle.getString("registrationNo");
+        }
+        StudentDataCache studentDataList = StudentHomePage.studentProfileModellist.StudentDetail;
+        if (studentDataList != null) {
+            if (registrationNo.equals(user.Id)) {
+                StudentId = user.Id;
+            } else {
+                StudentProfileModel sibModel = SiblingActivity.siblingProfileModel;
+                if (registrationNo.equals(sibModel.StudentDetail.RegistrationNo)) {
+                    StudentId = sibModel.StudentDetail.RegistrationNo;
+                }
+            }
+
+            Role = user.Role;
+        }
 
         presenter = new MapBoxPresenter(this);
         getJsonData();
@@ -77,7 +109,7 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
 
     @Override
     public void setLog(String topic, String body) {
-        Log.d(topic, body);
+        Log.e(topic, body);
     }
 
     @Override
@@ -87,7 +119,10 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
 
     @Override
     public Map<String, String> getParams() {
-        return null;
+        Map<String, String> params = new HashMap<>();
+        params.put("id", StudentId);
+        params.put("role", Role);
+        return params;
     }
 
 
@@ -101,39 +136,20 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
         setFieldInvisible();
 
         if(response != null) {
-            //setLog("BusRouteActivity", response.toString());
-            List<BusRouteCache> busRouteCaches = new ArrayList<>();
+            BusRouteCache busRouteCaches = null;
             try {
                 if (response.getString("Status").equals("true")) {
                     if (response.getString("Response").equals("Success")) {
-                        JSONArray dataArray = response.getJSONArray("Data");
-                        if (!dataArray.toString().equals("[]")) {
-                            if (dataArray.length() >= 0) {
-                                for (int i = 0; i < dataArray.length(); i++) {
-                                    JSONObject dataObject = dataArray.getJSONObject(i);
-                                    String SystemCode = dataObject.getString("SystemCode");
-                                    String StaffCode = dataObject.getString("StaffCode");
-                                    String FullName = dataObject.getString("FullName");
-                                    String RouteName = dataObject.getString("RouteName");
-
-                                    JSONArray routeDetailsArray = dataObject.getJSONArray("RouteDetails");
-                                    List<BusRouteCache.RouteDetails> routeDetailsList = new ArrayList<>();
-                                    for (int j = 0; j < routeDetailsArray.length(); j++) {
-                                        if (!routeDetailsArray.toString().equals("[]")) {
-                                            JSONObject routeDetailsObject = routeDetailsArray.getJSONObject(j);
-                                            String StationName = routeDetailsObject.getString("StationName");
-                                            String Latitude = routeDetailsObject.getString("Latitude");
-                                            String Longitude = routeDetailsObject.getString("Longitude");
-                                            String Order = routeDetailsObject.getString("Order");
-                                            routeDetailsList.add(new BusRouteCache.RouteDetails(StationName, Latitude, Longitude, Order));
-                                        }
-                                    }
-
-                                    busRouteCaches.add(new BusRouteCache(SystemCode, StaffCode, FullName, RouteName, routeDetailsList));
-
-                                }
-                            }
+                        String data = response.getString("Data");
+                        if(data == "null"){
+                            toast("There is no bus route for you.");
+                        }else {
+                            JSONObject dataObject = response.getJSONObject("Data");
+                            busRouteCaches = new Gson().fromJson(dataObject.toString(), new TypeToken<BusRouteCache>() {
+                            }.getType());
                         }
+                    }else{
+                        toast("There is no bus route for you.");
                     }
                 }
 
@@ -148,40 +164,10 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
         }
     }
 
-    private void showInView(final List<BusRouteCache> busRouteCachesList){
+    private void showInView(final BusRouteCache busRouteCachesList){
         saveBusRouteCachesList = busRouteCachesList;
-        setLog("BusRouteActivity", saveBusRouteCachesList.size()+"");
-        redirect(saveBusRouteCachesList.get(0), ShowInMapActivity.class);
-//        final RecyclerAdapter adapter = new RecyclerAdapter(this, saveBusRouteCachesList.size()) {
-//            TextView routeNameTextView;
-//            @Override
-//            public ViewHolder onCreate(ViewGroup viewGroup, int position) {
-//                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.bus_route_recyclerview_list, viewGroup,false);
-//                return new ViewHolder(view);
-//            }
-//
-//            @Override
-//            public void inflateUIFields(View itemView) {
-//                routeNameTextView = itemView.findViewById(R.id.busRoute_RouteName);
-//            }
-//
-//            @Override
-//            public void onBind(ViewHolder viewHolder, int position) {
-//                final BusRouteCache busRouteCache = saveBusRouteCachesList.get(position);
-//                routeNameTextView.setText(busRouteCache.RouteName);
-//
-//                viewHolder.itemView.findViewById(R.id.bck).setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        setLog("BusRouteActivity", busRouteCache.RouteDetailsList.size()+"");
-//                        setMessage("Total Route points "+busRouteCache.RouteDetailsList.size());
-//                        redirect(busRouteCache, ShowInMapActivity.class);
-//                    }
-//                });
-//            }
-//        };
-//
-//        recyclerView.setAdapter(adapter);
+        setLog("BusRouteActivity", saveBusRouteCachesList+"");
+        redirect(saveBusRouteCachesList, ShowInMapActivity.class);
     }
 
     private void redirect(BusRouteCache busRouteCache, Class<?> classActivity) {
@@ -191,10 +177,14 @@ public class BusRouteActivity extends AppCompatActivity implements IContractor.V
         finish();
     }
 
-    List<BusRouteCache> saveBusRouteCachesList;
+    BusRouteCache saveBusRouteCachesList;
     @Override
     protected void onRestart() {
         super.onRestart();
         showInView(saveBusRouteCachesList);
+    }
+
+    private void toast(String string){
+        Toast.makeText(this, string, Toast.LENGTH_LONG).show();
     }
 }

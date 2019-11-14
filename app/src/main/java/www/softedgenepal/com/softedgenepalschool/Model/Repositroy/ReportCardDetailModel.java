@@ -94,7 +94,6 @@ public class ReportCardDetailModel implements IContractor.Model {
 
         try {
             JSONObject response = new JSONObject(data);
-            // parseJson(response);
             setJsonData(response);
         } catch (JSONException e) {
             e.printStackTrace();

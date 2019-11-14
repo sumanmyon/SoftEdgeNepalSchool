@@ -1922,6 +1922,7 @@ id createHlw_message_editText
 id createHlw_post_button
 id custom
 id customPanel
+id customSnackButton
 id customSnackImage
 id customSnackText
 id customToastImage
@@ -2372,6 +2373,7 @@ id userProfile_nameTextView
 id userProfile_relativeLayout
 id v1
 id videos
+id view
 id viewLineHorizontal
 id viewLineVertical
 id view_offset_helper
@@ -2779,6 +2781,7 @@ string both
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
+string close
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title

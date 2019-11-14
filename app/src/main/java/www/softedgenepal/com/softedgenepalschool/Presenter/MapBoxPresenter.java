@@ -41,7 +41,7 @@ public class MapBoxPresenter implements IContractor.Presenter {
 
     @Override
     public Map<String, String> getParams() {
-        return null;
+        return busRouteActivity.getParams();
     }
 
     @Override
